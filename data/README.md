@@ -11,8 +11,9 @@ Contains customer PII (names, phones, emails, addresses) — keep this repo priv
 ### Customers (29 rows)
 `ID, Name, Contact, Phone, Email, Address, Status, Notes`
 - IDs HH001–HH044 (non-contiguous — gaps likely deleted/inactive records)
-- Status values: `active` (26), `ended` (1: HH017 Cinnamon Squared),
-  `bought_out` (1: HH022 Life Health Foods), `month_to_month` (1: HH028 Rescued)
+- Status values: `active` (25), `ended` (2: HH017 Cinnamon Squared, HH038 Lazy
+  Betty — confirmed no longer active 19/07/2026), `bought_out` (1: HH022 Life
+  Health Foods), `month_to_month` (1: HH028 Rescued)
 - Mostly Auckland; HH026 is Waikato (Ngaruawahia), HH032 is Palmerston North
 
 ### Machines (47 rows)
@@ -29,11 +30,12 @@ Contains customer PII (names, phones, emails, addresses) — keep this repo priv
 
 ## Portfolio snapshot (as of this export)
 
-- Total weekly billing across all machines: **$5,223.52/wk** (~$271.6k/yr)
-- From active customers: $4,796.81/wk across 44 machines
-- Top accounts by weekly: Eat Shop Do ($725), BlueOceanNZ/Caviar Kitchen
-  ($514.15), BlueMoonSkyNZZ ($500.41), Lazy Betty ($414.50), Mama Sila
-  Catering ($347.85), IPG Hotels/SOHO ($338.04)
+- Total weekly billing across all machine rows: $5,223.52/wk (includes
+  ended/bought-out contracts)
+- From active customers: **$4,382.31/wk across 43 machines** (~$227.9k/yr)
+- Top active accounts by weekly: Eat Shop Do ($725), BlueOceanNZ/Caviar
+  Kitchen ($514.15), BlueMoonSkyNZZ ($500.41), Mama Sila Catering ($347.85),
+  IPG Hotels/SOHO ($338.04)
 - Repeat-relationship signal: Julian Baleli holds two accounts (HH005 Gem
   Seafood, HH024 Manaia Eatery); Dil Bahadur Barala holds two (HH009
   BlueMoonSkyNZZ, HH030 BlueOceanNZ)
@@ -47,8 +49,8 @@ Contains customer PII (names, phones, emails, addresses) — keep this repo priv
 3. **HH042** ("EAT SHOP DO RENTAL - RENTAL | JUNE 2026", auto-added 2/06/2026)
    is a mis-imported record, not a real customer — likely a duplicate artifact
    of HH021 Eat Shop Do
-4. **HH038 Lazy Betty** — no address, no phone, contact first-name only, and
-   its machine M058 is "Equipment (unspecified)" at $414.50/wk
+4. **HH038 Lazy Betty** — ended customer (confirmed 19/07/2026); record was
+   thin anyway (no address/phone, machine M058 "Equipment (unspecified)")
 5. **HH001 Selwyn Contractors** — active customer with no machine rows
 6. **M060** — Type says "Lease-to-Own (36m)" but Term = 12
 7. **HH044** row carries an extra orphan value in a ninth column
