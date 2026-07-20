@@ -11,9 +11,10 @@ Contains customer PII (names, phones, emails, addresses) — keep this repo priv
 ### Customers (29 rows)
 `ID, Name, Contact, Phone, Email, Address, Status, Notes`
 - IDs HH001–HH044 (non-contiguous — gaps likely deleted/inactive records)
-- Status values: `active` (25), `ended` (2: HH017 Cinnamon Squared, HH038 Lazy
+- Status values: `active` (24), `ended` (2: HH017 Cinnamon Squared, HH038 Lazy
   Betty — confirmed no longer active 19/07/2026), `bought_out` (1: HH022 Life
-  Health Foods), `month_to_month` (1: HH028 Rescued)
+  Health Foods), `month_to_month` (1: HH028 Rescued), `arrears` (1: HH001
+  Selwyn Contractors — non-paying)
 - Mostly Auckland; HH026 is Waikato (Ngaruawahia), HH032 is Palmerston North
 
 ### Machines (47 rows)
@@ -51,7 +52,11 @@ Contains customer PII (names, phones, emails, addresses) — keep this repo priv
    of HH021 Eat Shop Do
 4. **HH038 Lazy Betty** — ended customer (confirmed 19/07/2026); record was
    thin anyway (no address/phone, machine M058 "Equipment (unspecified)")
-5. **HH001 Selwyn Contractors** — active customer with no machine rows
+5. **HH001 Selwyn Contractors** — status `arrears`: signed a Lease-For-Ownership
+   (36m) proposal on 9/9/2025 (SELWYN CONTRACTORS LIMITED, co. 8761910, contact
+   Daniel Seluini) but is non-paying (owner confirmed 19/07/2026). No machine
+   rows exist for this contract — equipment/weekly amount still to be added.
+   Signed proposal stored at `contracts/SELWYN_CONTRACTORS_lease_agreement.pdf`
 6. **M060** — Type says "Lease-to-Own (36m)" but Term = 12
 7. **HH044** row carries an extra orphan value in a ninth column
    (9429041xxxxx — possibly a phone or GST number that slipped a column)
