@@ -16,10 +16,10 @@ Scored 0–10 on **Clarity · Relevance · Novelty · Specificity · Credibility
 |---|---|---|---|---|---|---|---|---|
 | 1 | "A Rational combi in your kitchen — without $20,000 leaving your bank." | Specific truth | 8 | 9 | 8 | 9 | 8 | **42** |
 | 2 | "Refurbished? That's exactly why the payment's this low." | Myth-bust objection | 8 | 9 | 8 | 7 | 9 | **41** |
-| 3 | "Premium kitchen equipment. From under $25 a week +GST." | Specific truth | 10 | 9 | 5 | 9 | 8 | **41** |
-| 4 | "Commercial kitchen gear, from under $25 a week +GST." | Specific truth | 9 | 9 | 5 | 9 | 8 | **40** |
+| 3 | "Premium kitchen equipment. From $4.66/day +GST." | Specific truth | 10 | 9 | 5 | 9 | 8 | **41** |
+| 4 | "Commercial kitchen gear, from $4.66/day +GST." | Specific truth | 9 | 9 | 5 | 9 | 8 | **40** |
 | 5 | "You don't need $20,000 to run a $20,000 kitchen." | Contrarian truth | 8 | 9 | 8 | 7 | 8 | **40** |
-| 6 | "Here's what $25 a week +GST puts in your kitchen." | Curiosity gap | 8 | 9 | 6 | 8 | 8 | **39** |
+| 6 | "Here's what $4.66 a day +GST puts in your kitchen." | Curiosity gap | 8 | 9 | 6 | 8 | 8 | **39** |
 | 7 | "Tying up your cash in equipment is how good kitchens run dry." | High-stakes warning | 7 | 8 | 7 | 5 | 7 | **34** |
 | 8 | "Buying kitchen gear outright is the most expensive way to open." | Common mistake | 7 | 8 | 7 | 5 | 6 | **33** |
 | 9 | "Don't buy the oven. Put it to work instead." | Contrarian truth | 7 | 8 | 7 | 5 | 6 | **33** |
@@ -59,15 +59,15 @@ Champion of the value concept — the capital-preservation angle for premium gea
 | 7.0–9.5 (≈75%) | *Rational combi · Refurbished · With warranty* | "The same oven, working — for low weekly payments +GST." | Real Rational combi still on a steel plinth; "REFURBISHED · WITH WARRANTY" chip stamps on | MG over catalogue still (a Washpro hero shot is a plus) |
 | 9.5–11.0 | **Browse the stock list** · *Subject to credit approval · +GST* | "Browse the stock list." | End card: wordmark + Learn More pill + hirehospo.com | Motion graphics |
 
-### C1-B — "Under $25 a week" (10s) · from hook #3 · persona: new cafe owner
-The price-entry angle. Verify the number against live stock the morning it runs (`00` §2).
+### C1-B — "$4.66 a day" (10s) · from hook #3 · persona: new cafe owner
+The price-entry angle. Keep it on the cheap categories (`00` §2); confirm stock at/below $4.66/day the morning it runs.
 
 | t | On-screen text | VO / caption | Visual | Build |
 |---|---|---|---|---|
-| 0.0–2.5 | **From under $25/week +GST** | "Commercial kitchen gear, from under twenty-five a week plus GST." | Big mono price on dark steel; flame accent under "$25" | Motion graphics |
+| 0.0–2.5 | **From $4.66/day +GST** *· less than a flat white* | "Commercial kitchen gear, from four sixty-six a day plus GST." | Big mono price on dark steel; flame accent under "$4.66" | Motion graphics |
 | 2.5–5.0 | *Dishwasher · Oven · Prep* | "Refurbished, warranted, delivered by Washpro." | 3 catalogue stills fan in — Starline dishwasher, Turbofan oven, prep bench | MG over catalogue stills |
 | 5.0–7.5 | *150+ items to browse* | — | Quick grid of category tiles, one lights flame | Motion graphics |
-| 7.5–9.0 (≈80%) | **Refurbished · With warranty** | "That's how the weekly stays low." | Refurb-with-warranty chip stamps on the grid | Motion graphics |
+| 7.5–9.0 (≈80%) | **Refurbished · With warranty** | "That's how the payment stays low." | Refurb-with-warranty chip stamps on the grid | Motion graphics |
 | 9.0–10.0 | **Browse the stock list** · *Subject to credit approval* | "Browse the stock list." | End card + Learn More pill | Motion graphics |
 
 ### C1-C — "Refurbished is why" (11s) · from hook #2 · persona: any operator (objection-killer)
@@ -77,7 +77,7 @@ The price-entry angle. Verify the number against live stock the morning it runs 
 | 0.0–3.0 | **Refurbished?** *That's exactly why the payment's this low.* | "Refurbished? That's exactly why the payment's this low." | Word "REFURBISHED" types on dark steel; flame underline | Motion graphics |
 | 3.0–5.5 | *Premium European brands. A fraction of new.* | "Premium brands you'd never buy new." | Brand chips appear — Rational, Convotherm, Electrolux (real catalogue brands) | Motion graphics |
 | 5.5–7.5 | **With warranty.** | "And the warranty's why that's fine." | "WITH WARRANTY" stamps on with a green tick | Motion graphics |
-| 7.5–9.5 (≈78%) | *From under $25/week +GST* | "Low weekly payments, plus GST." | Catalogue still (combi oven) on plinth + price chip | MG over catalogue still |
+| 7.5–9.5 (≈78%) | *Low weekly payments +GST* | "Low weekly payments, plus GST." | Catalogue still (combi oven) on plinth + payment chip | MG over catalogue still |
 | 9.5–11.0 | **Browse the stock list** · *Subject to credit approval · +GST* | "Browse the stock list." | End card + Learn More pill | Motion graphics |
 
 ---
@@ -125,4 +125,4 @@ The one script where a little real B-roll earns its keep — the opening should 
 | **Motion graphics over catalogue stills** (cheap, do first) | Every end card, price/number frame, timeline, brand chips, refurb/warranty stamps, and all product heroes | Use real catalogue stills from `active-products.csv` product pages. Never invent a model — real brands only (Rational, Starline, Turbofan, Convotherm, Waldorf, Blue Seal). |
 | **Real Washpro footage (nice-to-have)** | Product hero shots in C1-A / C2-A (a combi or fryer on the bench), and the C2-C opening kitchen B-roll | Only C2-C's opener genuinely benefits from real footage. Everything else can launch as motion graphics and be upgraded later. |
 
-**Captioning:** every spoken line is burned in, bottom-centre, inside the safe zone (above the bottom-420px Reels mask). **Muted test:** play each cut with sound off — if the message isn't complete from the on-screen text alone, the text is wrong, not the VO. **Compliance on every end card:** "+GST" wherever a price appears, "Subject to credit approval," real gear only, no implied guaranteed approval. Numbers (esp. "under $25/week") are subject to the live-stock gate in `00` §2.
+**Captioning:** every spoken line is burned in, bottom-centre, inside the safe zone (above the bottom-420px Reels mask). **Muted test:** play each cut with sound off — if the message isn't complete from the on-screen text alone, the text is wrong, not the VO. **Compliance on every end card:** "+GST" wherever a price appears, "Subject to credit approval," real gear only, no implied guaranteed approval. Numbers (esp. "$4.66/day") are subject to the live-stock gate in `00` §2.

@@ -2,7 +2,11 @@
 
 *Two concepts, each a genuine A/B set. Every variant changes **one identifiable thing** — the unit frame, the number's specificity, the objection addressed, or the emotional register — and that thing is labelled. Cosmetic-only variants are not included. NZ English, NZD, ex-GST throughout. `⟨~125⟩` marks the mobile "See more" cut — everything before it must carry the message on its own.*
 
-**Standing compliance locks (apply to every line):** no implied guaranteed approval · "+GST" on every price · "subject to credit approval" present (in body or link description) · only the verified entry price ("from under $25/week +GST", live-stock-checked per `00` §2) · no specific weekly payment for a named product · real catalogue brands only.
+**Price hook — operator-confirmed:** the value claim is **"from $4.66/day +GST"** (see `00` §2). It's a conservative, substantiable "from" figure; keep it on the **cheap categories** (glasswashers, dishwashers, hot plates, small fryers). Premium-gear ads (combi ovens) lead with **capital preservation**, never the daily number. Fix the old unit-mixing by running **daily-frame** and **weekly-frame** ads as an A/B, not both units in one line.
+
+**Budget note ($20/day):** at this budget you will realistically run **one ad at a time**, not a rotation — treat the champions below as your first two ads to sequence, and see `01`/`04` (which need re-basing to $20/day) for how to run and read them.
+
+**Standing compliance locks (every line):** no implied guaranteed approval · "+GST" on every price · "subject to credit approval" present (body or link description) · only the confirmed entry price ("from $4.66/day +GST", live-stock-checked per `00` §2) · no specific weekly payment for a named product · real catalogue brands only.
 
 ---
 
@@ -12,21 +16,21 @@
 
 | # | Testing | Text (⟨~125⟩ = See-more cut) |
 |---|---|---|
-| **1 ★champion** | **Weekly unit + exact-round price** | Premium commercial kitchen equipment, from under $25/week +GST. Refurbished, warranted, and delivered by Washpro across NZ.⟨~125⟩ Rational combi ovens, Starline dishwashers, Turbofan ovens and more — browse the stock list and build your enquiry. Subject to credit approval. |
-| 2 | **Daily unit frame** (vs #1's weekly) | From under $3.50/day +GST, premium kitchen gear that would cost tens of thousands to buy new works in your kitchen instead.⟨~125⟩ Refurbished with warranty — that's how the weekly payment stays low. Browse the latest stock list. Subject to credit approval. |
-| 3 | **Capital-preservation objection** (cashflow) | A $20,000 Rational combi in your kitchen — without $20,000 leaving your bank.⟨~125⟩ HireHospo finances refurbished, warranted kitchen equipment on low weekly payments +GST, so your capital stays in the business. Browse the stock list. Subject to credit approval. |
-| 4 | **Refurbished objection** ("what if it breaks") | Refurbished? That's exactly why the payment is this low — and the warranty is why that's fine.⟨~125⟩ Premium European brands you'd never buy new, from under $25/week +GST, delivered and serviced by Washpro. Build your enquiry. Subject to credit approval. |
-| 5 | **Emotional register** (aspirational, softer) | Fully equipped kitchen. Cash still in the business.⟨~125⟩ HireHospo puts premium refurbished equipment — dishwashers, combi ovens, fryers, prep — in your kitchen on low weekly payments +GST. Browse 150+ items and build your enquiry. Subject to credit approval. |
+| **1 ★champion** | **daily unit + confirmed price + reframe** | Premium commercial kitchen equipment, from $4.66/day +GST — less than one flat white a day.⟨~125⟩ Refurbished, warranted, and delivered by Washpro across NZ. Browse glasswashers, dishwashers, fryers and more, and build your enquiry. Subject to credit approval. |
+| 2 | **weekly unit frame** (vs #1's daily) | Low weekly payments +GST put premium commercial kitchen equipment in your kitchen — without the capital hit.⟨~125⟩ Refurbished with warranty is how the payment stays low. Browse 150+ items and build your enquiry. Subject to credit approval. |
+| 3 | **capital-preservation objection** (premium gear) | A $20,000 Rational combi in your kitchen — without $20,000 leaving your bank.⟨~125⟩ HireHospo finances refurbished, warranted kitchen equipment on low weekly payments +GST, so your capital stays in the business. Browse the stock list. Subject to credit approval. |
+| 4 | **refurbished objection** ("what if it breaks") | Refurbished? That's exactly why the payment is this low — and the warranty is why that's fine.⟨~125⟩ Premium European brands you'd never buy new, on low weekly payments +GST, delivered and serviced by Washpro. Build your enquiry. Subject to credit approval. |
+| 5 | **emotional register** (aspirational, softer) | Fully equipped kitchen. Cash still in the business.⟨~125⟩ HireHospo puts premium refurbished equipment — dishwashers, combi ovens, fryers, prep — in your kitchen on low weekly payments +GST. Browse 150+ items and build your enquiry. Subject to credit approval. |
 
-*Note #5 replaces the banned "let your equipment pay for itself" (see `00` §3e) with an emotional line that keeps the promise without asserting a financial outcome.*
+*Note #5 replaces the banned "let your equipment pay for itself" (see `00` §3e) with an emotional line that keeps the promise without asserting a financial outcome. Note the daily figure "$4.66/day" appears only on #1 (an affordable-category ad); #3 and #4 name premium brands, so they carry "low weekly payments +GST", never the daily number.*
 
 ### Headlines (5 variants, ≤40 characters)
 
 | # | Testing | Headline | Chars |
 |---|---|---|---|
-| **1 ★** | round weekly price | `From under $25/week +GST` | 24 |
-| 2 | benefit, no number | `Premium kitchen gear, low weekly cost` | 37 |
-| 3 | exact price (vs round #1) | `From $22.82/week +GST` | 21 |
+| **1 ★** | daily confirmed price | `From $4.66/day +GST` | 19 |
+| 2 | weekly-unit frame, no number | `Premium kitchen gear, low weekly cost` | 37 |
+| 3 | the reframe device | `Less than a flat white a day +GST` | 33 |
 | 4 | capital-preservation angle | `The $20k oven, without the $20k` | 31 |
 | 5 | refurb-as-strength | `Refurbished. Warranted. Low weekly.` | 35 |
 
@@ -44,13 +48,13 @@
 The destination is a **browsable catalogue**, not an application form. "Learn More" matches the real next action ("browse the stock list"), keeps click quality honest, and avoids overstating immediacy. **Test "Get Quote"** as the higher-intent variant, but cautiously: HireHospo's golden rule is *no quote without a credit check first*, so "Get Quote" sets an expectation the funnel deliberately gates — watch that it doesn't lift clicks while dropping enquiry quality. Avoid "Sign Up"/"Apply Now" here — they imply an application the page doesn't present.
 
 ### Champion — ship first
-**Primary #1 + Headline #1 + Link description #2 + CTA "Learn More."** It leads with the strongest claim that is simultaneously true against live stock, consistent with the landing page, and memorable — the fastest way to a clean, defensible cold-traffic test.
+**Primary #1 + Headline #1 + Link description #2 + CTA "Learn More."** It leads with the operator-confirmed $4.66/day in a single clean unit, warmed by the flat-white reframe — a credible, substantiable cold-traffic opener kept to the affordable categories where the number rings true.
 
 ---
 
 ## Concept 2 — Quick Process / Speed
 
-*All variants built on the Level-2 honest-timeline rewrite from `00` §3d — the speed story rides the two facts that are reliably fast (the 24–48h credit decision and 1–3 day delivery after the deposit clears), never on implied guaranteed approval.*
+*All variants built on the Level-2 honest-timeline rewrite from `00` §3d — the speed story rides the two facts that are reliably fast (the 24–48h credit decision and 1–3 day delivery after the deposit clears), never on implied guaranteed approval. No price claims here, so the $4.66/day decision doesn't touch this concept.*
 
 ### Primary text (5 variants)
 
@@ -89,6 +93,6 @@ Matches "get our latest stock list" / browse. Same reasoning and same "Get Quote
 ---
 
 ## How these feed the rest of the pack
-- The two champions above are the two ads that go into the single launch ad set (`01`). Read them directionally against each other, not as a controlled test, until spend clears the split threshold.
-- The winning hooks in `03` reuse these champion angles as their opening 3 seconds (HookIDs `H-Under25wk`, `H-2448hr`), so on-screen video text and static copy stay consistent.
-- Every price in this file is subject to the live-stock verification gate in `00` §2 / `05` item 5.4. If the entry price moves, update Concept 1 headlines #1 and #3 and primary #1 the same day.
+- The two champions above are your first two ads. At $20/day, sequence them (run one, read it, then the other) rather than rotating both — see `01`/`04` once those are re-based to the $20/day budget.
+- The winning hooks in `03` reuse these champion angles as their opening 3 seconds (HookIDs `H-466day`, `H-2448hr`), so on-screen video text and static copy stay consistent.
+- Every price in this file is subject to the live-stock verification gate in `00` §2 / `05` item 5.4. "$4.66/day" only needs stock at or below it to exist on launch day (trivially true today) — but keep the gate and an owner, because catalogue stock moves.

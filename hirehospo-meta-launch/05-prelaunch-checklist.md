@@ -44,7 +44,7 @@ Launch is gated by this list, not the calendar (Assumption 3). The item most lik
 
 | # | Item | Blocking? | Owner |
 |---|---|---|---|
-| 4.1 | **Price claim verified against live stock this week** — "from under $25/week +GST" is true against a live product on the day of launch (`00` §2); owner assigned for ongoing re-verification whenever stock changes | **BLOCKING** | Marketing + Washpro |
+| 4.1 | **Price claim verified against live stock this week** — confirm live stock exists at or below "$4.66/day +GST" on the day of launch (`00` §2); owner assigned for ongoing re-verification whenever stock changes | **BLOCKING** | Marketing + Washpro |
 | 4.2 | **"+GST" present on every price** in every ad, headline and end card | **BLOCKING** | Marketing |
 | 4.3 | **"Subject to credit approval" present** wherever finance/speed is implied; **no copy implies guaranteed/automatic approval** (esp. Concept 2 — ship the `00` §3d Level-2 rewrite) | **BLOCKING** | Marketing |
 | 4.4 | **No specific weekly payment for a named product** beyond the verified "from" entry price; **"let your equipment pay for itself" removed** (`00` §3e) | **BLOCKING** | Marketing |
@@ -54,7 +54,7 @@ Launch is gated by this list, not the calendar (Assumption 3). The item most lik
 | 4.8 | **NZ disclosure question put to the client's advisor** and answered: does any financial-services/CCCFA/FMCA obligation attach to advertising B2B equipment finance, and are mandatory disclosures required (`00` §5) | **BLOCKING** | Legal / advisor |
 
 ## Section 5 — Operations (the wasted-lead guard)
-*The best ad in the world is wasted if the enquiry sits unanswered. At $66/day you cannot afford a single cold lead.*
+*The best ad in the world is wasted if the enquiry sits unanswered. At $20/day you cannot afford a single cold lead.*
 
 | # | Item | Blocking? | Owner |
 |---|---|---|---|

@@ -10,9 +10,9 @@ Read this file first. It sets the four operator assumptions the rest of the plan
 
 The four inputs at the top of the brief were not supplied. Per the brief's own instruction I have **not guessed silently**: each assumption below is stated in bold, set to the most conservative reasonable value, and carried through the whole plan. **Confirm or correct these before launch — three of the five deliverables branch on them.**
 
-> **ASSUMPTION 1 — Monthly budget: NZD $2,000 / month (≈ $66/day, ≈ $460/week).** The brief's own example figure and a realistic first-launch number. It is deliberately conservative because the low-budget case is the *hardest* case: it is what forces the single-ad-set structure and the upstream-event optimisation call. If the real budget is higher, `01-campaign-structure.md` states the exact daily-spend thresholds at which the structure should change.
+> **INPUT 1 — Daily budget: NZD $20/day (≈ $600/month, ≈ $140/week). Confirmed by the operator.** This is a very lean paid-social budget and it *intensifies* every constraint in this pack: it makes the single-ad-set structure mandatory (not just advisable), puts learning-phase exit effectively out of reach, and means you should expect to run **one ad at a time**, not two in rotation. **⚠ `01-campaign-structure.md` and `04-measurement-and-optimisation.md` were written against an earlier $66/day working assumption — their volume maths, spend thresholds and KPI ranges now need re-basing to $20/day. Ask for that refresh before using those two files.**
 >
-> **ASSUMPTION 2 — Geography: nationwide New Zealand.** Washpro services NZ-wide, and the hospitality-operator pool is small; restricting to Auckland at $66/day would starve delivery and worsen the central signal problem. **If Washpro's install capacity is Auckland-weighted, tighten to Auckland + main centres (Wellington, Christchurch, Hamilton, Tauranga)** — this is the one assumption most likely to be wrong, so confirm fulfilment reach first.
+> **ASSUMPTION 2 — Geography: nationwide New Zealand.** Washpro services NZ-wide, and the hospitality-operator pool is small; restricting to Auckland at $20/day would starve delivery and worsen the central signal problem. **If Washpro's install capacity is Auckland-weighted, tighten to Auckland + main centres (Wellington, Christchurch, Hamilton, Tauranga)** — this is the one assumption most likely to be wrong, so confirm fulfilment reach first.
 >
 > **ASSUMPTION 3 — Launch date: gated by the pre-launch checklist, not the calendar.** With no date given, treat launch as "the day `05-prelaunch-checklist.md` is fully green," and plan a **~2-week runway from today (26 July 2026), i.e. on or around 9 August 2026**. The blocking item most likely to slip that date is pixel + Conversions API verification on the portal.
 >
@@ -20,20 +20,17 @@ The four inputs at the top of the brief were not supplied. Per the brief's own i
 
 ---
 
-## 2. The price claim vs live stock — resolve before it runs
+## 2. The price claim — $4.66/day confirmed, here's how it runs clean
 
-**The problem (brief item a).** The ad says *"from $4.66 per day"*. That is **$32.62/week**. The live catalogue shows items from roughly **$22.82/week ex GST (≈ $3.26/day)** and offers an **"Under $25/wk" filter**. So the claim is not *inflated* — it is *understated* and it *mismatches what the visitor sees on arrival*. A cold viewer who is sold "$4.66/day" and lands on a page headed by sub-$25/week stock has been under-promised; worse, the two numbers don't line up, which reads as sloppy rather than generous.
+**Operator decision: "from $4.66/day" stays.** That's workable — it is compliant and substantiable, and it's the brand's established entry hook for the cheapest categories (glasswashers, hot plates, small fryers). Three things keep it clean:
 
-**Recommended claim — lead weekly, match the page.**
+- **It's a conservative claim, not a bait-low one.** $4.66/day = $32.62/week. The live catalogue floor is actually *lower* (~$22.82/week ≈ $3.26/day, with an "Under $25/wk" filter on the page). So "from $4.66/day" states a *higher* entry than the true minimum — there is comfortably stock at or below it, which is exactly what a "from" claim needs. The usual Fair Trading risk with "from $X" is the number being unachievable (bait); here you're if anything under-promising, so that risk doesn't bite.
+- **Fix the unit-mixing (brief item b).** The original line mixed units ("low weekly prices … from $4.66 per day"). One unit per ad: **daily-frame ads lead with "from $4.66/day +GST"** — and may sit the brand's *"less than one flat white a day"* reframe on top of it; **weekly-frame ads** carry the model as **"low weekly payments +GST"** with no specific weekly figure. Run the two frames against each other.
+- **Keep it on the cheap categories.** $4.66/day is believable on a glasswasher, hot plate or small fryer — not a $20k combi. Premium-gear ads still lead with capital preservation (the "$20k oven, without the $20k" angle), never a tiny daily number.
 
-| | Original | Recommended champion | Round variant | Daily-frame variant (test only) |
-|---|---|---|---|---|
-| Claim | "from $4.66 per day" | **"from $22.82/week +GST"** | **"from under $25/week +GST"** | "from under $3.50/day +GST" |
-| Why | mixes units, understates, mismatches page | exact live floor; mirrors the per-product "from $X/wk Ex GST" display | maps to the site's own **"Under $25/wk" filter** — a round, credible number the visitor will actually click | keeps a daily anchor for the audience that thinks in daily covers; rounded *up* from $3.26 so it stays true |
+**Residual to know, not to fix:** a visitor sold "$4.66/day" lands on a page showing weekly prices, some cheaper than the daily-equivalent. That's a pleasant surprise, not a bait-and-switch — fine to run. If you ever want ad and page to mirror each other, the lever is a daily-price cue on the landing view, not a change to the ad.
 
-I would **ship "from under $25/week +GST"** as the headline value claim: it is the strongest number that is (a) true against live stock, (b) consistent with the landing page, and (c) memorable. Use the exact "$22.82/week +GST" where precision adds credibility (long-form primary text). Retire "$4.66/day" — it is the weakest of the four because it both understates and mismatches.
-
-> **HARD GATE (guardrail 4).** Whatever number ships **must be verified against live stock on the morning of launch** and **re-verified whenever Washpro changes stock**. If the sub-$25 item sells and the new floor is $27.90/week, the ad must change the same day. This is a blocking checklist item (`05`, item 5.4), and it is the single claim most likely to drift out of compliance over time. Assign an owner to it.
+> **HARD GATE (guardrail 4).** "+GST" on the figure and "subject to credit approval" microcopy are mandatory, and the claim **must be verified against live stock on the morning of launch** (confirm stock exists at or below $4.66/day — trivially true today) and **re-checked whenever Washpro changes stock**. Blocking checklist item (`05`, item 5.4). Assign an owner.
 
 ---
 
@@ -46,8 +43,8 @@ The two concepts are locked in intent. Below, each flagged problem is shown with
 **(b) Unit mixing.** *"Premium equipment at low weekly prices, from $4.66 per day"* asks the reader to hold weekly and daily in one sentence. **Fix: one unit per ad, test the other as a variant.**
 
 - Original: "Premium equipment at low weekly prices, from $4.66 per day."
-- **Weekly frame (champion):** "Premium commercial kitchen equipment, from under $25/week +GST."
-- **Daily frame (variant):** "Premium kitchen equipment, from under $3.50/day +GST."
+- **Daily frame (champion — operator-confirmed, see §2):** "Premium kitchen equipment, from $4.66/day +GST — less than one flat white a day."
+- **Weekly frame (variant):** "Premium kitchen equipment on low weekly payments +GST."
 
 **(c) GST not stated.** The site quotes ex-GST; the ads must say so. For a B2B audience ex-GST is normal and expected — but **unstated it is a Fair Trading Act exposure** (see §5). **Fix: every price carries "+GST".** Applied to every line in `02` and every price frame in `03`.
 
