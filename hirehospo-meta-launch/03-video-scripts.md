@@ -65,7 +65,7 @@ The price-entry angle. Keep it on the cheap categories (`00` §2); confirm stock
 | t | On-screen text | VO / caption | Visual | Build |
 |---|---|---|---|---|
 | 0.0–2.5 | **From $4.66/day +GST** *· less than a flat white* | "Commercial kitchen gear, from four sixty-six a day plus GST." | Big mono price on dark steel; flame accent under "$4.66" | Motion graphics |
-| 2.5–5.0 | *Dishwasher · Oven · Prep* | "Refurbished, warranted, delivered by Washpro." | 3 catalogue stills fan in — Starline dishwasher, Turbofan oven, prep bench | MG over catalogue stills |
+| 2.5–5.0 | *Dishwasher · Oven · Prep* | "Refurbished, warranted, delivered across NZ." | 3 catalogue stills fan in — Starline dishwasher, Turbofan oven, prep bench | MG over catalogue stills |
 | 5.0–7.5 | *150+ items to browse* | — | Quick grid of category tiles, one lights flame | Motion graphics |
 | 7.5–9.0 (≈80%) | **Refurbished · With warranty** | "That's how the payment stays low." | Refurb-with-warranty chip stamps on the grid | Motion graphics |
 | 9.0–10.0 | **Browse the stock list** · *Subject to credit approval* | "Browse the stock list." | End card + Learn More pill | Motion graphics |
@@ -90,7 +90,7 @@ The price-entry angle. Keep it on the cheap categories (`00` §2); confirm stock
 |---|---|---|---|---|
 | 0.0–3.0 | **A credit decision in 24–48 hours.** *Not 24–48 days.* | "A credit decision in twenty-four to forty-eight hours. Not days." | "24–48 HRS" locks in mono; a clock/step ticks | Motion graphics |
 | 3.0–5.5 | *Approved? Deposit paid?* | "Once you're approved and your deposit's paid…" | Timeline: APPLY → DECISION → APPROVED (flame) — APPROVED conditional, ticks on | Motion graphics |
-| 5.5–8.0 (≈70%) | **Delivered in 1–3 business days** *by Washpro* | "…Washpro delivers in one to three business days." | DELIVERED step ticks; catalogue still slides in on a van/plinth | MG over catalogue still |
+| 5.5–8.0 (≈70%) | **Delivered in 1–3 business days** | "…delivered in one to three business days." | DELIVERED step ticks; catalogue still slides in on a van/plinth | MG over catalogue still |
 | 8.0–9.5 | *Get our latest stock list* | "Get our latest stock list." | Stock-list grid resolves | Motion graphics |
 | 9.5–11.0 | **Learn more** · *+GST · subject to credit approval* | — | End card + Learn More pill + hirehospo.com | Motion graphics |
 

@@ -62,9 +62,9 @@ Three rewrites, increasing caution:
 
 | Level | Rewrite | What it does |
 |---|---|---|
-| **1 — least cautious (needs legal sign-off)** | "Apply Monday. Credit decision in 24–48 hours. Approved and deposit paid? Washpro can deliver in 1–3 business days. +GST · subject to credit approval." | Keeps the day rhythm but makes approval conditional and puts the deposit in the sentence. Only ship if the client's advisor is comfortable the day structure reads as illustrative, not promised. |
+| **1 — least cautious (needs legal sign-off)** | "Apply Monday. Credit decision in 24–48 hours. Approved and deposit paid? Delivery follows in 1–3 business days. +GST · subject to credit approval." | Keeps the day rhythm but makes approval conditional and puts the deposit in the sentence. Only ship if the client's advisor is comfortable the day structure reads as illustrative, not promised. |
 | **2 — mid (my pick to ship)** | "From application to installed can move fast: a **24–48 hour credit decision**, then delivery **1–3 business days after your deposit clears**. We're credit-led — approval isn't guaranteed. +GST." | Shifts the speed story onto the parts that are *reliably* fast (the decision and the post-deposit delivery), states conditionality and the deposit plainly, and still feels like momentum. Defensible under the FTA and self-selects for deposit-capable leads. |
-| **3 — most cautious** | "A credit decision in **24–48 hours**. Once you're approved and your deposit's paid, Washpro delivers in **1–3 business days**. +GST · subject to credit approval · normal lending criteria apply." | Drops the day-of-week narrative entirely; sells only the two facts that are always true. Ship this if legal wants maximum caution. |
+| **3 — most cautious** | "A credit decision in **24–48 hours**. Once you're approved and your deposit's paid, it's delivered in **1–3 business days**. +GST · subject to credit approval · normal lending criteria apply." | Drops the day-of-week narrative entirely; sells only the two facts that are always true. Ship this if legal wants maximum caution. |
 
 **I would ship Level 2.** It preserves the emotional point of Concept 2 — *things move quickly here* — without a promise the funnel can't keep. Level 3 is the safe fallback; Level 1 only with explicit legal comfort.
 
