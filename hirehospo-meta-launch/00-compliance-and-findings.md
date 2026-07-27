@@ -26,7 +26,7 @@ The four inputs at the top of the brief were not supplied. Per the brief's own i
 
 - **It's a conservative claim, not a bait-low one.** $4.66/day = $32.62/week. The live catalogue floor is actually *lower* (~$22.82/week ≈ $3.26/day, with an "Under $25/wk" filter on the page). So "from $4.66/day" states a *higher* entry than the true minimum — there is comfortably stock at or below it, which is exactly what a "from" claim needs. The usual Fair Trading risk with "from $X" is the number being unachievable (bait); here you're if anything under-promising, so that risk doesn't bite.
 - **Fix the unit-mixing (brief item b).** The original line mixed units ("low weekly prices … from $4.66 per day"). One unit per ad: **daily-frame ads lead with "from $4.66/day +GST"** — and may sit the brand's *"less than one flat white a day"* reframe on top of it; **weekly-frame ads** carry the model as **"low weekly payments"** — no dollar figure, so no "+GST". Run the two frames against each other.
-- **$4.66/day is for the cheap categories** (glasswasher, hot plate, small fryer). **For premium gear, run the big-number value comparison without quoting the payment** — e.g. *"A $20,000 Rational combi. Without the $20,000 up front."* The Rational's own figure (~$121/week +GST ≈ ~$17/day) reads *high* against the machine and deflates the value feel, so it stays out of the ad — the contrast that lands is the $20,000 machine vs no $20,000 cheque. The weekly figure stays an internal reference for the post-approval quote, not ad copy.
+- **$4.66/day is for the cheap categories** (glasswasher, hot plate, small fryer). **For premium equipment, run the big-number value comparison without quoting the payment** — e.g. *"A $20,000 Rational combi. Without the $20,000 up front."* The Rational's own figure (~$121/week +GST ≈ ~$17/day) reads *high* against the machine and deflates the value feel, so it stays out of the ad — the contrast that lands is the $20,000 machine vs no $20,000 cheque. The weekly figure stays an internal reference for the post-approval quote, not ad copy.
 
 **Residual to know, not to fix:** a visitor sold "$4.66/day" lands on a page showing weekly prices, some cheaper than the daily-equivalent. That's a pleasant surprise, not a bait-and-switch — fine to run. If you ever want ad and page to mirror each other, the lever is a daily-price cue on the landing view, not a change to the ad.
 
@@ -48,11 +48,7 @@ The two concepts are locked in intent. Below, each flagged problem is shown with
 
 **(c) GST not stated.** The site quotes ex-GST; the ads must say so. For a B2B audience ex-GST is normal and expected — but **unstated it is a Fair Trading Act exposure** (see §5). **Fix: "+GST" glued to every dollar figure** — on the number itself (e.g. "$4.66/day +GST"), never floated into a sentence or tacked onto a non-numeric phrase like "low weekly payments". An ad that quotes no price (all of Concept 2) carries no "+GST".
 
-**(e) "Let your equipment pay for itself" is a financial-performance claim.** It implies the revenue generated will cover the payments — unsubstantiated, and category-risky for a finance product. **Fix: keep the emotional promise, drop the asserted outcome.**
-
-- Original: "Let your equipment pay for itself."
-- **Softer options (all shippable):** "Put premium equipment to work — keep your capital free." · "Get the gear working in your kitchen, not a $20,000 hole in your account." · "Fully equipped kitchen. Cash still in the business." · "Premium equipment, working from week one."
-- **Do not ship the original.** My pick: *"Fully equipped kitchen. Cash still in the business."*
+**(e) "Let the equipment pay for itself" — this is your hero line, so it stays.** It *is* a financial-performance claim (it implies revenue covers the payments), which is why an earlier draft flagged it. But the live site leads on it everywhere — *"Let the equipment pay for itself"*, *"LETTING KIWI MACHINES PAY FOR THEMSELVES"*, *"the equipment to pay for themselves"* — so the ads **mirror the site** rather than second-guess it. It stays a **site-level** claim the business owns; nothing in the ad needs to be more cautious than the landing page. Softer variants remain on the shelf if ever wanted: *"Fully equipped kitchen. Cash still in the business."* · *"Premium equipment, working from week one."*
 
 ### Concept 2 — Quick Process / Speed
 
@@ -93,6 +89,29 @@ Separately: Meta's **Financial Products & Services** ad policy applies **globall
 
 - **Fair Trading Act (applies to all trade, including B2B).** The FTA prohibits misleading or deceptive conduct in trade. Two live exposures this plan already addresses: (i) **advertising ex-GST prices without clearly stating they exclude GST** can breach the FTA and has been prosecuted — hence "+GST" on every price; (ii) the **Concept 2 timeline** implying guaranteed approval / no deposit — hence the §3(d) rewrite. Fine print cannot cure a misleading overall impression.
 - **CCCFA (consumer credit).** The Credit Contracts and Consumer Finance Act governs **consumer** credit — credit for personal, domestic or household use. HireHospo finances **commercial kitchen equipment to businesses**, which generally falls **outside** the CCCFA's consumer regime. **Do not treat this as settled.** The question for the client's advisor: *does any financial-services advertising or disclosure obligation (CCCFA, FMCA, responsible-lending, or FSPR/financial-advice rules) attach to how HireHospo advertises B2B equipment finance in NZ, and are there mandatory disclosures for the ads or the landing page?* Confirm before the first dollar is spent (`05`, item 5.7).
+
+---
+
+## 6. Brand voice & facts — from the live site (operator-supplied, 2026-07-27)
+
+The site is blocked to this session's tools, so the operator pasted the live homepage + finance-solutions + rent + lease-for-ownership copy. **This is the voice authority** — and it is **warmer and more direct** than the "underwriter, no exclamation marks" register the earlier drafts used. Match this.
+
+**Signature language (use verbatim where it fits):** *"Let the equipment pay for itself"* / *"Letting Kiwi machines pay for themselves"* · *"big dreams to fulfil"* · *"From start-ups to legacies"* · *"we're hospitality insiders ourselves"* · *"we've got your back"* · *"your business growth is within reach"* · *"It's a no-brainer"* · *"applying is a breeze"*. A **chatty, encouraging tone with the odd exclamation mark is on-brand** (the site uses them) — the earlier "exclamation marks almost never" rule was wrong for HireHospo.
+
+**Nouns & CTA:** say **"commercial kitchen equipment" / "kitchen equipment" / "machines"** — **never "gear."** The site's CTA is **"Apply Now"** everywhere; mirror it — *unless* a given ad's destination is the browse-catalogue, where "Learn More" matches the on-page action (confirm the destination per ad).
+
+**The offer — confirmed exact (this resolves the earlier 12-month conflict):**
+- **Rent Before Ownership** — *"Simple 12 month rental term"*, *"You decide whether to keep it"*. No automatic ownership; end-of-term you can **purchase at a discount, keep renting at reduced payments, or upgrade**; *"100% tax-deductible payments."*
+- **Lease for Ownership** — *"Straightforward 36 month hire-purchase agreement"*, **"Own the equipment outright at the end of the term"** ("Guaranteed Ownership Post-Term"), **"Fixed interest rate"**, tax-deductible depreciation + interest.
+- Cross-line: *"After three years, the equipment is all yours. Can't wait that long? With our rent-to-own option, you can purchase anytime after just 12 months."* → the 12-month product carries a **purchase option, not automatic transfer** — so "yours to own" copy is fine, but don't claim *guaranteed* ownership on the 12-month.
+- The site openly sells **"fixed interest rate"** and **tax deductibility** — earlier drafts steered away from interest language; that was over-cautious.
+
+**Process / claims straight off the site (use these, they're the brand's own):** *"Apply online or over the phone"* · **"Most finance applications valued below $25,000 are approved within 3 business days"** · **"1–2 days turnaround"** · **"Up to 50k"** funding · **"$0 machine upgrades\*"** · **"5-minute application"** · **"zero upfront costs — just a simple deposit and a weekly rental fee"** · **"over 500 machines in stock"** · pricing is indicative — *"apply online … for an accurate quote."*
+
+**Discrepancies to resolve (site vs the internal doc I was handed):**
+- **Address:** site = *123 Captain Springs Rd, Onehunga*; internal doc = *71 Station Road, Penrose*. (Ads don't use it — but pick the right one.)
+- **Stock count:** site = *"over 500 machines"*; the brochure/portal export was ~154–241 active, and `02`/`03` say *"150+ items"* (matches the brochure the ads point to). Align to whichever destination the ad uses.
+- **Approval speed:** site = *"under $25k approved within 3 business days"*; some copy also uses *"24–48 hours"* for the decision — prefer the site's public wording.
 
 ---
 

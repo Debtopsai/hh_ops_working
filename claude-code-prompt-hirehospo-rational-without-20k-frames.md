@@ -39,7 +39,7 @@ accentink #14161A   text on a flame surface — always
 - **Logo:** use the HireHospo wordmark **asset** from the folder/site. **Never redraw or invent a logomark.** If no asset exists, set "HireHospo" in Space Grotesk and ⚠-flag it in the README. Wordmark at the bridge + end card only.
 
 ## 5. What to build — per-frame contract (reuse the standard frames)
-Lock copy **verbatim**. Approved claims only · "+ GST" glued to any dollar figure (here, only the $20,000) · "Subject to credit approval" on the end card · **premium-gear value comparison quotes no payment figure** (machine vs no $20k up front) · catalogue-true gear.
+Lock copy **verbatim**. Approved claims only · "+ GST" glued to any dollar figure (here, only the $20,000) · "Subject to credit approval" on the end card · **premium-equipment value comparison quotes no payment figure** (machine vs no $20k up front) · catalogue-true equipment.
 
 | File | Beat | Duration | Verbatim copy | Motion |
 |---|---|---|---|---|
@@ -78,4 +78,4 @@ ad/rational-without-20k/
 3. Build the 6 frames in order; sync settle/stamp motion to the audio-brief timestamps.
 4. Build the 15.0s animatic in `index.html` (contact sheet + play-through).
 5. Write `README.md`: how to record, the ⚠ price-verification note, wordmark-asset status, and the frame/beat map.
-6. **Self-review:** animatic = 15.0s · copy verbatim vs the table · "+ GST" on the $20,000 figure · "Subject to credit approval" on the end card · catalogue-true gear (real Rational combi, no invented model) · flame discipline (one/frame, none on the drain frames) · safe area (top 250px / bottom 320px clear) · `?record` clean.
+6. **Self-review:** animatic = 15.0s · copy verbatim vs the table · "+ GST" on the $20,000 figure · "Subject to credit approval" on the end card · catalogue-true equipment (real Rational combi, no invented model) · flame discipline (one/frame, none on the drain frames) · safe area (top 250px / bottom 320px clear) · `?record` clean.

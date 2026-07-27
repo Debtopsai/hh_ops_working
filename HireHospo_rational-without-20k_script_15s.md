@@ -1,8 +1,8 @@
 ## Script — "Twenty grand, for one oven" — Restaurant owner — Problem→Solution Aware — High-stakes warning (capital-hit) — PAS — 15s
 
-**Offer focus:** Lease-to-Own 36m · **Featured gear:** Rational SCC WE101 combi oven (combi ovens — the premium hero category; buy-outright ~$20,000 band, ⚠ verify live) · **HireHospo intro at:** 0:06 (≈47%) · **CTA:** Apply now
+**Offer focus:** Lease-to-Own 36m · **Featured equipment:** Rational SCC WE101 combi oven (combi ovens — the premium hero category; buy-outright ~$20,000 band, ⚠ verify live) · **HireHospo intro at:** 0:06 (≈47%) · **CTA:** Apply now
 **Format:** person-free motion graphics + real equipment imagery (dark steel). **Voice:** credit-led operator — underwriting, not selling.
-**Compliance:** approved claims only · "+ GST" glued to any dollar figure (here, only the $20,000) · "Subject to credit approval" on the end card · value-comparison frame for premium gear — the $20,000 machine against **no $20,000 up front** (don't quote the Rational's own payment; it reads high against the machine).
+**Compliance:** approved claims only · "+ GST" glued to any dollar figure (here, only the $20,000) · "Subject to credit approval" on the end card · value-comparison frame for premium equipment — the $20,000 machine against **no $20,000 up front** (don't quote the Rational's own payment; it reads high against the machine).
 
 | Time | Section | VO | On-screen text | Visual (dark, no people) | SFX / music |
 |---|---|---|---|---|---|

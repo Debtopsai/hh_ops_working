@@ -48,7 +48,7 @@ Launch is gated by this list, not the calendar (Assumption 3). The item most lik
 | 4.2 | **"+GST" glued to every dollar figure** (on the number, not floated in a sentence or on a non-numeric phrase); ads with no price carry none | **BLOCKING** | Marketing |
 | 4.3 | **"Subject to credit approval" present** wherever finance/speed is implied; **no copy implies guaranteed/automatic approval** (esp. Concept 2 — ship the `00` §3d Level-2 rewrite) | **BLOCKING** | Marketing |
 | 4.4 | **No specific weekly payment for a named product** beyond the verified "from" entry price; **"let your equipment pay for itself" removed** (`00` §3e) | **BLOCKING** | Marketing |
-| 4.5 | **Only real catalogue brands/categories/equipment** on screen and in copy — no invented models, specs or non-stocked gear (guardrail 6) | **BLOCKING** | Marketing + Product |
+| 4.5 | **Only real catalogue brands/categories/equipment** on screen and in copy — no invented models, specs or non-stocked equipment (guardrail 6) | **BLOCKING** | Marketing + Product |
 | 4.6 | **NZ English throughout**, NZD, ex-GST convention consistent | **BLOCKING** | Marketing |
 | 4.7 | **Meta Special Ad Category checked in-account:** set to None (correct for NZ today), and owner briefed to watch for an auto-applied credit flag in the first 48h (`00` §4) | **BLOCKING** | Marketing |
 | 4.8 | **NZ disclosure question put to the client's advisor** and answered: does any financial-services/CCCFA/FMCA obligation attach to advertising B2B equipment finance, and are mandatory disclosures required (`00` §5) | **BLOCKING** | Legal / advisor |

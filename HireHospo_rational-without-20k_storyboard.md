@@ -24,7 +24,7 @@ Shared system: provisional HireHospo dark-steel tokens (a real kit/brand book in
 | capital-drain | Shots 2–3 | #12141A | same number greys, drains to $0 in a ledger | desaturate + downward drain, ~1.2s; **no flame** (problem beat) | reuse quote-shock number geometry; keep flame off |
 | approval-timeline | Shot 4 | #12141A | wordmark + 4 mono steps, APPROVED lit flame | wordmark resolve 0.4s; steps tick left→right; APPROVED stamps | bridge frame; "Subject to credit approval" microcopy lives here |
 | hero-plinth | Shots 5–6 | #12141A + brushed-steel gradient | real Rational combi cut-out on plinth; RATIONAL · COMBI OVEN chip; NZ delivery/service microcopy; warranty badge | product settle 0.5s ease-out; badge stamps at 0:10.5 (flame) | equipment = real active product; link its page in hand-off; **never invent a model** |
-| capital-ledger | Shot 7 | #12141A | two ticked rows (capital kept / oven working) + flame "no $20,000 up front" | rows tick in sequence; footer figure lights flame last | the premium-gear capital-preservation frame; one flame highlight |
+| capital-ledger | Shot 7 | #12141A | two ticked rows (capital kept / oven working) + flame "no $20,000 up front" | rows tick in sequence; footer figure lights flame last | the premium-equipment capital-preservation frame; one flame highlight |
 | end-card | Shot 8 | #12141A | wordmark + value prop + flame Apply-now pill + subline + URL | pill settle + APPROVED-style stamp | carries ALL required microcopy; wordmark asset, never redrawn |
 
 ## Production notes
