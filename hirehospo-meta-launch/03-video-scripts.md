@@ -2,7 +2,7 @@
 
 *10–12 second ads. Hook 2–3s, body 5–6s, CTA 1–2s; product lands ~70–85% through; no room for a bridge. **Watched muted** — burned-in captions mandatory, and the on-screen text must carry the whole message with the sound off. Person-free motion graphics over real catalogue stills (plus a little kitchen B-roll). Voice matches the live site (`00` §6): warm, direct, "we've got your back." Say "kitchen equipment"/"machines," never "gear."*
 
-**Aspect ratios:** 9:16 (1080×1920) primary; 4:5 (1080×1350) for Feed. **Reels safe zones:** clear the **top ~250px** and **bottom ~420px**; hero elements in the central band. **CTA end card: "Get our stock list"** (button: Learn More; destination = the stock list/brochure — see `02`).
+**Aspect ratios:** 9:16 (1080×1920) primary; 4:5 (1080×1350) for Feed. **Reels safe zones:** clear the **top ~250px** and **bottom ~420px**; hero elements in the central band. **CTA end card: "Get our stock list today"** (button: Learn More; destination = the stock list/brochure — see `02`).
 
 ---
 
@@ -55,7 +55,7 @@ Scored 0–10 on **Clarity · Relevance · Novelty · Specificity · Credibility
 | 2.5–4.5 | *Buy it outright, and it's gone.* | "Buy it outright, and it's gone." | The number greys and drains from a ledger line | Motion graphics |
 | 4.5–6.5 | **Or let it pay for itself.** | "Or let it pay for itself." | Hard reset → HireHospo wordmark resolves | Motion graphics |
 | 6.5–9.0 (≈75%) | *Rational combi · low weekly payments* | "The same oven, working — on low weekly payments." | Real Rational combi still on a steel plinth; payment chip | MG over catalogue still |
-| 9.0–11.0 | **Get our stock list** · *browse the range* | "Get our stock list." | End card: wordmark + Learn More pill + hirehospo.com | Motion graphics |
+| 9.0–11.0 | **Get our stock list today** · *browse the range* | "Get our stock list today." | End card: wordmark + Learn More pill + hirehospo.com | Motion graphics |
 
 ### C1-B — "$4.66 a day" (10s) · from hook #3 · new cafe / price
 | t | On-screen text | VO / caption | Visual | Build |
@@ -64,7 +64,7 @@ Scored 0–10 on **Clarity · Relevance · Novelty · Specificity · Credibility
 | 2.5–5.0 | *Dishwasher · oven · prep* | "Commercial kitchen equipment, on low weekly payments." | 3 catalogue stills fan in — Starline dishwasher, Turbofan oven, prep bench | MG over catalogue stills |
 | 5.0–7.0 | *Over 500 machines in stock* | "Over five hundred machines in stock." | Category grid, one tile lights flame | Motion graphics |
 | 7.0–9.0 (≈80%) | **Let it pay for itself** | "And let it pay for itself." | The brand line resolves | Motion graphics |
-| 9.0–10.0 | **Get our stock list** | "Get our stock list." | End card + Learn More pill | Motion graphics |
+| 9.0–10.0 | **Get our stock list today** | "Get our stock list today." | End card + Learn More pill | Motion graphics |
 
 ### C1-C — "Brands you'd never buy new" (11s) · from hook #2 · premium-brand access
 | t | On-screen text | VO / caption | Visual | Build |
@@ -73,7 +73,7 @@ Scored 0–10 on **Clarity · Relevance · Novelty · Specificity · Credibility
 | 3.0–5.5 | *Rational · Convotherm · Electrolux* | "Rational. Convotherm. Electrolux." | Brand chips appear one by one (real catalogue brands) | Motion graphics |
 | 5.5–7.5 | **Now on low weekly payments.** | "Now on low weekly payments." | Payment chip resolves; one brand chip lights flame | Motion graphics |
 | 7.5–9.5 (≈78%) | *Backed by warranty* | "Backed by warranty." | Catalogue still (combi oven) on plinth + warranty chip | MG over catalogue still |
-| 9.5–11.0 | **Get our stock list** | "Get our stock list." | End card + Learn More pill | Motion graphics |
+| 9.5–11.0 | **Get our stock list today** | "Get our stock list today." | End card + Learn More pill | Motion graphics |
 
 ---
 
@@ -85,8 +85,8 @@ Scored 0–10 on **Clarity · Relevance · Novelty · Specificity · Credibility
 | 0.0–3.0 | **Most applications under $25k** *— approved in 3 business days.* | "Most applications under twenty-five k — approved in three business days." | "3 BUSINESS DAYS" locks in mono; a step ticks | Motion graphics |
 | 3.0–5.5 | *Apply → approved → on their way* | "Apply, get approved, and your machines are on their way." | Timeline: APPLY → APPROVED (flame) → ON THEIR WAY | Motion graphics |
 | 5.5–8.0 (≈70%) | **1–2 day turnaround** | "A one-to-two-day turnaround." | Turnaround step ticks; catalogue still slides in | MG over catalogue still |
-| 8.0–9.5 | *Zero upfront cost — just a deposit* | "Zero upfront cost — just a deposit." | Mono line resolves | Motion graphics |
-| 9.5–11.0 | **Get our stock list** | "Get our stock list today." | End card + Learn More pill + hirehospo.com | Motion graphics |
+| 8.0–9.5 | *Minimal upfront cost — just a deposit* | "Minimal upfront cost — just a deposit." | Mono line resolves | Motion graphics |
+| 9.5–11.0 | **Get our stock list today** | "Get our stock list today." | End card + Learn More pill + hirehospo.com | Motion graphics |
 
 ### C2-B — "Fryer dies mid-service" (10s) · from hook #2 · high-stakes
 | t | On-screen text | VO / caption | Visual | Build |
@@ -95,7 +95,7 @@ Scored 0–10 on **Clarity · Relevance · Novelty · Specificity · Credibility
 | 3.0–5.0 | *You haven't got weeks.* | "You haven't got weeks." | Cut to black; line types on | Motion graphics |
 | 5.0–7.5 | **Apply in 5 minutes.** *Most under $25k approved in 3 business days.* | "Apply in five minutes — most under twenty-five k approved in three business days." | Timeline ticks; APPROVED (flame) | Motion graphics |
 | 7.5–9.0 (≈80%) | *Delivered on a 1–2 day turnaround* | "Delivered, one to two days." | Fryer catalogue still on plinth | MG over catalogue still |
-| 9.0–10.0 | **Get our stock list** · *we've got your back* | — | End card + Learn More pill | Motion graphics |
+| 9.0–10.0 | **Get our stock list today** · *we've got your back* | — | End card + Learn More pill | Motion graphics |
 
 ### C2-C — "Simple as 1, 2, 3" (11s) · from hook #5 · process ease
 | t | On-screen text | VO / caption | Visual | Build |
@@ -104,7 +104,7 @@ Scored 0–10 on **Clarity · Relevance · Novelty · Specificity · Credibility
 | 3.0–5.0 | *1. Apply in 5 minutes* | "One — apply in five minutes." | Step 1 ticks | Motion graphics |
 | 5.0–7.0 | *2. Choose from 500+ machines* | "Two — choose from over five hundred machines." | Step 2 + category tiles | Motion graphics |
 | 7.0–9.0 (≈80%) | *3. Approved? Take delivery* | "Three — get approved, and take delivery." | Step 3; APPROVED lights flame | Motion graphics |
-| 9.0–11.0 | **Get our stock list** | "Get our stock list." | End card + Learn More pill | Motion graphics |
+| 9.0–11.0 | **Get our stock list today** | "Get our stock list today." | End card + Learn More pill | Motion graphics |
 
 ---
 
@@ -115,4 +115,4 @@ Scored 0–10 on **Clarity · Relevance · Novelty · Specificity · Credibility
 | **Motion graphics over catalogue stills** (cheap, do first) | Every end card, price/number frame, timeline, brand chips, warranty stamps, and all product heroes | Use real catalogue stills. Real brands only (Rational, Starline, Turbofan, Convotherm, Waldorf, Blue Seal). Never invent a model. |
 | **Real kitchen footage (nice-to-have)** | The C2-B opening fryer B-roll | Only C2-B's opener genuinely needs real footage; everything else launches as motion graphics. |
 
-**Captioning:** every spoken line burned in, bottom-centre, inside the safe zone. **Muted test:** with sound off, the on-screen text alone must carry the message. **Compliance on every end card:** "+GST" only where a dollar figure shows, CTA "Get our stock list" (Learn More button), approval not implied as guaranteed ("most … under $25k" / "see if you qualify"), Auckland delivery, real equipment only, no Washpro on screen, warranty (not "refurbished") as the reassurance chip. "$4.66/day" is subject to the live-stock gate in `00` §2.
+**Captioning:** every spoken line burned in, bottom-centre, inside the safe zone. **Muted test:** with sound off, the on-screen text alone must carry the message. **Compliance on every end card:** "+GST" only where a dollar figure shows, CTA "Get our stock list today" (Learn More button), approval not implied as guaranteed ("most … under $25k" / "see if you qualify"), Auckland delivery, real equipment only, no Washpro on screen, warranty (not "refurbished") as the reassurance chip. "$4.66/day" is subject to the live-stock gate in `00` §2.
