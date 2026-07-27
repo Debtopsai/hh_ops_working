@@ -69,6 +69,37 @@
 
 ---
 
+## AD 3 — SOCIAL PROOF ("top cafes finance it")
+
+**The video (fixed, uploaded):** *"What do Auckland's top cafes have in common? They don't buy their equipment. They finance it — and keep their cash working. HireHospo. Get our latest stock list today."*
+**What the video already does:** the curiosity hook + the social-proof "smart operators finance, not buy" + the cashflow payoff + CTA. **So the copy adds** the *how* (low weekly payments, minimal upfront), a bit of mechanism/price where useful, and the light compliance the video doesn't carry.
+
+### Primary text (5 variants)
+
+| # | Testing | Text (⟨~125⟩ = See-more cut) |
+|---|---|---|
+| **1 ★champion** | social proof + cashflow | Auckland's top cafes worked something out: don't sink your cash into equipment — finance it, and keep that money working in the business.⟨~125⟩ Premium commercial kitchen equipment on low weekly payments, minimal upfront cost. That's the HireHospo way. Get our latest stock list today. |
+| 2 | curiosity + mechanism | Ever wonder how the busiest cafes kit out a full kitchen without a huge cash hit?⟨~125⟩ They don't buy the equipment — they finance it on low weekly payments and keep their cash free. From $4.66/day +GST. Get our latest stock list today. |
+| 3 | smart-money / capital | Buying your equipment outright ties up cash you could be using to grow.⟨~125⟩ Auckland's top operators finance theirs instead — low weekly payments, minimal upfront cost, cash still working in the business. Get our latest stock list today. Subject to credit approval. |
+| 4 | aspirational / "join them" | Kit out like Auckland's best — without the upfront hit.⟨~125⟩ The top cafes finance their equipment and let it pay for itself while their cash keeps working. Premium machines on low weekly payments. Get our latest stock list today. |
+| 5 | direct value + social proof | There's a reason the top kitchens finance their equipment: it keeps their cash working.⟨~125⟩ Premium commercial kitchen equipment on low weekly payments from $4.66/day +GST, minimal upfront cost. Get our latest stock list today. Subject to credit approval. |
+
+### Headlines (5, ≤40 chars) · ### Link descriptions (3, ≤30 chars)
+
+| # | Headline | Chars | | # | Link description | Chars |
+|---|---|---|---|---|---|---|
+| **1 ★** | `Auckland's top cafes finance it` | 31 | | **1 ★** | `Get our latest stock list` | 25 |
+| 2 | `Don't buy it. Finance it.` | 23 | | 2 | `Keep your cash working` | 22 |
+| 3 | `Keep your cash working` | 22 | | 3 | `Subject to credit approval` | 26 |
+| 4 | `The smart way to kit out` | 24 | | | | |
+| 5 | `From $4.66/day +GST` | 19 | | | | |
+
+**Champion:** Primary #1 + Headline #1 + Link description #1 + button "Learn More" (CTA "Get our latest stock list today"). The video poses the question and reveals the smart-money answer; the copy names the mechanism (low weekly payments, minimal upfront) and points to the stock list.
+
+> **Compliance (Ad 3):** the video shows **no price**, so nothing on it needs "+GST" — but any copy that states "$4.66/day" carries **"+GST"** (done). "Finance it" is a finance claim, so **"Subject to credit approval"** rides in a link description + the end card. ⚠ **Two things to verify:** *"Auckland's top cafes"* is a social-proof generalisation (fine as puffery — but don't imply specific named venues are customers unless they are), and the on-screen **"THE GRILL"** apron in the end card shouldn't imply a real venue's endorsement unless that's true and cleared.
+
+---
+
 ## Notes
 - **Ad 1's copy complements the video** — it opens on the felt problem (the upfront hit) the video doesn't voice. **Ad 2's copy deliberately runs with the video's speed message** (operator preference) — the honesty lever there is the "most … under $25k … within 3 business days" qualifier plus the on-screen super and the "Subject to credit approval" microcopy, not distance from the script.
 - **A/B is on the copy, not the video** — the videos are fixed, so you're testing which primary/headline pulls best around each one. At $20/day, run one at a time (`01`/`04`).

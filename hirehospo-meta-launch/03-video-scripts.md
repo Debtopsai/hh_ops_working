@@ -41,6 +41,30 @@
 
 ---
 
+## VIDEO 3 — Social proof ("top cafes finance it") — *uploaded, already built*
+
+**Transcript (on-screen text, extracted from the uploaded MP4 — 11.98s, 9:16; audio can't be transcribed in this environment, but the on-screen text reads as the full script):**
+> *"What do Auckland's top cafes have in common? They don't buy their equipment. They finance it — and keep their cash working. HireHospo. Get our latest stock list today."*
+
+**On-screen beat map (what's already in the cut):**
+
+| t | On-screen text (yellow = emphasis word) | Visual |
+|---|---|---|
+| 0–3s | "What do **Auckland's** top **cafes** have in **common?**" | Auckland aerial — Sky Tower, Viaduct Harbour |
+| 3–5s | "They don't buy **their equipment**" | Busy cafe interior, patrons + barista |
+| 5–7s | "They **Finance it**" | Pro kitchen — chefs plating; real **Turbofan** combi oven |
+| 7–9s | "and keep their **cash working**" | Same kitchen, Turbofan oven with flame |
+| 9–12s | **HireHospo** (orange underline) · **GET OUR LATEST STOCK LIST TODAY** · **Get Stock List** button + arrow | Two chefs at "THE GRILL" pass, plated dishes |
+
+**Notes for the pack:**
+- This video **has people** (cafe patrons, chefs) — unlike Videos 1 & 2, which I spec'd person-free. That's fine; it's the operator's existing cut. It just means the "person-free" default isn't a hard brand rule.
+- **Brand colours visible here:** amber/orange accent + white, with a **navy** CTA button — worth folding into the visual system / any future animation prompt (the "flame orange + navy" pairing, not the provisional flame-on-steel I'd assumed).
+- Equipment shown is a real **Turbofan** (catalogue-true ✓). CTA matches Video 2: **"Get our latest stock list today."**
+- **Compliance:** no price on screen (no "+GST" needed on the video). It's a finance ad, so keep **"Subject to credit approval"** microcopy on the end card. ⚠ *"Auckland's top cafes"* is a social-proof generalisation, and the **"THE GRILL"** apron shouldn't imply a real venue endorses HireHospo unless that's true and cleared.
+- Paired ad copy is in `02` (Ad 3).
+
+---
+
 ## Production notes
 - Person-free motion graphics over **real catalogue stills** (Rational, Starline, Turbofan, Convotherm, Waldorf, Blue Seal — never an invented model). Only a kitchen "equipment working" B-roll clip (Video 2, Friday beat) benefits from real footage; everything else is MG.
 - **Safe zones:** clear the top ~250px and bottom ~420px (Reels UI); hero elements central.
