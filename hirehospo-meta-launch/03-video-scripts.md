@@ -44,14 +44,14 @@
 ## VIDEO 3 — Social proof ("top cafes finance it") — *uploaded, already built*
 
 **Transcript (on-screen text, extracted from the uploaded MP4 — 11.98s, 9:16; audio can't be transcribed in this environment, but the on-screen text reads as the full script):**
-> *"What do Auckland's top cafes have in common? They don't buy their equipment. They finance it — and keep their cash working. HireHospo. Get our latest stock list today."*
+> *"What do Auckland's top cafes have in common? They don't buy their equipment outright. They finance it, and keep their cash working. HireHospo. Get our latest stock list today."*
 
 **On-screen beat map (what's already in the cut):**
 
 | t | On-screen text (yellow = emphasis word) | Visual |
 |---|---|---|
 | 0–3s | "What do **Auckland's** top **cafes** have in **common?**" | Auckland aerial — Sky Tower, Viaduct Harbour |
-| 3–5s | "They don't buy **their equipment**" | Busy cafe interior, patrons + barista |
+| 3–5s | "They don't buy their equipment **outright**" | Busy cafe interior, patrons + barista |
 | 5–7s | "They **Finance it**" | Pro kitchen — chefs plating; real **Turbofan** combi oven |
 | 7–9s | "and keep their **cash working**" | Same kitchen, Turbofan oven with flame |
 | 9–12s | **HireHospo** (orange underline) · **GET OUR LATEST STOCK LIST TODAY** · **Get Stock List** button + arrow | Two chefs at "THE GRILL" pass, plated dishes |
