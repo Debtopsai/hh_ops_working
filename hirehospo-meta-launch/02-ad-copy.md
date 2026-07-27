@@ -4,7 +4,7 @@
 
 **Voice anchors (from the site):** *"Let the equipment pay for itself"* · *"From start-ups to legacies"* · *"we've got your back"* · *"hospitality insiders"* · *"zero upfront costs — just a simple deposit and a weekly rental fee"* · *"apply in 5 minutes / see if you qualify"* · *"most applications under $25,000 approved within 3 business days"*. Say **"commercial kitchen equipment" / "kitchen equipment" / "machines"** — never "gear."
 
-**Locks:** "+GST" only ever glued to a dollar figure (never floated); $4.66/day for the cheap categories; premium gear = the $20,000-machine value comparison, no payment figure; no Washpro in copy; "refurbished" stays a light body mention, never a hook/headline; Auckland delivery. Approval isn't guaranteed — carry it as the site does ("apply to see if you qualify"), with "subject to credit approval" as light microcopy where a finance claim is strong.
+**Locks:** "+GST" only ever glued to a dollar figure (never floated); $4.66/day for the cheap categories; premium equipment = the $20,000-machine value comparison, no payment figure; no Washpro in copy; "refurbished" stays a light body mention, never a hook/headline; Auckland delivery. Approval isn't guaranteed — carry it as the site does ("apply to see if you qualify"), with "subject to credit approval" as light microcopy where a finance claim is strong.
 
 **CTA — `Apply Now`** (the site's universal CTA). ⚠ This points at the 5-minute application (`/pages/finance-apply`), not the browse-catalogue the earlier plan assumed — if you send ad traffic straight to the application, the optimisation event in `01`/`04` shifts from "Add to Enquiry" to a Lead on the application. **Confirm the ad destination.**
 
