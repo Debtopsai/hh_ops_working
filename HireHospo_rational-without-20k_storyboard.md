@@ -13,8 +13,8 @@
 | 4 | 0:06–0:08 | GFX bridge / timeline | Hard visual reset: HireHospo wordmark resolves top-centre; approval timeline row begins — APPLY → CREDIT CHECK → APPROVED → DELIVERED 1–3 DAYS | HireHospo · APPLY → CREDIT CHECK → **APPROVED** → DELIVERED 1–3 DAYS · *Subject to credit approval* | "Or finance it with HireHospo." | Lift; clean UI tick | Cut |
 | 5 | 0:08–0:10.5 | EQUIP hero plinth | Real Rational combi cut out on a brushed-steel plinth, centred; brand/category chip lower-left; NZ delivery/service microcopy at base | *RATIONAL · COMBI OVEN* · NZ-based delivery, install & service | "The same oven —" | Rack clack (sparing) | Cut |
 | 6 | 0:10.5–0:11.5 | GFX refurb badge | The condition chip stamps onto the plinth frame (flame stamp settle) | **REFURBISHED · WITH WARRANTY** | "refurbished, with warranty." | Stamp thud (soft) | Cut |
-| 7 | 0:11.5–0:13 | GFX capital-ledger | Two mono ledger rows tick in; footer figure lights flame | CAPITAL — kept in the business ✓ · OVEN — in your kitchen ✓ · **low weekly payments + GST** | "The oven works. Your capital keeps working too." | Till / receipt tick | Cut |
-| 8 | 0:13–0:15 | GFX end card | Wordmark, value prop, flame Apply-now pill; APPROVED-style settle; URL | **Apply now** · *Approved in 24 to 48 hours · Subject to credit approval* · low weekly payments + GST · hirehospo.com | "Apply now — approved in 24 to 48 hours." | Settle; warm tail; button | End |
+| 7 | 0:11.5–0:13 | GFX capital-ledger | Two mono ledger rows tick in; footer figure lights flame | CAPITAL — kept in the business ✓ · OVEN — in your kitchen ✓ · **low weekly payments** | "The oven works. Your capital keeps working too." | Till / receipt tick | Cut |
+| 8 | 0:13–0:15 | GFX end card | Wordmark, value prop, flame Apply-now pill; APPROVED-style settle; URL | **Apply now** · *Approved in 24 to 48 hours · Subject to credit approval* · low weekly payments · hirehospo.com | "Apply now — approved in 24 to 48 hours." | Settle; warm tail; button | End |
 
 ## Frames to build (Claude Code hand-off)
 Shared system: provisional HireHospo dark-steel tokens (a real kit/brand book in the folder wins). Reuse the standard frames.
@@ -24,15 +24,15 @@ Shared system: provisional HireHospo dark-steel tokens (a real kit/brand book in
 | capital-drain | Shots 2–3 | #12141A | same number greys, drains to $0 in a ledger | desaturate + downward drain, ~1.2s; **no flame** (problem beat) | reuse quote-shock number geometry; keep flame off |
 | approval-timeline | Shot 4 | #12141A | wordmark + 4 mono steps, APPROVED lit flame | wordmark resolve 0.4s; steps tick left→right; APPROVED stamps | bridge frame; "Subject to credit approval" microcopy lives here |
 | hero-plinth | Shots 5–6 | #12141A + brushed-steel gradient | real Rational combi cut-out on plinth; RATIONAL · COMBI OVEN chip; NZ delivery/service microcopy; refurb badge | product settle 0.5s ease-out; badge stamps at 0:10.5 (flame) | equipment = real active product; link its page in hand-off; **never invent a model** |
-| capital-ledger | Shot 7 | #12141A | two ticked rows (capital kept / oven working) + flame "low weekly payments + GST" | rows tick in sequence; footer figure lights flame last | the premium-gear capital-preservation frame; one flame highlight |
+| capital-ledger | Shot 7 | #12141A | two ticked rows (capital kept / oven working) + flame "low weekly payments" | rows tick in sequence; footer figure lights flame last | the premium-gear capital-preservation frame; one flame highlight |
 | end-card | Shot 8 | #12141A | wordmark + value prop + flame Apply-now pill + subline + URL | pill settle + APPROVED-style stamp | carries ALL required microcopy; wordmark asset, never redrawn |
 
 ## Production notes
 - Dark frames throughout (#12141A). Flame #FF9B2E = the only "go" fill. **One flame highlight per frame, key beats only** (quote-shock underline · APPROVED step · refurb badge · ledger footer · Apply-now pill). Shots 2–3 (the capital-hit) carry **no flame** — the problem beat should feel cold.
-- Money and terms in JetBrains Mono ("$20,000", "+ GST", "REFURBISHED · WITH WARRANTY", "low weekly payments + GST", timeline steps). Headline copy in Space Grotesk; captions in Inter.
+- Money and terms in JetBrains Mono ("$20,000", "+ GST", "REFURBISHED · WITH WARRANTY", "low weekly payments", timeline steps). Headline copy in Space Grotesk; captions in Inter.
 - Equipment shot uses a real catalogue product (Rational SCC WE101 combi — real brand + category chip; link the product page in the hand-off). Never invent models, capacities, or specs.
 - Roles stay clean: HireHospo **finances** (wordmark, timeline, CTA); delivery/install/service shown passively as "NZ-based delivery, install & service" (never name Washpro in on-screen copy, never imply HireHospo turns a spanner). Never imply HireHospo holds stock.
-- Wordmark at the bridge (Shot 4) + end card (Shot 8) only; never redraw the logo. End card carries "Apply now" + "Approved in 24 to 48 hours · Subject to credit approval" + "low weekly payments + GST".
+- Wordmark at the bridge (Shot 4) + end card (Shot 8) only; never redraw the logo. End card carries "Apply now" + "Approved in 24 to 48 hours · Subject to credit approval" + "low weekly payments".
 - Caption every spoken line, burned-in, bottom-centre, inside the safe zone.
 
 ## Safe-area check (9:16)

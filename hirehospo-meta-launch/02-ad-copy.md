@@ -4,9 +4,9 @@
 
 **Price hook — operator-confirmed:** the value claim is **"from $4.66/day +GST"** (see `00` §2). It's a conservative, substantiable "from" figure; keep it on the **cheap categories** (glasswashers, dishwashers, hot plates, small fryers). Premium-gear ads (combi ovens) lead with **capital preservation**, never the daily number. Fix the old unit-mixing by running **daily-frame** and **weekly-frame** ads as an A/B, not both units in one line.
 
-**Budget note ($20/day):** at this budget you will realistically run **one ad at a time**, not a rotation — treat the champions below as your first two ads to sequence, and see `01`/`04` (which need re-basing to $20/day) for how to run and read them.
+**GST placement rule:** "+GST" is only ever glued **directly to a dollar figure** ("$4.66/day +GST"). It is never floated into a sentence, tacked onto a non-numeric phrase ("low weekly payments"), or dropped on an end card / link that shows no price. Concept 2 quotes no price, so it carries no "+GST" at all.
 
-**Standing compliance locks (every line):** no implied guaranteed approval · "+GST" on every price · "subject to credit approval" present (body or link description) · only the confirmed entry price ("from $4.66/day +GST", live-stock-checked per `00` §2) · no specific weekly payment for a named product · real catalogue brands only.
+**Standing compliance locks (every line):** no implied guaranteed approval · "+GST" glued to any dollar figure · "subject to credit approval" present (body or link description) · only the confirmed entry price ("from $4.66/day +GST", live-stock-checked per `00` §2) · no specific weekly payment for a named product · real catalogue brands only.
 
 ---
 
@@ -17,12 +17,12 @@
 | # | Testing | Text (⟨~125⟩ = See-more cut) |
 |---|---|---|
 | **1 ★champion** | **daily unit + confirmed price + reframe** | Premium commercial kitchen equipment, from $4.66/day +GST — less than one flat white a day.⟨~125⟩ Refurbished, warranted, with NZ-based delivery and install. Browse glasswashers, dishwashers, fryers and more, and build your enquiry. Subject to credit approval. |
-| 2 | **weekly unit frame** (vs #1's daily) | Low weekly payments +GST put premium commercial kitchen equipment in your kitchen — without the capital hit.⟨~125⟩ Refurbished with warranty is how the payment stays low. Browse 150+ items and build your enquiry. Subject to credit approval. |
-| 3 | **capital-preservation objection** (premium gear) | A $20,000 Rational combi in your kitchen — without $20,000 leaving your bank.⟨~125⟩ HireHospo finances refurbished, warranted kitchen equipment on low weekly payments +GST, so your capital stays in the business. Browse the stock list. Subject to credit approval. |
-| 4 | **refurbished objection** ("what if it breaks") | Refurbished? That's exactly why the payment is this low — and the warranty is why that's fine.⟨~125⟩ Premium European brands you'd never buy new, on low weekly payments +GST, with NZ-based delivery and service. Build your enquiry. Subject to credit approval. |
-| 5 | **emotional register** (aspirational, softer) | Fully equipped kitchen. Cash still in the business.⟨~125⟩ HireHospo puts premium refurbished equipment — dishwashers, combi ovens, fryers, prep — in your kitchen on low weekly payments +GST. Browse 150+ items and build your enquiry. Subject to credit approval. |
+| 2 | **weekly unit frame** (vs #1's daily) | Low weekly payments put premium commercial kitchen equipment in your kitchen — without the capital hit.⟨~125⟩ Refurbished with warranty is how the payment stays low. Browse 150+ items and build your enquiry. Subject to credit approval. |
+| 3 | **capital-preservation objection** (premium gear) | A $20,000 Rational combi in your kitchen — without $20,000 leaving your bank.⟨~125⟩ HireHospo finances refurbished, warranted kitchen equipment on low weekly payments, so your capital stays in the business. Browse the stock list. Subject to credit approval. |
+| 4 | **refurbished objection** ("what if it breaks") | Refurbished? That's exactly why the payment is this low — and the warranty is why that's fine.⟨~125⟩ Premium European brands you'd never buy new, on low weekly payments, with NZ-based delivery and service. Build your enquiry. Subject to credit approval. |
+| 5 | **emotional register** (aspirational, softer) | Fully equipped kitchen. Cash still in the business.⟨~125⟩ HireHospo puts premium refurbished equipment — dishwashers, combi ovens, fryers, prep — in your kitchen on low weekly payments. Browse 150+ items and build your enquiry. Subject to credit approval. |
 
-*Note #5 replaces the banned "let your equipment pay for itself" (see `00` §3e) with an emotional line that keeps the promise without asserting a financial outcome. Note the daily figure "$4.66/day" appears only on #1 (an affordable-category ad); #3 and #4 name premium brands, so they carry "low weekly payments +GST", never the daily number.*
+*Note #5 replaces the banned "let your equipment pay for itself" (see `00` §3e) with an emotional line that keeps the promise without asserting a financial outcome. The daily figure "$4.66/day +GST" appears only on #1 (an affordable-category ad); #3 and #4 name premium brands, so they carry "low weekly payments" (no dollar figure, so no "+GST"), never the daily number.*
 
 ### Headlines (5 variants, ≤40 characters)
 
@@ -30,7 +30,7 @@
 |---|---|---|---|
 | **1 ★** | daily confirmed price | `From $4.66/day +GST` | 19 |
 | 2 | weekly-unit frame, no number | `Premium kitchen gear, low weekly cost` | 37 |
-| 3 | the reframe device | `Less than a flat white a day +GST` | 33 |
+| 3 | the reframe device | `Less than a flat white a day` | 28 |
 | 4 | capital-preservation angle | `The $20k oven, without the $20k` | 31 |
 | 5 | refurb-as-strength | `Refurbished. Warranted. Low weekly.` | 35 |
 
@@ -38,7 +38,7 @@
 
 | # | Testing | Description | Chars |
 |---|---|---|---|
-| 1 | action + GST | `Browse the stock list +GST` | 26 |
+| 1 | action | `Browse the stock list` | 21 |
 | **2 ★** | mandatory microcopy carrier | `Subject to credit approval` | 26 |
 | 3 | proof (scale + warranty) | `150+ items. Refurb + warranty` | 29 |
 
@@ -54,17 +54,17 @@ The destination is a **browsable catalogue**, not an application form. "Learn Mo
 
 ## Concept 2 — Quick Process / Speed
 
-*All variants built on the Level-2 honest-timeline rewrite from `00` §3d — the speed story rides the two facts that are reliably fast (the 24–48h credit decision and 1–3 day delivery after the deposit clears), never on implied guaranteed approval. No price claims here, so the $4.66/day decision doesn't touch this concept.*
+*All variants built on the Level-2 honest-timeline rewrite from `00` §3d — the speed story rides the two facts that are reliably fast (the 24–48h credit decision and 1–3 day delivery after the deposit clears), never on implied guaranteed approval. No price is quoted in this concept, so no "+GST" appears — the $4.66/day decision doesn't touch it.*
 
 ### Primary text (5 variants)
 
 | # | Testing | Text (⟨~125⟩ = See-more cut) |
 |---|---|---|
-| **1 ★champion** | **the reliably-fast fact, specific** | A credit decision in 24–48 hours — not 24–48 days.⟨~125⟩ Once you're approved and your deposit's paid, it's delivered in 1–3 business days. Get our latest stock list today. +GST · subject to credit approval. |
-| 2 | **high-stakes / problem-first** | Your fryer dies mid-service. How fast can you replace it?⟨~125⟩ HireHospo gives a credit decision in 24–48 hours; once approved and your deposit clears, it's delivered in 1–3 business days. Browse the stock list. +GST · subject to credit approval. |
-| 3 | **honesty / credit-led trust** (novelty) | Fast finance doesn't mean easy approval. We're credit-led — we say no to plenty of deals.⟨~125⟩ But when it's yes, it's quick: a 24–48 hour decision, delivery 1–3 business days after your deposit clears. +GST. Get the latest stock list. |
-| 4 | **process clarity** (the honest timeline stated flat) | From application to installed, honestly: a 24–48 hour credit decision, then delivery 1–3 business days after your deposit clears.⟨~125⟩ Approval isn't guaranteed — but nothing here drags. Browse the latest stock list. +GST · subject to credit approval. |
-| 5 | **freshness register** (latest stock) | New refurbished stock lands regularly — combi ovens, dishwashers, fryers, prep.⟨~125⟩ Get our latest stock list, build your enquiry, and if you're approved it's installed within days of your deposit clearing. +GST · subject to credit approval. |
+| **1 ★champion** | **the reliably-fast fact, specific** | A credit decision in 24–48 hours — not 24–48 days.⟨~125⟩ Once you're approved and your deposit's paid, it's delivered in 1–3 business days. Get our latest stock list today. Subject to credit approval. |
+| 2 | **high-stakes / problem-first** | Your fryer dies mid-service. How fast can you replace it?⟨~125⟩ HireHospo gives a credit decision in 24–48 hours; once approved and your deposit clears, it's delivered in 1–3 business days. Browse the stock list. Subject to credit approval. |
+| 3 | **honesty / credit-led trust** (novelty) | Fast finance doesn't mean easy approval. We're credit-led — we say no to plenty of deals.⟨~125⟩ But when it's yes, it's quick: a 24–48 hour decision, delivery 1–3 business days after your deposit clears. Get the latest stock list. |
+| 4 | **process clarity** (the honest timeline stated flat) | From application to installed, honestly: a 24–48 hour credit decision, then delivery 1–3 business days after your deposit clears.⟨~125⟩ Approval isn't guaranteed — but nothing here drags. Browse the latest stock list. Subject to credit approval. |
+| 5 | **freshness register** (latest stock) | New refurbished stock lands regularly — combi ovens, dishwashers, fryers, prep.⟨~125⟩ Get our latest stock list, build your enquiry, and if you're approved it's installed within days of your deposit clearing. Subject to credit approval. |
 
 ### Headlines (5 variants, ≤40 characters)
 
@@ -82,7 +82,7 @@ The destination is a **browsable catalogue**, not an application form. "Learn Mo
 |---|---|---|---|
 | **1 ★** | mandatory microcopy carrier | `Subject to credit approval` | 26 |
 | 2 | low-friction ask | `Get the latest stock list` | 25 |
-| 3 | specific + GST | `24–48hr decision. +GST` | 22 |
+| 3 | specific timeframe | `24–48hr decision` | 16 |
 
 ### Recommended CTA button — **Learn More**
 Matches "get our latest stock list" / browse. Same reasoning and same "Get Quote" caveat as Concept 1. Do **not** use "Apply Now" on the speed concept — paired with a speed message it is exactly the combination that implies guaranteed, immediate approval (the `00` §3d risk).

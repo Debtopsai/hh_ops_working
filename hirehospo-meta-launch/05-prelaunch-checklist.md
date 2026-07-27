@@ -45,7 +45,7 @@ Launch is gated by this list, not the calendar (Assumption 3). The item most lik
 | # | Item | Blocking? | Owner |
 |---|---|---|---|
 | 4.1 | **Price claim verified against live stock this week** — confirm live stock exists at or below "$4.66/day +GST" on the day of launch (`00` §2); owner assigned for ongoing re-verification whenever stock changes | **BLOCKING** | Marketing + Washpro |
-| 4.2 | **"+GST" present on every price** in every ad, headline and end card | **BLOCKING** | Marketing |
+| 4.2 | **"+GST" glued to every dollar figure** (on the number, not floated in a sentence or on a non-numeric phrase); ads with no price carry none | **BLOCKING** | Marketing |
 | 4.3 | **"Subject to credit approval" present** wherever finance/speed is implied; **no copy implies guaranteed/automatic approval** (esp. Concept 2 — ship the `00` §3d Level-2 rewrite) | **BLOCKING** | Marketing |
 | 4.4 | **No specific weekly payment for a named product** beyond the verified "from" entry price; **"let your equipment pay for itself" removed** (`00` §3e) | **BLOCKING** | Marketing |
 | 4.5 | **Only real catalogue brands/categories/equipment** on screen and in copy — no invented models, specs or non-stocked gear (guardrail 6) | **BLOCKING** | Marketing + Product |

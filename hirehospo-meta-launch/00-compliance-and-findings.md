@@ -25,7 +25,7 @@ The four inputs at the top of the brief were not supplied. Per the brief's own i
 **Operator decision: "from $4.66/day" stays.** That's workable — it is compliant and substantiable, and it's the brand's established entry hook for the cheapest categories (glasswashers, hot plates, small fryers). Three things keep it clean:
 
 - **It's a conservative claim, not a bait-low one.** $4.66/day = $32.62/week. The live catalogue floor is actually *lower* (~$22.82/week ≈ $3.26/day, with an "Under $25/wk" filter on the page). So "from $4.66/day" states a *higher* entry than the true minimum — there is comfortably stock at or below it, which is exactly what a "from" claim needs. The usual Fair Trading risk with "from $X" is the number being unachievable (bait); here you're if anything under-promising, so that risk doesn't bite.
-- **Fix the unit-mixing (brief item b).** The original line mixed units ("low weekly prices … from $4.66 per day"). One unit per ad: **daily-frame ads lead with "from $4.66/day +GST"** — and may sit the brand's *"less than one flat white a day"* reframe on top of it; **weekly-frame ads** carry the model as **"low weekly payments +GST"** with no specific weekly figure. Run the two frames against each other.
+- **Fix the unit-mixing (brief item b).** The original line mixed units ("low weekly prices … from $4.66 per day"). One unit per ad: **daily-frame ads lead with "from $4.66/day +GST"** — and may sit the brand's *"less than one flat white a day"* reframe on top of it; **weekly-frame ads** carry the model as **"low weekly payments"** — no dollar figure, so no "+GST". Run the two frames against each other.
 - **Keep it on the cheap categories.** $4.66/day is believable on a glasswasher, hot plate or small fryer — not a $20k combi. Premium-gear ads still lead with capital preservation (the "$20k oven, without the $20k" angle), never a tiny daily number.
 
 **Residual to know, not to fix:** a visitor sold "$4.66/day" lands on a page showing weekly prices, some cheaper than the daily-equivalent. That's a pleasant surprise, not a bait-and-switch — fine to run. If you ever want ad and page to mirror each other, the lever is a daily-price cue on the landing view, not a change to the ad.
@@ -44,9 +44,9 @@ The two concepts are locked in intent. Below, each flagged problem is shown with
 
 - Original: "Premium equipment at low weekly prices, from $4.66 per day."
 - **Daily frame (champion — operator-confirmed, see §2):** "Premium kitchen equipment, from $4.66/day +GST — less than one flat white a day."
-- **Weekly frame (variant):** "Premium kitchen equipment on low weekly payments +GST."
+- **Weekly frame (variant):** "Premium kitchen equipment on low weekly payments."
 
-**(c) GST not stated.** The site quotes ex-GST; the ads must say so. For a B2B audience ex-GST is normal and expected — but **unstated it is a Fair Trading Act exposure** (see §5). **Fix: every price carries "+GST".** Applied to every line in `02` and every price frame in `03`.
+**(c) GST not stated.** The site quotes ex-GST; the ads must say so. For a B2B audience ex-GST is normal and expected — but **unstated it is a Fair Trading Act exposure** (see §5). **Fix: "+GST" glued to every dollar figure** — on the number itself (e.g. "$4.66/day +GST"), never floated into a sentence or tacked onto a non-numeric phrase like "low weekly payments". An ad that quotes no price (all of Concept 2) carries no "+GST".
 
 **(e) "Let your equipment pay for itself" is a financial-performance claim.** It implies the revenue generated will cover the payments — unsubstantiated, and category-risky for a finance product. **Fix: keep the emotional promise, drop the asserted outcome.**
 
@@ -62,9 +62,9 @@ Three rewrites, increasing caution:
 
 | Level | Rewrite | What it does |
 |---|---|---|
-| **1 — least cautious (needs legal sign-off)** | "Apply Monday. Credit decision in 24–48 hours. Approved and deposit paid? Delivery follows in 1–3 business days. +GST · subject to credit approval." | Keeps the day rhythm but makes approval conditional and puts the deposit in the sentence. Only ship if the client's advisor is comfortable the day structure reads as illustrative, not promised. |
-| **2 — mid (my pick to ship)** | "From application to installed can move fast: a **24–48 hour credit decision**, then delivery **1–3 business days after your deposit clears**. We're credit-led — approval isn't guaranteed. +GST." | Shifts the speed story onto the parts that are *reliably* fast (the decision and the post-deposit delivery), states conditionality and the deposit plainly, and still feels like momentum. Defensible under the FTA and self-selects for deposit-capable leads. |
-| **3 — most cautious** | "A credit decision in **24–48 hours**. Once you're approved and your deposit's paid, it's delivered in **1–3 business days**. +GST · subject to credit approval · normal lending criteria apply." | Drops the day-of-week narrative entirely; sells only the two facts that are always true. Ship this if legal wants maximum caution. |
+| **1 — least cautious (needs legal sign-off)** | "Apply Monday. Credit decision in 24–48 hours. Approved and deposit paid? Delivery follows in 1–3 business days. Subject to credit approval." | Keeps the day rhythm but makes approval conditional and puts the deposit in the sentence. Only ship if the client's advisor is comfortable the day structure reads as illustrative, not promised. |
+| **2 — mid (my pick to ship)** | "From application to installed can move fast: a **24–48 hour credit decision**, then delivery **1–3 business days after your deposit clears**. We're credit-led — approval isn't guaranteed." | Shifts the speed story onto the parts that are *reliably* fast (the decision and the post-deposit delivery), states conditionality and the deposit plainly, and still feels like momentum. Defensible under the FTA and self-selects for deposit-capable leads. |
+| **3 — most cautious** | "A credit decision in **24–48 hours**. Once you're approved and your deposit's paid, it's delivered in **1–3 business days**. Subject to credit approval · normal lending criteria apply." | Drops the day-of-week narrative entirely; sells only the two facts that are always true. Ship this if legal wants maximum caution. |
 
 **I would ship Level 2.** It preserves the emotional point of Concept 2 — *things move quickly here* — without a promise the funnel can't keep. Level 3 is the safe fallback; Level 1 only with explicit legal comfort.
 

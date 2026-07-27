@@ -56,8 +56,8 @@ Champion of the value concept — the capital-preservation angle for premium gea
 | 0.0–2.5 | **$20,000** · *for one oven* | "Twenty grand. For one oven." | Mono number counts up on dark steel; flame underline snaps on lock | Motion graphics |
 | 2.5–4.5 | *Buy it outright, and it's gone.* | "Pay cash and it's gone before service." | The number greys and drains out of a ledger line | Motion graphics |
 | 4.5–7.0 | **Or finance it.** | — | Hard reset → HireHospo wordmark resolves | Motion graphics |
-| 7.0–9.5 (≈75%) | *Rational combi · Refurbished · With warranty* | "The same oven, working — for low weekly payments +GST." | Real Rational combi still on a steel plinth; "REFURBISHED · WITH WARRANTY" chip stamps on | MG over catalogue still (a Washpro hero shot is a plus) |
-| 9.5–11.0 | **Browse the stock list** · *Subject to credit approval · +GST* | "Browse the stock list." | End card: wordmark + Learn More pill + hirehospo.com | Motion graphics |
+| 7.0–9.5 (≈75%) | *Rational combi · Refurbished · With warranty* | "The same oven, working — for low weekly payments." | Real Rational combi still on a steel plinth; "REFURBISHED · WITH WARRANTY" chip stamps on | MG over catalogue still (a Washpro hero shot is a plus) |
+| 9.5–11.0 | **Browse the stock list** · *Subject to credit approval* | "Browse the stock list." | End card: wordmark + Learn More pill + hirehospo.com | Motion graphics |
 
 ### C1-B — "$4.66 a day" (10s) · from hook #3 · persona: new cafe owner
 The price-entry angle. Keep it on the cheap categories (`00` §2); confirm stock at/below $4.66/day the morning it runs.
@@ -77,8 +77,8 @@ The price-entry angle. Keep it on the cheap categories (`00` §2); confirm stock
 | 0.0–3.0 | **Refurbished?** *That's exactly why the payment's this low.* | "Refurbished? That's exactly why the payment's this low." | Word "REFURBISHED" types on dark steel; flame underline | Motion graphics |
 | 3.0–5.5 | *Premium European brands. A fraction of new.* | "Premium brands you'd never buy new." | Brand chips appear — Rational, Convotherm, Electrolux (real catalogue brands) | Motion graphics |
 | 5.5–7.5 | **With warranty.** | "And the warranty's why that's fine." | "WITH WARRANTY" stamps on with a green tick | Motion graphics |
-| 7.5–9.5 (≈78%) | *Low weekly payments +GST* | "Low weekly payments, plus GST." | Catalogue still (combi oven) on plinth + payment chip | MG over catalogue still |
-| 9.5–11.0 | **Browse the stock list** · *Subject to credit approval · +GST* | "Browse the stock list." | End card + Learn More pill | Motion graphics |
+| 7.5–9.5 (≈78%) | *Low weekly payments* | "Low weekly payments." | Catalogue still (combi oven) on plinth + payment chip | MG over catalogue still |
+| 9.5–11.0 | **Browse the stock list** · *Subject to credit approval* | "Browse the stock list." | End card + Learn More pill | Motion graphics |
 
 ---
 
@@ -92,7 +92,7 @@ The price-entry angle. Keep it on the cheap categories (`00` §2); confirm stock
 | 3.0–5.5 | *Approved? Deposit paid?* | "Once you're approved and your deposit's paid…" | Timeline: APPLY → DECISION → APPROVED (flame) — APPROVED conditional, ticks on | Motion graphics |
 | 5.5–8.0 (≈70%) | **Delivered in 1–3 business days** | "…delivered in one to three business days." | DELIVERED step ticks; catalogue still slides in on a van/plinth | MG over catalogue still |
 | 8.0–9.5 | *Get our latest stock list* | "Get our latest stock list." | Stock-list grid resolves | Motion graphics |
-| 9.5–11.0 | **Learn more** · *+GST · subject to credit approval* | — | End card + Learn More pill + hirehospo.com | Motion graphics |
+| 9.5–11.0 | **Learn more** · *Subject to credit approval* | — | End card + Learn More pill + hirehospo.com | Motion graphics |
 
 ### C2-B — "We say no to plenty" (11s) · from hook #2 · credit-led honesty / trust
 The differentiated angle — honesty as the hook. Watch this one doesn't read as discouraging; the payoff must feel like *quality*, not *rejection*.
@@ -102,7 +102,7 @@ The differentiated angle — honesty as the hook. Watch this one doesn't read as
 | 0.0–3.0 | **Fast finance doesn't mean easy approval.** | "Fast finance doesn't mean easy approval." | Text on dark steel; a flame "NO" stamp appears then clears | Motion graphics |
 | 3.0–5.0 | *We're credit-led. We say no to plenty.* | "We're credit-led — we say no to plenty of deals." | Row of application cards; some greyed, one lights flame | Motion graphics |
 | 5.0–7.5 | **But when it's yes, it's quick.** | "But when it's yes, it's quick." | The flame card ticks: DECISION 24–48 HRS | Motion graphics |
-| 7.5–9.5 (≈77%) | *Refurbished · With warranty · +GST* | "Delivered 1–3 business days after your deposit." | Catalogue still on plinth + warranty chip | MG over catalogue still |
+| 7.5–9.5 (≈77%) | *Refurbished · With warranty* | "Delivered 1–3 business days after your deposit." | Catalogue still on plinth + warranty chip | MG over catalogue still |
 | 9.5–11.0 | **Get the latest stock list** · *Subject to credit approval* | "Get the latest stock list." | End card + Learn More pill | Motion graphics |
 
 ### C2-C — "Fryer dies mid-service" (10s) · from hook #4 · high-stakes, problem-first
@@ -114,7 +114,7 @@ The one script where a little real B-roll earns its keep — the opening should 
 | 3.0–5.0 | *How fast can you replace it?* | "How fast can you replace it?" | Cut to black; question types on | Motion graphics |
 | 5.0–7.5 | **Credit decision in 24–48 hours.** | "A decision in 24 to 48 hours." | Timeline ticks; APPROVED (flame) conditional | Motion graphics |
 | 7.5–9.0 (≈80%) | *Installed 1–3 days after your deposit* | "Installed within days of your deposit." | Fryer catalogue still on plinth, warranty chip | MG over catalogue still |
-| 9.0–10.0 | **Browse the stock list** · *Subject to credit approval · +GST* | — | End card + Learn More pill | Motion graphics |
+| 9.0–10.0 | **Browse the stock list** · *Subject to credit approval* | — | End card + Learn More pill | Motion graphics |
 
 ---
 
