@@ -49,18 +49,18 @@
 
 | # | Testing | Text (⟨~125⟩ = See-more cut) |
 |---|---|---|
-| **1 ★champion** | the honest version of the speed | That's how fast it moves when finance isn't the hold-up.⟨~125⟩ Apply in about 5 minutes — most applications under $25,000 are approved within 3 business days — then your machines are on their way. Minimal upfront cost, just a deposit. Get our latest stock list today. Subject to credit approval. |
-| 2 | persona / urgency | In hospitality, a dead machine can't wait weeks for a replacement.⟨~125⟩ Our application takes about 5 minutes, most under $25k are approved within 3 business days, and delivery follows fast. We've got your back. Get our latest stock list today. Subject to credit approval. |
-| 3 | process ease | Apply, get approved, take delivery — genuinely that simple when the finance is sorted.⟨~125⟩ A 5-minute application, most under $25k approved within 3 business days, then a quick turnaround. Get our latest stock list today. Subject to credit approval. |
-| 4 | honest "will I qualify?" | Wondering how fast you could be up and running? Start by seeing if you qualify.⟨~125⟩ A 5-minute application, most under $25k approved within 3 business days, then your machines are on their way. Minimal upfront cost. Get our latest stock list today. |
-| 5 | freshness / stock | New machines land in stock all the time — and they move fast.⟨~125⟩ Apply in about 5 minutes, most under $25k approved within 3 business days, delivery soon after. Browse what's in and get our latest stock list today. Subject to credit approval. |
+| **1 ★champion** | the site's speed claim, direct | Apply in 5 minutes. Most applications under $25,000 are approved within 3 business days.⟨~125⟩ Once you're approved, your machines are on their way — a 1–2 day turnaround. Minimal upfront cost — just a deposit. Get our latest stock list today. |
+| 2 | high-stakes / problem-first | Fryer dies mid-service? You haven't got weeks to sort a replacement.⟨~125⟩ Apply in 5 minutes — most applications under $25k approved within 3 business days, then a 1–2 day turnaround. We've got your back. Get our latest stock list today. |
+| 3 | honest "will I qualify?" | Not sure you'll qualify? There's one quick way to find out.⟨~125⟩ A 5-minute application, most under $25k approved within 3 business days. Minimal upfront cost — just a deposit and low weekly payments. Get our latest stock list today. |
+| 4 | process ease ("simple as 1,2,3") | Simple as 1, 2, 3: apply, choose your equipment, take delivery.⟨~125⟩ Most applications under $25k are approved within 3 business days, with a 1–2 day turnaround after that. Over 500 machines in stock. Get our latest stock list today. |
+| 5 | freshness / stock | New machines land in stock all the time — combi ovens, dishwashers, fryers, prep.⟨~125⟩ Apply in 5 minutes, get approved (most under $25k within 3 business days), and let your new kitchen equipment pay for itself. Get our latest stock list today. |
 
 ### Headlines (5, ≤40 chars) · ### Link descriptions (3, ≤30 chars)
 
 | # | Headline | Chars | | # | Link description | Chars |
 |---|---|---|---|---|---|---|
 | **1 ★** | `Most approved in 3 business days` | 32 | | **1 ★** | `Get our latest stock list` | 25 |
-| 2 | `Apply in 5 minutes` | 18 | | 2 | `A decision in 3 business days` | 29 |
+| 2 | `Apply in 5 minutes` | 18 | | 2 | `Subject to credit approval` | 26 |
 | 3 | `Get our latest stock list today` | 31 | | 3 | `1–2 day turnaround` | 18 |
 | 4 | `Your machines, on their way` | 27 | | | | |
 | 5 | `Simple as 1, 2, 3` | 17 | | | | |
@@ -70,6 +70,6 @@
 ---
 
 ## Notes
-- **Copy complements, never transcribes.** Each primary opens on something the video doesn't say (the felt problem, the persona, the honest detail) and lets the video keep its hook and tagline. The one deliberate overlap is the **price + "+GST"** in Ad 1 and the **honest approval claim** in Ad 2 — both there for compliance, not repetition.
+- **Ad 1's copy complements the video** — it opens on the felt problem (the upfront hit) the video doesn't voice. **Ad 2's copy deliberately runs with the video's speed message** (operator preference) — the honesty lever there is the "most … under $25k … within 3 business days" qualifier plus the on-screen super and the "Subject to credit approval" microcopy, not distance from the script.
 - **A/B is on the copy, not the video** — the videos are fixed, so you're testing which primary/headline pulls best around each one. At $20/day, run one at a time (`01`/`04`).
 - Voice authority is `00` §6; the two on-screen compliance fixes above are the only changes I'd ask of the videos themselves.
