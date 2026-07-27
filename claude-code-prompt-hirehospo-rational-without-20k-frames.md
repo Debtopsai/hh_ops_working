@@ -39,15 +39,15 @@ accentink #14161A   text on a flame surface — always
 - **Logo:** use the HireHospo wordmark **asset** from the folder/site. **Never redraw or invent a logomark.** If no asset exists, set "HireHospo" in Space Grotesk and ⚠-flag it in the README. Wordmark at the bridge + end card only.
 
 ## 5. What to build — per-frame contract (reuse the standard frames)
-Lock copy **verbatim**. Approved claims only · "+ GST" glued to any dollar figure (here, only the $20,000) · "Subject to credit approval" on the end card · **no quoted weekly price for a specific product** · catalogue-true gear.
+Lock copy **verbatim**. Approved claims only · "+ GST" glued to each dollar figure (here, $20,000 and $17.30/day) · "Subject to credit approval" on the end card · **indicative per-product "from" figure is fine** (matches the site) · catalogue-true gear.
 
 | File | Beat | Duration | Verbatim copy | Motion |
 |---|---|---|---|---|
 | `frames/01-quote-shock.html` | Hook 0:00–0:03 | 3.0s | `$20,000` · `+ GST` · `FOR ONE OVEN` | Mono number counts 0→20,000 (~0.8s, ease-out); flame underline snaps under the last digits on lock; hold |
 | `frames/02-capital-drain.html` | Agitate 0:03–0:06 | 3.0s | `PAID IN FULL. GONE.` · `before service.` | Reuse the quote-shock number; it desaturates to grey and drains downward out of a ledger line to `$0` (~1.2s); faint hollow tick at 0:05. **No flame.** |
 | `frames/03-approval-timeline.html` | Bridge 0:06–0:08 | 2.0s | `HireHospo` · `APPLY → CREDIT CHECK → APPROVED → DELIVERED 1–3 DAYS` · `Subject to credit approval` | Hard reset; wordmark resolves (0.4s); 4 mono steps tick left→right; **APPROVED** lights flame + stamps |
-| `frames/04-hero-plinth.html` | Proof 1 0:08–0:11.5 | 3.5s | `RATIONAL · COMBI OVEN` · `NZ-based delivery, install & service` · `WITH WARRANTY` | Real Rational combi cut-out settles on brushed-steel plinth (0.5s); warranty badge stamps on at 0:10.5 (flame) |
-| `frames/05-capital-ledger.html` | Proof 2 0:11.5–0:13 | 1.5s | `CAPITAL — kept in the business ✓` · `OVEN — in your kitchen ✓` · `low weekly payments` | Two rows tick in sequence; footer figure lights flame last (one flame highlight) |
+| `frames/04-hero-plinth.html` | Proof 1 0:08–0:11.5 | 3.5s | `RATIONAL · COMBI OVEN` · `Auckland delivery, install & service` · `WITH WARRANTY` | Real Rational combi cut-out settles on brushed-steel plinth (0.5s); warranty badge stamps on at 0:10.5 (flame) |
+| `frames/05-capital-ledger.html` | Proof 2 0:11.5–0:13 | 1.5s | `CAPITAL — kept in the business ✓` · `OVEN — in your kitchen ✓` · `from $17.30/day +GST` | Two rows tick in sequence; footer figure lights flame last (one flame highlight) |
 | `frames/06-end-card.html` | CTA 0:13–0:15 | 2.0s | `Premium kitchen equipment, warranted, on low weekly payments.` · **`Apply now`** · `Approved in 24 to 48 hours · Subject to credit approval` · `hirehospo.com` | Wordmark + prop settle; flame Apply-now pill (accentink text) with a stamp settle; hold |
 
 (Frames 02 and 04 span two storyboard shots each — build them as single frames with an internal beat at the sub-timestamp noted.)
@@ -68,7 +68,7 @@ ad/rational-without-20k/
 ## 7. Constraints
 - Self-contained: Tailwind (CDN) + Google Fonts (CDN) + vanilla JS only. No bundler, no npm.
 - On-system only: dark steel canvas, flame = the only go-fill, mono for money, **one flame highlight per frame** (none on frames 02). NZ English throughout.
-- **Compliance (hard):** approved claims only; the `$20,000` band is ⚠ *verify against the live Rational SCC WE101 product page before paid use* — leave a README note; no approval hype ("guaranteed/instant/everyone approved" — banned); "+ GST" glued to the `$20,000` figure only (never on "low weekly payments" — it's not a number); "Subject to credit approval" present on the end card + timeline; **no specific weekly/daily figure** (premium gear → capital preservation, not a daily number); roles clean (financed by HireHospo; delivery/install/service shown passively as 'NZ-based delivery, install & service' — never name Washpro in on-screen copy, never imply HireHospo turns a spanner).
+- **Compliance (hard):** approved claims only; the `$20,000` band is ⚠ *verify against the live Rational SCC WE101 product page before paid use* — leave a README note; no approval hype ("guaranteed/instant/everyone approved" — banned); "+ GST" glued to each dollar figure — `$20,000` and `$17.30/day` (never on "low weekly payments" — not a number); "Subject to credit approval" present on the end card + timeline; **the $20k pairs with the Rational's real daily figure ($17.30/day +GST) as a value comparison**; roles clean (financed by HireHospo; delivery/install/service shown passively as 'NZ-based delivery, install & service' — never name Washpro in on-screen copy, never imply HireHospo turns a spanner).
 - Recordable: true 1080×1920, `?record` hides all UI/controls and plays once clean for screen capture. Each frame also standalone-recordable.
 - Original work — no copied brand assets beyond the supplied HireHospo wordmark/product image.
 
@@ -78,4 +78,4 @@ ad/rational-without-20k/
 3. Build the 6 frames in order; sync settle/stamp motion to the audio-brief timestamps.
 4. Build the 15.0s animatic in `index.html` (contact sheet + play-through).
 5. Write `README.md`: how to record, the ⚠ price-verification note, wordmark-asset status, and the frame/beat map.
-6. **Self-review:** animatic = 15.0s · copy verbatim vs the table · "+ GST" on the $20,000 figure (the only dollar figure) · "Subject to credit approval" on the end card · catalogue-true gear (real Rational combi, no invented model) · flame discipline (one/frame, none on the drain frames) · safe area (top 250px / bottom 320px clear) · `?record` clean.
+6. **Self-review:** animatic = 15.0s · copy verbatim vs the table · "+ GST" on the $20,000 and $17.30/day figures · "Subject to credit approval" on the end card · catalogue-true gear (real Rational combi, no invented model) · flame discipline (one/frame, none on the drain frames) · safe area (top 250px / bottom 320px clear) · `?record` clean.

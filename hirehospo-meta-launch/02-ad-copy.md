@@ -2,7 +2,7 @@
 
 *Two concepts, each a genuine A/B set. Every variant changes **one identifiable thing** — the unit frame, the number's specificity, the objection addressed, or the emotional register — and that thing is labelled. Cosmetic-only variants are not included. NZ English, NZD, ex-GST throughout. `⟨~125⟩` marks the mobile "See more" cut — everything before it must carry the message on its own.*
 
-**Price hook — operator-confirmed:** the value claim is **"from $4.66/day +GST"** (see `00` §2). It's a conservative, substantiable "from" figure; keep it on the **cheap categories** (glasswashers, dishwashers, hot plates, small fryers). Premium-gear ads (combi ovens) lead with **capital preservation**, never the daily number. Fix the old unit-mixing by running **daily-frame** and **weekly-frame** ads as an A/B, not both units in one line.
+**Price hook — operator-confirmed:** the value claim is **"from $4.66/day +GST"** (see `00` §2). It's a conservative, substantiable "from" figure; keep it on the **cheap categories** (glasswashers, dishwashers, hot plates, small fryers). Premium-gear ads (combi ovens) pair the **big capital number with the real daily figure** as a value comparison — e.g. *a $20,000 Rational, from $17.30/day +GST* (the lowest Rational combi is $121.09/week +GST; ÷7 = $17.30/day). Fix the old unit-mixing by running **daily-frame** and **weekly-frame** ads as an A/B, not both units in one line.
 
 **GST placement rule:** "+GST" is only ever glued **directly to a dollar figure** ("$4.66/day +GST"). It is never floated into a sentence, tacked onto a non-numeric phrase ("low weekly payments"), or dropped on an end card / link that shows no price. Concept 2 quotes no price, so it carries no "+GST" at all.
 
@@ -16,13 +16,13 @@
 
 | # | Testing | Text (⟨~125⟩ = See-more cut) |
 |---|---|---|
-| **1 ★champion** | **daily unit + confirmed price + reframe** | Premium commercial kitchen equipment, from $4.66/day +GST — less than one flat white a day.⟨~125⟩ Backed by warranty, with NZ-based delivery and install. Browse glasswashers, dishwashers, fryers and more, and build your enquiry. Subject to credit approval. |
+| **1 ★champion** | **daily unit + confirmed price + reframe** | Premium commercial kitchen equipment, from $4.66/day +GST — less than one flat white a day.⟨~125⟩ Backed by warranty, with Auckland delivery and install. Browse glasswashers, dishwashers, fryers and more, and build your enquiry. Subject to credit approval. |
 | 2 | **weekly unit frame** (vs #1's daily) | Low weekly payments put premium commercial kitchen equipment in your kitchen — without the capital hit.⟨~125⟩ That's how premium brands land on payments that actually fit — all backed by warranty. Browse 150+ items and build your enquiry. Subject to credit approval. |
-| 3 | **capital-preservation objection** (premium gear) | A $20,000 Rational combi in your kitchen — without $20,000 leaving your bank.⟨~125⟩ HireHospo finances premium kitchen equipment, warranted, on low weekly payments, so your capital stays in the business. Browse the stock list. Subject to credit approval. |
+| 3 | **value comparison** (premium gear) | A $20,000 Rational combi. From $17.30/day +GST.⟨~125⟩ The premium oven you'd never write a $20k cheque for — warranted, working in your kitchen now, your capital still in the business. Browse the stock list. Subject to credit approval. |
 | 4 | **premium-brand access** (buy-new objection) | The European brands you'd spec if budget were no object — Rational, Convotherm, Electrolux — working in your kitchen now.⟨~125⟩ Premium gear (much of it refurbished, all warranted) on low weekly payments, not a $30k cheque. Build your enquiry. Subject to credit approval. |
 | 5 | **emotional register** (aspirational, softer) | Fully equipped kitchen. Cash still in the business.⟨~125⟩ HireHospo puts premium equipment — dishwashers, combi ovens, fryers, prep — in your kitchen on low weekly payments. Browse 150+ items and build your enquiry. Subject to credit approval. |
 
-*Note #5 replaces the banned "let your equipment pay for itself" (see `00` §3e) with an emotional line that keeps the promise without asserting a financial outcome. Per brand preference, **"refurbished" is kept out of every hook and headline** and appears once, lightly, in #4's body — warranty and premium-brand access carry the reassurance instead. The daily figure "$4.66/day +GST" appears only on #1; #3 and #4 name premium brands, so they carry "low weekly payments" (no dollar figure, so no "+GST"), never the daily number.*
+*Note #5 replaces the banned "let your equipment pay for itself" (see `00` §3e) with an emotional line that keeps the promise without asserting a financial outcome. Per brand preference, **"refurbished" is kept out of every hook and headline** and appears once, lightly, in #4's body — warranty and premium-brand access carry the reassurance instead. The "$4.66/day +GST" entry figure appears only on #1; #3 pairs the $20,000 capital number with the Rational's real daily figure ($17.30/day +GST); #4 names premium brands on "low weekly payments" without a figure.*
 
 ### Headlines (5 variants, ≤40 characters)
 
@@ -31,7 +31,7 @@
 | **1 ★** | daily confirmed price | `From $4.66/day +GST` | 19 |
 | 2 | weekly-unit frame, no number | `Premium kitchen gear, low weekly cost` | 37 |
 | 3 | the reframe device | `Less than a flat white a day` | 28 |
-| 4 | capital-preservation angle | `The $20k oven, without the $20k` | 31 |
+| 4 | capital vs daily (value comparison) | `A $20k Rational, from $17.30/day +GST` | 37 |
 | 5 | ownership + warranty | `Warranted. Yours to own. Low weekly.` | 36 |
 
 ### Link descriptions (3 variants, ≤30 characters)
@@ -48,7 +48,7 @@
 The destination is a **browsable catalogue**, not an application form. "Learn More" matches the real next action ("browse the stock list"), keeps click quality honest, and avoids overstating immediacy. **Test "Get Quote"** as the higher-intent variant, but cautiously: HireHospo's golden rule is *no quote without a credit check first*, so "Get Quote" sets an expectation the funnel deliberately gates — watch that it doesn't lift clicks while dropping enquiry quality. Avoid "Sign Up"/"Apply Now" here — they imply an application the page doesn't present.
 
 ### Champion — ship first
-**Primary #1 + Headline #1 + Link description #2 + CTA "Learn More."** It leads with the operator-confirmed $4.66/day in a single clean unit, warmed by the flat-white reframe — a credible, substantiable cold-traffic opener kept to the affordable categories where the number rings true.
+**Primary #1 + Headline #1 + Link description #2 + CTA "Learn More."** It leads with the operator-confirmed $4.66/day in a single clean unit, warmed by the flat-white reframe — a credible, substantiable cold-traffic opener kept to the affordable categories where the number rings true. **For premium-gear audiences, run #3 in parallel** — the *"$20,000 Rational, from $17.30/day +GST"* value comparison is the strongest single frame in the set: a huge machine against a tiny daily figure.
 
 ---
 

@@ -65,7 +65,7 @@ The price-entry angle. Keep it on the cheap categories (`00` §2); confirm stock
 | t | On-screen text | VO / caption | Visual | Build |
 |---|---|---|---|---|
 | 0.0–2.5 | **From $4.66/day +GST** *· less than a flat white* | "Commercial kitchen gear, from four sixty-six a day plus GST." | Big mono price on dark steel; flame accent under "$4.66" | Motion graphics |
-| 2.5–5.0 | *Dishwasher · Oven · Prep* | "Premium brands, warranted, delivered across NZ." | 3 catalogue stills fan in — Starline dishwasher, Turbofan oven, prep bench | MG over catalogue stills |
+| 2.5–5.0 | *Dishwasher · Oven · Prep* | "Premium brands, warranted, delivered across Auckland." | 3 catalogue stills fan in — Starline dishwasher, Turbofan oven, prep bench | MG over catalogue stills |
 | 5.0–7.5 | *150+ items to browse* | — | Quick grid of category tiles, one lights flame | Motion graphics |
 | 7.5–9.0 (≈80%) | **Backed by warranty** | "That's how the payment stays low." | Warranty chip stamps on the grid | Motion graphics |
 | 9.0–10.0 | **Browse the stock list** · *Subject to credit approval* | "Browse the stock list." | End card + Learn More pill | Motion graphics |

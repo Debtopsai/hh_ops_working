@@ -1,93 +1,77 @@
 # 04 — Measurement & Optimisation: the first 90 days
 
-*Targets are ranges, not promises. This is a cold NZ B2B account with no history at ~$66/day (Assumption 1). Treat the first 30 days as buying data, not conversions. Everything here assumes the pixel + CAPI are verified before spend (`05`).*
+*Targets are ranges, not promises. Cold account, no history, **$20/day (~$140/week)**, **Auckland only** — see `00`. At this budget the first job of the spend is to buy data and find the winning angle, not to hit a CAC. Assumes pixel + CAPI verified before spend (`05`).*
 
 ---
 
-## The funnel, and why the last number takes weeks
-
-Traffic doesn't convert in one step. It lands → filters → browses → adds one or more items → submits an enquiry list. Then the *real* business funnel begins, off-platform and slow:
+## The funnel, and why the bottom number takes weeks
 
 ```
 Impression → Landing-page view → ViewContent → Add to Enquiry → SUBMIT ENQUIRY (Lead)
                                                                      ↓
                           credit application → credit decision (24–48h) → APPROVED
                                                                      ↓
-                              quote → contract signed → DEPOSIT CLEARS (20 wks upfront)
+                              quote → contract signed → DEPOSIT CLEARS (deposit upfront)
                                                                      ↓
                                                           FUNDED CONTRACT ← the number that matters
 ```
 
-The Meta-side events (up to Lead) you can read within days. Everything below Lead runs on the credit-and-deposit cycle and **will not produce a reliable cost-per-funded-contract for roughly 4–8 weeks** — the deposit is 20 weeks of payments upfront and is the slowest, highest-friction gate in the whole chain. Do not wait for that number to make early decisions; watch the leading indicators instead.
+Everything up to Lead you can read within days. Everything below runs on the credit-and-deposit cycle and **won't produce a reliable cost-per-funded-contract for ~4–8 weeks** — the deposit is the slowest, highest-friction gate. Don't wait for that number to steer early decisions; watch the leading indicators.
 
-## Event mapping (set these in Events Manager)
+## Event mapping (Events Manager)
 
-| Funnel step | Meta standard event | Role |
+| Funnel step | Meta standard event | Role at $20/day |
 |---|---|---|
 | Lands on /brochure | PageView | Traffic sanity only |
-| Views a product | ViewContent | Fallback optimisation event (week 1 if AddToEnquiry starves) |
-| **Add to Enquiry** | **AddToCart** | **Launch optimisation event** — best intent/frequency balance |
-| **Submit enquiry list** | **Lead** | The true on-platform outcome; the KPI you judge on |
-| (optional) enquiry value | attach a value param | Lets you read cost-per-lead by category later |
+| Views a product | **ViewContent** | **Launch optimisation event** — the only one frequent enough to learn from |
+| Add to Enquiry | AddToCart | Move optimisation here once ViewContent delivers steadily |
+| Submit enquiry list | Lead | The true outcome — **measured, not optimised** (too rare at this budget) |
 
-Why not optimise for Lead from day one: see the volume maths in `01`. At $66/day you land ~7–9 Leads/week — far below the ~50/week an ad set needs to exit learning, so Lead-optimisation would leave the algorithm starved. Start on AddToCart (Add to Enquiry), keep Lead as the *measured* outcome, and move optimisation down to Lead only once you're seeing **~15–25 Leads/week consistently.**
+## Volume & KPI ranges (cold Auckland B2B, $20/day)
 
----
+Ranges are first-account expectations — you are *building* the benchmarks. "Investigate" = look, don't act (see decision rules).
 
-## KPI set with target ranges (cold NZ B2B, ~$66/day)
-
-Ranges are first-account expectations, not benchmarks — you are *building* the benchmarks. "Investigate" = look, don't act yet (see decision rules).
-
-| Metric | Target range | Investigate if | Notes |
+| Metric | Target range | Investigate if | Note |
 |---|---|---|---|
-| CPM | $8–15 NZD | > $20 | Small market; Reels/Stories cheaper |
-| Hook rate (3s/ThruPlay) | 25–35% | < 20% | Muted-first creative problem if low |
-| Hold rate (ThruPlay/impr) | 10–20% | < 8% | Body pacing problem if low |
-| Outbound CTR (link) | 0.8–1.5% | < 0.6% | Demanding destination caps this |
-| Cost / landing-page view | $1.20–$2.50 | > $4 | |
-| Add-to-Enquiry rate (of LPV) | 5–12% | < 3% | Landing-experience lever (see below) |
-| Cost / Add to Enquiry | $12–$30 | > $45 | The launch optimisation KPI |
-| Enquiry-submit rate (of LPV) | 1.5–4% | < 1% | |
-| **Cost per enquiry (Lead)** | **$40–$100** | **> $130** | **The headline KPI. Aim < $75.** |
-| Enquiry → credit application | 40–60% | < 30% | Off-platform; inbox-owner dependent |
-| Application → approval | 35–60% | — | Credit-led: many declines are *correct*, not a failure |
-| Approval → signed contract | 40–60% | < 30% | Deposit conversation happens here |
-| Contract → deposit cleared (funded) | 50–70% | < 40% | The 20-week deposit is the drop-off |
-| **Cost per funded contract** | **$600–$1,500** | after 8 wks, > $2,500 | Not measurable for 4–8 wks |
+| CPM | $10–16 | > $22 | Small Auckland pool |
+| Outbound CTR (link) | 0.8–1.5% | < 0.6% | Demanding destination caps it |
+| Landing-page views | ~90–100/week | < 50 | Delivery health |
+| Cost / landing-page view | $1.30–$2.80 | > $4.50 | |
+| Add-to-Enquiry rate (of LPV) | 5–12% | < 3% | Landing-experience lever |
+| **Cost per enquiry (Lead)** | **$45–$110** | **> $140** | **Headline KPI. Aim < $80.** High variance at low volume |
+| Enquiries/week | ~2–3 | 0 across 10+ days | Expect low absolute numbers |
+| Enquiry → credit application | 40–60% | < 30% | Inbox-owner dependent |
+| Application → approval | 35–60% | — | Credit-led: many declines are *correct* |
+| Approval → contract → funded | ~20–35% combined | — | The deposit is the drop-off |
+| **Cost per funded contract** | **$600–$1,200** | after 8 wks, > $2,500 | Not measurable for ~4–8 weeks |
 
-**On cost per funded contract:** at the midpoints (~7 enquiries/wk × ~50% to application × ~50% approval × ~50% contract × ~60% funded ≈ **~0.5 funded/week ≈ 2/month**), CAC lands near **~$1,000 per funded contract.** Against a contract that bills weekly for 12–36 months (funding up to $50k, ~30% equipment margin), that is very likely acceptable — but confirm it against real contract economics once the first cohort funds. **Until then, watch these leading indicators:** cost per enquiry, enquiry→application rate, and *application quality* (are enquirers deposit-capable — 20 weeks upfront?). If cost-per-enquiry is on target but application quality is poor, the problem is the message setting a false expectation (revisit the Concept 2 timeline / deposit framing), not the media.
+**Be realistic about absolute volume.** At ~2–3 enquiries/week and the credit + deposit funnel below them, expect on the order of **~2–4 funded contracts across the first 90 days**, not per month. That is normal for $20/day in one metro — the budget buys *learning and a trickle*, not scale. If the economics work at that CAC (a funded contract bills weekly for 12–36 months), the lever to grow is **budget**, once an angle is proven. Leading indicators to watch meanwhile: cost per enquiry, enquiry→application rate, and whether enquirers are **deposit-capable** (the deposit is the real qualifier).
 
 ---
 
-## Learning phase & review cadence
+## Learning phase & cadence
+- **You will sit "Learning limited"** at $20/day — accept it. Don't chase a learning-phase exit you can't fund; judge on cost-per-outcome across rolling **14-day** windows.
+- **Don't touch the ad set for the first 7 days.** Every meaningful edit resets learning. Batch changes to the weekly review.
+- **Cadence:** glance at delivery/spend daily (is it spending, any policy flag, is the link alive — nothing more). Decisions weekly. Formal reviews at **day 14, 30, 60, 90.**
 
-- **Learning phase:** an ad set needs ~50 optimisation events in 7 days to exit. At this budget you will likely sit in **"Learning limited"** — that is expected here, not a fault. Don't chase learning-phase exit you can't afford; instead judge on cost-per-outcome across rolling **14-day** windows.
-- **Don't touch the ad set for the first 7 days.** Every meaningful edit (budget >20%, audience, creative, optimisation event) **resets learning**. Batch changes; make them at the weekly review, not daily.
-- **Cadence:** check *delivery and spend* daily (health only — is it spending, any policy flags, any broken link). Make *decisions* weekly. Formal reviews at **day 14, 30, 60, 90.**
+## Decision rules — and the mistake that sinks first launches
 
-## Decision rules — and the mistake that breaks first launches
+> **The first-timer mistake: judging an ad on three days of data.** In the first 72 hours the ad set is in learning and daily numbers swing wildly — acting on them throws the launch away. **Rule: no kill/swap decision inside the first 7 days, and not before the minimums below.**
 
-> **The first-time-advertiser mistake: judging creative on three days of data.** In the first 72 hours an ad set is in learning, daily results swing wildly, and the numbers are noise. Acting on them — killing the "loser," dumping budget on the "winner" — resets learning and throws away the launch. **The rule that prevents it: no kill or scale decision inside the first 7 days, and never before the minimums below are met.**
-
-**Minimum evidence before ANY creative decision:** ≥ 7 days live **and** ≥ ~3,000 impressions on that ad **and** ≥ ~15 optimisation events (or ≥ ~8 enquiries) at the ad-set level. Below that you are reading variance.
+**Minimum before any creative decision:** ≥ 10–14 days live **and** ≥ ~3,000 impressions on that ad **and** ideally ≥ ~6–8 enquiries accumulated. Below that you're reading variance — and at $20/day, reaching those minimums *takes* those two weeks, which is exactly why you run one ad at a time.
 
 | Decision | Rule |
 |---|---|
-| **Kill an ad** | After ≥7 days & ≥3,000 impressions: kill it only if it is *clearly* worse — e.g. outbound CTR below half the other ad **and** cost-per-Add-to-Enquiry ≥50% higher, with zero enquiries while the other is producing them. One bad metric is not enough. |
-| **Scale** | Only after ≥14 days of cost-per-enquiry stable and within target. Raise budget by **≤20% every 3–4 days** (bigger jumps reset learning). Prefer gradual increases over duplication early. |
-| **Change optimisation event** | Move AddToCart → Lead only after ~15–25 Leads/week for 2 straight weeks. Drop AddToCart → ViewContent in week 1 only if delivery is starved (spend not clearing, CPM spiking). |
-| **Do nothing** | The correct call most days in the first fortnight. Boredom is not a data point. |
+| **Swap the live ad** | After its ≥14-day window: if cost-per-enquiry is above range (or it produced ~none while landing/engagement looked fine), retire it and run the next angle from `03`. |
+| **Keep running** | If cost-per-enquiry is in range and stable, leave it — don't fiddle. |
+| **Change optimisation event** | Move ViewContent → Add to Enquiry once ViewContent delivers steadily for 2 weeks. Don't jump to Lead. |
+| **Scale** | Only once an angle shows stable in-range cost-per-enquiry across 3–4 weeks. Raise budget ≤20% every 3–4 days. At this budget, "scaling" realistically means *deciding to raise the budget*, which is a business call, not a button. |
 
 ---
 
-## Creative fatigue plan — two ads is a thin rotation
+## Creative fatigue — faster here than anywhere
 
-Two creatives will not last. In a small NZ audience, frequency climbs and the same operators see the same two ads quickly.
-
-- **Watch frequency** over a rolling 7-day window. **Fatigue signal: frequency > ~2.5–3** *and* rising cost-per-enquiry / falling CTR at the same time. Frequency alone isn't fatigue; frequency **plus** decaying efficiency is.
-- **Expected burn-out: ~3–5 weeks** at this budget and audience size. The two launch ads are a starting hand, not a season.
-- **Production rhythm — the $1k rule:** produce roughly **one new ad per $1,000 of monthly spend** → at $2,000/month, **~2 fresh ads per month, minimum.** Have the **next 2–3 variants in production by week 3**, before the first pair fatigues, so there is never a gap. Cheapest refreshes: new hooks (you have ranked spares in `03`) over the same proven body and end card; new catalogue stills; a 4:5 cut you haven't run yet.
-- **Refresh, don't just add:** when a new variant beats an old one on cost-per-enquiry over 14 days, retire the old one. Keep the rotation at 2–4 live ads, not an ever-growing pile.
+One metro + a small pool means the same operators see your ad quickly. **Watch 7-day frequency: fatigue = frequency > ~2.5–3 *and* rising cost-per-enquiry / falling CTR together.** Expect the running ad to tire in **~2–4 weeks** — which lines up neatly with the one-ad-at-a-time cadence: as one ad's 14-day read finishes and it starts to fatigue, the next angle from `03` goes live. Keep the **next 1–2 ads always in production** so there's never a dead gap. The `$1k` rule (≈1 new ad per $1k/month) implies ~0.6 ads/month at this spend, but *fatigue*, not spend, sets the real pace here — plan for a fresh angle roughly every 3 weeks.
 
 ## What a good first 90 days looks like
-Day 0–14: spending cleanly on AddToCart, cost-per-enquiry finding its range, no decisions made. Day 14–30: first read on which concept/hook the algorithm favours; kill the clear loser if minimums are met; first enquiries moving into credit. Day 30–60: cost-per-enquiry stable, optimisation possibly moved to Lead, second creative wave live, first funded contracts appearing. Day 60–90: a real (if small) cost-per-funded-contract number, a validated champion angle, and a decision on whether budget justifies the two-ad-set split (`01`).
+Day 0–14: spending cleanly on ViewContent, ad #1's cost-per-enquiry finding its range, no decisions. Day 14–30: first read on ad #1; retire or keep; ad #2 (next angle) live; first enquiries entering credit. Day 30–60: two or three angles read, a front-runner emerging, first funded contract(s) appearing. Day 60–90: a proven angle, a real (small) cost-per-funded-contract, and a budget decision — this is the point at which spending more is justified, not before.
