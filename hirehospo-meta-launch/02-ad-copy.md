@@ -1,97 +1,75 @@
-# 02 — Ad Copy
+# 02 — Ad Copy (paired to the two videos)
 
-*Two concepts, each a genuine A/B set. Every variant changes **one identifiable thing** — labelled — so it's a real test, not cosmetic variation. **Voice matches the live site** (see `00` §6): warm, direct, "we've got your back," the odd exclamation, and the brand's own lines. NZ English, NZD, ex-GST. `⟨~125⟩` marks the mobile "See more" cut.*
+*The two video scripts below are the operator's — fixed. This file is the **ad copy that runs with each video**: the primary text (above the video) and the headline (below it). The copy's job is to **complement** the video — carry the context, the empathy, and the compliance the 10-second video can't — **never to transcribe it.** Voice matches the live site (`00` §6). NZ English, NZD, ex-GST. `⟨~125⟩` marks the mobile "See more" cut.*
 
-**Voice anchors (from the site):** *"Let the equipment pay for itself"* · *"From start-ups to legacies"* · *"we've got your back"* · *"hospitality insiders"* · *"minimal upfront cost — just a deposit and a weekly payment"* · *"apply in 5 minutes"* · *"most applications under $25,000 approved within 3 business days"*. Say **"commercial kitchen equipment" / "kitchen equipment" / "machines"** — never "gear."
+**CTA (both):** button **Learn More**, on-ad / end-card line **"Get our latest stock list today"** (your wording, restored). Destination = the stock list / brochure — the funnel `01`/`04` are built for.
 
-**Destination + CTA (confirmed):** ads go to the **stock list / brochure** (`portal.hirehospo.com/brochure`) — browse → add to enquiry → submit. So the Meta CTA button is **Learn More** (matches browsing) and the on-ad / video end-card CTA line is **"Get our stock list today."** This is the funnel `01`/`04` are built for (ViewContent → Add to Enquiry → Lead) — no change needed there.
-
-**Locks:** "+GST" only ever glued to a dollar figure (never floated); $4.66/day for the cheap categories; premium equipment = the $20,000-machine value comparison, no payment figure; no Washpro in copy; "refurbished" stays a light body mention, never a hook/headline; Auckland delivery; approval never implied guaranteed (the site's "most … under $25k" qualifier is kept).
+**Locks:** "+GST" only glued to a dollar figure; $4.66/day is the entry price; no Washpro in copy; "refurbished" only a light body mention; Auckland; approval never implied guaranteed (carry "most applications under $25k … within 3 business days" + "subject to credit approval").
 
 ---
 
-## Concept 1 — Low Weekly Payment / Value ("let it pay for itself")
+## AD 1 — VALUE
 
-### Primary text (5 variants)
+**The video (fixed):** *"Premium equipment at low weekly prices from $4.66 per day. HireHospo. Let your equipment pay for itself."*
+**What the video already does:** the price hook + the brand tagline. **So the copy adds** cashflow context, who it's for, warmth, and the compliance the video lacks (**"+GST"** on the price, "subject to credit approval").
+> ⚠ **On-screen fix for the video:** the price super must read **"$4.66/day +GST"**, not "$4.66 per day" — a bare ex-GST price is a Fair Trading exposure (`00` §3c). One small on-screen change, no re-shoot.
+
+### Primary text (5 variants — each complements the video, none repeats it)
 
 | # | Testing | Text (⟨~125⟩ = See-more cut) |
 |---|---|---|
-| **1 ★champion** | **daily entry price + "pays for itself"** | Kit out your kitchen from $4.66/day +GST — less than a flat white.⟨~125⟩ Get the commercial kitchen equipment you need now on low weekly payments, and let it pay for itself. Minimal upfront cost — just a deposit and a weekly payment. Get our stock list today. |
-| 2 | **brand / "start-ups to legacies"** (no number) | From start-ups to legacies, we've got your back.⟨~125⟩ Premium commercial kitchen equipment on low weekly payments, so your cash stays in the business where it's needed. Minimal upfront cost — just a simple deposit. Get our stock list today. |
-| 3 | **value comparison** (premium equipment) | A $20,000 Rational combi. Without the $20,000 up front.⟨~125⟩ The premium oven you'd never buy outright — working in your kitchen now on low weekly payments, letting it pay for itself. Get our stock list today. |
-| 4 | **premium-brand access** (buy-new objection) | The European brands you'd spec if budget were no object — Rational, Convotherm, Electrolux.⟨~125⟩ On low weekly payments, not a $30,000 cheque. Premium kitchen equipment (much of it refurbished, all warranted), from hospitality insiders who've got your back. Get our stock list today. |
-| 5 | **emotional / the dream** | You've got the dream. We've got the kitchen to build it.⟨~125⟩ Fully equipped on low weekly payments, with the equipment paying for itself while your cash stays in the business. From start-ups to legacies, HireHospo has your back. Get our stock list today. |
+| **1 ★champion** | cashflow context | Kitting out a commercial kitchen shouldn't mean emptying the bank.⟨~125⟩ Get the equipment you need now on low weekly payments — from $4.66/day +GST — and keep your cash working in the business. Minimal upfront cost, just a deposit. Get our latest stock list today. Subject to credit approval. |
+| 2 | persona (fit-out / upgrade) | New fit-out, or upgrading tired kit? The equipment's the easy part — it's the upfront hit that stings.⟨~125⟩ On low weekly payments from $4.66/day +GST, it doesn't have to. Minimal upfront cost — just a deposit. From start-ups to legacies, we've got your back. Get our latest stock list today. |
+| 3 | brand / "insiders" | We're hospitality insiders — we've kitted out everyone from start-ups to legacies.⟨~125⟩ Premium commercial kitchen equipment on payments that actually fit, from $4.66/day +GST, so it pays for itself while your cash stays put. Get our latest stock list today. Subject to credit approval. |
+| 4 | reassurance (warranty / local) | The equipment you need, working in your kitchen now — not a hole in your account.⟨~125⟩ Low weekly payments from $4.66/day +GST, backed by warranty and local support. Minimal upfront cost, just a deposit. Get our latest stock list today. |
+| 5 | short — lets the video breathe | Less than a flat white a day, and your kitchen pays for itself.⟨~125⟩ Premium commercial kitchen equipment on low weekly payments from $4.66/day +GST. Minimal upfront cost. Get our latest stock list today. Subject to credit approval. |
 
-*"Refurbished" appears once, lightly, in #4 — never in a hook or headline (brand preference). "Let the equipment pay for itself" is your site hero, used in #1/#3/#5.*
+### Headlines (5, ≤40 chars) · ### Link descriptions (3, ≤30 chars)
 
-### Headlines (5 variants, ≤40 characters)
+| # | Headline | Chars | | # | Link description | Chars |
+|---|---|---|---|---|---|---|
+| **1 ★** | `From $4.66/day +GST` | 19 | | **1 ★** | `Get our latest stock list` | 25 |
+| 2 | `Let your equipment pay for itself` | 33 | | 2 | `Minimal upfront cost` | 20 |
+| 3 | `Low weekly payments, minimal upfront` | 36 | | 3 | `Up to $50k funding` | 18 |
+| 4 | `Your kitchen, sorted from $4.66/day` | 35 | | | | |
+| 5 | `From start-ups to legacies` | 26 | | | | |
 
-| # | Testing | Headline | Chars |
-|---|---|---|---|
-| **1 ★** | daily entry price | `Your kitchen. From $4.66/day +GST` | 33 |
-| 2 | the site hero line | `Let the equipment pay for itself` | 32 |
-| 3 | brand / emotional | `From start-ups to legacies` | 26 |
-| 4 | value comparison | `A $20k Rational — no $20k up front` | 34 |
-| 5 | plain weekly value | `Kitchen equipment, low weekly` | 29 |
-
-### Link descriptions (3 variants, ≤30 characters)
-
-| # | Testing | Description | Chars |
-|---|---|---|---|
-| **1 ★** | the CTA | `Get our stock list today` | 24 |
-| 2 | browse variant | `Browse the stock list` | 21 |
-| 3 | funding ceiling | `Up to $50k funding` | 18 |
-
-### Recommended CTA — button **Learn More**, on-ad line **"Get our stock list today"**
-The destination is a browsable stock list, so "Learn More" is the honest button (they're going to browse, not apply), and the closing line invites the actual action — get the stock list. Test **"Shop Now"** as a button variant; avoid "Apply Now" (the ad doesn't go to the application).
-
-### Champion — ship first
-**Primary #1 + Headline #1 + Link description #1 + button "Learn More" (CTA line "Get our stock list today").** Leads with the $4.66/day hook and the flat-white reframe, lands the brand promise ("let it pay for itself"), and closes on the real ask. **For premium-equipment audiences, run #3 in parallel** — the *"$20,000 Rational, without the $20,000 up front"* value comparison.
+**Champion:** Primary #1 + Headline #1 + Link description #1 + button "Learn More" (CTA "Get our latest stock list today"). It opens on the felt problem (the upfront hit) the video doesn't voice, then hands off to the video's own promise.
 
 ---
 
-## Concept 2 — Quick Process / Speed
+## AD 2 — SPEED
 
-*Built on the site's real process claims — the speed story rides the 5-minute application and "most applications under $25,000 approved within 3 business days," then the 1–2 day turnaround. Approval is never implied guaranteed ("most … under $25k" stays). The CTA still sends them to browse the stock list first. No price quoted, so no "+GST" here.*
+**The video (fixed):** *"Monday, apply. Tuesday, approved. Thursday, delivered. Friday, equipment starts to pay for itself. Get our latest stock list today."*
+**What the video already does:** the fast day-by-day story + tagline + CTA. **So the copy adds** the *honest* version of the speed (so the ad as a whole isn't misleading), the why-it-matters, and the compliance microcopy.
 
-### Primary text (5 variants)
+> ⚠ **This one needs a compliance touch — the video, not just the copy.** *"Tuesday, approved"* implies **guaranteed/automatic approval** and *"Thursday, delivered"* skips the **deposit** — a Fair Trading misleading-conduct risk (`00` §3d), and fine print in the copy can't fully cure a misleading *video*. Lightest fix that keeps your creative: **(a)** a small persistent on-screen super — *"Illustrative. Subject to credit approval. Deposit applies."* — and ideally **(b)** soften the one word: *"Tuesday, **a decision**"* instead of *"Tuesday, approved."* The copy below then carries the true version ("most applications under $25k approved within 3 business days"). Please get this signed off before it runs.
+
+### Primary text (5 variants — each complements the video, none repeats it)
 
 | # | Testing | Text (⟨~125⟩ = See-more cut) |
 |---|---|---|
-| **1 ★champion** | **the site's own speed claim** | Apply in 5 minutes. Most applications under $25,000 are approved within 3 business days.⟨~125⟩ Once you're approved, your machines are on their way — a 1–2 day turnaround. Minimal upfront cost — just a deposit. Get our stock list today. |
-| 2 | **high-stakes / problem-first** | Fryer dies mid-service? You haven't got weeks to sort a replacement.⟨~125⟩ Apply in 5 minutes — most applications under $25k approved within 3 business days, then a 1–2 day turnaround. We've got your back. Get our stock list today. |
-| 3 | **honest "will I qualify?"** (novelty) | Not sure you'll qualify? There's one quick way to find out.⟨~125⟩ A 5-minute application, most under $25k approved within 3 business days. Minimal upfront cost — just a deposit and low weekly payments. Get our stock list today. |
-| 4 | **process ease** ("simple as 1,2,3") | Simple as 1, 2, 3: apply, choose your equipment, take delivery.⟨~125⟩ Most applications under $25k are approved within 3 business days, with a 1–2 day turnaround after that. Over 500 machines in stock. Get our stock list today. |
-| 5 | **freshness / stock** | New machines land in stock all the time — combi ovens, dishwashers, fryers, prep.⟨~125⟩ Apply in 5 minutes, get approved (most under $25k within 3 business days), and let your new kitchen equipment pay for itself. Get our stock list today. |
+| **1 ★champion** | the honest version of the speed | That's how fast it moves when finance isn't the hold-up.⟨~125⟩ Apply in about 5 minutes — most applications under $25,000 are approved within 3 business days — then your machines are on their way. Minimal upfront cost, just a deposit. Get our latest stock list today. Subject to credit approval. |
+| 2 | persona / urgency | In hospitality, a dead machine can't wait weeks for a replacement.⟨~125⟩ Our application takes about 5 minutes, most under $25k are approved within 3 business days, and delivery follows fast. We've got your back. Get our latest stock list today. Subject to credit approval. |
+| 3 | process ease | Apply, get approved, take delivery — genuinely that simple when the finance is sorted.⟨~125⟩ A 5-minute application, most under $25k approved within 3 business days, then a quick turnaround. Get our latest stock list today. Subject to credit approval. |
+| 4 | honest "will I qualify?" | Wondering how fast you could be up and running? Start by seeing if you qualify.⟨~125⟩ A 5-minute application, most under $25k approved within 3 business days, then your machines are on their way. Minimal upfront cost. Get our latest stock list today. |
+| 5 | freshness / stock | New machines land in stock all the time — and they move fast.⟨~125⟩ Apply in about 5 minutes, most under $25k approved within 3 business days, delivery soon after. Browse what's in and get our latest stock list today. Subject to credit approval. |
 
-### Headlines (5 variants, ≤40 characters)
+### Headlines (5, ≤40 chars) · ### Link descriptions (3, ≤30 chars)
 
-| # | Testing | Headline | Chars |
-|---|---|---|---|
-| **1 ★** | the site's speed claim (honest) | `Most approved in 3 business days` | 32 |
-| 2 | the CTA / low-friction ask | `Get our latest stock list` | 25 |
-| 3 | process ease (site line) | `Simple as 1, 2, 3` | 17 |
-| 4 | speed / delivery, warm | `Your machines, on their way` | 27 |
-| 5 | emotional, no time-claim | `Less waiting, more cooking` | 26 |
+| # | Headline | Chars | | # | Link description | Chars |
+|---|---|---|---|---|---|---|
+| **1 ★** | `Most approved in 3 business days` | 32 | | **1 ★** | `Get our latest stock list` | 25 |
+| 2 | `Apply in 5 minutes` | 18 | | 2 | `A decision in 3 business days` | 29 |
+| 3 | `Get our latest stock list today` | 31 | | 3 | `1–2 day turnaround` | 18 |
+| 4 | `Your machines, on their way` | 27 | | | | |
+| 5 | `Simple as 1, 2, 3` | 17 | | | | |
 
-### Link descriptions (3 variants, ≤30 characters)
-
-| # | Testing | Description | Chars |
-|---|---|---|---|
-| **1 ★** | the CTA | `Get our stock list today` | 24 |
-| 2 | what's behind it | `See what's in stock` | 19 |
-| 3 | turnaround | `1–2 day turnaround` | 18 |
-
-### Recommended CTA — button **Learn More**, on-ad line **"Get our stock list today"**
-Same as Concept 1. The speed concept sells the fast process in the body, then sends them to browse the stock list as the first step — which is exactly the original Concept 2 tagline ("Get our latest stock list today").
-
-### Champion — ship first
-**Primary #1 + Headline #1 + Link description #1 + button "Learn More" (CTA line "Get our stock list today").** Puts the promise on the site's own honest claim ("most applications under $25,000 approved within 3 business days") — credible because it's how you already talk, and safe because the "most … under $25k" qualifier is kept.
+**Champion:** Primary #1 + Headline #1 + Link description #1 + button "Learn More" (CTA "Get our latest stock list today"). The video sells the *speed*; the copy makes it *true and specific* ("most … under $25k … within 3 business days") so the ad is both punchy and defensible.
 
 ---
 
-## How these feed the rest of the pack
-- Two champions = your first two ads. At $20/day, sequence them (one at a time), don't rotate — see `01`/`04`.
-- Winning hooks in `03` reuse these champion angles (`H-466day`, `H-3days`); every video end card carries the **"Get our stock list today"** CTA.
-- Prices are subject to the live-stock gate in `00` §2 / `05` item 5.4; "$4.66/day" only needs one live item at or below it.
-- Voice authority is `00` §6 (the operator-supplied site copy). If any line here drifts from how the site actually talks, the site wins.
+## Notes
+- **Copy complements, never transcribes.** Each primary opens on something the video doesn't say (the felt problem, the persona, the honest detail) and lets the video keep its hook and tagline. The one deliberate overlap is the **price + "+GST"** in Ad 1 and the **honest approval claim** in Ad 2 — both there for compliance, not repetition.
+- **A/B is on the copy, not the video** — the videos are fixed, so you're testing which primary/headline pulls best around each one. At $20/day, run one at a time (`01`/`04`).
+- Voice authority is `00` §6; the two on-screen compliance fixes above are the only changes I'd ask of the videos themselves.

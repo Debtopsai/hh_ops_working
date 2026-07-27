@@ -75,6 +75,6 @@ Lookalikes need ~100 seed events — not realistic for months at this volume; pa
 |---|---|---|
 | **Campaign** | `HH_{Stage}_{Objective}_{Geo}_{YYYY-MM}` | `HH_PROSPECT_Sales_AKL_2026-08` |
 | **Ad set** | `HH_{StageShort}_{Audience}_{Age}_{Geo}_{OptEvent}_v{n}` | `HH_PS_ADV-AUD_25-65_AKL_ViewContent_v1` |
-| **Ad** | `HH_{Concept}_{Format}_{HookID}_v{n}` | `HH_C1-Value_9x16_H-466day_v1` · `HH_C2-Speed_9x16_H-2448hr_v1` |
+| **Ad** | `HH_{Video}_{Format}_{CopyID}_v{n}` | `HH_V1-Value_9x16_P1_v1` · `HH_V2-Speed_9x16_P1_v1` |
 
-Concept tags `C1-Value` / `C2-Speed`; Format `9x16` / `4x5`; HookID a short slug from `03` (`H-466day`, `H-2448hr`, `H-BrandsNew`, `H-20kRational`, `H-FryerDies`). Move `v{n}` on every refresh so fatigue tracking in `04` stays legible. Since you run one ad at a time, the ad name's HookID is also your running log of what's been tested.
+Video tags `V1-Value` / `V2-Speed` (the two fixed videos, `03`); Format `9x16` / `4x5`; **CopyID** = which primary/headline variant from `02` (`P1`–`P5`). Move `v{n}` on every refresh so fatigue tracking in `04` stays legible. Since you run one ad at a time, the ad name's CopyID is your running log of which copy you've tested against each video.

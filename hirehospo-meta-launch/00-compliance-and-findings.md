@@ -108,7 +108,7 @@ The site is blocked to this session's tools, so the operator pasted the live hom
 
 **Process / claims straight off the site (use these, they're the brand's own):** *"Apply online or over the phone"* · **"Most finance applications valued below $25,000 are approved within 3 business days"** · **"1–2 days turnaround"** · **"Up to 50k"** funding · **"$0 machine upgrades\*"** · **"5-minute application"** · **"over 500 machines in stock"** · pricing is indicative — *"apply online … for an accurate quote."*
 
-**Upfront-cost wording:** the site says *"zero upfront costs"*, but ad copy uses **"minimal upfront cost — just a deposit"** (operator preference, and the more accurate claim, since a deposit *is* an upfront cost). **CTA:** *"Get our stock list today"* (button: Learn More), matching the browse-catalogue destination.
+**Upfront-cost wording:** the site says *"zero upfront costs"*, but ad copy uses **"minimal upfront cost — just a deposit"** (operator preference, and the more accurate claim, since a deposit *is* an upfront cost). **CTA:** *"Get our latest stock list today"* (the operator's exact wording; button: Learn More), matching the browse-catalogue destination.
 
 **Discrepancies to resolve (site vs the internal doc I was handed):**
 - **Address:** site = *123 Captain Springs Rd, Onehunga*; internal doc = *71 Station Road, Penrose*. (Ads don't use it — but pick the right one.)
