@@ -83,6 +83,6 @@ Pattern: `{Brand}_{Stage}_{Objective}_{Event}_{Geo}_{YYYY-MM}` → drill down co
 | **Ad set** | `HH_{StageShort}_{Audience}_{Age}_{Geo}_{OptEvent}_v{n}` | `HH_PS_ADV-AUD_25-65_NZ_AddToEnquiry_v1` |
 | **Ad** | `HH_{Concept}_{Format}_{HookID}_v{n}` | `HH_C1-Value_9x16_H-Under25wk_v1` · `HH_C2-Speed_9x16_H-2448hr_v1` |
 
-Conventions in use elsewhere in the pack: **Concept tags** `C1-Value` / `C2-Speed`; **Format** `9x16` / `4x5`; **HookID** = a short slug of the winning hook from `03` (e.g. `H-Under25wk`, `H-2448hr`, `H-RefurbWhy`, `H-FryerDies`). Keep `v{n}` moving every time you refresh creative so fatigue tracking in `04` stays legible.
+Conventions in use elsewhere in the pack: **Concept tags** `C1-Value` / `C2-Speed`; **Format** `9x16` / `4x5`; **HookID** = a short slug of the winning hook from `03` (e.g. `H-466day`, `H-2448hr`, `H-BrandsNew`, `H-FryerDies`). Keep `v{n}` moving every time you refresh creative so fatigue tracking in `04` stays legible.
 
 **When you split to two ad sets (≥ ~$9k/month):** duplicate the ad set, put one concept in each, rename `..._AddToEnquiry_C1_v1` / `..._AddToEnquiry_C2_v1`, and switch the campaign to CBO.

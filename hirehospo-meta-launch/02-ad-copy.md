@@ -16,13 +16,13 @@
 
 | # | Testing | Text (⟨~125⟩ = See-more cut) |
 |---|---|---|
-| **1 ★champion** | **daily unit + confirmed price + reframe** | Premium commercial kitchen equipment, from $4.66/day +GST — less than one flat white a day.⟨~125⟩ Refurbished, warranted, with NZ-based delivery and install. Browse glasswashers, dishwashers, fryers and more, and build your enquiry. Subject to credit approval. |
-| 2 | **weekly unit frame** (vs #1's daily) | Low weekly payments put premium commercial kitchen equipment in your kitchen — without the capital hit.⟨~125⟩ Refurbished with warranty is how the payment stays low. Browse 150+ items and build your enquiry. Subject to credit approval. |
-| 3 | **capital-preservation objection** (premium gear) | A $20,000 Rational combi in your kitchen — without $20,000 leaving your bank.⟨~125⟩ HireHospo finances refurbished, warranted kitchen equipment on low weekly payments, so your capital stays in the business. Browse the stock list. Subject to credit approval. |
-| 4 | **refurbished objection** ("what if it breaks") | Refurbished? That's exactly why the payment is this low — and the warranty is why that's fine.⟨~125⟩ Premium European brands you'd never buy new, on low weekly payments, with NZ-based delivery and service. Build your enquiry. Subject to credit approval. |
-| 5 | **emotional register** (aspirational, softer) | Fully equipped kitchen. Cash still in the business.⟨~125⟩ HireHospo puts premium refurbished equipment — dishwashers, combi ovens, fryers, prep — in your kitchen on low weekly payments. Browse 150+ items and build your enquiry. Subject to credit approval. |
+| **1 ★champion** | **daily unit + confirmed price + reframe** | Premium commercial kitchen equipment, from $4.66/day +GST — less than one flat white a day.⟨~125⟩ Backed by warranty, with NZ-based delivery and install. Browse glasswashers, dishwashers, fryers and more, and build your enquiry. Subject to credit approval. |
+| 2 | **weekly unit frame** (vs #1's daily) | Low weekly payments put premium commercial kitchen equipment in your kitchen — without the capital hit.⟨~125⟩ That's how premium brands land on payments that actually fit — all backed by warranty. Browse 150+ items and build your enquiry. Subject to credit approval. |
+| 3 | **capital-preservation objection** (premium gear) | A $20,000 Rational combi in your kitchen — without $20,000 leaving your bank.⟨~125⟩ HireHospo finances premium kitchen equipment, warranted, on low weekly payments, so your capital stays in the business. Browse the stock list. Subject to credit approval. |
+| 4 | **premium-brand access** (buy-new objection) | The European brands you'd spec if budget were no object — Rational, Convotherm, Electrolux — working in your kitchen now.⟨~125⟩ Premium gear (much of it refurbished, all warranted) on low weekly payments, not a $30k cheque. Build your enquiry. Subject to credit approval. |
+| 5 | **emotional register** (aspirational, softer) | Fully equipped kitchen. Cash still in the business.⟨~125⟩ HireHospo puts premium equipment — dishwashers, combi ovens, fryers, prep — in your kitchen on low weekly payments. Browse 150+ items and build your enquiry. Subject to credit approval. |
 
-*Note #5 replaces the banned "let your equipment pay for itself" (see `00` §3e) with an emotional line that keeps the promise without asserting a financial outcome. The daily figure "$4.66/day +GST" appears only on #1 (an affordable-category ad); #3 and #4 name premium brands, so they carry "low weekly payments" (no dollar figure, so no "+GST"), never the daily number.*
+*Note #5 replaces the banned "let your equipment pay for itself" (see `00` §3e) with an emotional line that keeps the promise without asserting a financial outcome. Per brand preference, **"refurbished" is kept out of every hook and headline** and appears once, lightly, in #4's body — warranty and premium-brand access carry the reassurance instead. The daily figure "$4.66/day +GST" appears only on #1; #3 and #4 name premium brands, so they carry "low weekly payments" (no dollar figure, so no "+GST"), never the daily number.*
 
 ### Headlines (5 variants, ≤40 characters)
 
@@ -32,7 +32,7 @@
 | 2 | weekly-unit frame, no number | `Premium kitchen gear, low weekly cost` | 37 |
 | 3 | the reframe device | `Less than a flat white a day` | 28 |
 | 4 | capital-preservation angle | `The $20k oven, without the $20k` | 31 |
-| 5 | refurb-as-strength | `Refurbished. Warranted. Low weekly.` | 35 |
+| 5 | ownership + warranty | `Warranted. Yours to own. Low weekly.` | 36 |
 
 ### Link descriptions (3 variants, ≤30 characters)
 
@@ -40,7 +40,7 @@
 |---|---|---|---|
 | 1 | action | `Browse the stock list` | 21 |
 | **2 ★** | mandatory microcopy carrier | `Subject to credit approval` | 26 |
-| 3 | proof (scale + warranty) | `150+ items. Refurb + warranty` | 29 |
+| 3 | proof (scale + warranty) | `150+ items. Warranty included` | 29 |
 
 *(Link description renders only on some placements — never rely on it to carry a compliance line the body doesn't also carry.)*
 
@@ -64,7 +64,7 @@ The destination is a **browsable catalogue**, not an application form. "Learn Mo
 | 2 | **high-stakes / problem-first** | Your fryer dies mid-service. How fast can you replace it?⟨~125⟩ HireHospo gives a credit decision in 24–48 hours; once approved and your deposit clears, it's delivered in 1–3 business days. Browse the stock list. Subject to credit approval. |
 | 3 | **honesty / credit-led trust** (novelty) | Fast finance doesn't mean easy approval. We're credit-led — we say no to plenty of deals.⟨~125⟩ But when it's yes, it's quick: a 24–48 hour decision, delivery 1–3 business days after your deposit clears. Get the latest stock list. |
 | 4 | **process clarity** (the honest timeline stated flat) | From application to installed, honestly: a 24–48 hour credit decision, then delivery 1–3 business days after your deposit clears.⟨~125⟩ Approval isn't guaranteed — but nothing here drags. Browse the latest stock list. Subject to credit approval. |
-| 5 | **freshness register** (latest stock) | New refurbished stock lands regularly — combi ovens, dishwashers, fryers, prep.⟨~125⟩ Get our latest stock list, build your enquiry, and if you're approved it's installed within days of your deposit clearing. Subject to credit approval. |
+| 5 | **freshness register** (latest stock) | New stock lands regularly — combi ovens, dishwashers, fryers, prep.⟨~125⟩ Get our latest stock list, build your enquiry, and if you're approved it's installed within days of your deposit clearing. Subject to credit approval. |
 
 ### Headlines (5 variants, ≤40 characters)
 

@@ -35,7 +35,7 @@ approve   #58C97B   small approval ticks only (never a fill)
 accentink #14161A   text on a flame surface — always
 ```
 - **Type:** Space Grotesk (display; semibold headings, bold figures, tight tracking) · Inter (body/captions) · **JetBrains Mono for money, terms, chips** ("$20,000", "+ GST", "REFURBISHED · WITH WARRANTY", "low weekly payments", timeline steps; uppercase 0.08em).
-- **Discipline:** **one flame highlight per frame, key beat only.** The two capital-hit frames (drain / ledger-empty) carry **no flame** — the problem beat is cold. Brushed-steel gradient allowed on the plinth frame only. Motion: transform + opacity only; settles ~0.5s ease-out; a "stamp" settle for APPROVED and the refurb badge; respect `prefers-reduced-motion`.
+- **Discipline:** **one flame highlight per frame, key beat only.** The two capital-hit frames (drain / ledger-empty) carry **no flame** — the problem beat is cold. Brushed-steel gradient allowed on the plinth frame only. Motion: transform + opacity only; settles ~0.5s ease-out; a "stamp" settle for APPROVED and the warranty badge; respect `prefers-reduced-motion`.
 - **Logo:** use the HireHospo wordmark **asset** from the folder/site. **Never redraw or invent a logomark.** If no asset exists, set "HireHospo" in Space Grotesk and ⚠-flag it in the README. Wordmark at the bridge + end card only.
 
 ## 5. What to build — per-frame contract (reuse the standard frames)
@@ -46,9 +46,9 @@ Lock copy **verbatim**. Approved claims only · "+ GST" glued to any dollar figu
 | `frames/01-quote-shock.html` | Hook 0:00–0:03 | 3.0s | `$20,000` · `+ GST` · `FOR ONE OVEN` | Mono number counts 0→20,000 (~0.8s, ease-out); flame underline snaps under the last digits on lock; hold |
 | `frames/02-capital-drain.html` | Agitate 0:03–0:06 | 3.0s | `PAID IN FULL. GONE.` · `before service.` | Reuse the quote-shock number; it desaturates to grey and drains downward out of a ledger line to `$0` (~1.2s); faint hollow tick at 0:05. **No flame.** |
 | `frames/03-approval-timeline.html` | Bridge 0:06–0:08 | 2.0s | `HireHospo` · `APPLY → CREDIT CHECK → APPROVED → DELIVERED 1–3 DAYS` · `Subject to credit approval` | Hard reset; wordmark resolves (0.4s); 4 mono steps tick left→right; **APPROVED** lights flame + stamps |
-| `frames/04-hero-plinth.html` | Proof 1 0:08–0:11.5 | 3.5s | `RATIONAL · COMBI OVEN` · `NZ-based delivery, install & service` · `REFURBISHED · WITH WARRANTY` | Real Rational combi cut-out settles on brushed-steel plinth (0.5s); refurb badge stamps on at 0:10.5 (flame) |
+| `frames/04-hero-plinth.html` | Proof 1 0:08–0:11.5 | 3.5s | `RATIONAL · COMBI OVEN` · `NZ-based delivery, install & service` · `WITH WARRANTY` | Real Rational combi cut-out settles on brushed-steel plinth (0.5s); warranty badge stamps on at 0:10.5 (flame) |
 | `frames/05-capital-ledger.html` | Proof 2 0:11.5–0:13 | 1.5s | `CAPITAL — kept in the business ✓` · `OVEN — in your kitchen ✓` · `low weekly payments` | Two rows tick in sequence; footer figure lights flame last (one flame highlight) |
-| `frames/06-end-card.html` | CTA 0:13–0:15 | 2.0s | `Premium kitchen equipment, refurbished and warranted, on low weekly payments.` · **`Apply now`** · `Approved in 24 to 48 hours · Subject to credit approval` · `hirehospo.com` | Wordmark + prop settle; flame Apply-now pill (accentink text) with a stamp settle; hold |
+| `frames/06-end-card.html` | CTA 0:13–0:15 | 2.0s | `Premium kitchen equipment, warranted, on low weekly payments.` · **`Apply now`** · `Approved in 24 to 48 hours · Subject to credit approval` · `hirehospo.com` | Wordmark + prop settle; flame Apply-now pill (accentink text) with a stamp settle; hold |
 
 (Frames 02 and 04 span two storyboard shots each — build them as single frames with an internal beat at the sub-timestamp noted.)
 
