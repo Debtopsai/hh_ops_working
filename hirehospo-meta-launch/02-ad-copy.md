@@ -1,98 +1,97 @@
 # 02 — Ad Copy
 
-*Two concepts, each a genuine A/B set. Every variant changes **one identifiable thing** — the unit frame, the number's specificity, the objection addressed, or the emotional register — and that thing is labelled. Cosmetic-only variants are not included. NZ English, NZD, ex-GST throughout. `⟨~125⟩` marks the mobile "See more" cut — everything before it must carry the message on its own.*
+*Two concepts, each a genuine A/B set. Every variant changes **one identifiable thing** — labelled — so it's a real test, not cosmetic variation. **Voice matches the live site** (see `00` §6): warm, direct, "we've got your back," the odd exclamation, and the brand's own lines. NZ English, NZD, ex-GST. `⟨~125⟩` marks the mobile "See more" cut.*
 
-**Price hook — operator-confirmed:** the value claim is **"from $4.66/day +GST"** (see `00` §2). It's a conservative, substantiable "from" figure; keep it on the **cheap categories** (glasswashers, dishwashers, hot plates, small fryers). Premium-equipment ads (combi ovens) run the **big-number value comparison without quoting the payment** — e.g. *a $20,000 Rational combi, without the $20,000 up front*. The Rational's own figure (~$121/week ≈ ~$17/day) reads *high* against the machine and deflates the value feel, so keep it out of the ad. Fix the old unit-mixing by running **daily-frame** and **weekly-frame** ads as an A/B, not both units in one line.
+**Voice anchors (from the site):** *"Let the equipment pay for itself"* · *"From start-ups to legacies"* · *"we've got your back"* · *"hospitality insiders"* · *"zero upfront costs — just a simple deposit and a weekly rental fee"* · *"apply in 5 minutes / see if you qualify"* · *"most applications under $25,000 approved within 3 business days"*. Say **"commercial kitchen equipment" / "kitchen equipment" / "machines"** — never "gear."
 
-**GST placement rule:** "+GST" is only ever glued **directly to a dollar figure** ("$4.66/day +GST"). It is never floated into a sentence, tacked onto a non-numeric phrase ("low weekly payments"), or dropped on an end card / link that shows no price. Concept 2 quotes no price, so it carries no "+GST" at all.
+**Locks:** "+GST" only ever glued to a dollar figure (never floated); $4.66/day for the cheap categories; premium gear = the $20,000-machine value comparison, no payment figure; no Washpro in copy; "refurbished" stays a light body mention, never a hook/headline; Auckland delivery. Approval isn't guaranteed — carry it as the site does ("apply to see if you qualify"), with "subject to credit approval" as light microcopy where a finance claim is strong.
 
-**Standing compliance locks (every line):** no implied guaranteed approval · "+GST" glued to any dollar figure · "subject to credit approval" present (body or link description) · only the confirmed entry price ("from $4.66/day +GST", live-stock-checked per `00` §2) · no specific weekly payment for a named product · real catalogue brands only.
+**CTA — `Apply Now`** (the site's universal CTA). ⚠ This points at the 5-minute application (`/pages/finance-apply`), not the browse-catalogue the earlier plan assumed — if you send ad traffic straight to the application, the optimisation event in `01`/`04` shifts from "Add to Enquiry" to a Lead on the application. **Confirm the ad destination.**
 
 ---
 
-## Concept 1 — Low Weekly Payment / Value
+## Concept 1 — Low Weekly Payment / Value ("let it pay for itself")
 
 ### Primary text (5 variants)
 
 | # | Testing | Text (⟨~125⟩ = See-more cut) |
 |---|---|---|
-| **1 ★champion** | **daily unit + confirmed price + reframe** | Premium commercial kitchen equipment, from $4.66/day +GST — less than one flat white a day.⟨~125⟩ Backed by warranty, with Auckland delivery and install. Browse glasswashers, dishwashers, fryers and more, and build your enquiry. Subject to credit approval. |
-| 2 | **weekly unit frame** (vs #1's daily) | Low weekly payments put premium commercial kitchen equipment in your kitchen — without the capital hit.⟨~125⟩ That's how premium brands land on payments that actually fit — all backed by warranty. Browse 150+ items and build your enquiry. Subject to credit approval. |
-| 3 | **value comparison** (premium equipment) | A $20,000 Rational combi. Without the $20,000 up front.⟨~125⟩ The premium oven you'd never buy outright — warranted, working in your kitchen now, your capital still in the business. Browse the stock list. Subject to credit approval. |
-| 4 | **premium-brand access** (buy-new objection) | The European brands you'd spec if budget were no object — Rational, Convotherm, Electrolux — working in your kitchen now.⟨~125⟩ Premium kitchen equipment (much of it refurbished, all warranted) on low weekly payments, not a $30k cheque. Build your enquiry. Subject to credit approval. |
-| 5 | **emotional register** (aspirational, softer) | Fully equipped kitchen. Cash still in the business.⟨~125⟩ HireHospo puts premium equipment — dishwashers, combi ovens, fryers, prep — in your kitchen on low weekly payments. Browse 150+ items and build your enquiry. Subject to credit approval. |
+| **1 ★champion** | **daily entry price + "pays for itself"** | Kit out your kitchen from $4.66/day +GST — less than a flat white.⟨~125⟩ Get the commercial kitchen equipment you need now on low weekly payments, and let it pay for itself. Zero upfront cost — just a deposit and a weekly payment. Apply in 5 minutes to see if you qualify. |
+| 2 | **brand / "start-ups to legacies"** (no number) | From start-ups to legacies, we've got your back.⟨~125⟩ Premium commercial kitchen equipment on low weekly payments, so your cash stays in the business where it's needed. Zero upfront cost beyond a simple deposit. See if you qualify in 5 minutes. |
+| 3 | **value comparison** (premium equipment) | A $20,000 Rational combi. Without the $20,000 up front.⟨~125⟩ The premium oven you'd never buy outright — working in your kitchen now on low weekly payments, letting it pay for itself. Apply to see if you qualify. |
+| 4 | **premium-brand access** (buy-new objection) | The European brands you'd spec if budget were no object — Rational, Convotherm, Electrolux.⟨~125⟩ On low weekly payments, not a $30,000 cheque. Premium kitchen equipment (much of it refurbished, all warranted), from hospitality insiders who've got your back. Apply in 5 minutes. |
+| 5 | **emotional / the dream** | You've got the dream. We've got the kitchen to build it.⟨~125⟩ Fully equipped on low weekly payments, with the equipment paying for itself while your cash stays in the business. From start-ups to legacies, HireHospo has your back. See if you qualify. |
 
-*Note #5 replaces the banned "let your equipment pay for itself" (see `00` §3e) with an emotional line that keeps the promise without asserting a financial outcome. Per brand preference, **"refurbished" is kept out of every hook and headline** and appears once, lightly, in #4's body — warranty and premium-brand access carry the reassurance instead. The "$4.66/day +GST" entry figure appears only on #1; #3 runs the $20,000-machine value comparison **without quoting a payment** (the daily/weekly figure reads high against the machine); #4 names premium brands on "low weekly payments" without a figure.*
+*"Refurbished" appears once, lightly, in #4 — never in a hook or headline (`00` §... brand preference). "Let the equipment pay for itself" is your site hero, used in #1/#3/#5.*
 
 ### Headlines (5 variants, ≤40 characters)
 
 | # | Testing | Headline | Chars |
 |---|---|---|---|
-| **1 ★** | daily confirmed price | `From $4.66/day +GST` | 19 |
-| 2 | weekly-unit frame, no number | `Kitchen equipment, low weekly payments` | 38 |
-| 3 | the reframe device | `Less than a flat white a day` | 28 |
-| 4 | big number, no big cheque | `A $20k Rational — no $20k up front` | 34 |
-| 5 | ownership + warranty | `Warranted. Yours to own. Low weekly.` | 36 |
+| **1 ★** | daily entry price | `Your kitchen. From $4.66/day +GST` | 33 |
+| 2 | the site hero line | `Let the equipment pay for itself` | 32 |
+| 3 | brand / emotional | `From start-ups to legacies` | 26 |
+| 4 | value comparison | `A $20k Rational — no $20k up front` | 34 |
+| 5 | plain weekly value | `Kitchen equipment, low weekly` | 29 |
 
 ### Link descriptions (3 variants, ≤30 characters)
 
 | # | Testing | Description | Chars |
 |---|---|---|---|
-| 1 | action | `Browse the stock list` | 21 |
-| **2 ★** | mandatory microcopy carrier | `Subject to credit approval` | 26 |
-| 3 | proof (scale + warranty) | `150+ items. Warranty included` | 29 |
+| **1 ★** | low-friction ask | `Apply in 5 minutes` | 18 |
+| 2 | honest qualifier | `See if you qualify` | 18 |
+| 3 | funding ceiling | `Up to $50k funding` | 18 |
 
-*(Link description renders only on some placements — never rely on it to carry a compliance line the body doesn't also carry.)*
-
-### Recommended CTA button — **Learn More**
-The destination is a **browsable catalogue**, not an application form. "Learn More" matches the real next action ("browse the stock list"), keeps click quality honest, and avoids overstating immediacy. **Test "Get Quote"** as the higher-intent variant, but cautiously: HireHospo's golden rule is *no quote without a credit check first*, so "Get Quote" sets an expectation the funnel deliberately gates — watch that it doesn't lift clicks while dropping enquiry quality. Avoid "Sign Up"/"Apply Now" here — they imply an application the page doesn't present.
+### Recommended CTA — **Apply Now**
+Matches the site's universal CTA and reads as the natural next step off a warm value message. (Destination caveat in the header — confirm application vs browse-catalogue.)
 
 ### Champion — ship first
-**Primary #1 + Headline #1 + Link description #2 + CTA "Learn More."** It leads with the operator-confirmed $4.66/day in a single clean unit, warmed by the flat-white reframe — a credible, substantiable cold-traffic opener kept to the affordable categories where the number rings true. **For premium-equipment audiences, run #3 in parallel** — the *"$20,000 Rational combi, without the $20,000 up front"* value comparison: the premium machine, none of the upfront hit.
+**Primary #1 + Headline #1 + Link description #1 + CTA "Apply Now."** Leads with the $4.66/day hook and the flat-white reframe, then lands the brand promise ("let it pay for itself") and the frictionless ask ("apply in 5 minutes") — your voice, your numbers. **For premium-equipment audiences, run #3 in parallel** — the *"$20,000 Rational, without the $20,000 up front"* value comparison.
 
 ---
 
 ## Concept 2 — Quick Process / Speed
 
-*All variants built on the Level-2 honest-timeline rewrite from `00` §3d — the speed story rides the two facts that are reliably fast (the 24–48h credit decision and 1–3 day delivery after the deposit clears), never on implied guaranteed approval. No price is quoted in this concept, so no "+GST" appears — the $4.66/day decision doesn't touch it.*
+*Built on the site's real process claims — the speed story rides the two facts the site itself states: the 5-minute application and "most applications under $25,000 approved within 3 business days," then the 1–2 day turnaround. No implied guaranteed approval; "most … under $25k" is kept so it stays honest. No price quoted, so no "+GST" here.*
 
 ### Primary text (5 variants)
 
 | # | Testing | Text (⟨~125⟩ = See-more cut) |
 |---|---|---|
-| **1 ★champion** | **the reliably-fast fact, specific** | A credit decision in 24–48 hours — not 24–48 days.⟨~125⟩ Once you're approved and your deposit's paid, it's delivered in 1–3 business days. Get our latest stock list today. Subject to credit approval. |
-| 2 | **high-stakes / problem-first** | Your fryer dies mid-service. How fast can you replace it?⟨~125⟩ HireHospo gives a credit decision in 24–48 hours; once approved and your deposit clears, it's delivered in 1–3 business days. Browse the stock list. Subject to credit approval. |
-| 3 | **honesty / credit-led trust** (novelty) | Fast finance doesn't mean easy approval. We're credit-led — we say no to plenty of deals.⟨~125⟩ But when it's yes, it's quick: a 24–48 hour decision, delivery 1–3 business days after your deposit clears. Get the latest stock list. |
-| 4 | **process clarity** (the honest timeline stated flat) | From application to installed, honestly: a 24–48 hour credit decision, then delivery 1–3 business days after your deposit clears.⟨~125⟩ Approval isn't guaranteed — but nothing here drags. Browse the latest stock list. Subject to credit approval. |
-| 5 | **freshness register** (latest stock) | New stock lands regularly — combi ovens, dishwashers, fryers, prep.⟨~125⟩ Get our latest stock list, build your enquiry, and if you're approved it's installed within days of your deposit clearing. Subject to credit approval. |
+| **1 ★champion** | **the site's own speed claim** | Apply in 5 minutes. Most applications under $25,000 are approved within 3 business days.⟨~125⟩ Once you're approved, your machines are on their way — a 1–2 day turnaround. Zero upfront cost beyond a deposit. See if you qualify today. |
+| 2 | **high-stakes / problem-first** | Fryer dies mid-service? You haven't got weeks to sort a replacement.⟨~125⟩ Apply in 5 minutes — most applications under $25k approved within 3 business days, then a 1–2 day turnaround. We've got your back. Apply now. |
+| 3 | **honest "will I qualify?"** (novelty) | Not sure you'll qualify? There's one quick way to find out.⟨~125⟩ A 5-minute application, most under $25k approved within 3 business days. No big upfront cost — just a deposit and low weekly payments. Apply now and see. |
+| 4 | **process ease** ("simple as 1,2,3") | Simple as 1, 2, 3: apply, choose your equipment, take delivery.⟨~125⟩ Most applications under $25k are approved within 3 business days, with a 1–2 day turnaround after that. Over 500 machines in stock. Apply in 5 minutes. |
+| 5 | **freshness / stock** | New machines land in stock all the time — combi ovens, dishwashers, fryers, prep.⟨~125⟩ Apply in 5 minutes, get approved (most under $25k within 3 business days), and let your new kitchen equipment pay for itself. Apply now. |
 
 ### Headlines (5 variants, ≤40 characters)
 
 | # | Testing | Headline | Chars |
 |---|---|---|---|
-| **1 ★** | the reliably-fast fact | `Credit decision in 24–48 hours` | 30 |
-| 2 | low-friction ask | `Get our latest stock list` | 25 |
-| 3 | honesty angle | `Fast answer. Not easy approval.` | 31 |
-| 4 | speed-after-approval (conditional) | `Approved? Installed within days` | 31 |
+| **1 ★** | the site's speed claim (honest) | `Most approved in 3 business days` | 32 |
+| 2 | low-friction ask | `Apply in 5 minutes` | 18 |
+| 3 | process ease (site line) | `Simple as 1, 2, 3` | 17 |
+| 4 | speed / delivery, warm | `Your machines, on their way` | 27 |
 | 5 | emotional, no time-claim | `Less waiting, more cooking` | 26 |
 
 ### Link descriptions (3 variants, ≤30 characters)
 
 | # | Testing | Description | Chars |
 |---|---|---|---|
-| **1 ★** | mandatory microcopy carrier | `Subject to credit approval` | 26 |
-| 2 | low-friction ask | `Get the latest stock list` | 25 |
-| 3 | specific timeframe | `24–48hr decision` | 16 |
+| **1 ★** | honest qualifier | `See if you qualify` | 18 |
+| 2 | low-friction ask | `5-minute application` | 20 |
+| 3 | turnaround | `1–2 day turnaround` | 18 |
 
-### Recommended CTA button — **Learn More**
-Matches "get our latest stock list" / browse. Same reasoning and same "Get Quote" caveat as Concept 1. Do **not** use "Apply Now" on the speed concept — paired with a speed message it is exactly the combination that implies guaranteed, immediate approval (the `00` §3d risk).
+### Recommended CTA — **Apply Now**
+The speed concept is all about the fast, easy application — "Apply Now" is the message. (Same destination caveat.)
 
 ### Champion — ship first
-**Primary #1 + Headline #1 + Link description #1 + CTA "Learn More."** It puts the speed promise on the one thing that is genuinely fast and always true — the 24–48 hour decision — which is both the most credible claim and the safest one.
+**Primary #1 + Headline #1 + Link description #1 + CTA "Apply Now."** Puts the promise on the site's own honest claim ("most applications under $25,000 approved within 3 business days") — credible because it's already how you talk, and safe because the "most … under $25k" qualifier is kept.
 
 ---
 
 ## How these feed the rest of the pack
-- The two champions above are your first two ads. At $20/day, sequence them (run one, read it, then the other) rather than rotating both — see `01`/`04` once those are re-based to the $20/day budget.
-- The winning hooks in `03` reuse these champion angles as their opening 3 seconds (HookIDs `H-466day`, `H-2448hr`), so on-screen video text and static copy stay consistent.
-- Every price in this file is subject to the live-stock verification gate in `00` §2 / `05` item 5.4. "$4.66/day" only needs stock at or below it to exist on launch day (trivially true today) — but keep the gate and an owner, because catalogue stock moves.
+- Two champions = your first two ads. At $20/day, sequence them (one at a time), don't rotate — see `01`/`04`.
+- Winning hooks in `03` reuse these champion angles (`H-466day`, `H-3days`), so video and static stay consistent.
+- Prices are subject to the live-stock gate in `00` §2 / `05` item 5.4; "$4.66/day" only needs one live item at or below it.
+- Voice authority is `00` §6 (the operator-supplied site copy). If any line here drifts from how the site actually talks, the site wins.
