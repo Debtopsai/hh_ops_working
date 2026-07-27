@@ -18,9 +18,9 @@
 
 | # | Testing | Text (⟨~125⟩ = See-more cut) |
 |---|---|---|
-| **1 ★champion** | cashflow context | Kitting out a commercial kitchen shouldn't mean emptying the bank.⟨~125⟩ Get the equipment you need now on low weekly payments — from $4.66/day +GST — and keep your cash working in the business. Minimal upfront cost, just a deposit. Get our latest stock list today. Subject to credit approval. |
+| **1 ★champion** | cashflow context | Getting the equipment you need shouldn't mean emptying the bank.⟨~125⟩ Get it now on low weekly payments — from $4.66/day +GST — and keep your cash working in the business. Minimal upfront cost, just a deposit. Get our latest stock list today. Subject to credit approval. |
 | 2 | persona (fit-out / upgrade) | New fit-out, or upgrading tired kit? The equipment's the easy part — it's the upfront hit that stings.⟨~125⟩ On low weekly payments from $4.66/day +GST, it doesn't have to. Minimal upfront cost — just a deposit. From start-ups to legacies, we've got your back. Get our latest stock list today. |
-| 3 | brand / "insiders" | We're hospitality insiders — we've kitted out everyone from start-ups to legacies.⟨~125⟩ Premium commercial kitchen equipment on payments that actually fit, from $4.66/day +GST, so it pays for itself while your cash stays put. Get our latest stock list today. Subject to credit approval. |
+| 3 | brand / "insiders" | We're hospitality insiders — we're here for you, from start-ups to legacies.⟨~125⟩ Premium commercial kitchen equipment on payments that actually fit, from $4.66/day +GST, so it pays for itself while your cash stays put. Get our latest stock list today. Subject to credit approval. |
 | 4 | reassurance (warranty / local) | The equipment you need, working in your kitchen now — not a hole in your account.⟨~125⟩ Low weekly payments from $4.66/day +GST, backed by warranty and local support. Minimal upfront cost, just a deposit. Get our latest stock list today. |
 | 5 | short — lets the video breathe | Less than a flat white a day, and your kitchen pays for itself.⟨~125⟩ Premium commercial kitchen equipment on low weekly payments from $4.66/day +GST. Minimal upfront cost. Get our latest stock list today. Subject to credit approval. |
 
@@ -79,9 +79,9 @@
 | # | Testing | Text (⟨~125⟩ = See-more cut) |
 |---|---|---|
 | **1 ★champion** | social proof + cashflow | Auckland's top cafes worked something out: don't buy your equipment outright — finance it, and keep that money working in the business.⟨~125⟩ Premium commercial kitchen equipment on low weekly payments, minimal upfront cost. That's the HireHospo way. Get our latest stock list today. |
-| 2 | curiosity + mechanism | Ever wonder how the busiest cafes kit out a full kitchen without a huge cash hit?⟨~125⟩ They don't buy the equipment outright — they finance it on low weekly payments and keep their cash free. From $4.66/day +GST. Get our latest stock list today. |
+| 2 | curiosity + mechanism | Ever wonder how the busiest cafes get all their equipment without a huge cash hit?⟨~125⟩ They don't buy the equipment outright — they finance it on low weekly payments and keep their cash free. From $4.66/day +GST. Get our latest stock list today. |
 | 3 | smart-money / capital | Buying your equipment outright ties up cash you could be using to grow.⟨~125⟩ Auckland's top operators finance theirs instead — low weekly payments, minimal upfront cost, cash still working in the business. Get our latest stock list today. Subject to credit approval. |
-| 4 | aspirational / "join them" | Kit out like Auckland's best — without the upfront hit.⟨~125⟩ The top cafes finance their equipment and let it pay for itself while their cash keeps working. Premium machines on low weekly payments. Get our latest stock list today. |
+| 4 | aspirational / "join them" | Equip your kitchen like Auckland's best — without the upfront hit.⟨~125⟩ The top cafes finance their equipment and let it pay for itself while their cash keeps working. Premium machines on low weekly payments. Get our latest stock list today. |
 | 5 | direct value + social proof | There's a reason the top kitchens finance their equipment: it keeps their cash working.⟨~125⟩ Premium commercial kitchen equipment on low weekly payments from $4.66/day +GST, minimal upfront cost. Get our latest stock list today. Subject to credit approval. |
 
 ### Headlines (5, ≤40 chars) · ### Link descriptions (3, ≤30 chars)
@@ -91,7 +91,7 @@
 | **1 ★** | `Auckland's top cafes finance it` | 31 | | **1 ★** | `Get our latest stock list` | 25 |
 | 2 | `Don't buy it. Finance it.` | 23 | | 2 | `Keep your cash working` | 22 |
 | 3 | `Keep your cash working` | 22 | | 3 | `Subject to credit approval` | 26 |
-| 4 | `The smart way to kit out` | 24 | | | | |
+| 4 | `The smart way to equip a kitchen` | 32 | | | | |
 | 5 | `From $4.66/day +GST` | 19 | | | | |
 
 **Champion:** Primary #1 + Headline #1 + Link description #1 + button "Learn More" (CTA "Get our latest stock list today"). The video poses the question and reveals the smart-money answer; the copy names the mechanism (low weekly payments, minimal upfront) and points to the stock list.
