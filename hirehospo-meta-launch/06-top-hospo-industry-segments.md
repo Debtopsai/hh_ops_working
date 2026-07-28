@@ -42,6 +42,26 @@ Equipment columns are **real catalogue categories/brands** (dishwashers, combi/c
 
 ---
 
+## Localised hook lines (drop-in for the Video 3 template)
+
+Swap only the opening line below; the rest of the script is identical for every industry:
+*"…They don't buy their equipment outright. They finance it, and keep their cash working. HireHospo. Get our latest stock list today."*
+
+1. Cafés — **"What do Auckland's top cafés have in common?"**
+2. Restaurants — **"What do Auckland's top restaurants have in common?"**
+3. Bakeries — **"What do Auckland's top bakeries have in common?"**
+4. Bars — **"What do Auckland's top bars have in common?"**
+5. Caterers — **"What do Auckland's top caterers have in common?"**
+6. Takeaways — **"What do Auckland's top takeaways have in common?"**
+7. Pizzerias — **"What do Auckland's top pizzerias have in common?"**
+8. Food trucks — **"What do Auckland's top food trucks have in common?"**
+9. Event & wedding venues — **"What do Auckland's top venues have in common?"**
+10. Hotels — **"What do Auckland's top hotels have in common?"**
+11. Delivery / cloud kitchens — **"What do Auckland's top delivery kitchens have in common?"**
+12. Aged care / institutional *(softened — no "top")* — **"What do the best-run care kitchens have in common?"**
+
+---
+
 ## Naming (extends `01`)
 
 | Level | Convention | Example |
