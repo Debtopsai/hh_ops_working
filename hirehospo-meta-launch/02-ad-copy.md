@@ -100,6 +100,42 @@
 
 ---
 
+## AD 4 — PRICE-LED ("from $X/day") — price test
+
+**The creative:** *"Commercial kitchen equipment from $6.99/day."* **Price test:** run it at **$6.99/day +GST** (primary) and **$3.99/day +GST** (lower-price test). Everything else stays identical between the two — you're testing which price point converts, so keep the copy, headline and creative the same and change only the number.
+
+**Both figures are substantiable:** the catalogue floor is ~$3.26/day (≈$22.82/week ex GST), so there is live stock at or below both $3.99/day (≈$27.93/wk +GST) and $6.99/day (≈$48.93/wk +GST). Confirm on launch day (`00` §2). "$3.99/day" sits closest to the true floor, so it's the stronger low-price hook; "$6.99/day" is the more conservative claim.
+
+### Primary text (5 variants — shown at $6.99/day; for the test, swap to $3.99/day)
+
+| # | Testing | Text (⟨~125⟩ = See-more cut) |
+|---|---|---|
+| **1 ★champion** | straight value | Commercial kitchen equipment from $6.99/day +GST.⟨~125⟩ Premium machines on low weekly payments, minimal upfront cost — and they pay for themselves while your cash stays in the business. Get our latest stock list today. |
+| 2 | cashflow / keep cash working | Get the equipment you need from $6.99/day +GST — and keep your cash where it belongs: in the business.⟨~125⟩ Low weekly payments, minimal upfront cost. From start-ups to legacies, we've got your back. Get our latest stock list today. |
+| 3 | "let it pay for itself" | From $6.99/day +GST, the equipment works for you — and pays for itself.⟨~125⟩ Premium commercial kitchen equipment on low weekly payments, minimal upfront cost. Get our latest stock list today. Subject to credit approval. |
+| 4 | upfront-cost objection | You don't need a big cheque to get the equipment you need.⟨~125⟩ Commercial kitchen equipment from $6.99/day +GST — low weekly payments, minimal upfront cost, cash still working. Get our latest stock list today. |
+| 5 | daily-cost reframe | About the price of a coffee and a muffin a day.⟨~125⟩ Commercial kitchen equipment from $6.99/day +GST, on low weekly payments. Minimal upfront cost. Get our latest stock list today. Subject to credit approval. |
+
+*For the **$3.99/day** test: swap "$6.99/day" → "$3.99/day" in every line, and change #5's reframe to **"Less than a flat white a day."** (An Auckland flat white is ~$5.50–6, so that only holds at $3.99 — don't use it at $6.99; the "coffee and a muffin" reframe (~$7) is the one that fits $6.99.)*
+
+### Headlines (5, ≤40 chars) · ### Link descriptions (3, ≤30 chars)
+
+| # | Headline | Chars | | # | Link description | Chars |
+|---|---|---|---|---|---|---|
+| **1 ★** | `From $6.99/day +GST` *(test: `From $3.99/day +GST`)* | 19 | | **1 ★** | `Get our latest stock list` | 25 |
+| 2 | `Commercial kitchen equipment` | 28 | | 2 | `Minimal upfront cost` | 20 |
+| 3 | `Let it pay for itself` | 21 | | 3 | `Subject to credit approval` | 26 |
+| 4 | `Keep your cash working` | 22 | | | | |
+| 5 | `Kitchen equipment, low weekly` | 29 | | | | |
+
+### Recommended CTA — button **Learn More**, on-ad line **"Get our latest stock list today"**
+
+**Champion:** Primary #1 + Headline #1 + Link description #1. Run the identical ad at **$6.99/day +GST** and **$3.99/day +GST** as the price test; whichever wins on cost-per-enquiry becomes the price you lead with.
+
+> **Compliance (Ad 4):** "+GST" is on both figures (done). Both are true "from" claims against live stock — keep the `00` §2 launch-day check. "Subject to credit approval" rides in a link description + the end card. The daily→weekly equivalents ($6.99/day ≈ $48.93/wk +GST; $3.99/day ≈ $27.93/wk +GST) are for your reference — don't put a specific weekly figure for a named product in the ad. On the video, the price super must show **"+GST"** next to the number.
+
+---
+
 ## Notes
 - **Ad 1's copy complements the video** — it opens on the felt problem (the upfront hit) the video doesn't voice. **Ad 2's copy deliberately runs with the video's speed message** (operator preference) — the honesty lever there is the "most … under $25k … within 3 business days" qualifier plus the on-screen super and the "Subject to credit approval" microcopy, not distance from the script.
 - **A/B is on the copy, not the video** — the videos are fixed, so you're testing which primary/headline pulls best around each one. At $20/day, run one at a time (`01`/`04`).
