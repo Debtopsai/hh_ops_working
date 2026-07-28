@@ -42,6 +42,21 @@ Equipment columns are **real catalogue categories/brands** (dishwashers, combi/c
 
 ---
 
+## Visual approach — keep the shell, customise the content
+
+Run these as **one template with swappable content**, not fully-same and not fully-custom. Consistency builds brand recognition and keeps production cheap; the industry-specific footage is what earns the click (the creative self-selects the operator, so a baker must see a bakery).
+
+| Keep **identical** (the brand signature) | Customise **per industry** (the relevance) |
+|---|---|
+| Structure, beats, pacing | The opening word ("cafés" → "bakeries" → "bars"…) |
+| Music + VO voice/tone | B-roll / environment on the "they don't buy / they finance it" beats — show *that* industry's real setting |
+| On-screen text style (white + yellow emphasis) + typography | The equipment shown — match real catalogue gear to the industry (bakery → mixers/provers/deck ovens; bar → glasswashers/ice; restaurant → Rational combi; food truck → compact griddle/fryer) |
+| The reveal: "They don't buy their equipment outright / They finance it / keep their cash working" | — |
+| The **Auckland aerial opener** (says "Auckland," works for all — a recognisable device) | — |
+| The **end card** (HireHospo wordmark + orange underline · "Get our latest stock list today" · navy "Get Stock List" button + arrow) | — |
+
+**Why not fully-same:** a baker seeing café footage under "top bakeries" breaks the self-selection. **Why not fully-custom:** expensive, and it dilutes brand recognition for no gain. The equipment swap also keeps each cut catalogue-true.
+
 ## Localised hook lines (drop-in for the Video 3 template)
 
 Swap only the opening line below; the rest of the script is identical for every industry:
