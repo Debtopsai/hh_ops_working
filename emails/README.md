@@ -1,108 +1,89 @@
-# Developer Setup: Facebook Lead Auto-Reply Email
+# Developer Setup: Facebook Lead Auto-Reply (personal email from Urman)
 
-Auto-reply that fires the moment a lead submits the **Facebook instant form**
-for the HireHospo lead-capture campaign. It confirms the enquiry and sets the
-expectation that a real person will be in touch **within 24 hours**.
+Auto-reply that fires when a lead submits the **Facebook instant form** for the
+HireHospo lead-capture campaign. It is written to read as a **genuine personal
+email from Urman**, not a designed marketing template: plain text, first person,
+warm. Urman introduces himself, says he'll be in touch soon, offers to work on
+the price personally, and asks the lead to check the brochure and note the
+machines they're interested in before the call.
 
-This folder is the complete handoff. Everything below is ready to configure.
+Keep it looking like a real person typed it. Do not add a header banner, hero
+image, buttons, or heavy branding.
 
 ## Files to load
 
 | File | Where it goes |
 |---|---|
-| `hirehospo-lead-autoreply.html` | The `text/html` body of the email. Paste as-is into the ESP / autoresponder template. |
-| `hirehospo-lead-autoreply.txt` | The `text/plain` alternative part. Set this as the plain-text version (do not auto-generate it) so multipart clients and spam filters see clean text. |
+| `hirehospo-lead-autoreply.txt` | The `text/plain` body. This is the canonical human version. |
+| `hirehospo-lead-autoreply.html` | The `text/html` body: the same words in minimal HTML (plain paragraphs, clickable links, no template). Use if the platform sends HTML. |
 
-Both are self-contained: table-based layout, all CSS inlined, Google Fonts
-loaded with web-safe fallbacks, and an Outlook (VML) button fallback. No
-external images. Do not run them through a "CSS inliner" again.
+If the platform lets you send **plain text only**, do that. It feels the most
+personal and lands in the primary inbox.
 
 ## Send settings
 
 | Setting | Value |
 |---|---|
-| From name | `HireHospo` |
-| From address | `info@hirehospo.com` |
-| Reply-To | `info@hirehospo.com` |
-| Subject | `We've got your enquiry, we'll be in touch within 24 hours` |
-| Preheader | Already baked into the HTML (hidden span at top). No action needed. |
-| Send trigger | On Facebook instant-form submission (lead created). Send once, immediately. |
-| Type | Transactional / autoresponder (not a marketing broadcast). |
+| From name | `Urman at HireHospo` (or `Urman` + Urman's own address if he has one) |
+| From address | `info@hirehospo.com` (swap to Urman's direct address for authenticity) |
+| Reply-To | `info@hirehospo.com` (or Urman's direct address) |
+| Subject | `Thanks for your enquiry (a quick note from Urman)` |
+| Preheader | Baked into the HTML. No action needed. |
+| Send trigger | On Facebook instant-form submission. Send once, immediately. |
+| Type | Transactional / personal autoresponse (not a marketing broadcast). |
 
-Alternate subject lines (optional A/B):
-- `Thanks {{first_name}}, here's what happens next`
-- `Your HireHospo enquiry is in good hands`
+Alternate subject lines:
+- `Urman here, thanks for reaching out`
+- `Thanks for your enquiry, I'll be in touch soon`
 
-## Merge fields to wire up
-
-The support email and phone are **already hardcoded** in both files. Only three
-tokens remain. Replace the string, or map it to your platform's merge tag:
+## Merge fields
 
 | Token | Appears in | Set to |
 |---|---|---|
-| `{{first_name}}` | Alt subject line only (not the body) | Lead's first name from the FB form. Add a fallback of `there` for blank values. |
-| `{{business_address}}` | Footer of HTML + TXT | HireHospo's NZ postal address (required for bulk/marketing-email compliance). |
-| `{{unsubscribe_url}}` | Footer of HTML + TXT | Your platform's unsubscribe link / merge tag (e.g. `{{ unsubscribe }}`). |
+| `{{first_name}}` | Greeting | Lead's first name from the FB form. Set a fallback of `there` so a blank never shows. |
 
-> If the platform treats this strictly as a 1:1 transactional autoresponse, the
-> unsubscribe line can be dropped. If there's any doubt it counts as marketing,
-> keep it and populate both tokens.
+Everything else is hardcoded: Urman's name, the contact details
+(`info@hirehospo.com`, `+64 20 4100 9064`), and the brochure link
+(`https://portal.hirehospo.com/brochure`).
 
-## Two things to confirm before go-live
+## Confirm before go-live
 
-1. **Logo.** The header renders the wordmark **"HireHospo"** in white Merriweather
-   inside the navy header band, with **"FINANCE"** in gold beside it (mirroring the
-   live site header). If a hosted logo asset exists, replace the wordmark with a
-   hosted `<img>` (max-width ~180px, include `alt`). No logo file was supplied in
-   the repo, so this is a text stand-in.
-2. **Button destination.** The "Browse the range" button points to
-   `https://www.hirehospo.com/collections/all`. Swap to the campaign's
-   SwipePages landing page if you'd rather keep leads inside one funnel.
+1. **Urman's contact details.** If Urman has a direct email and/or mobile, use
+   them as the From/Reply-To and in the signature. It reads as more personal
+   than the general inbox, and replies reach him directly.
+2. **Urman's sign-off.** Add a job title under his name if he wants one (e.g.
+   "Urman, Finance"). Left off by default to keep it casual.
+3. **Brochure link.** Points to `https://portal.hirehospo.com/brochure`. Confirm
+   that is the customer-facing brochure URL you want leads to open.
+
+## Opt-out / compliance
+
+Because this is a personal reply to someone who just enquired, the body is kept
+clean of a formal unsubscribe block. Two options depending on how your platform
+classifies the send:
+
+- **Transactional (1:1 reply):** the single "subject to credit approval" line is
+  enough. A lead can simply reply to opt out.
+- **Marketing (bulk sender rules apply):** add your platform's unsubscribe link
+  and a postal address in a small footer line. NZ's Unsolicited Electronic
+  Messages Act requires a working unsubscribe on commercial messages.
+
+Ask whoever owns deliverability which applies before launch.
+
+## Copy notes (keep these if the wording is edited)
+
+- **Human, first person, NZ English.** No corporate template voice.
+- **No specific price or weekly figure.** "Work on the price with you" is about
+  personal service, not a quoted number (the golden rule: no quote before
+  credit approval).
+- The **"subject to credit approval"** line stays.
+- No pressure or urgency language.
+- No em dashes (use commas, colons or full stops).
 
 ## Test checklist
 
-Send a live test to seed addresses and verify:
-
-- [ ] Renders in **Gmail (light and dark)**, **Apple Mail / iOS Mail**, and **Outlook**. It's a light design, so spot-check dark-mode clients (Gmail app, Outlook.com) to confirm the navy header band and gold button aren't re-tinted.
-- [ ] Subject and hidden preheader show correctly in the inbox preview.
-- [ ] `{{first_name}}`, `{{business_address}}`, `{{unsubscribe_url}}` all resolve (no raw `{{ }}` left).
-- [ ] The `info@hirehospo.com` and `+64 20 4100 9064` links open mail/dialer.
-- [ ] The button and both footer links open correctly.
+- [ ] Renders cleanly in Gmail, Apple Mail / iOS Mail and Outlook. It's plain,
+      so there is little to break; check the links and the line breaks.
+- [ ] `{{first_name}}` resolves (no raw `{{ }}`), and the fallback works when blank.
+- [ ] `info@hirehospo.com`, `+64 20 4100 9064` and the brochure link all open.
 - [ ] Plain-text part is attached and readable.
-
-## Copy / compliance (do not edit without a check)
-
-The wording is built to HireHospo's finance-compliance rules. If copy changes
-are requested, keep these intact:
-
-- **No specific weekly or daily price** anywhere (no quote before credit approval).
-- **"+ GST"** stays on every payment mention.
-- **"Subject to credit approval; normal lending criteria apply"** stays in the footer.
-- Approval framed as **"24 to 48 hours"**, never "instant" or "guaranteed".
-- No urgency / pressure wording; Washpro stays credited for delivery, install and service.
-
-## Brand colours used
-
-Light navy + gold palette, matching the live HireHospo Finance catalog
-(portal.hirehospo.com). The gold button uses navy text, mirroring the site's
-"Enquiry List" button.
-
-| Token | Hex | Where |
-|---|---|---|
-| navy | `#1C3D5A` | header band, headings, primary text, step 2/3 numbers, footer links |
-| gold | `#F4A62A` | accent: gold rule, "FINANCE", step 1 badge, check ticks, CTA button |
-| page | `#F4F5F7` | outer background |
-| card | `#FFFFFF` | card background |
-| panel | `#F6F8FA` | reassurance panel |
-| navy-tint | `#EEF2F6` | step 2/3 number badges |
-| line | `#E5E8EC` | borders / hairlines |
-| body | `#3F4A57` | body text |
-| muted | `#8A94A0` / `#A2ABB6` | captions / microcopy |
-| gold-tint | `#FDF4E4` | "Enquiry received" chip background |
-
-> Hex values are eyeballed from a screenshot of the live catalog. Swap for the
-> official brand hex codes if you have them.
-
-Type: Merriweather (headlines, serif), Inter (body and labels), each with a
-web-safe fallback stack (Georgia/serif for Merriweather; Helvetica/Arial for
-Inter). These are HireHospo's brand typefaces, confirmed from hirehospo.com.

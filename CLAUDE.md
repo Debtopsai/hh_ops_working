@@ -41,6 +41,11 @@ pressure. NZ English, restrained punctuation. No jargon (leverage, synergy,
 seamless, solutions, etc.). **Avoid em dashes** (use commas, colons, or full
 stops instead), especially in customer-facing copy.
 
+**Lead / enquiry auto-replies are sent as human, personal emails** from a named
+person (e.g. Urman), plain and first-person, not designed marketing templates.
+Urman handles pricing personally and asks leads to browse the brochure and note
+the machines they want before the call.
+
 **Finance compliance for customer-facing copy:**
 - Never quote a specific weekly/daily price before credit approval. Sell the
   model ("low weekly payments + GST"), not a number.
