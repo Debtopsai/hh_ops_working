@@ -124,3 +124,17 @@ customer-facing assets (emails, landing pages, ad frames):
 These are the only two brand typefaces. Earlier drafts used Space Grotesk and a
 monospace face provisionally; those are retired. Avoid em dashes in
 customer-facing copy.
+
+## Brand Colours
+
+Confirmed from the live HireHospo Finance catalog (portal.hirehospo.com):
+
+- **Navy** `#1C3D5A`: primary; header bands, headings, primary buttons, links
+- **Gold** `#F4A62A`: the single accent; CTAs, key highlights, "FINANCE", prices
+- Light backgrounds: page `#F4F5F7`, cards `#FFFFFF`, panels `#F6F8FA`
+- Text: navy headings `#1C3D5A`, slate body `#3F4A57`, muted `#8A94A0`
+- Borders/hairlines `#E5E8EC`
+
+Light, navy-led, gold accent. Gold buttons use navy text. An earlier provisional
+dark "service-kitchen" palette with a flame accent has been retired. Hex values
+are eyeballed from the live catalog; swap for official codes if provided.

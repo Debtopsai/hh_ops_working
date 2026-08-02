@@ -143,8 +143,12 @@ marks almost never). Reframes to reuse:
 
 > Everything in this section is a working default so frames can be built consistently today. Flag
 > it as provisional in any hand-off, and fold in the real kit the moment one exists.
-> **Update (2026): typography is now confirmed from hirehospo.com - Merriweather (headlines) + Inter
-> (body/labels). The colour tokens below remain provisional until a kit/brand book lands.**
+> **Update (2026): the OFFICIAL brand is now confirmed from the live catalog (portal.hirehospo.com).
+> Typefaces: Merriweather (headlines) + Inter (body/labels). Colours: a LIGHT navy + gold system -
+> navy #1C3D5A (primary), gold #F4A62A (the single accent), on white / soft-grey #F4F5F7, slate body
+> text #3F4A57. The dark "service-kitchen" tokens below were provisional and DO NOT match the brand;
+> keep them only as an optional dark creative treatment for feed ads, and revisit with the client
+> before paid use.**
 
 The world of the brand is the **commercial kitchen after service** - dark stainless, warm light,
 capable and calm. Dark theme by default (thumb-stopping against feed white, and it makes flame +

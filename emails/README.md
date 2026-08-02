@@ -50,10 +50,11 @@ tokens remain. Replace the string, or map it to your platform's merge tag:
 
 ## Two things to confirm before go-live
 
-1. **Logo.** The header renders the wordmark **"HireHospo"** in the display
-   typeface (flame accent on "Hospo"). If a hosted logo asset exists, replace
-   the wordmark cell with a hosted `<img>` (max-width ~180px, include `alt`).
-   No logo file was supplied in the repo, so this is a text stand-in.
+1. **Logo.** The header renders the wordmark **"HireHospo"** in white Merriweather
+   inside the navy header band, with **"FINANCE"** in gold beside it (mirroring the
+   live site header). If a hosted logo asset exists, replace the wordmark with a
+   hosted `<img>` (max-width ~180px, include `alt`). No logo file was supplied in
+   the repo, so this is a text stand-in.
 2. **Button destination.** The "Browse the range" button points to
    `https://www.hirehospo.com/collections/all`. Swap to the campaign's
    SwipePages landing page if you'd rather keep leads inside one funnel.
@@ -62,7 +63,7 @@ tokens remain. Replace the string, or map it to your platform's merge tag:
 
 Send a live test to seed addresses and verify:
 
-- [ ] Renders in **Gmail (light and dark)**, **Apple Mail / iOS Mail**, and **Outlook**. Dark-themed emails are the ones worth spot-checking, since some clients re-tint backgrounds.
+- [ ] Renders in **Gmail (light and dark)**, **Apple Mail / iOS Mail**, and **Outlook**. It's a light design, so spot-check dark-mode clients (Gmail app, Outlook.com) to confirm the navy header band and gold button aren't re-tinted.
 - [ ] Subject and hidden preheader show correctly in the inbox preview.
 - [ ] `{{first_name}}`, `{{business_address}}`, `{{unsubscribe_url}}` all resolve (no raw `{{ }}` left).
 - [ ] The `info@hirehospo.com` and `+64 20 4100 9064` links open mail/dialer.
@@ -82,17 +83,25 @@ are requested, keep these intact:
 
 ## Brand colours used
 
+Light navy + gold palette, matching the live HireHospo Finance catalog
+(portal.hirehospo.com). The gold button uses navy text, mirroring the site's
+"Enquiry List" button.
+
 | Token | Hex | Where |
 |---|---|---|
-| page | `#0C0E12` | outer background |
-| canvas | `#12141A` | card background |
-| surface | `#1C1F26` | reassurance panel, step 2/3 badges |
-| line | `#2A2E37` | borders / hairlines |
-| ink | `#F4F4F2` | headings / primary text |
-| ink2 | `#B9BDC7` | body text |
-| mute | `#838896` | captions |
-| flame | `#FF9B2E` | top rule, "Hospo", step 1 badge, CTA button |
-| approve | `#58C97B` | "Enquiry received" chip and check bullets |
+| navy | `#1C3D5A` | header band, headings, primary text, step 2/3 numbers, footer links |
+| gold | `#F4A62A` | accent: gold rule, "FINANCE", step 1 badge, check ticks, CTA button |
+| page | `#F4F5F7` | outer background |
+| card | `#FFFFFF` | card background |
+| panel | `#F6F8FA` | reassurance panel |
+| navy-tint | `#EEF2F6` | step 2/3 number badges |
+| line | `#E5E8EC` | borders / hairlines |
+| body | `#3F4A57` | body text |
+| muted | `#8A94A0` / `#A2ABB6` | captions / microcopy |
+| gold-tint | `#FDF4E4` | "Enquiry received" chip background |
+
+> Hex values are eyeballed from a screenshot of the live catalog. Swap for the
+> official brand hex codes if you have them.
 
 Type: Merriweather (headlines, serif), Inter (body and labels), each with a
 web-safe fallback stack (Georgia/serif for Merriweather; Helvetica/Arial for
