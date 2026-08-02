@@ -112,3 +112,15 @@ costs, terms and obligations. Professional finance provider, not a discount
 shop. Sell the **payment, not the price**; never state a specific weekly
 figure before credit approval. NZ-local voice and support are core to the
 brand.
+
+## Brand Typography
+
+Confirmed from hirehospo.com (Aug 2026). Use these two typefaces in all
+customer-facing assets (emails, landing pages, ad frames):
+
+- **Headlines:** Merriweather (serif, bold); fallback Georgia, serif
+- **Body & labels:** Inter; fallback Helvetica Neue, Arial, sans-serif
+
+These are the only two brand typefaces. Earlier drafts used Space Grotesk and a
+monospace face provisionally; those are retired. Avoid em dashes in
+customer-facing copy.

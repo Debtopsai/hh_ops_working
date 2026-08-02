@@ -143,6 +143,8 @@ marks almost never). Reframes to reuse:
 
 > Everything in this section is a working default so frames can be built consistently today. Flag
 > it as provisional in any hand-off, and fold in the real kit the moment one exists.
+> **Update (2026): typography is now confirmed from hirehospo.com - Merriweather (headlines) + Inter
+> (body/labels). The colour tokens below remain provisional until a kit/brand book lands.**
 
 The world of the brand is the **commercial kitchen after service** - dark stainless, warm light,
 capable and calm. Dark theme by default (thumb-stopping against feed white, and it makes flame +
@@ -163,10 +165,11 @@ approve   #58C97B   small approval ticks only (never a fill)
 accentink #14161A   text on a flame surface - always
 ```
 
-- **Type:** Space Grotesk (display; semibold headings, bold figures, tight tracking) · Inter
-  (body) · **JetBrains Mono for money, terms, and chips** (prices, "+ GST", "REFURBISHED · WITH
-  WARRANTY", SKU/category labels, uppercase 0.08em). Money always in mono - it reads like a ledger,
-  which is the brand.
+- **Type (confirmed from hirehospo.com, 2026):** **Merriweather** for headlines (serif; bold) ·
+  **Inter** for body and labels (uppercase, ~0.08em tracking for chips/labels). These two are the
+  HireHospo brand typefaces - do not reintroduce Space Grotesk or a monospace face; earlier drafts
+  used those provisionally before the live-site fonts were confirmed. Fallbacks: Georgia/serif for
+  Merriweather, Helvetica Neue/Arial for Inter.
 - **Texture:** subtle brushed-stainless gradient allowed on equipment plinth frames; dot-grid and
   neo-brutalist devices belong to the sibling brands - don't borrow them.
 - **Discipline:** **one flame highlight per frame**, on the key beat only. Photography of real

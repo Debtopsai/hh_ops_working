@@ -94,5 +94,6 @@ are requested, keep these intact:
 | flame | `#FF9B2E` | top rule, "Hospo", step 1 badge, CTA button |
 | approve | `#58C97B` | "Enquiry received" chip and check bullets |
 
-Type: Space Grotesk (display), Inter (body), JetBrains Mono (money and labels),
-each with a web-safe fallback stack.
+Type: Merriweather (headlines, serif), Inter (body and labels), each with a
+web-safe fallback stack (Georgia/serif for Merriweather; Helvetica/Arial for
+Inter). These are HireHospo's brand typefaces, confirmed from hirehospo.com.
