@@ -1,21 +1,20 @@
 Hi {{first_name}},
 
 Thanks for getting in touch about financing your kitchen equipment. I'm
-Urman, and I'll be looking after your enquiry personally.
+Urman, and I'll be personally looking after your enquiry.
 
-I'll be in touch very soon to chat through what you're after (usually
-within a day). And just so you know, I'm more than happy to personally
-work on the price with you, so we get it sitting right for your budget.
+I'll be in touch very soon to chat through what you're after, usually
+within a day.
 
 Before we talk, could you do two quick things for me?
 
   1. Have a look through our brochure:
      https://portal.hirehospo.com/brochure
 
-  2. Note down the machines you're interested in, so we can go straight
-     through them when we chat.
+  2. Note down the machines you're interested in. Don't stress too much
+     about the price, we'll chat through it on the call.
 
-That way we'll make the most of the call and get you sorted quickly.
+That way we'll make the most of the call to get you sorted quickly.
 
 Talk soon,
 
@@ -23,5 +22,3 @@ Urman
 HireHospo
 info@hirehospo.com
 +64 20 4100 9064
-
-Any finance is subject to credit approval; normal lending criteria apply.

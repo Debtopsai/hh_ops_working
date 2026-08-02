@@ -3,9 +3,9 @@
 Auto-reply that fires when a lead submits the **Facebook instant form** for the
 HireHospo lead-capture campaign. It is written to read as a **genuine personal
 email from Urman**, not a designed marketing template: plain text, first person,
-warm. Urman introduces himself, says he'll be in touch soon, offers to work on
-the price personally, and asks the lead to check the brochure and note the
-machines they're interested in before the call.
+warm. Urman introduces himself, says he'll be in touch soon, asks the lead to
+check the brochure and note the machines they're interested in, and keeps
+pricing off the table until the call.
 
 Keep it looking like a real person typed it. Do not add a header banner, hero
 image, buttons, or heavy branding.
@@ -14,8 +14,9 @@ image, buttons, or heavy branding.
 
 | File | Where it goes |
 |---|---|
-| `hirehospo-lead-autoreply.txt` | The `text/plain` body. This is the canonical human version. |
+| `hirehospo-lead-autoreply.txt` | The `text/plain` body. This is the canonical human version (Version 1). |
 | `hirehospo-lead-autoreply.html` | The `text/html` body: the same words in minimal HTML (plain paragraphs, clickable links, no template). Use if the platform sends HTML. |
+| `lead-autoreply-variations.md` | Four copy variations (subject + body) to pick from or A/B test. The `.txt` / `.html` above hold Version 1. |
 
 If the platform lets you send **plain text only**, do that. It feels the most
 personal and lands in the primary inbox.
@@ -73,10 +74,12 @@ Ask whoever owns deliverability which applies before launch.
 ## Copy notes (keep these if the wording is edited)
 
 - **Human, first person, NZ English.** No corporate template voice.
-- **No specific price or weekly figure.** "Work on the price with you" is about
-  personal service, not a quoted number (the golden rule: no quote before
-  credit approval).
-- The **"subject to credit approval"** line stays.
+- **No specific price or weekly figure.** Pricing stays off the table until the
+  call; the email tells the lead not to worry about it yet (the golden rule: no
+  quote before credit approval).
+- **Finance disclaimer.** The body omits a formal disclaimer to keep the personal
+  feel. If deliverability wants one, add a light "subject to credit approval;
+  normal lending criteria apply" line to Urman's email signature, not the body.
 - No pressure or urgency language.
 - No em dashes (use commas, colons or full stops).
 
