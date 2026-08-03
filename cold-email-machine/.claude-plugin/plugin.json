@@ -1,0 +1,7 @@
+{
+  "name": "cold-email-machine",
+  "version": "1.0.0",
+  "description": "End-to-end B2B cold email system: infrastructure, deliverability, list building, offer engineering, copywriting, signal workflows and campaign ops. Encodes the Lead Gen Jay methodology (three pillars, triple tap, qualification-first lists, reverse lead magnets, signal campaigns) with NZ/AU/EU compliance calibration.",
+  "author": { "name": "Raj Singh" },
+  "keywords": ["cold email", "outbound", "lead generation", "b2b", "deliverability", "instantly", "apollo", "clay"]
+}
