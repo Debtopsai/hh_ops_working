@@ -55,7 +55,7 @@ This makes the segmentation serve sales *and* risk, not just marketing.
 
 **How this maps to work already in the repo:**
 - Campaign **A** is the full realisation of your exclusive-brochure idea → copy in `campaign-a-premium-brochure.md`.
-- Campaign **B** = the audited "Hospo Catalog" plan → `campaigns/hirehospo-auckland-catalog/` (repositioned as the Tier-B workhorse, not the premium play).
+- Campaign **B** → canonical offer + sequence in `campaign-b-cashflow-catalog.md` (Tier-B workhorse); deeper 7-section plan + funnel math + original audit in `campaigns/hirehospo-auckland-catalog/`.
 - Campaign **C** = the signal play already built → `campaigns/hirehospo-new-venues-nz/`.
 
 Run **one segment per campaign** (campaigns test audiences; A/B variants test copy). Don't blend tiers in one send — the whole point is a different offer per tier.
