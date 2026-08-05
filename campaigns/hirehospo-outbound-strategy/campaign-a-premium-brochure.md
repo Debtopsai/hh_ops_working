@@ -32,8 +32,47 @@ Top venues often hide the owner's email behind a gatekeeper, so email alone unde
 ## Sequence (variables: `{{firstName|there}}`, `{{CompanyName}}`; fill `[Your Name]`, `[NZ postal address]`, `[case study — with consent]`)
 
 ### Email 1 — the invitation [T+0, plain text, no links]
-**Subject (spintax, 3–5 words, curiosity + a hint of exclusivity):**
-`{{an invite for {{CompanyName}}|premium refurb — invite only|short list for {{CompanyName}}}}`
+
+Two A/B arms for the "angle" test — run them head to head and let **positive-reply rate** decide the tone question.
+
+#### Variant A (PRIMARY — appreciative, client copy)
+Kept exactly as written. Only mechanical bugs fixed (typo, broken `{[Rating}}` token, stray `(( ))`, name fallback) + the NZ-required removal line added — no wording changed.
+
+**Subject:** `Kia ora {{firstName|there}}, we appreciate the value you're adding to our Auckland community.`
+
+```
+Kia ora {{firstName|there}},
+
+I just wanted to say how impressed I was with {{CompanyName}}'s {{rating}}, with
+over {{reviewCount}} generous reviews. It's clear Kiwis in Auckland love what
+you're dishing up.
+
+To introduce - I'm [Your Name] from HireHospo.
+Like you, we also have a mission to make our customers happy.
+
+For us, it's pretty simple: solving the equipment ownership equation for Auckland
+hospitality businesses.
+
+We allow businesses like yours to have access to high quality operations (at low
+weekly costs), so you can focus on what you do best - create amazing experiences
+that Kiwi's rely on.
+
+To help, we have a Digital Hospo Brochure (which you won't find publicly) - only
+for a select few restaurants in Auckland we feel are adding value to our local
+community.
+
+If you'd like access to this - feel free to reply to this email with 'Brochure.'
+
+Ngā mihi nui,
+
+[Your Name]
+HireHospo
+Not for you? Reply 'no thanks' and I'll take you off our list. HireHospo, [NZ postal address].
+```
+> ⚠️ **Merge-field names must match your tool's columns exactly** — `firstName`, `CompanyName`, `rating`, `reviewCount`. If a column is named differently (e.g. `stars`, `google_rating`), the token renders blank. Set a fallback on every field. **Skip any lead missing `rating`/`reviewCount`** so this email never sends with a blank where a number should be.
+
+#### Variant B (challenger — lean)
+**Subject (spintax):** `{{an invite for {{CompanyName}}|premium refurb — invite only|short list for {{CompanyName}}}}`
 
 ```
 Kia ora {{firstName|there}},
@@ -56,7 +95,7 @@ Ngā mihi nui,
 [Your Name], HireHospo
 Not for you? Reply 'no thanks' and I'll take you off the list. HireHospo, [NZ postal address].
 ```
-*Selectivity framed as a criterion ("best-reviewed kitchens"), not gush. No weekly figure. Removal line present.*
+*A tests warm/appreciative (your copy) vs B tests lean/curiosity. Both carry the removal line (UEMA). Emails 2–5 below follow whichever Email-1 wins.*
 
 ### Email 2 — one new reason [T+3, same thread]
 ```
