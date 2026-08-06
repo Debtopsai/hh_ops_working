@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>HireHospo Equipment Care Guide</title>
+<link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@700;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy:#1C3D5A; --gold:#F4A62A; --page:#F4F5F7; --card:#FFFFFF;
+    --panel:#F6F8FA; --line:#E5E8EC; --ink:#1C3D5A; --body:#3F4A57; --mute:#8A94A0;
+    --goldtint:#FDF4E4;
+  }
+  *{box-sizing:border-box;}
+  body{margin:0; background:var(--page); color:var(--body);
+    font-family:'Inter','Helvetica Neue',Arial,sans-serif; font-size:15px; line-height:1.6;}
+  .sheet{max-width:820px; margin:24px auto; background:var(--card); border:1px solid var(--line);
+    border-radius:14px; overflow:hidden;}
+  h1,h2,h3{font-family:'Merriweather',Georgia,'Times New Roman',serif; color:var(--ink); margin:0;}
+  a{color:var(--navy);}
+  p{margin:0 0 14px 0;}
+  .pad{padding:0 44px;}
+
+  /* Masthead */
+  .masthead{background:var(--navy); color:#fff; padding:26px 44px 24px;}
+  .wm{font-family:'Merriweather',Georgia,serif; font-size:20px; font-weight:700; color:#fff;}
+  .wm .fin{font-family:'Inter',Arial,sans-serif; font-size:11px; font-weight:600; letter-spacing:0.18em; color:var(--gold);}
+  .masthead h1{color:#fff; font-size:30px; line-height:1.2; margin:18px 0 6px;}
+  .masthead .sub{color:#C7D2DE; font-size:14px; margin:0;}
+  .goldbar{height:3px; background:var(--gold);}
+
+  /* Section headings */
+  h2{font-size:21px; margin:34px 0 6px; padding-top:4px;}
+  h2 + .rule{width:44px; height:3px; background:var(--gold); margin:0 0 16px; border-radius:2px;}
+  .lead{color:var(--body);}
+
+  .callout{background:var(--goldtint); border:1px solid #F5E2BE; border-radius:10px; padding:14px 18px; margin:0 0 16px;}
+  .callout strong{color:var(--navy);}
+
+  /* Rules */
+  .rule-item{display:flex; gap:14px; padding:14px 0; border-top:1px solid var(--line);}
+  .rule-item:first-child{border-top:none;}
+  .rule-num{flex:0 0 30px; width:30px; height:30px; line-height:30px; text-align:center;
+    background:var(--gold); color:var(--navy); font-weight:700; border-radius:7px; font-size:14px;}
+  .rule-item h3{font-size:15px; font-family:'Inter',Arial,sans-serif; font-weight:700; color:var(--navy); margin:4px 0 4px;}
+  .rule-item p{margin:0; font-size:14px;}
+
+  /* Tables */
+  table{width:100%; border-collapse:collapse; margin:0 0 8px; font-size:14px;}
+  th,td{text-align:left; padding:10px 12px; border:1px solid var(--line); vertical-align:top;}
+  thead th{background:var(--navy); color:#fff; font-weight:600; font-family:'Inter',Arial,sans-serif;}
+  tbody th{background:var(--panel); color:var(--navy); font-weight:700; white-space:nowrap;}
+  .log td{height:34px;}
+
+  /* Machine cards */
+  .grid{display:grid; grid-template-columns:1fr 1fr; gap:14px; margin:6px 0 8px;}
+  .mcard{background:var(--card); border:1px solid var(--line); border-radius:10px; padding:16px 18px; break-inside:avoid;}
+  .mcard h3{font-size:15px; color:var(--navy); margin:0 0 8px; padding-bottom:8px; border-bottom:1px solid var(--line);}
+  .mcard ul{margin:0; padding-left:16px;}
+  .mcard li{font-size:13.5px; line-height:1.5; margin-bottom:6px;}
+  .kills{color:#9A3B12;}
+  .kills strong{color:#9A3B12;}
+
+  /* Checklist */
+  ul.check{list-style:none; padding:0; margin:0;}
+  ul.check li{position:relative; padding:6px 0 6px 26px; font-size:14px; border-top:1px solid var(--line);}
+  ul.check li:first-child{border-top:none;}
+  ul.check li:before{content:"\2713"; position:absolute; left:0; top:6px; color:var(--gold); font-weight:700;}
+
+  /* Two-col warranty */
+  .cols{display:grid; grid-template-columns:1fr 1fr; gap:14px;}
+  .box{border:1px solid var(--line); border-radius:10px; padding:14px 18px;}
+  .box.ok{background:#F2F8F4; border-color:#CDE6D6;}
+  .box.no{background:#FBF3F0; border-color:#EBD6CE;}
+  .box h3{font-size:14px; font-family:'Inter',Arial,sans-serif; text-transform:uppercase; letter-spacing:0.06em; margin:0 0 8px;}
+  .box.ok h3{color:#2E7D4F;} .box.no h3{color:#9A3B12;}
+  .box ul{margin:0; padding-left:16px; font-size:13.5px;}
+
+  /* Contact panel */
+  .contact{background:var(--navy); color:#fff; border-radius:12px; padding:22px 24px; margin:8px 0;}
+  .contact h3{color:#fff; font-size:16px; margin:0 0 10px;}
+  .contact p{margin:0 0 6px; color:#DCE6EF; font-size:14px;}
+  .contact a{color:var(--gold); font-weight:600;}
+  .roles{display:grid; grid-template-columns:1fr 1fr 1fr; gap:10px; margin:6px 0 16px;}
+  .role{background:var(--panel); border:1px solid var(--line); border-radius:10px; padding:12px 14px; font-size:13.5px;}
+  .role b{color:var(--navy);}
+
+  .foot{padding:18px 44px 34px; color:var(--mute); font-size:13px; font-style:italic;}
+
+  @media (max-width:640px){
+    .pad,.masthead,.foot{padding-left:22px; padding-right:22px;}
+    .grid,.cols,.roles{grid-template-columns:1fr;}
+    .masthead h1{font-size:25px;}
+  }
+  @media print{
+    body{background:#fff; font-size:11.5pt;}
+    .sheet{max-width:none; margin:0; border:none; border-radius:0;}
+    .page-break{break-before:page;}
+    .mcard,.rule-item,tr,.box,.contact{break-inside:avoid;}
+    a{color:var(--navy); text-decoration:none;}
+  }
+</style>
+</head>
+<body>
+<div class="sheet">
+
+  <!-- Masthead -->
+  <div class="masthead">
+    <div class="wm">HireHospo <span class="fin">FINANCE</span></div>
+    <h1>Looking after your equipment</h1>
+    <p class="sub">A care guide for your commercial kitchen</p>
+  </div>
+  <div class="goldbar"></div>
+
+  <div class="pad">
+    <p style="margin-top:26px;" class="lead">Congratulations on your new equipment. This guide is here to help you get years of reliable service out of it. Please take ten minutes to read it, and keep it somewhere your team can find it.</p>
+    <p class="lead">Most of the breakdowns we see are not the machine giving up. They are the result of equipment that was run hard and never cared for. Nearly all of it is preventable, and this guide shows you how.</p>
+    <p class="lead">A quick note on who does what. HireHospo finances your equipment. Washpro delivers, installs and services it. The day-to-day care is the one part that sits with you, and it is the part that makes the biggest difference.</p>
+
+    <h2>First, the important bit: this is commercial equipment</h2>
+    <div class="rule"></div>
+    <p>Commercial kitchen equipment is built to work hard, but it is not a domestic appliance and it does not look after itself.</p>
+    <ul>
+      <li>Run eight hours a day, one of these machines does in a day what a home unit would take a week to do. Heat, water, grease and constant use wear parts fast.</li>
+      <li>Your warranty covers genuine faults in the equipment. It does not cover damage caused by neglect, such as scale, blocked coils, old oil or the wrong chemicals. Good care keeps you out of that gap.</li>
+      <li>Downtime costs more than maintenance, every time. A dishwasher that dies on a Friday night or a fridge that fails overnight costs you a call-out, a repair and lost trade. Prevention is always cheaper.</li>
+    </ul>
+    <p>None of this is meant to worry you. A few minutes of care each day and a professional service on schedule will keep your kitchen running.</p>
+
+    <h2>The five rules that prevent most breakdowns</h2>
+    <div class="rule"></div>
+
+    <div class="rule-item"><div class="rule-num">1</div><div><h3>Water is the number one enemy</h3><p>Scale from the water supply builds up on heating elements and inside boilers, and it is the single most common cause of failure in dishwashers, glasswashers, combi ovens, ice makers and coffee machines. Even New Zealand's soft to moderately hard water will scale a hot commercial machine over time. Find out how hard your local water is, fit filtration or softening on any machine that heats water, and descale on schedule.</p></div></div>
+
+    <div class="rule-item"><div class="rule-num">2</div><div><h3>Keep it clean, every day</h3><p>Grease, food debris and blocked filters are behind a huge share of faults. A daily clean is the cheapest maintenance there is.</p></div></div>
+
+    <div class="rule-item"><div class="rule-num">3</div><div><h3>Give it air</h3><p>Machines need airflow to shed heat. This matters most for fridges and freezers: keep the condenser coil clean, leave space around the unit, and keep it out of direct heat. A blocked coil is the fastest way to kill a compressor.</p></div></div>
+
+    <div class="rule-item"><div class="rule-num">4</div><div><h3>Use it the way it is meant to be used</h3><p>Use the correct chemicals and oil, do not overload it, allow warm-up and cool-down where needed, and make sure your team knows how to run it. Most misuse is simply nobody being shown.</p></div></div>
+
+    <div class="rule-item"><div class="rule-num">5</div><div><h3>Service it on schedule, and report problems early</h3><p>A small noise, leak or drop in performance is a cheap fix today. Ignored, it becomes a breakdown. Book a professional service on a regular cycle, and call us the moment something is not right.</p></div></div>
+  </div>
+
+  <div class="pad page-break">
+    <h2>How often: your maintenance rhythm</h2>
+    <div class="rule"></div>
+    <div class="callout"><strong>The heavy-use rule:</strong> if a machine runs around eight hours a day, it needs a professional service about four times a year, once a quarter. Lighter use, once or twice a year is usually enough. Water-fed machines also need filter changes and descaling in between, set to your local water hardness.</div>
+    <table>
+      <thead><tr><th style="width:130px;">When</th><th>What to do</th></tr></thead>
+      <tbody>
+        <tr><th>Every day</th><td>Wipe down. Empty and clean filters, traps and drip trays. Skim the fryer. Clear dishwasher spray arms and jets. Scrape the griddle. Check door seals. Leave washers open to dry.</td></tr>
+        <tr><th>Every week</th><td>Deeper clean, including behind and underneath. Descale checks on water-fed gear. Boil-out the fryer on busy sites. Sanitise ice makers and prep equipment.</td></tr>
+        <tr><th>Every month</th><td>Descale water-fed machines. Clean refrigeration condenser coils. Check gaskets and seals. Fryer boil-out. Change or check water filters.</td></tr>
+        <tr><th>Every quarter</th><td>Professional service for heavy-use equipment. Calibration, gas and electrical checks, water filter changes.</td></tr>
+        <tr><th>Every year</th><td>Full professional service and safety check for lighter-use sites. Gas safety check on all gas equipment.</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="pad page-break">
+    <h2>Machine by machine</h2>
+    <div class="rule"></div>
+    <p>Quick care notes for the main categories. Always follow the manufacturer's manual for your specific model as well.</p>
+    <div class="grid">
+
+      <div class="mcard"><h3>Dishwashers and glasswashers</h3><ul>
+        <li><b>Daily:</b> empty and rinse the filters, clear the wash and rinse arms so no jet is blocked, wipe the seals, leave the door open to dry.</li>
+        <li><b>Regular:</b> descale to suit your water hardness, check detergent and rinse-aid dosing, clean the tank.</li>
+        <li class="kills"><strong>What kills them:</strong> limescale in the boiler and blocked jets. Soft water still scales a hot machine over time.</li>
+      </ul></div>
+
+      <div class="mcard"><h3>Combi and convection ovens</h3><ul>
+        <li><b>Daily:</b> run the cleaning cycle, wipe the cavity, clean the door seal, check the drain is clear.</li>
+        <li><b>Regular:</b> descale the steam generator (monthly is a common guide, more in hard water), keep the water filter in date, never ignore a descale alert.</li>
+        <li class="kills"><strong>What kills them:</strong> scale in the steam generator and neglected door seals. Water treatment is essential on a combi.</li>
+      </ul></div>
+
+      <div class="mcard"><h3>Ranges, cooktops and gas burners</h3><ul>
+        <li><b>Daily:</b> clean the burners and drip trays, keep the burner ports clear.</li>
+        <li><b>Regular:</b> check ignition and the flame (it should burn blue), clear blocked jets, keep grease down.</li>
+        <li><b>Gas is Washpro's job:</b> never modify gas connections yourself. Book us for gas work and an annual gas safety check.</li>
+      </ul></div>
+
+      <div class="mcard"><h3>Griddles, grills and salamanders</h3><ul>
+        <li><b>Daily:</b> scrape and clean the plate, empty the grease trays, season the surface where the manual calls for it.</li>
+        <li><b>Regular:</b> clear carbon build-up, check the elements or burners.</li>
+        <li class="kills"><strong>What kills them:</strong> built-up carbon and grease, and running them dry.</li>
+      </ul></div>
+
+      <div class="mcard"><h3>Deep fryers and pasta cookers</h3><ul>
+        <li><b>Daily:</b> skim, filter the oil, wipe down, clean the baskets.</li>
+        <li><b>Regular:</b> change the oil on your schedule and boil-out the vat (about monthly, weekly for busy sites). Check the thermostat and high-limit cut-out.</li>
+        <li class="kills"><strong>What kills them:</strong> old, dirty oil and carbon on the elements. Never overfill, and never leave a fryer on and unattended.</li>
+      </ul></div>
+
+      <div class="mcard"><h3>Pizza and conveyor ovens</h3><ul>
+        <li><b>Daily and weekly:</b> clean crumb trays, stones and conveyor belts, check the heating elements.</li>
+        <li>Keep the ventilation around the oven clear.</li>
+      </ul></div>
+
+      <div class="mcard"><h3>Bakery and dough equipment</h3><ul>
+        <li><b>After each use:</b> clean bowls, beaters, rollers and guards.</li>
+        <li><b>Regular:</b> check drive belts and gears, keep it lubricated where specified.</li>
+        <li class="kills"><strong>What kills them:</strong> overloading past the bowl or dough capacity. It is the fastest way to burn out a motor or gearbox.</li>
+      </ul></div>
+
+      <div class="mcard"><h3>Refrigeration and ice</h3><ul>
+        <li><b>The big one:</b> clean the condenser coil. A coil clogged with dust and grease is the top cause of compressor failure. Clean it monthly in a greasy kitchen, every three months in a clean one.</li>
+        <li><b>Daily and weekly:</b> check the door seals, do not block airflow around the unit, keep it out of direct heat.</li>
+        <li><b>Ice makers:</b> descale and sanitise on schedule. Scale and slime build up fast.</li>
+        <li class="kills"><strong>What kills them:</strong> blocked coils and worn seals. A dirty coil also pushes your power bill up 20 to 30 percent.</li>
+      </ul></div>
+
+      <div class="mcard"><h3>Holding, display and food warming</h3><ul>
+        <li>Clean the water pans, elements and seals, check the thermostat, keep the unit clean and dry.</li>
+      </ul></div>
+
+      <div class="mcard"><h3>Food prep and slicing</h3><ul>
+        <li>Clean and sanitise after every use, handle and store blades safely, check the guards, lubricate where the manual specifies.</li>
+      </ul></div>
+
+    </div>
+  </div>
+
+  <div class="pad page-break">
+    <h2>Your kitchen matters as much as the machine</h2>
+    <div class="rule"></div>
+    <p>A well-maintained machine in a poor environment will still struggle. Run through this checklist for your kitchen:</p>
+    <ul class="check">
+      <li><b>Ventilation and extraction</b> working and clean. Grease-laden air ruins electronics and coils.</li>
+      <li><b>Space around units</b> for airflow, especially fridges and freezers. Do not push them hard against a wall or box them in.</li>
+      <li><b>Ambient heat.</b> Fridges and freezers work harder in a hot kitchen. Keep them away from ovens and direct sun where you can.</li>
+      <li><b>Water.</b> Know your hardness and fit filtration or softening on any water-fed equipment.</li>
+      <li><b>Cleanliness.</b> Keep floors, surfaces and the backs of machines free of grease and dust, and stay on top of pest control.</li>
+      <li><b>Stable power.</b> Report any trips or flickering to us.</li>
+    </ul>
+
+    <h2>What your warranty covers, and what it does not</h2>
+    <div class="rule"></div>
+    <div class="cols">
+      <div class="box ok"><h3>Covered</h3><ul><li>Genuine faults in the equipment.</li></ul></div>
+      <div class="box no"><h3>Not covered</h3><ul><li>Scale build-up</li><li>Blocked condenser coils</li><li>Old or dirty oil</li><li>The wrong chemicals</li><li>Overloading or running dry</li><li>Unapproved modifications</li></ul></div>
+    </div>
+    <p style="margin-top:14px;">This is not about catching you out. These failures are preventable, and this guide is how you prevent them. Keeping up with care, and keeping a simple record of it, protects both your equipment and your warranty.</p>
+  </div>
+
+  <div class="pad page-break">
+    <h2>Who does what, and how to get help</h2>
+    <div class="rule"></div>
+    <div class="roles">
+      <div class="role"><b>HireHospo</b><br>Your finance and your point of contact.</div>
+      <div class="role"><b>Washpro</b><br>Delivery, installation, servicing and repairs.</div>
+      <div class="role"><b>You</b><br>Daily care and booking scheduled maintenance.</div>
+    </div>
+    <div class="contact">
+      <h3>To book a service or report a problem</h3>
+      <p>Email: <a href="mailto:info@hirehospo.com">info@hirehospo.com</a></p>
+      <p>Phone: <a href="tel:+6420410009064">+64 20 4100 9064</a></p>
+      <p>Web: <a href="https://www.hirehospo.com">hirehospo.com</a></p>
+    </div>
+    <p>If a machine is down, get in touch straight away. And if you would like us to set up a regular service schedule so you are not left trying to remember, just ask. We are happy to arrange it.</p>
+
+    <h2>Keep a simple service log</h2>
+    <div class="rule"></div>
+    <p>A few lines each time keeps your equipment history clear and your warranty clean.</p>
+    <table class="log">
+      <thead><tr><th>Date</th><th>Machine</th><th>What was done</th><th>By whom</th><th>Next due</th></tr></thead>
+      <tbody>
+        <tr><td></td><td></td><td></td><td></td><td></td></tr>
+        <tr><td></td><td></td><td></td><td></td><td></td></tr>
+        <tr><td></td><td></td><td></td><td></td><td></td></tr>
+        <tr><td></td><td></td><td></td><td></td><td></td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <p class="foot">Look after these machines and they will look after your kitchen. Any questions, we are only a call away.</p>
+
+</div>
+</body>
+</html>
