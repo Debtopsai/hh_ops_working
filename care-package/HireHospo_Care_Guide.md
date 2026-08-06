@@ -75,8 +75,8 @@ descaling in between, set to your local water hardness.
 | **Every day** | Wipe down. Empty and clean filters, traps and drip trays. Skim the fryer. Clear dishwasher spray arms and jets. Scrape the griddle. Check door seals. Leave washers open to dry. |
 | **Every week** | Deeper clean, including behind and underneath. Descale checks on water-fed gear. Boil-out the fryer on busy sites. Sanitise ice makers and prep equipment. |
 | **Every month** | Descale water-fed machines. Clean refrigeration condenser coils. Check gaskets and seals. Fryer boil-out. Change or check water filters. |
-| **Every quarter** | Professional service for heavy-use equipment. Calibration, gas and electrical checks, water filter changes. |
-| **Every year** | Full professional service and safety check for lighter-use sites. Gas safety check on all gas equipment. |
+| **Every quarter** | **Book one professional maintenance session.** This is the four-a-year cadence for equipment used around eight hours a day. It covers calibration, gas and electrical checks, and water filter changes. |
+| **Every year** | For lighter-use sites, one to two professional services a year is usually enough. Gas safety check on all gas equipment. |
 
 ---
 
