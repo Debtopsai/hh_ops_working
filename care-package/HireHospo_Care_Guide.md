@@ -198,11 +198,11 @@ protects both your equipment and your warranty.
 
 - Email: info@hirehospo.com
 - Phone: +64 20 4100 9064
-- Web: hirehospo.com
+- Web: www.hirehospo.com
 
-If a machine is down, get in touch straight away. And if you would like us to set
-up a regular service schedule so you are not left trying to remember, just ask. We
-are happy to arrange it.
+If a machine is down, get in touch straight away. If you would like a maintenance
+session booked in, just let us know and we can organise it. We are also happy to
+set up a regular service schedule so you are not left trying to remember.
 
 ---
 
