@@ -101,11 +101,13 @@ Today is mid-August (NZ winter). The quarter runs into spring and the lead-up to
 
 **Batch a month at a time.** In the last week of each month, produce the next month's 28 posts (about 12 videos, 8 carousels, 8 statics).
 
-**Videos (producer):**
-1. `/meta-ad-hook-writer` — generate and score hooks for the week's video topics.
-2. `/hirehospo-ad-factory` (full package) or `/meta-ad-script-writer` (just the script) — flesh the chosen hook into a script with beats, on-screen text and shot notes.
-3. Producer shoots/edits in the house style (bold white text, amber emphasis, real catalogue equipment, HireHospo end card with "GET OUR LATEST STOCK LIST TODAY").
-4. `/hirehospo-reel-caption` — write the IG + FB captions (Mode A from the finished cut, or Mode B to pre-write from the script).
+**Videos (hooks + scripts).** The hook and script skills live in the Claude session, not in Poppy and not on the producer's machine, so there are two paths. Use A by default.
+- **Path A (recommended):** generate hooks and scripts **in this Claude session** in the monthly batch, using `/meta-ad-hook-writer` then `/hirehospo-ad-factory` (full package) or `/meta-ad-script-writer` (script only). Save the scripts to the repo and hand them to the producer. The producer needs no skills.
+- **Path B (portable):** when generating outside the session (in Poppy or any chat tool), use the self-contained Hook + Script prompt in `03-video-hook-and-script-prompt.md`, which replicates the same method with the HireHospo locks baked in.
+
+Then:
+1. Producer shoots/edits in the house style (bold white text, amber emphasis, real catalogue equipment, HireHospo end card with "GET OUR LATEST STOCK LIST TODAY").
+2. `/hirehospo-reel-caption` — write the IG + FB captions (Mode A from the finished cut, or Mode B to pre-write from the script).
 
 **Statics + carousels (Poppy.ai):**
 1. Take the day's brief from the calendar (pillar + message + any price/equipment).
