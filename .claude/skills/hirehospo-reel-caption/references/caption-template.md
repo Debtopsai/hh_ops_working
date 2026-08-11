@@ -29,7 +29,7 @@ Same story, tuned for Facebook:
   (Facebook is link-friendly; Comment BROCHURE is Instagram-native, do not use it here).
 - **Microcopy line:** Finance is subject to credit approval.
 - **Hashtag block (use this exact set, best post volume on Facebook):**
-  `#hirehospo #hosponz #AucklandHospitality #HospitalityNZ #nzhospitality #nzcafe #nzrestaurant`
+  `#hirehospo #hosponz #AucklandHospitality #HospitalityNZ #nzhospitality #nzcafe #nzrestaurant #nzhotel #hotelnz`
 
 ## 4. Notes
 - Explain why the two captions differ (IG Comment BROCHURE auto-DM vs FB direct link).
