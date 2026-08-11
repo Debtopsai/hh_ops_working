@@ -49,11 +49,11 @@ Concept: **"We don't just finance kitchens. We help them run for years."**
 >
 > We are not just financing equipment. We are financing futures.
 >
-> 👉 Get our latest stock list today: [your stock-list link]
+> 👉 Get our latest stock list today: https://portal.hirehospo.com/brochure
 >
 > Finance is subject to credit approval.
 >
-> #HireHospo #HospoNZ #AucklandHospitality
+> #hirehospo #hosponz #AucklandHospitality #HospitalityNZ #nzhospitality #nzcafe #nzrestaurant #nzhotel #hotelnz
 
 ---
 

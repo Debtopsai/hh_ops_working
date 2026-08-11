@@ -87,8 +87,8 @@ Follow `references/caption-template.md`. Produce, in order:
 2. **Instagram caption** — hook, body in brand voice, "Comment BROCHURE" CTA, "subject to
    credit approval" microcopy, 8 to 12 hashtags.
 3. **Facebook caption** — same story, but a **direct stock-list link CTA** (not Comment
-   BROCHURE, which is IG-native), slightly more room for text, a lighter 2 to 4 hashtag
-   set. Use a `[your stock-list link]` placeholder if the real URL is unknown.
+   BROCHURE, which is IG-native), slightly more room for text, and the locked Facebook
+   hashtag set. Link: **https://portal.hirehospo.com/brochure**.
 4. **Notes** — compliance flags, figure decisions, and the auto-DM reminder.
 
 Match the copy to the actual message of this video/source, not a template angle.

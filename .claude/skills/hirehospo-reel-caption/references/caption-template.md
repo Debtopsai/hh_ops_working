@@ -25,7 +25,7 @@ Structure:
 Same story, tuned for Facebook:
 - Same hook and body, but Facebook tolerates a little more text, so a slightly fuller
   middle is fine.
-- **CTA line:** a direct link, "👉 Get our latest stock list today: [your stock-list link]"
+- **CTA line:** a direct link, "👉 Get our latest stock list today: https://portal.hirehospo.com/brochure"
   (Facebook is link-friendly; Comment BROCHURE is Instagram-native, do not use it here).
 - **Microcopy line:** Finance is subject to credit approval.
 - **Hashtag block (use this exact set, best post volume on Facebook):**
