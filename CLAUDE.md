@@ -9,6 +9,7 @@
 - Approved phrases: "minimal upfront cost" (NOT "zero" / "no upfront cost"), "low weekly payments", "let your equipment pay for itself" / "pays for itself from day one", "keep your cash working".
 - Standard CTA: **"Get our latest stock list today."** Traffic goes to the stock list / brochure.
 - For Instagram captions, the CTA is **"Comment BROCHURE"** (auto-DM trigger) to get the stock list.
+- **Facebook default hashtag set** (best post volume, use these): `#hirehospo #hosponz #AucklandHospitality #HospitalityNZ #nzhospitality #nzcafe #nzrestaurant`. Facebook CTA is a direct stock-list link (not Comment BROCHURE, which is IG-native).
 - Do **not** mention Washpro in customer-facing ad copy (internal only). Keep "refurb" low-visibility, not front-line.
 
 ## Compliance locks (NZ)

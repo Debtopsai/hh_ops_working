@@ -28,7 +28,8 @@ Same story, tuned for Facebook:
 - **CTA line:** a direct link, "👉 Get our latest stock list today: [your stock-list link]"
   (Facebook is link-friendly; Comment BROCHURE is Instagram-native, do not use it here).
 - **Microcopy line:** Finance is subject to credit approval.
-- **Hashtag block** (2 to 4 only): Facebook does not lean on hashtags.
+- **Hashtag block (use this exact set, best post volume on Facebook):**
+  `#hirehospo #hosponz #AucklandHospitality #HospitalityNZ #nzhospitality #nzcafe #nzrestaurant`
 
 ## 4. Notes
 - Explain why the two captions differ (IG Comment BROCHURE auto-DM vs FB direct link).
