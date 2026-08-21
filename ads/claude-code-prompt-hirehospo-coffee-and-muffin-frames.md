@@ -22,7 +22,7 @@ Build the frames and a stitched **15.0s animatic** at **1080×1920 (9:16)** for 
 ## 3. Inputs
 
 - The script and storyboard - **the build spec.** The storyboard's "Frames to build" table is the contract; the script's copy column is verbatim law.
-- `ad/fitout-quote-shock/shared/` - **reuse `tokens.css`, `stage.js`, `frame-end-card.html`, the approval timeline, the category grid and the refurb badge.**
+- `ad/fitout-quote-shock/shared/` - **reuse `tokens.css`, `stage.js`, `frame-end-card.html`, the approval timeline, the category grid and the serviced badge.**
 - `ad/50k-from-1499/frames/01-headline.html` - reuse its disclosure-block component.
 - Any HireHospo UI kit, brand book, wordmark asset, or SwipePages export - **if present, these override §4 entirely.**
 - Any catalogue export (`active-products.csv`) - to confirm the four category names.
@@ -49,9 +49,9 @@ Copy is **verbatim and locked**.
 | `frames/01-headline.html` | Shots 1-3 · 0:00-0:07.5 | 7.5s | `$50,000 OF EQUIPMENT` · `FOR THE PRICE OF A COFFEE & MUFFIN A DAY` | L1 resolves over 0.5s, full-bleed, alone in frame, and **holds for 2.5s**. The product image fades up beneath it at 3.0s over 0.6s and then **does not move again — no push-in, no drift, no parallax**. L2 resolves at 5.0s over 0.6s with the flame landing on `COFFEE & MUFFIN`. The two lines wrap above and below the image so the whole frame reads as one sentence with a picture in the middle |
 | `frames/02-approval-timeline.html` | Shot 4 · 0:07.5-0:09.5 | 2.0s | `HireHospo` · `FUNDING UP TO $50,000` · `APPLY` · `CREDIT CHECK` · `APPROVED` · `DELIVERED 1-3 BUSINESS DAYS` · `Subject to credit approval` | **Hard reset** — full layout change. **REUSE** with the funding-ceiling line enabled |
 | `frames/03-category-grid.html` | Shot 5 · 0:09.5-0:10.5 | 1.0s | `COMBI OVENS` · `COMMERCIAL DISHWASHERS` · `CONVECTION OVENS` · `GLASSWASHERS` | Four tiles light 150ms apart, warm. **REUSE**, re-parameterised to cafe categories |
-| `frames/04-refurb-badge.html` | Shot 6 · 0:10.5-0:11.5 | 1.0s | `REFURBISHED · WITH WARRANTY` | **REUSE** unchanged. Stamp settle 1.08 → 1.0, 0.25s |
+| `frames/04-serviced-badge.html` | Shot 6 · 0:10.5-0:11.5 | 1.0s | `FULLY SERVICED · WITH WARRANTY` | **REUSE** unchanged. Stamp settle 1.08 → 1.0, 0.25s |
 | `frames/05-entry-figure.html` | Shot 7 · 0:11.5-0:12.5 | 1.0s | `From $14.99/day` · `FUNDING UP TO $50,000 · PACKAGES FROM $14.99/DAY` · `YOUR PAYMENT DEPENDS ON EQUIPMENT VALUE AND TERM` · `+ GST · SUBJECT TO CREDIT APPROVAL` | **REUSE** the disclosed-figure component from `50k-from-1499`. Figure scales 0.94 → 1.0 with a flame underline wipe; disclosure fades in at +0.15s **inside the same container** |
-| `frames/06-end-card.html` | Shot 8 · 0:12.5-0:15 | 2.5s | `HireHospo` · `Premium kitchen equipment, refurbished and warranted, on low weekly payments.` · `Get our latest stock list today` · `REFURBISHED · WITH WARRANTY · + GST · SUBJECT TO CREDIT APPROVAL` · `hirehospo.com` | **REUSE** unchanged |
+| `frames/06-end-card.html` | Shot 8 · 0:12.5-0:15 | 2.5s | `HireHospo` · `Premium kitchen equipment, fully serviced and warranted, on low weekly payments.` · `Get our latest stock list today` · `FULLY SERVICED · WITH WARRANTY · + GST · SUBJECT TO CREDIT APPROVAL` · `hirehospo.com` | **REUSE** unchanged |
 
 **Frame 01 is the ad and it is half the runtime.** Two text beats and a photograph that does not move. It will feel slow while you build it — that is the offer-led bet, and it is deliberate. Do not add motion to fill the time.
 
@@ -75,7 +75,7 @@ ad/coffee-and-muffin/
   - **Never put a price on the coffee and muffin.** No label, no chip, no caption, no tooltip, anywhere in the build. The headline makes the comparison; putting a dollar figure on the food would be a claim about third-party retail pricing HireHospo has no basis to make.
   - **"+ GST"** in the disclosure and on the end card. **"Subject to credit approval"** in the disclosure and on frames 02 and 06.
   - **No product model name anywhere.** Categories only.
-  - No approval hype, no pressure, no discount-shop language. **"Refurbished" is never softened** — only the locked pair `REFURBISHED · WITH WARRANTY`.
+  - No approval hype, no pressure, no discount-shop language. **"Fully serviced" is never softened** — only the locked pair `FULLY SERVICED · WITH WARRANTY`.
   - **Roles clean:** HireHospo finances; Washpro sources, refurbishes, delivers, installs and services.
   - **Build `frames/05-alt-rate.html`** with a `[RATE]` placeholder, wired behind `?alt`.
 - **Product image:** if no coffee-and-muffin photograph is in the folder, build the frame with a labelled placeholder box at the correct dimensions and **⚠-flag it in the README**. Do not substitute a stock image, an illustration, an emoji, or a CSS drawing — the frame depends on the object reading as real and ordinary.

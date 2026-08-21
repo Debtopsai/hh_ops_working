@@ -13,9 +13,9 @@
 | 3 | 0:05-0:07.5 | TXT headline L2 | Line 2 resolves across the frame with the image still beneath it. The two halves of the headline now read as one sentence around the picture | **FOR THE PRICE OF A COFFEE & MUFFIN A DAY** *(display type, flame on `COFFEE & MUFFIN`)* | "...a coffee and a muffin a day." | Room tone holds; music lifts one step | Hard cut (beat of black, 4 frames) |
 | 4 | 0:07.5-0:09.5 | GFX HireHospo | **Hard visual reset.** Wordmark resolves centre on steel, lifts to top third; approval timeline draws in below | HireHospo · `FUNDING UP TO $50,000` · `APPLY` → `CREDIT CHECK` → `APPROVED` *(flame)* → `DELIVERED 1-3 BUSINESS DAYS` · *Subject to credit approval* | "All on our stock list." | Room tone cuts; lift; clean UI tick on APPROVED (−12dB) | Hard cut |
 | 5 | 0:09.5-0:10.5 | GFX category tiles | Four category tiles light one at a time - what "$50,000 of equipment" actually is | `COMBI OVENS` · `COMMERCIAL DISHWASHERS` · `CONVECTION OVENS` · `GLASSWASHERS` | *(no VO - let the tiles land)* | Four tile ticks, 150ms apart, warm | Hard cut |
-| 6 | 0:10.5-0:11.5 | Refurb badge | Condition badge stamps on over the tiles' lower left | **`REFURBISHED · WITH WARRANTY`** *(flame border, stamp settle)* | "Refurbished, with warranty." | Rack clack (single); stamp settle | Hard cut |
+| 6 | 0:10.5-0:11.5 | Serviced badge | Condition badge stamps on over the tiles' lower left | **`FULLY SERVICED · WITH WARRANTY`** *(flame border, stamp settle)* | "Fully serviced. With warranty." | Rack clack (single); stamp settle | Hard cut |
 | 7 | 0:11.5-0:12.5 | GFX figure + disclosure | The daily figure resolves with the three-line disclosure block locked beneath it in the same container | **From $14.99/day** · `FUNDING UP TO $50,000 · PACKAGES FROM $14.99/DAY` / `YOUR PAYMENT DEPENDS ON EQUIPMENT VALUE AND TERM` / `+ GST · SUBJECT TO CREDIT APPROVAL` | "From $14.99 a day plus GST." | Till/receipt tick (−16dB) | Hard cut |
-| 8 | 0:12.5-0:15 | End card | Wordmark, value line, flame CTA pill, mono subline, URL | HireHospo · *Premium kitchen equipment, refurbished and warranted, on low weekly payments.* · **Get our latest stock list today** · `REFURBISHED · WITH WARRANTY · + GST · SUBJECT TO CREDIT APPROVAL` · `hirehospo.com` | "Get our latest stock list today." | Button (−16dB); settle, short tail | Hold to end |
+| 8 | 0:12.5-0:15 | End card | Wordmark, value line, flame CTA pill, mono subline, URL | HireHospo · *Premium kitchen equipment, fully serviced and warranted, on low weekly payments.* · **Get our latest stock list today** · `FULLY SERVICED · WITH WARRANTY · + GST · SUBJECT TO CREDIT APPROVAL` · `hirehospo.com` | "Get our latest stock list today." | Button (−16dB); settle, short tail | Hold to end |
 
 ## Frames to build
 
@@ -26,7 +26,7 @@
 | `frame-headline-coffee` | Shots 1-3 | Two-line headline wrapped around a still product image | L1 resolves 0.5s and holds; image fades up at 3.0s over 0.6s and then **does not move at all**; L2 resolves at 5.0s over 0.6s with the flame landing on `COFFEE & MUFFIN` | **NEW - this is the ad.** The stillness of the image under a moving headline is the whole effect. No parallax, no Ken Burns, no drift |
 | `frame-approval-timeline` | Shot 4 | Wordmark + ceiling line + 4 mono steps | Wordmark resolves 0.5s; steps draw L→R; APPROVED stamps flame | **REUSED** with the funding-ceiling line enabled |
 | `frame-category-grid` | Shot 5 | Four category tiles, real names | Tiles light 150ms apart, warm | **REUSED**, re-parameterised to cafe categories |
-| `frame-refurb-badge` | Shot 6 | `REFURBISHED · WITH WARRANTY` | Stamp settle: scale 1.08 → 1.0, 0.25s | **REUSED** unchanged |
+| `frame-serviced-badge` | Shot 6 | `FULLY SERVICED · WITH WARRANTY` | Stamp settle: scale 1.08 → 1.0, 0.25s | **REUSED** unchanged |
 | `frame-entry-figure-disclosed` | Shot 7 | Figure + three-line disclosure block | Figure scales 0.94 → 1.0 with a flame underline wipe; disclosure fades in at +0.15s **inside the same container** | **REUSED** from `50k-from-1499` |
 | `frame-end-card` | Shot 8 | Wordmark, value line, CTA pill, microcopy, URL | Pill scales 0.96 → 1.0 | **REUSED** unchanged |
 

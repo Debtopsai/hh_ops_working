@@ -30,7 +30,7 @@
 | 0:02-0:04 | "That's not the problem." | Lower and quieter than the first line, not louder. Small stress on **"that's"**. The instinct will be to punch this line; resist it. Underplaying it is what makes it feel true. |
 | 0:04-0:09 | "The problem is $20,000 leaving your account, and the six months after that." | Even and unhurried - the longest line in the ad and it must not accelerate. Small stress on **"leaving"**. **A real comma pause before "and the six months after that"**, then deliver that clause more quietly, almost as an afterthought. That clause is the actual argument of the ad. |
 | 0:09-0:11 | "It's on our stock list." | The only line that gains warmth. Stress **"stock list"**. Steady, no lift at the end. The brand is on screen, not in this line; do not add it back. |
-| 0:11-0:14 | "A refurbished Rational combi. With warranty." | **The single most important read in the ad.** "Refurbished" and "Rational" must carry equal confidence - a refurbished premium brand is the whole proposition, and any hesitation on "refurbished" turns it into an apology. Full stop before "With warranty", delivered as a closed statement, not a reassurance. |
+| 0:11-0:14 | "A fully serviced Rational combi. With warranty." | **The single most important read in the ad.** "Refurbished" and "Rational" must carry equal confidence - a refurbished premium brand is the whole proposition, and any hesitation on "refurbished" turns it into an apology. Full stop before "With warranty", delivered as a closed statement, not a reassurance. |
 | 0:14-0:16.5 | "Approved in 24 to 48 hours." | Plain and procedural. This is a process fact. No warmth needed. |
 | 0:16.5-0:20 | "Get our latest stock list today." | Calm and even, six words across three and a half seconds - the most unhurried line in the set. Small stress on **"stock list"**. Full stop, no rise, no smile. "+ GST" is burned in on the end card rather than spoken. |
 
@@ -49,7 +49,7 @@
 | 0:07.5 | **Everything drops to a low sustain** | The pause. Silence is the agitation | (drop) |
 | 0:09 | Clean UI tick on APPROVED + soft steel swell on the wordmark | The bridge beat | −12dB (tick), −20dB (swell) |
 | 0:11 | Single dish-rack clack + a low oven-door thunk | Kitchen texture, used **once**, and the door thunk is this ad's signature sound - heavy, expensive, well-made | −16dB (clack), −15dB (thunk) |
-| 0:12.7 | Stamp settle (short, dry, low thud + light metallic ring) on `REFURBISHED · WITH WARRANTY` | The objection-killer beat | −14dB |
+| 0:12.7 | Stamp settle (short, dry, low thud + light metallic ring) on `FULLY SERVICED · WITH WARRANTY` | The objection-killer beat | −14dB |
 | 0:14.2 | Soft approval tick | Procedural confirmation | −18dB |
 | 0:15.8 / 0:16.2 | Two soft approval ticks, 400ms apart | The capital-preservation ledger - both sides winning, heard as two separate confirmations | −16dB |
 | 0:17.6 | Till / receipt tick on the payment-model line | The money-model beat | −16dB |

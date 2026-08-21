@@ -14,9 +14,9 @@
 | 4 | 0:05.5-0:06.5 | GFX category tiles | The headline shrinks to the top third **and stays**; two category tiles light beneath it | `COMBI OVENS` · `COMMERCIAL DISHWASHERS` | "Ovens, dishwashers..." | Two tile ticks, 150ms apart | Match cut |
 | 5 | 0:06.5-0:07.5 | GFX category tiles | Two more tiles light, completing the grid | `RANGES` · `FOOD PREP` | "...ranges, prep." | Two tile ticks | Hard cut |
 | 6 | 0:07.5-0:09.5 | GFX HireHospo | Wordmark resolves centre on steel, lifts to top third; approval timeline draws in below | HireHospo · `FUNDING UP TO $50,000` · `APPLY` → `CREDIT CHECK` → `APPROVED` *(flame)* → `DELIVERED 1-3 BUSINESS DAYS` · *Subject to credit approval* | "All on our stock list." | Lift; clean UI tick on APPROVED (−12dB) | Hard cut |
-| 7 | 0:09.5-0:11.5 | EQUIP hero plinth + badge | Real catalogue equipment on a brushed-steel plinth; condition badge stamps on over the lower left | **`REFURBISHED · WITH WARRANTY`** *(flame border, stamp settle)* | "Refurbished, with warranty." | Rack clack (single); stamp settle | Hard cut |
+| 7 | 0:09.5-0:11.5 | EQUIP hero plinth + badge | Real catalogue equipment on a brushed-steel plinth; condition badge stamps on over the lower left | **`FULLY SERVICED · WITH WARRANTY`** *(flame border, stamp settle)* | "Fully serviced. With warranty." | Rack clack (single); stamp settle | Hard cut |
 | 8 | 0:11.5-0:12.5 | GFX approval line | Four mono steps collapse to a single lit line | `APPROVED IN 24 TO 48 HOURS` | "Approved in 24 to 48 hours." | Soft approval tick | Hard cut |
-| 9 | 0:12.5-0:15 | End card | Wordmark, value line, flame CTA pill, mono subline, URL | HireHospo · *Premium kitchen equipment, refurbished and warranted, on low weekly payments.* · **Get our latest stock list today** · `REFURBISHED · WITH WARRANTY · + GST · SUBJECT TO CREDIT APPROVAL` · `hirehospo.com` | "Get our latest stock list today." | Button (−16dB); settle, short tail | Hold to end |
+| 9 | 0:12.5-0:15 | End card | Wordmark, value line, flame CTA pill, mono subline, URL | HireHospo · *Premium kitchen equipment, fully serviced and warranted, on low weekly payments.* · **Get our latest stock list today** · `FULLY SERVICED · WITH WARRANTY · + GST · SUBJECT TO CREDIT APPROVAL` · `hirehospo.com` | "Get our latest stock list today." | Button (−16dB); settle, short tail | Hold to end |
 
 ## Frames to build
 
@@ -27,7 +27,7 @@
 | `frame-headline-plate` | Shots 1-3 | Two-line headline + persistent disclosure block | L1 resolves 0.5s; L2 lands at 2.0s; disclosure fades in at 3.5s and **persists to 0:13**; whole block scales to 0.42 and moves to the top third at 5.0s | **NEW.** The headline never leaves the screen until the end card. The disclosure is a DOM child of the headline block |
 | `frame-category-grid` | Shots 4-5 | Four category tiles, real names | Tiles light 150ms apart in two pairs | **REUSED** from the earlier build |
 | `frame-approval-timeline` | Shot 6 | Wordmark + ceiling line + 4 mono steps | Wordmark resolves 0.5s; steps draw L→R; APPROVED stamps flame | **REUSED** with the funding-ceiling line enabled |
-| `frame-hero-plinth` + `frame-refurb-badge` | Shot 7 | Equipment cut-out + condition badge | Plinth push-in 2%; badge stamp settle (scale 1.08 → 1.0, 0.25s) | **REUSED** |
+| `frame-hero-plinth` + `frame-serviced-badge` | Shot 7 | Equipment cut-out + condition badge | Plinth push-in 2%; badge stamp settle (scale 1.08 → 1.0, 0.25s) | **REUSED** |
 | `frame-approval-compact` | Shot 8 | Single lit approval line | Collapses from the timeline, hours resolve at 0.3s | **REUSED** from `rational-without-20k` |
 | `frame-end-card` | Shot 9 | Wordmark, value line, CTA pill, microcopy, URL | Pill scales 0.96 → 1.0 | **REUSED** unchanged |
 

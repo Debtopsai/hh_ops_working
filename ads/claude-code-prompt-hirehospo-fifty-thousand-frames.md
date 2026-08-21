@@ -21,7 +21,7 @@ Build the animated frames and a stitched **15.0s animatic** at **1080×1920 (9:1
 ## 3. Inputs
 
 - `HireHospo_fifty-thousand_script_15s.md` and `HireHospo_fifty-thousand_storyboard.md` - **the build spec.** The storyboard's "Frames to build" table is the contract; the script's copy column is verbatim law.
-- `ad/fitout-quote-shock/shared/` - **reuse `tokens.css`, `stage.js`, `frame-end-card.html`, the approval timeline, the refurb badge and the split frame.**
+- `ad/fitout-quote-shock/shared/` - **reuse `tokens.css`, `stage.js`, `frame-end-card.html`, the approval timeline, the serviced badge and the split frame.**
 - `ad/50k-from-1499/frames/` - **reuse the four-tile category grid.**
 - Any HireHospo UI kit, brand book, wordmark asset, or SwipePages export - **if present, these override §4 entirely.**
 - Any catalogue export (`active-products.csv`) - to confirm the four category names.
@@ -56,9 +56,9 @@ Copy below is **verbatim and locked**.
 | `frames/01-quote-plate.html` | Shots 1-2 · 0:00-0:04 | 4.0s | `$50,000` · `QUOTE #` | Figure resolves over 0.5s with a flame underline snapping on lock. At 2.0s a quote plate assembles **around** it - header rule, three `line`-coloured line items, `QUOTE #` - over 0.6s. The whole plate then desaturates `ink` → `mute` over 0.4s and **the flame underline extinguishes**. The figure must be a DOM child of the plate so the trapping reads structurally |
 | `frames/02-dark-kitchen.html` | Shots 3-4 · 0:04-0:07.5 | 3.5s | `NOT IN YOUR KITCHEN` | The quote plate holds, scaled to 0.94. Four category tiles sit behind it, dark and unlit (`line`). At 2.0s the figure inside the quote dims one further step - **the only change in frame**. **No flame** |
 | `frames/03-approval-timeline.html` | Shot 5 · 0:07.5-0:10 | 2.5s | `HireHospo` · `FUNDING UP TO $50,000` · `APPLY` · `CREDIT CHECK` · `APPROVED` · `DELIVERED 1-3 BUSINESS DAYS` · `Subject to credit approval` | **Hard reset.** The quote plate clears frame upward over 0.4s, then **REUSE** the timeline component with the funding-ceiling line enabled |
-| `frames/04-tiles-light.html` | Shots 6-7 · 0:10-0:12.5 | 2.5s | `COMBI OVENS` · `COMMERCIAL DISHWASHERS` · `RANGES` · `FOOD PREP` · `REFURBISHED · WITH WARRANTY` | **REUSE** the four-tile grid from `50k-from-1499`, **in the same positions as frame 02**. Tiles light one at a time, warm, 150ms apart; badge stamps on at 1.5s (scale 1.08 → 1.0, 0.25s) |
+| `frames/04-tiles-light.html` | Shots 6-7 · 0:10-0:12.5 | 2.5s | `COMBI OVENS` · `COMMERCIAL DISHWASHERS` · `RANGES` · `FOOD PREP` · `FULLY SERVICED · WITH WARRANTY` | **REUSE** the four-tile grid from `50k-from-1499`, **in the same positions as frame 02**. Tiles light one at a time, warm, 150ms apart; badge stamps on at 1.5s (scale 1.08 → 1.0, 0.25s) |
 | `frames/05-payment-model.html` | Shot 8 · 0:12.5-0:13.5 | 1.0s | `low weekly payments + GST` | **REUSE** the split component in its **model-only state** - the state that carries no number. Flame fill wipes left→right over 0.35s |
-| `frames/06-end-card.html` | Shot 9 · 0:13.5-0:15 | 1.5s | `HireHospo` · `Premium kitchen equipment, refurbished and warranted, on low weekly payments.` · `Get our latest stock list today` · `REFURBISHED · WITH WARRANTY · + GST · SUBJECT TO CREDIT APPROVAL` · `hirehospo.com` | **REUSE** unchanged |
+| `frames/06-end-card.html` | Shot 9 · 0:13.5-0:15 | 1.5s | `HireHospo` · `Premium kitchen equipment, fully serviced and warranted, on low weekly payments.` · `Get our latest stock list today` · `FULLY SERVICED · WITH WARRANTY · + GST · SUBJECT TO CREDIT APPROVAL` · `hirehospo.com` | **REUSE** unchanged |
 
 **Only `01-quote-plate` is genuinely new.** Everything else is a component you already have. If you find yourself writing a second new frame, check the existing ad folders first.
 
@@ -84,7 +84,7 @@ ad/fifty-thousand/
   - The `$50,000` in frames 01-02 is the **supplier's quote** - the thing sitting still. Do not style it as a HireHospo price. It becomes a HireHospo claim only in frame 03, with "up to" attached.
   - **"+ GST"** on frames 05 and 06. **"Subject to credit approval"** on frames 03 and 06.
   - **No product model name anywhere.** Categories only. Never invent a model number, capacity, or spec.
-  - No approval hype, no pressure, no discount-shop language. **"Refurbished" is never softened** - only the locked pair `REFURBISHED · WITH WARRANTY`.
+  - No approval hype, no pressure, no discount-shop language. **"Fully serviced" is never softened** - only the locked pair `FULLY SERVICED · WITH WARRANTY`.
   - **Roles clean:** HireHospo finances; Washpro sources, refurbishes, delivers, installs and services.
 - **Recordable:** `?record` renders a true 1080×1920 stage with no chrome, no scrollbars, no cursor.
 - **Original work.**

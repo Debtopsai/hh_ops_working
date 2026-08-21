@@ -28,7 +28,7 @@
 | 0:04-0:055 | "Three machines." | Slower. Small stress on **"Three"**. |
 | 0:05.5-0:07 | "One cheque. Before you've opened." | Quietest line in the ad. Drop volume and pitch slightly. **Beat of silence after "cheque."** "Before you've opened" is almost thrown away - no emphasis, which is what makes it land. |
 | 0:07-0:09 | "All on our stock list." | The only line that gains warmth. Stress **"stock list"** - it is the thing the ad is sending them to. Steady, no lift at the end. The brand is on screen, not in this line; do not add it back. |
-| 0:09-0:12 | "Refurbished Starline and Turbofan, with warranty." | Even and confident - **this is the line most likely to be read apologetically. It must not be.** "Refurbished" carries the same weight as "with warranty". No hedging, no softening. |
+| 0:09-0:12 | "Fully serviced Starline and Turbofan. With warranty." | Even and confident - **this is the line most likely to be read apologetically. It must not be.** "Fully serviced" carries the same weight as "with warranty". No hedging, no softening. |
 | 0:12-0:15 | "Get our latest stock list today." | Calm and even, six words across three seconds - unhurried. Small stress on **"stock list"**. Full stop, no rise, no smile. "+ GST" is no longer spoken here; it is burned in on the split frame and the end card, which satisfies the requirement. |
 
 - Record **3 reads of the hook** (flatter / slightly warmer / slower with a longer pause before the figure) and **2 reads of the CTA** (neutral and half a degree warmer) for the editor to choose.
@@ -44,7 +44,7 @@
 | 0:05.5 | **Ambience and music cut to a low sustain** | The one-cheque beat - silence does the work | (drop) |
 | 0:07 | Clean UI tick on APPROVED + soft steel swell on the wordmark | The bridge beat | −12dB (tick), −20dB (swell) |
 | 0:09.5 | Single dish-rack clack | Kitchen texture, used **once** - the signature, not a foley wall | −16dB |
-| 0:11 | Stamp settle (short, dry, low thud + light metallic ring) on `REFURBISHED · WITH WARRANTY` | The objection-killer beat | −14dB |
+| 0:11 | Stamp settle (short, dry, low thud + light metallic ring) on `FULLY SERVICED · WITH WARRANTY` | The objection-killer beat | −14dB |
 | 0:12.2 | Till / receipt tick on the split flip | The money-model beat | −16dB |
 | 0:13.6 | Button (soft, single, no click-tail) on the CTA pill | CTA | −16dB |
 

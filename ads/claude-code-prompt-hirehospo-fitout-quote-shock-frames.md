@@ -37,10 +37,10 @@ approve   #58C97B   small approval ticks only (never a fill)
 accentink #14161A   text on a flame surface - always
 ```
 
-- **Type:** Space Grotesk (display; semibold headings, bold figures, tight tracking) · Inter (body) · **JetBrains Mono for all money, terms and chips** (prices, "+ GST", "REFURBISHED · WITH WARRANTY", category labels - uppercase, 0.08em tracking). Money always in mono; it reads like a ledger, which is the brand.
+- **Type:** Space Grotesk (display; semibold headings, bold figures, tight tracking) · Inter (body) · **JetBrains Mono for all money, terms and chips** (prices, "+ GST", "FULLY SERVICED · WITH WARRANTY", category labels - uppercase, 0.08em tracking). Money always in mono; it reads like a ledger, which is the brand.
 - **One flame highlight per frame**, on the key beat only. Frames `frame-category-grid` (shots 3-4) carry **none** - the cold beat is deliberate.
 - Brushed-stainless gradient permitted **only** on the plinth frame. No dot-grid, no neo-brutalist borders - those belong to sibling brands.
-- **Motion:** transform + opacity only. Settles ~0.5s ease-out. A "stamp" settle for the refurb badge (scale 1.08 → 1.0, 0.25s). Respect `prefers-reduced-motion`.
+- **Motion:** transform + opacity only. Settles ~0.5s ease-out. A "stamp" settle for the serviced badge (scale 1.08 → 1.0, 0.25s). Respect `prefers-reduced-motion`.
 - **Logo: never redraw or invent a logomark.** Use the wordmark asset from the folder or hirehospo.com. If none exists, set "HireHospo" in Space Grotesk semibold and **⚠-flag it in the README**.
 
 ## 5. What to build - per-frame contract
@@ -52,9 +52,9 @@ Copy below is **verbatim and locked**. Do not rewrite, shorten, "improve", or ad
 | `frames/01-quote-shock.html` | Shots 1-2 · 0:00-0:04 | 4.0s | `$16,800` · `DISHWASHER  $2,000-$20,000` · `CONVECTION OVEN  $2,800-$8,300` · `GLASSWASHER  $2,300-$4,000` | Figure counts 0→16,800 over 0.7s ease-out; flame underline snaps beneath the last three digits on lock; figure scales to top third at 2.0s; three mono line items type in at 120ms stagger |
 | `frames/02-category-grid.html` | Shots 3-4 · 0:04-0:07 | 3.0s | `THREE MACHINES` → `ONE CHEQUE` | Three equal steel tiles fade up 150ms apart; at 1.5s they slide together (0.4s) and collapse into a single bar; `$16,800` desaturates ink → mute over 0.3s. **No flame in this frame.** |
 | `frames/03-approval-timeline.html` | Shot 5 · 0:07-0:09 | 2.0s | `HireHospo` · `APPLY` · `CREDIT CHECK` · `APPROVED` · `DELIVERED 1-3 BUSINESS DAYS` · `Subject to credit approval` | **Hard reset** - full layout change. Wordmark resolves 0.5s and lifts to top third; four mono steps draw left→right 150ms apart; `APPROVED` fills flame with a stamp settle; microcopy fades in at +0.2s |
-| `frames/04-hero-plinth.html` | Shots 6-7 · 0:09-0:12 | 3.0s | `STARLINE M2` / `COMMERCIAL DISHWASHERS` → `TURBOFAN E31D4` / `CONVECTION OVENS` · `REFURBISHED · WITH WARRANTY` | Brushed-steel plinth push-in 2% across the whole beat; product cross-dissolves at 1.5s; condition badge stamps on at 2.0s (scale 1.08 → 1.0, 0.25s, 2° rotate correction) |
+| `frames/04-hero-plinth.html` | Shots 6-7 · 0:09-0:12 | 3.0s | `STARLINE M2` / `COMMERCIAL DISHWASHERS` → `TURBOFAN E31D4` / `CONVECTION OVENS` · `FULLY SERVICED · WITH WARRANTY` | Brushed-steel plinth push-in 2% across the whole beat; product cross-dissolves at 1.5s; condition badge stamps on at 2.0s (scale 1.08 → 1.0, 0.25s, 2° rotate correction) |
 | `frames/05-split.html` | Shot 8 · 0:12-0:13.5 | 1.5s | `$16,800` · `low weekly payments + GST` | Top block drops 4px and desaturates to mute; bottom block lifts 8px as a flame fill wipes left→right over 0.35s |
-| `frames/06-end-card.html` | Shot 9 · 0:13.5-0:15 | 1.5s | `HireHospo` · `Premium kitchen equipment, refurbished and warranted, on low weekly payments.` · `Get our latest stock list today` · `REFURBISHED · WITH WARRANTY · + GST · SUBJECT TO CREDIT APPROVAL` · `hirehospo.com` | CTA pill scales 0.96 → 1.0 with a flame fill; microcopy fades at +0.2s; everything holds still from 1.0s (this frame is the thumbnail-safe hold) |
+| `frames/06-end-card.html` | Shot 9 · 0:13.5-0:15 | 1.5s | `HireHospo` · `Premium kitchen equipment, fully serviced and warranted, on low weekly payments.` · `Get our latest stock list today` · `FULLY SERVICED · WITH WARRANTY · + GST · SUBJECT TO CREDIT APPROVAL` · `hirehospo.com` | CTA pill scales 0.96 → 1.0 with a flame fill; microcopy fades at +0.2s; everything holds still from 1.0s (this frame is the thumbnail-safe hold) |
 
 **Build `frame-end-card`, `frame-approval-timeline`, `frame-quote-shock` and `frame-split` as parameterised, reusable components** - the sibling ads `friday-glasswasher` and `rational-without-20k` reuse all four with different content. Take the copy, figures and chip labels as data, not hard-coded strings.
 

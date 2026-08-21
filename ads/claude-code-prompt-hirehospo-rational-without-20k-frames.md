@@ -19,7 +19,7 @@ Build the animated frames and a stitched **20.0s animatic** at **1080×1920 (9:1
 ## 3. Inputs
 
 - `HireHospo_rational-without-20k_script_20s.md` and `HireHospo_rational-without-20k_storyboard.md` - **the build spec.** The storyboard's "Frames to build" table is the contract; the script's copy column is verbatim law.
-- `ad/fitout-quote-shock/shared/` if present - **reuse `tokens.css`, `stage.js`, `frame-end-card.html`, the approval timeline, the hero plinth and the refurb badge.** Four of eleven shots are re-parameterised versions of frames that already exist. Do not fork them; extend their parameters.
+- `ad/fitout-quote-shock/shared/` if present - **reuse `tokens.css`, `stage.js`, `frame-end-card.html`, the approval timeline, the hero plinth and the serviced badge.** Four of eleven shots are re-parameterised versions of frames that already exist. Do not fork them; extend their parameters.
 - Any HireHospo UI kit, brand book, wordmark asset, or SwipePages export in the folder - **if present, these are the source of truth and override §4 entirely.**
 - Any catalogue export (`active-products.csv`) - to confirm the Rational combi is active and to get its real product-page handle.
 
@@ -55,10 +55,10 @@ Copy below is **verbatim and locked**. Do not rewrite, shorten, "improve", or ad
 | `frames/02-capital-hit.html` | Shots 3-4 · 0:04-0:07.5 | 3.5s | `$20,000` · `26 WEEKS` · `SIX MONTHS` | Ledger figure decrements in 4 discrete steps over 1.4s. At 2.0s a 26-segment horizontal bar contracts left→right over 1.2s, segments extinguishing one by one; `26 WEEKS` cross-fades to `SIX MONTHS`. **No flame in this frame** |
 | `frames/03-pause.html` | Shot 5 · 0:07.5-0:09 | 1.5s | *(no text - deliberate)* | The contracted bar holds. **Everything stops.** 1% scale drift over the full 1.5s and nothing else. **No flame** |
 | `frames/04-approval-timeline.html` | Shot 6 · 0:09-0:11 | 2.0s | `HireHospo` · `APPLY` · `CREDIT CHECK` · `APPROVED` · `DELIVERED 1-3 BUSINESS DAYS` · `Subject to credit approval` | **Hard reset** - full layout change. **REUSE** the `fitout-quote-shock` component unchanged |
-| `frames/05-hero-plinth.html` | Shots 7-8 · 0:11-0:14 | 3.0s | `RATIONAL SCC WE101` / `COMBI OVENS` · `REFURBISHED · WITH WARRANTY` | **REUSE** the plinth component. Plinth push-in 2%; a warm reflection travels the door glass over 1.2s; badge stamps on at 1.5s (scale 1.08 → 1.0, 0.25s, 2° rotate correction) |
+| `frames/05-hero-plinth.html` | Shots 7-8 · 0:11-0:14 | 3.0s | `RATIONAL SCC WE101` / `COMBI OVENS` · `FULLY SERVICED · WITH WARRANTY` | **REUSE** the plinth component. Plinth push-in 2%; a warm reflection travels the door glass over 1.2s; badge stamps on at 1.5s (scale 1.08 → 1.0, 0.25s, 2° rotate correction) |
 | `frames/06-timeline-compact.html` | Shot 9 · 0:14-0:15.5 | 1.5s | `APPROVED IN 24 TO 48 HOURS` | **NEW variant** of the timeline component: collapsed to a single line with `APPROVED` pre-lit; the hours resolve beneath it at 0.3s |
 | `frames/07-capital-ledger.html` | Shot 10 · 0:15.5-0:17.5 | 2.0s | `OVEN IN THE KITCHEN` · `CAPITAL IN THE BUSINESS` | **NEW.** Two mono ledger lines. A small `approve` tick lands on line 1 at 0.3s and line 2 at 0.7s; both hold to the cut. **No VO over this frame - no caption either.** Ticks are small marks, never fills |
-| `frames/08-end-card.html` | Shot 11 · 0:17.5-0:20 | 2.5s | `HireHospo` · `Premium kitchen equipment, refurbished and warranted, on low weekly payments.` · `low weekly payments + GST` · `Get our latest stock list today` · `REFURBISHED · WITH WARRANTY · + GST · SUBJECT TO CREDIT APPROVAL` · `hirehospo.com` | **REUSE** with the `low weekly payments + GST` line enabled. Pill scales 0.96 → 1.0; microcopy fades at +0.2s; holds still from 1.0s |
+| `frames/08-end-card.html` | Shot 11 · 0:17.5-0:20 | 2.5s | `HireHospo` · `Premium kitchen equipment, fully serviced and warranted, on low weekly payments.` · `low weekly payments + GST` · `Get our latest stock list today` · `FULLY SERVICED · WITH WARRANTY · + GST · SUBJECT TO CREDIT APPROVAL` · `hirehospo.com` | **REUSE** with the `low weekly payments + GST` line enabled. Pill scales 0.96 → 1.0; microcopy fades at +0.2s; holds still from 1.0s |
 
 **The hardest frame is `01-statement`, and it is the one that matters most.** Its power comes from restraint: 1.5 seconds of a single sentence on an empty dark frame. Do not add a product shot, a background texture, a gradient sweep, an equipment silhouette, or any secondary motion. If it feels too empty while you are building it, it is correct.
 
@@ -83,7 +83,7 @@ ad/rational-without-20k/
   - **"+ GST"** appears on the end card, attached to the payment-model line.
   - **"Subject to credit approval"** appears on frame 04 and frame 08.
   - **`RATIONAL SCC WE101` must be an active catalogue product.** Verify before building. If it is not active, substitute another **active Rational combi from the catalogue** and update the chip - **never fall back to a generic "commercial combi oven"**, and never invent a model number, capacity, tray count, or spec.
-  - No approval hype ("guaranteed", "instant", "everyone approved"), no pressure ("act now", "limited time", countdowns), no discount-shop language ("cheap", "bargain", "slashed"). **"Refurbished" is never apologised for or softened** - it appears only in the locked pair `REFURBISHED · WITH WARRANTY`.
+  - No approval hype ("guaranteed", "instant", "everyone approved"), no pressure ("act now", "limited time", countdowns), no discount-shop language ("cheap", "bargain", "slashed"). **"Fully serviced" is never apologised for or softened** - it appears only in the locked pair `FULLY SERVICED · WITH WARRANTY`.
   - **Roles clean:** HireHospo finances. Washpro sources, refurbishes, delivers, installs and services.
 - **Recordable:** `?record` renders a true 1080×1920 stage with no chrome, no scrollbars, no cursor, and starts the timeline on load.
 - **Original work:** build the type and layout yourself.

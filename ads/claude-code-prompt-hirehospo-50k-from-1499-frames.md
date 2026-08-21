@@ -22,7 +22,7 @@ Build the frames and a stitched **15.0s animatic** at **1080×1920 (9:16)** for 
 ## 3. Inputs
 
 - The script and storyboard - **the build spec.** The storyboard's "Frames to build" table is the contract; the script's copy column is verbatim law.
-- `ad/fitout-quote-shock/shared/` - **reuse `tokens.css`, `stage.js`, `frame-end-card.html`, the approval timeline, the category grid, the hero plinth and the refurb badge.**
+- `ad/fitout-quote-shock/shared/` - **reuse `tokens.css`, `stage.js`, `frame-end-card.html`, the approval timeline, the category grid, the hero plinth and the serviced badge.**
 - `ad/rational-without-20k/frames/06-timeline-compact.html` - reuse for the approval line.
 - Any HireHospo UI kit, brand book, wordmark asset, or SwipePages export - **if present, these override §4 entirely.**
 - Any catalogue export (`active-products.csv`) - to confirm the four category names.
@@ -49,9 +49,9 @@ Copy is **verbatim and locked**.
 | `frames/01-headline.html` | Shots 1-3 · 0:00-0:05.5 | 5.5s | `$50,000 OF EQUIPMENT` · `FROM $14.99/DAY + GST` · `FUNDING UP TO $50,000 · PACKAGES FROM $14.99/DAY` · `YOUR PAYMENT DEPENDS ON EQUIPMENT VALUE AND TERM` · `+ GST · SUBJECT TO CREDIT APPROVAL` | L1 resolves over 0.5s, full-bleed, alone in frame. L2 lands beneath at 2.0s. The three-line disclosure fades in at 3.5s **and persists**. At 5.0s the whole block scales to 0.42 and moves to the top third — **it stays there for the rest of the ad** |
 | `frames/02-category-grid.html` | Shots 4-5 · 0:05.5-0:07.5 | 2.0s | `COMBI OVENS` · `COMMERCIAL DISHWASHERS` · `RANGES` · `FOOD PREP` | Four tiles light 150ms apart in two pairs, beneath the persisted headline. **REUSE** the grid component |
 | `frames/03-approval-timeline.html` | Shot 6 · 0:07.5-0:09.5 | 2.0s | `HireHospo` · `FUNDING UP TO $50,000` · `APPLY` · `CREDIT CHECK` · `APPROVED` · `DELIVERED 1-3 BUSINESS DAYS` · `Subject to credit approval` | **REUSE** with the funding-ceiling line enabled |
-| `frames/04-plinth-badge.html` | Shot 7 · 0:09.5-0:11.5 | 2.0s | `REFURBISHED · WITH WARRANTY` | **REUSE** plinth + badge. Plinth push-in 2%; badge stamp settle (1.08 → 1.0, 0.25s) |
+| `frames/04-plinth-badge.html` | Shot 7 · 0:09.5-0:11.5 | 2.0s | `FULLY SERVICED · WITH WARRANTY` | **REUSE** plinth + badge. Plinth push-in 2%; badge stamp settle (1.08 → 1.0, 0.25s) |
 | `frames/05-approval-compact.html` | Shot 8 · 0:11.5-0:12.5 | 1.0s | `APPROVED IN 24 TO 48 HOURS` | **REUSE** from `rational-without-20k` |
-| `frames/06-end-card.html` | Shot 9 · 0:12.5-0:15 | 2.5s | `HireHospo` · `Premium kitchen equipment, refurbished and warranted, on low weekly payments.` · `Get our latest stock list today` · `REFURBISHED · WITH WARRANTY · + GST · SUBJECT TO CREDIT APPROVAL` · `hirehospo.com` | **REUSE** unchanged |
+| `frames/06-end-card.html` | Shot 9 · 0:12.5-0:15 | 2.5s | `HireHospo` · `Premium kitchen equipment, fully serviced and warranted, on low weekly payments.` · `Get our latest stock list today` · `FULLY SERVICED · WITH WARRANTY · + GST · SUBJECT TO CREDIT APPROVAL` · `hirehospo.com` | **REUSE** unchanged |
 
 **The headline persists.** After the 5.0s shrink it remains in the top third through frames 02-05 — render it as a persistent layer in `stage.js`, not as a copy pasted into each frame.
 
@@ -74,7 +74,7 @@ ad/50k-from-1499/
   - **"FROM" must appear in the on-screen rate line**, never a bare figure.
   - **"+ GST"** in the headline, the disclosure and the end card. **"Subject to credit approval"** in the disclosure and on frames 03 and 06.
   - **No product model name anywhere.** Categories only - a model beside a rate reads as a per-product quote and breaches the credit gate.
-  - No approval hype, no pressure, no discount-shop language. **"Refurbished" is never softened** - only the locked pair `REFURBISHED · WITH WARRANTY`.
+  - No approval hype, no pressure, no discount-shop language. **"Fully serviced" is never softened** - only the locked pair `FULLY SERVICED · WITH WARRANTY`.
   - **Roles clean:** HireHospo finances; Washpro sources, refurbishes, delivers, installs and services.
   - **Build `frames/01-alt-rate.html`** with the rate slot empty and a `[RATE]` placeholder, wired behind `?alt`, so a Credit-revised figure can be previewed instantly.
 - **Recordable:** `?record` renders a true 1080×1920 stage, no chrome, no scrollbars, no cursor.

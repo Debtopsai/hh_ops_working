@@ -30,7 +30,7 @@
 | 0:02.5-0:05.5 | "From fourteen ninety-nine a day, plus GST." | **"From" is load-bearing and must be clearly articulated** - it is what keeps the rate a starting point rather than a quote. Do not let it run into the number. Then the figure, plainly. **"Plus GST" spoken at full level and clarity**, never swallowed or tacked on - it should sound like part of the offer, because it is. |
 | 0:05.5-0:07.5 | "Ovens, dishwashers, ranges, prep." | Four items, evenly spaced, **each one landing with its tile**. This is a list being read, not a sentence - allow a real beat between each. |
 | 0:07.5-0:09.5 | "All on our stock list." | Steady, matter-of-fact. Stress **"stock list"**. No lift at the end. The brand is on screen, not in this line; do not add it back. |
-| 0:09.5-0:11.5 | "Refurbished, with warranty." | "Refurbished" carries the same confidence as "with warranty" - **never apologetic**. Closed statement, full stop. |
+| 0:09.5-0:11.5 | "Fully serviced. With warranty." | "Fully serviced" carries the same confidence as "with warranty" - **never apologetic**. Closed statement, full stop. |
 | 0:11.5-0:15 | "Get our latest stock list today." | Calm and even, six words across three and a half seconds - do not rush it to fill the space. Small stress on **"stock list"**. Full stop, no rise, no smile. |
 
 - Record **3 reads of the two headline lines** (flat / half a degree warmer / with a longer pause between them) and **2 reads of the CTA**.
@@ -46,7 +46,7 @@
 | 0:05 / 0:06.5 | Four tile ticks, 150ms apart, in two pairs | The list. Each tick lands with its category | −18dB |
 | 0:07.5 | Clean UI tick on APPROVED + soft steel swell on the wordmark | The HireHospo beat | −12dB (tick), −20dB (swell) |
 | 0:09.7 | Single dish-rack clack | Kitchen texture, used once | −16dB |
-| 0:10.3 | Stamp settle on `REFURBISHED · WITH WARRANTY` | The objection-killer beat | −14dB |
+| 0:10.3 | Stamp settle on `FULLY SERVICED · WITH WARRANTY` | The objection-killer beat | −14dB |
 | 0:11.3 | Soft approval tick | Procedural confirmation | −18dB |
 | 0:13.2 | Button on the CTA pill | CTA | −16dB |
 

@@ -29,7 +29,7 @@
 | 0:00-0:03 | "Fifty thousand dollars' worth of equipment." | Even and factual. Small stress on **"equipment"**. Full stop, then a real **0.5s pause** while the image comes up. The pause is where the viewer starts wondering what the second half is. |
 | 0:03-0:07.5 | "For the price of a coffee and a muffin a day." | **The line the ad rests on - deliver it completely straight.** Same pitch, same warmth, same pace as the first line. No stress on "coffee", none on "muffin", none on "day". No smile. It is a price comparison stated as a fact, and stating it flatly is what makes it land as true rather than as a slogan. |
 | 0:07.5-0:09.5 | "All on our stock list." | Steady, matter-of-fact. Stress **"stock list"**. No lift. The brand is on screen, not in this line; do not add it back. |
-| 0:09.5-0:12.5 | "Refurbished, with warranty. From $14.99 a day." | "Refurbished" carries the same confidence as "with warranty" - **never apologetic**. **"From" is load-bearing** and must be clearly articulated. "+ GST" is no longer spoken here; it is burned into the disclosure block beneath the figure, which satisfies the requirement. |
+| 0:09.5-0:12.5 | "Fully serviced, with warranty. From $14.99 a day." | "Fully serviced" carries the same confidence as "with warranty" - **never apologetic**. **"From" is load-bearing** and must be clearly articulated. "+ GST" is no longer spoken here; it is burned into the disclosure block beneath the figure, which satisfies the requirement. |
 | 0:12.5-0:15 | "Get our latest stock list today." | Calm and even. Small stress on **"stock list"**. Full stop, no rise, no smile. |
 
 - Record **4 reads of the coffee-and-muffin line** - flat / flatter / flattest / one deliberately warm. Take the flattest one that is still engaging. Directors reliably over-perform this line; having an underplayed take in the bin protects the ad from itself.
@@ -44,7 +44,7 @@
 | 0:05 | Room tone holds under the headline line 2 | The comparison sits in its own world | −24dB |
 | 0:07.5 | **Room tone cuts dead** + clean UI tick on APPROVED + soft steel swell on the wordmark | The reset. The audio and visual resets land on the same frame - this is the most important edit in the ad | −12dB (tick), −20dB (swell) |
 | 0:09.5 | Four tile ticks, 150ms apart, warm | What the money actually buys | −18dB |
-| 0:11.2 | Single dish-rack clack + stamp settle on `REFURBISHED · WITH WARRANTY` | Kitchen texture (once) and the objection-killer beat | −16dB / −14dB |
+| 0:11.2 | Single dish-rack clack + stamp settle on `FULLY SERVICED · WITH WARRANTY` | Kitchen texture (once) and the objection-killer beat | −16dB / −14dB |
 | 0:12.2 | Till / receipt tick on the figure | The money beat - a deliberate callback to the cup-set at 0:03, same sound family | −16dB |
 | 0:13.2 | Button on the CTA pill | CTA | −16dB |
 

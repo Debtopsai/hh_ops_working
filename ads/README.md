@@ -70,7 +70,7 @@ the minimum fix.
 ## Build order (production efficiency)
 
 **Build `fitout-quote-shock` first.** It establishes `shared/tokens.css`, `shared/stage.js` and four
-parameterised components - end card, approval timeline, hero plinth, refurb badge. Every other ad
+parameterised components - end card, approval timeline, hero plinth, serviced badge. Every other ad
 reuses them:
 
 | Order | Ad | Reuses | New frames |
@@ -93,7 +93,7 @@ CTA. Two consequences worth knowing:
 - **The landing page must be a stock-list capture page**, not the finance application. The ads now
   send traffic to a list, and the application sits downstream of the nurture.
 - **The end-card microcopy changed with it.** "Approved in 24 to 48 hours" no longer fits under a
-  stock-list button, so the end card now reads `REFURBISHED · WITH WARRANTY · + GST · SUBJECT TO
+  stock-list button, so the end card now reads `FULLY SERVICED · WITH WARRANTY · + GST · SUBJECT TO
   CREDIT APPROVAL`. The credit gate is unchanged and still mandatory - the ads make finance claims,
   so "Subject to credit approval" stays regardless of what the button says.
 - **The CTA costs VO time.** Six words where "Apply now" was two, so the final beat grew in every ad

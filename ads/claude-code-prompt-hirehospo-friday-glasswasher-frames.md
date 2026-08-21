@@ -19,7 +19,7 @@ Build the animated frames and a stitched **15.0s animatic** at **1080×1920 (9:1
 ## 3. Inputs
 
 - `HireHospo_friday-glasswasher_script_15s.md` and `HireHospo_friday-glasswasher_storyboard.md` - **the build spec.** The storyboard's "Frames to build" table is the contract; the script's copy column is verbatim law.
-- `ad/fitout-quote-shock/shared/` if present - **reuse `tokens.css`, `stage.js`, `frame-end-card.html`, the approval timeline, the hero plinth and the refurb badge.** Six of nine shots in this ad are re-parameterised versions of frames that already exist. Do not fork them; extend their parameters.
+- `ad/fitout-quote-shock/shared/` if present - **reuse `tokens.css`, `stage.js`, `frame-end-card.html`, the approval timeline, the hero plinth and the serviced badge.** Six of nine shots in this ad are re-parameterised versions of frames that already exist. Do not fork them; extend their parameters.
 - Any HireHospo UI kit, brand book, wordmark asset, or SwipePages export in the folder - **if present, these are the source of truth and override §4 entirely.**
 - Any catalogue export (`active-products.csv`) - for the real glasswasher category name, price band and product-page handles.
 
@@ -55,9 +55,9 @@ Copy below is **verbatim and locked**. Do not rewrite, shorten, "improve", or ad
 | `frames/02-dead-machine.html` | Shot 2 · 0:02-0:03.5 | 1.5s | *(no text; one dead indicator dot in `mute`)* | Slow 1% push-in only. **No flame in this frame** |
 | `frames/03-count-up.html` | Shots 3-4 · 0:03.5-0:07 | 3.5s | `240 GLASSES` · `HAND-WASH` | Counter runs 0→240 over 2.2s and **keeps incrementing past the end of the VO line**; `HAND-WASH` resolves in `mute` at 2.0s. **No flame in this frame** |
 | `frames/04-approval-timeline.html` | Shot 5 · 0:07-0:09 | 2.0s | `HireHospo` · `APPLY` · `CREDIT CHECK` · `APPROVED` · `DELIVERED 1-3 BUSINESS DAYS · AFTER DEPOSIT` · `Subject to credit approval` | **Hard reset** - full layout change. **REUSE** the `fitout-quote-shock` component with the DELIVERED step re-parameterised to carry `· AFTER DEPOSIT` |
-| `frames/05-hero-plinth.html` | Shots 6-7 · 0:09-0:11.5 | 2.5s | `GLASSWASHERS` / `$2,300-$4,000` · `REFURBISHED · WITH WARRANTY` | **REUSE** the plinth component. Plinth push-in 2%; wash-cycle indicator lights come up over 0.4s; badge stamps on at 1.5s (scale 1.08 → 1.0, 0.25s) |
+| `frames/05-hero-plinth.html` | Shots 6-7 · 0:09-0:11.5 | 2.5s | `GLASSWASHERS` / `$2,300-$4,000` · `FULLY SERVICED · WITH WARRANTY` | **REUSE** the plinth component. Plinth push-in 2%; wash-cycle indicator lights come up over 0.4s; badge stamps on at 1.5s (scale 1.08 → 1.0, 0.25s) |
 | `frames/06-entry-figure.html` | Shot 8 · 0:11.5-0:13 | 1.5s | `From $4.66/day` · `+ GST · SUBJECT TO CREDIT APPROVAL` | **NEW.** Figure scales 0.94 → 1.0 with a flame underline wipe; footnote fades in at +0.15s. **The footnote must be a DOM child of the figure block** - see §7 |
-| `frames/07-end-card.html` | Shot 9 · 0:13-0:15 | 2.0s | `HireHospo` · `Premium kitchen equipment, refurbished and warranted, on low weekly payments.` · `Get our latest stock list today` · `REFURBISHED · WITH WARRANTY · + GST · SUBJECT TO CREDIT APPROVAL` · `hirehospo.com` | **REUSE** unchanged. Pill scales 0.96 → 1.0; microcopy fades at +0.2s; holds still from 1.0s |
+| `frames/07-end-card.html` | Shot 9 · 0:13-0:15 | 2.0s | `HireHospo` · `Premium kitchen equipment, fully serviced and warranted, on low weekly payments.` · `Get our latest stock list today` · `FULLY SERVICED · WITH WARRANTY · + GST · SUBJECT TO CREDIT APPROVAL` · `hirehospo.com` | **REUSE** unchanged. Pill scales 0.96 → 1.0; microcopy fades at +0.2s; holds still from 1.0s |
 
 **Continuity requirement:** the glasswasher in `05-hero-plinth` must be **the same machine** as the unlit one in `02-dead-machine`, now lit and running. Use the same source image, relit - not a different product shot. This visual rhyme is the ad's payoff and it works with the sound off.
 
