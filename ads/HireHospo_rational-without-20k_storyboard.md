@@ -2,7 +2,7 @@
 
 **Script:** `HireHospo_rational-without-20k_script_20s.md` · **Hook** (contrarian truth, restaurant owner, Product Aware) · **PPI+P**
 **Total shots:** 11 · **Aspect ratio:** 9:16 (1080×1920) · **Theme:** dark steel (provisional system; canvas #12141A)
-**HireHospo intro at:** 0:09 (45%) · **CTA:** Apply now
+**HireHospo intro at:** 0:09 (45%) · **CTA:** Get our latest stock list today
 
 ## Shot list
 
@@ -13,12 +13,12 @@
 | 3 | 0:04-0:06 | GFX capital hit | Mono ledger line. A balance figure steps **down** in four decrements, landing on the withdrawal | `$20,000` *(mono, stepping down; no flame)* | "The problem is $20,000..." | Dip; soft ledger tick per step (−20dB) | Hard cut |
 | 4 | 0:06-0:07.5 | GFX runway bar | A horizontal 26-segment bar contracts left→right, week by week | `26 WEEKS` → `SIX MONTHS` *(mono, mute)* | "...leaving your account..." | Ticks continue, slowing | Hard cut |
 | 5 | 0:07.5-0:09 | GFX the pause | The contracted bar holds. Frame goes almost entirely still and dark - the only "empty" frame in the set | *(no text - deliberate)* | "...and the six months after that." | **Near-total drop.** Low sustain only | Hard cut (beat of black, 4 frames) |
-| 6 | 0:09-0:11 | GFX bridge / **hard reset** | HireHospo wordmark resolves centre on steel, lifts to top third; approval timeline draws in below, four mono steps | HireHospo · `APPLY` → `CREDIT CHECK` → `APPROVED` *(flame)* → `DELIVERED 1-3 BUSINESS DAYS` · *microcopy: Subject to credit approval* | "HireHospo finances it instead." | Lift; clean UI tick on APPROVED (−12dB) | Hard cut |
+| 6 | 0:09-0:11 | GFX bridge / **hard reset** | HireHospo wordmark resolves centre on steel, lifts to top third; approval timeline draws in below, four mono steps | HireHospo · `APPLY` → `CREDIT CHECK` → `APPROVED` *(flame)* → `DELIVERED 1-3 BUSINESS DAYS` · *microcopy: Subject to credit approval* | "It's on our stock list." | Lift; clean UI tick on APPROVED (−12dB) | Hard cut |
 | 7 | 0:11-0:12.5 | EQUIP hero plinth | Rational SCC WE101 combi oven on a brushed-steel plinth, warm key from upper left, door glass catching light | `RATIONAL SCC WE101` / `COMBI OVENS` *(mono chips)* | "A refurbished Rational combi." | Single rack clack; low oven-door thunk (−16dB) | Match cut (plinth holds) |
 | 8 | 0:12.5-0:14 | Refurb badge | Condition badge stamps on over the plinth's lower left | **`REFURBISHED · WITH WARRANTY`** *(flame border, stamp settle)* | "With warranty." | Stamp settle; light metallic ring | Hard cut |
 | 9 | 0:14-0:15.5 | GFX approval timeline (return) | The timeline from shot 6 returns, compressed to a single line, `APPROVED` already lit; the hours resolve beneath it | `APPROVED IN 24 TO 48 HOURS` *(mono)* | "Approved in 24 to 48 hours." | Soft approval tick | Hard cut |
 | 10 | 0:15.5-0:17.5 | GFX capital-preservation ledger | Two mono ledger lines, each with a `#58C97B` tick landing in turn. **The only frame in the set where both sides win** | `OVEN IN THE KITCHEN` ✓ · `CAPITAL IN THE BUSINESS` ✓ | *(no VO - let the frame land)* | Two soft approval ticks, 400ms apart (−16dB) | Hard cut |
-| 11 | 0:17.5-0:20 | End card | HireHospo wordmark, value line, flame CTA pill, mono subline, URL | HireHospo · *Premium kitchen equipment, refurbished and warranted, on low weekly payments.* · **low weekly payments + GST** · **Apply now** *(flame pill, #14161A text)* · `APPROVED IN 24 TO 48 HOURS · SUBJECT TO CREDIT APPROVAL` · `hirehospo.com` | "Low weekly payments, plus GST. Apply now." | Till/receipt tick; button (−16dB); settle, short tail | Hold to end |
+| 11 | 0:17.5-0:20 | End card | HireHospo wordmark, value line, flame CTA pill, mono subline, URL | HireHospo · *Premium kitchen equipment, refurbished and warranted, on low weekly payments.* · **low weekly payments + GST** · **Get our latest stock list today** *(flame pill, #14161A text)* · `REFURBISHED · WITH WARRANTY · + GST · SUBJECT TO CREDIT APPROVAL` · `hirehospo.com` | "Get our latest stock list today." | Till/receipt tick; button (−16dB); settle, short tail | Hold to end |
 
 ## Frames to build (Claude Code hand-off)
 

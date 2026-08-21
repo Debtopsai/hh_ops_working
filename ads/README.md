@@ -9,8 +9,8 @@ pending Credit sign-off; the third is the control and ships today. **Read "The $
 below before briefing any of Set 2.**
 
 Each package is four files. All three are **9:16 (1080×1920)**, **person-free** (motion graphics +
-real equipment imagery), dark-steel themed, and carry the credit-led brand voice, the "Apply now"
-CTA, and the NZ finance-ad compliance gates.
+real equipment imagery), dark-steel themed, and carry the credit-led brand voice, the **"Get our latest stock list today"** CTA, and the NZ
+finance-ad compliance gates.
 
 | # | Slug | Hook | ICP | Awareness | Framework | Offer | Length |
 |---|---|---|---|---|---|---|---|
@@ -84,6 +84,25 @@ reuses them:
 
 Building in any other order means building the shared system twice. **If Credit sign-off is slow,
 build 1, 2, 3 and 6** - all four are cleared, and 6 costs one new frame.
+
+## The CTA and the bridge line
+
+**CTA across all six is "Get our latest stock list today"** - a lead-capture CTA, not an application
+CTA. Two consequences worth knowing:
+
+- **The landing page must be a stock-list capture page**, not the finance application. The ads now
+  send traffic to a list, and the application sits downstream of the nurture.
+- **The end-card microcopy changed with it.** "Approved in 24 to 48 hours" no longer fits under a
+  stock-list button, so the end card now reads `REFURBISHED · WITH WARRANTY · + GST · SUBJECT TO
+  CREDIT APPROVAL`. The credit gate is unchanged and still mandatory - the ads make finance claims,
+  so "Subject to credit approval" stays regardless of what the button says.
+- **The CTA costs VO time.** Six words where "Apply now" was two, so the final beat grew in every ad
+  and a body line was trimmed to pay for it. All six re-audited: pace ceiling held at ≤2.60 wps.
+
+**"HireHospo funds it" is retired.** No VO line names the brand as the actor any more. The bridge
+now points at the stock list instead - "All on our stock list", "It's on our stock list" - and
+HireHospo is carried by the wordmark on screen at the bridge and the end card, plus the URL. If you
+want the brand spoken aloud again, it is a one-line change per ad.
 
 ## Compliance status
 

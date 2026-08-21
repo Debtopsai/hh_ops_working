@@ -2,7 +2,7 @@
 
 **Script:** `HireHospo_fifty-thousand_script_15s.md` · **Hook** (high-stakes warning, restaurant / caterer scaling, Product Aware) · **PAS**
 **Total shots:** 9 · **Aspect ratio:** 9:16 (1080×1920) · **Theme:** dark steel (provisional system; canvas #12141A)
-**HireHospo intro at:** 0:07.5 (50%) · **CTA:** Apply now
+**HireHospo intro at:** 0:07.5 (50%) · **CTA:** Get our latest stock list today
 **✅ CLEARED TO PRODUCE** - zero unapproved claims, no daily or weekly figure anywhere. This is the control cut and the one to build first if Credit sign-off is slow.
 
 ## Shot list
@@ -13,11 +13,11 @@
 | 2 | 0:02-0:04 | GFX quote traps it | A supplier quote document assembles around the figure - header rule, line items, a reference number - then the whole plate desaturates ink → mute | `QUOTE #` *(mono, greying)* · line items in `line` | "Sitting in a quote." | Paper-settle (dry, close); the flame underline extinguishes | Hard cut |
 | 3 | 0:04-0:06 | GFX dark kitchen | The quote holds still, slightly reduced. Behind it, four category tiles sit dark and unlit | `NOT IN YOUR KITCHEN` *(mono, mute)* | "Not in your kitchen." | Dip; low service ambience | Hard cut |
 | 4 | 0:06-0:07.5 | GFX the number | The quote holds. The figure inside it dims one further step - the only change in frame | *(no new text - the quote and tiles hold)* | "Because of the number." | **Near-silence.** Ambience and music drop to a low sustain | Hard cut (beat of black, 4 frames) |
-| 5 | 0:07.5-0:10 | GFX bridge / **hard reset** | The quote plate clears frame upward; HireHospo wordmark resolves centre on steel, lifts to top third; approval timeline draws in below | HireHospo · `FUNDING UP TO $50,000` · `APPLY` → `CREDIT CHECK` → `APPROVED` *(flame)* → `DELIVERED 1-3 BUSINESS DAYS` · *microcopy: Subject to credit approval* | "HireHospo funds up to fifty thousand." | Lift; paper clears (a single sweep); clean UI tick on APPROVED (−12dB) | Hard cut |
+| 5 | 0:07.5-0:10 | GFX bridge / **hard reset** | The quote plate clears frame upward; HireHospo wordmark resolves centre on steel, lifts to top third; approval timeline draws in below | HireHospo · `FUNDING UP TO $50,000` · `APPLY` → `CREDIT CHECK` → `APPROVED` *(flame)* → `DELIVERED 1-3 BUSINESS DAYS` · *microcopy: Subject to credit approval* | "Up to fifty thousand dollars." | Lift; paper clears (a single sweep); clean UI tick on APPROVED (−12dB) | Hard cut |
 | 6 | 0:10-0:11.5 | GFX tiles light | The same four category tiles from shot 3 light one at a time - the kitchen happening | `COMBI OVENS` · `COMMERCIAL DISHWASHERS` · `RANGES` · `FOOD PREP` | "Refurbished..." | Four tile ticks, warm, 150ms apart | Hard cut |
 | 7 | 0:11.5-0:12.5 | Refurb badge | Condition badge stamps on over the tiles' lower left | **`REFURBISHED · WITH WARRANTY`** *(flame border, stamp settle)* | "...with warranty." | Stamp settle; light metallic ring | Hard cut |
 | 8 | 0:12.5-0:13.5 | GFX payment model | The payment model resolves in flame. **No figure - the model, not a number** | **low weekly payments + GST** | "Low weekly payments plus GST." | Till/receipt tick (−16dB) | Hard cut |
-| 9 | 0:13.5-0:15 | End card | HireHospo wordmark, value line, flame CTA pill, mono subline, URL | HireHospo · *Premium kitchen equipment, refurbished and warranted, on low weekly payments.* · **Apply now** *(flame pill, #14161A text)* · `APPROVED IN 24 TO 48 HOURS · SUBJECT TO CREDIT APPROVAL` · `hirehospo.com` | "Apply now." | Button (−16dB); music settles, short tail | Hold to end |
+| 9 | 0:13.5-0:15 | End card | HireHospo wordmark, value line, flame CTA pill, mono subline, URL | HireHospo · *Premium kitchen equipment, refurbished and warranted, on low weekly payments.* · **Get our latest stock list today** *(flame pill, #14161A text)* · `REFURBISHED · WITH WARRANTY · + GST · SUBJECT TO CREDIT APPROVAL` · `hirehospo.com` | "Get our latest stock list today." | Button (−16dB); music settles, short tail | Hold to end |
 
 ## Frames to build (Claude Code hand-off)
 

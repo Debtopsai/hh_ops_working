@@ -58,7 +58,7 @@ Copy below is **verbatim and locked**.
 | `frames/03-approval-timeline.html` | Shot 5 · 0:07.5-0:10 | 2.5s | `HireHospo` · `FUNDING UP TO $50,000` · `APPLY` · `CREDIT CHECK` · `APPROVED` · `DELIVERED 1-3 BUSINESS DAYS` · `Subject to credit approval` | **Hard reset.** The quote plate clears frame upward over 0.4s, then **REUSE** the timeline component with the funding-ceiling line enabled |
 | `frames/04-tiles-light.html` | Shots 6-7 · 0:10-0:12.5 | 2.5s | `COMBI OVENS` · `COMMERCIAL DISHWASHERS` · `RANGES` · `FOOD PREP` · `REFURBISHED · WITH WARRANTY` | **REUSE** the four-tile grid from `50k-from-1499`, **in the same positions as frame 02**. Tiles light one at a time, warm, 150ms apart; badge stamps on at 1.5s (scale 1.08 → 1.0, 0.25s) |
 | `frames/05-payment-model.html` | Shot 8 · 0:12.5-0:13.5 | 1.0s | `low weekly payments + GST` | **REUSE** the split component in its **model-only state** - the state that carries no number. Flame fill wipes left→right over 0.35s |
-| `frames/06-end-card.html` | Shot 9 · 0:13.5-0:15 | 1.5s | `HireHospo` · `Premium kitchen equipment, refurbished and warranted, on low weekly payments.` · `Apply now` · `APPROVED IN 24 TO 48 HOURS · SUBJECT TO CREDIT APPROVAL` · `hirehospo.com` | **REUSE** unchanged |
+| `frames/06-end-card.html` | Shot 9 · 0:13.5-0:15 | 1.5s | `HireHospo` · `Premium kitchen equipment, refurbished and warranted, on low weekly payments.` · `Get our latest stock list today` · `REFURBISHED · WITH WARRANTY · + GST · SUBJECT TO CREDIT APPROVAL` · `hirehospo.com` | **REUSE** unchanged |
 
 **Only `01-quote-plate` is genuinely new.** Everything else is a component you already have. If you find yourself writing a second new frame, check the existing ad folders first.
 

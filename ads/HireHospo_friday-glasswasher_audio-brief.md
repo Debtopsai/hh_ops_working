@@ -27,9 +27,9 @@
 |---|---|---|
 | 0:00-0:03.5 | "Friday, seven o'clock. The glasswasher just died." | **Two separate statements, not one sentence.** Full stop and a real 0.5s pause after "o'clock". "The glasswasher just died" is delivered completely flat - no drama, no sympathy. It is a fact about a Friday. |
 | 0:03.5-0:07 | "Every glass in the place is now a hand-wash." | Slightly slower than the hook. Small stress on **"every"**. The line ends but the counter keeps going - **leave the tail dry, no trailing warmth**, so the silence after it feels like the night continuing. |
-| 0:07-0:09 | "HireHospo finances the replacement." | The only line that gains warmth. Stress **"replacement"**, not the brand name. Steady, no lift at the end. |
-| 0:09-0:13 | "Refurbished glasswashers, with warranty. From $4.66 a day plus GST." | **The most important read in the ad.** "Refurbished" must carry the same confidence as "with warranty" - not a hedge, not an apology. Then a small pause before the figure. **"Plus GST" is spoken at full level and clarity, never trailed off or rushed** - it is a legal requirement, and it also sounds more honest, which helps. |
-| 0:13-0:15 | "Apply now." | An instruction delivered calmly. Full stop. No rise, no smile. |
+| 0:07-0:09 | "It's on our stock list." | The only line that gains warmth. Stress **"stock list"**. Steady, no lift at the end. The brand is on screen, not in this line; do not add it back. |
+| 0:09-0:13 | "Refurbished, with warranty. From $4.66 a day plus GST." | **The most important read in the ad.** "Refurbished" must carry the same confidence as "with warranty" - not a hedge, not an apology. Then a small pause before the figure. **"Plus GST" is spoken at full level and clarity, never trailed off or rushed** - it is a legal requirement, and it also sounds more honest, which helps. |
+| 0:13-0:15 | "Get our latest stock list today." | An instruction delivered calmly. Full stop. No rise, no smile. |
 
 - Record **3 reads of the hook** (flatter / slightly warmer / with a longer pause after "o'clock") and **2 reads of the $4.66 line** (neutral and half a degree warmer) for the editor.
 - Record an alternate take of the $4.66 line with the figure spoken as "four dollars sixty-six a day" in case the client prefers the longhand.

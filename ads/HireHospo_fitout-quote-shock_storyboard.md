@@ -2,7 +2,7 @@
 
 **Script:** `HireHospo_fitout-quote-shock_script_15s.md` · **Hook** (high-stakes warning, new cafe owner, Problem Aware) · **PAS**
 **Total shots:** 9 · **Aspect ratio:** 9:16 (1080×1920) · **Theme:** dark steel (provisional system; canvas #12141A)
-**HireHospo intro at:** 0:07 (47%) · **CTA:** Apply now
+**HireHospo intro at:** 0:07 (47%) · **CTA:** Get our latest stock list today
 
 ## Shot list
 
@@ -12,11 +12,11 @@
 | 2 | 0:02-0:04 | GFX quote detail | The figure shrinks to the top third; three mono line items type in beneath it | `DISHWASHER  $2,000-$20,000` / `CONVECTION OVEN  $2,800-$8,300` / `GLASSWASHER  $2,300-$4,000` | "Sixteen thousand, eight hundred." | Line-item tick ×3 | Hard cut |
 | 3 | 0:04-0:05.5 | GFX category grid | Three steel tiles, equal weight, none lit - deliberately flat | `THREE MACHINES` | "Three machines." | Low service ambience enters | Hard cut |
 | 4 | 0:05.5-0:07 | GFX one-cheque | The three tiles slide together and collapse into one bar; $16,800 desaturates to #838896 | **ONE CHEQUE** *(mono, no flame - this frame stays cold)* | "One cheque. Before you've opened." | Ambience + music duck to near-silence on "opened" | Hard cut (beat of black, 4 frames) |
-| 5 | 0:07-0:09 | GFX bridge / **hard reset** | HireHospo wordmark resolves centre on steel, then lifts to the top third; approval timeline draws in below, four mono steps | HireHospo · `APPLY` → `CREDIT CHECK` → `APPROVED` *(flame)* → `DELIVERED 1-3 BUSINESS DAYS` · *microcopy: Subject to credit approval* | "HireHospo finances the fit-out instead." | Lift; clean UI tick on APPROVED (−12dB) | Hard cut |
+| 5 | 0:07-0:09 | GFX bridge / **hard reset** | HireHospo wordmark resolves centre on steel, then lifts to the top third; approval timeline draws in below, four mono steps | HireHospo · `APPLY` → `CREDIT CHECK` → `APPROVED` *(flame)* → `DELIVERED 1-3 BUSINESS DAYS` · *microcopy: Subject to credit approval* | "All on our stock list." | Lift; clean UI tick on APPROVED (−12dB) | Hard cut |
 | 6 | 0:09-0:10.5 | EQUIP hero plinth | Starline M2 undercounter dishwasher cut out on a brushed-steel plinth, warm key from upper left | `STARLINE M2` / `COMMERCIAL DISHWASHERS` *(mono chips)* | "Refurbished Starline..." | Single rack clack (−16dB) | Match cut (plinth holds) |
 | 7 | 0:10.5-0:12 | EQUIP hero plinth + refurb badge | Plinth swaps to Turbofan E31D4 convection oven; condition badge stamps on over the lower left | `TURBOFAN E31D4` / `CONVECTION OVENS` · **`REFURBISHED · WITH WARRANTY`** *(flame border, stamp settle)* | "...and Turbofan, with warranty." | Stamp settle; light steel ring | Hard cut |
 | 8 | 0:12-0:13.5 | GFX big-number-vs-weekly split | Vertical split. Top: $16,800 in mono, greying and dropping 4px. Bottom: "low weekly payments **+ GST**" lifting in flame | `$16,800` *(grey)* ↓ / **low weekly payments + GST** *(flame)* | "Low weekly payments, plus GST." | Till/receipt tick on the flip (−16dB) | Hard cut |
-| 9 | 0:13.5-0:15 | End card | HireHospo wordmark, value line, flame CTA pill, mono subline, URL | HireHospo · *Premium kitchen equipment, refurbished and warranted, on low weekly payments.* · **Apply now** *(flame pill, #14161A text)* · `APPROVED IN 24 TO 48 HOURS · SUBJECT TO CREDIT APPROVAL` · `hirehospo.com` | "Apply now." | Button (−16dB); music settles, short tail | Hold to end |
+| 9 | 0:13.5-0:15 | End card | HireHospo wordmark, value line, flame CTA pill, mono subline, URL | HireHospo · *Premium kitchen equipment, refurbished and warranted, on low weekly payments.* · **Get our latest stock list today** *(flame pill, #14161A text)* · `REFURBISHED · WITH WARRANTY · + GST · SUBJECT TO CREDIT APPROVAL` · `hirehospo.com` | "Get our latest stock list today." | Button (−16dB); music settles, short tail | Hold to end |
 
 ## Frames to build (Claude Code hand-off)
 

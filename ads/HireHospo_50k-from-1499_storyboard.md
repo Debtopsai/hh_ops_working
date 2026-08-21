@@ -8,15 +8,15 @@
 
 | # | Time | Shot | Visual | On-screen text | VO | SFX / music | Cut |
 |---|---|---|---|---|---|---|---|
-| 1 | 0:00-0:02 | TXT headline L1 | Full-bleed on steel. Nothing else in frame - no equipment, no device | **$50,000 OF EQUIPMENT** *(mono, flame on the figure)* | "Fifty thousand dollars' worth of equipment." | Music in low (−18dB); single ledger tick | Hold |
-| 2 | 0:02-0:03.5 | TXT headline L2 | Line 2 lands beneath line 1; both hold at full size | **FROM $14.99/DAY + GST** *(mono, flame)* | "From fourteen ninety-nine a day..." | Till/receipt tick on the figure (−16dB) | Hold |
-| 3 | 0:03.5-0:05 | GFX disclosure resolves | The three-line disclosure block fades in beneath the headline and **stays on screen until 0:13** | `FUNDING UP TO $50,000 · PACKAGES FROM $14.99/DAY` / `YOUR PAYMENT DEPENDS ON EQUIPMENT VALUE AND TERM` / `+ GST · SUBJECT TO CREDIT APPROVAL` | "...plus GST." | Soft settle | Hard cut |
-| 4 | 0:05-0:06.5 | GFX category tiles | The headline shrinks to the top third **and stays**; two category tiles light beneath it | `COMBI OVENS` · `COMMERCIAL DISHWASHERS` | "Ovens, dishwashers..." | Two tile ticks, 150ms apart | Match cut |
+| 1 | 0:00-0:02.5 | TXT headline L1 | Full-bleed on steel. Nothing else in frame - no equipment, no device | **$50,000 OF EQUIPMENT** *(mono, flame on the figure)* | "Fifty thousand dollars' worth of equipment." | Music in low (−18dB); single ledger tick | Hold |
+| 2 | 0:02.5-0:04 | TXT headline L2 | Line 2 lands beneath line 1; both hold at full size | **FROM $14.99/DAY + GST** *(mono, flame)* | "From fourteen ninety-nine a day..." | Till/receipt tick on the figure (−16dB) | Hold |
+| 3 | 0:04-0:05.5 | GFX disclosure resolves | The three-line disclosure block fades in beneath the headline and **stays on screen until 0:13** | `FUNDING UP TO $50,000 · PACKAGES FROM $14.99/DAY` / `YOUR PAYMENT DEPENDS ON EQUIPMENT VALUE AND TERM` / `+ GST · SUBJECT TO CREDIT APPROVAL` | "...plus GST." | Soft settle | Hard cut |
+| 4 | 0:05.5-0:06.5 | GFX category tiles | The headline shrinks to the top third **and stays**; two category tiles light beneath it | `COMBI OVENS` · `COMMERCIAL DISHWASHERS` | "Ovens, dishwashers..." | Two tile ticks, 150ms apart | Match cut |
 | 5 | 0:06.5-0:07.5 | GFX category tiles | Two more tiles light, completing the grid | `RANGES` · `FOOD PREP` | "...ranges, prep." | Two tile ticks | Hard cut |
-| 6 | 0:07.5-0:09.5 | GFX HireHospo | Wordmark resolves centre on steel, lifts to top third; approval timeline draws in below | HireHospo · `FUNDING UP TO $50,000` · `APPLY` → `CREDIT CHECK` → `APPROVED` *(flame)* → `DELIVERED 1-3 BUSINESS DAYS` · *Subject to credit approval* | "HireHospo funds it." | Lift; clean UI tick on APPROVED (−12dB) | Hard cut |
-| 7 | 0:09.5-0:11 | EQUIP hero plinth + badge | Real catalogue equipment on a brushed-steel plinth; condition badge stamps on over the lower left | **`REFURBISHED · WITH WARRANTY`** *(flame border, stamp settle)* | "Refurbished, with warranty." | Rack clack (single); stamp settle | Hard cut |
-| 8 | 0:11-0:13 | GFX approval line | Four mono steps collapse to a single lit line | `APPROVED IN 24 TO 48 HOURS` | "Approved in 24 to 48 hours." | Soft approval tick | Hard cut |
-| 9 | 0:13-0:15 | End card | Wordmark, value line, flame CTA pill, mono subline, URL | HireHospo · *Premium kitchen equipment, refurbished and warranted, on low weekly payments.* · **Apply now** · `APPROVED IN 24 TO 48 HOURS · SUBJECT TO CREDIT APPROVAL` · `hirehospo.com` | "Apply now." | Button (−16dB); settle, short tail | Hold to end |
+| 6 | 0:07.5-0:09.5 | GFX HireHospo | Wordmark resolves centre on steel, lifts to top third; approval timeline draws in below | HireHospo · `FUNDING UP TO $50,000` · `APPLY` → `CREDIT CHECK` → `APPROVED` *(flame)* → `DELIVERED 1-3 BUSINESS DAYS` · *Subject to credit approval* | "All on our stock list." | Lift; clean UI tick on APPROVED (−12dB) | Hard cut |
+| 7 | 0:09.5-0:11.5 | EQUIP hero plinth + badge | Real catalogue equipment on a brushed-steel plinth; condition badge stamps on over the lower left | **`REFURBISHED · WITH WARRANTY`** *(flame border, stamp settle)* | "Refurbished, with warranty." | Rack clack (single); stamp settle | Hard cut |
+| 8 | 0:11.5-0:12.5 | GFX approval line | Four mono steps collapse to a single lit line | `APPROVED IN 24 TO 48 HOURS` | "Approved in 24 to 48 hours." | Soft approval tick | Hard cut |
+| 9 | 0:12.5-0:15 | End card | Wordmark, value line, flame CTA pill, mono subline, URL | HireHospo · *Premium kitchen equipment, refurbished and warranted, on low weekly payments.* · **Get our latest stock list today** · `REFURBISHED · WITH WARRANTY · + GST · SUBJECT TO CREDIT APPROVAL` · `hirehospo.com` | "Get our latest stock list today." | Button (−16dB); settle, short tail | Hold to end |
 
 ## Frames to build
 
@@ -51,7 +51,7 @@ Reset at **0:07.5** (the wordmark, shot 6). Body cuts every ~1.5s. In an offer-l
 
 ## Audit
 
-Shots: **9** (15s budget = 8-10 ✓). Timing: 2.0 + 1.5 + 1.5 + 1.5 + 1.0 + 2.0 + 1.5 + 2.0 + 2.0 = **15.0s ✓**. Headline verbatim and first ✓. Disclosure on screen 0:02-0:13 ✓. Categories real, no invented model ✓. One flame highlight per frame ✓. Money in mono ✓. Safe area ✓. End card microcopy complete ✓.
+Shots: **9** (15s budget = 8-10 ✓). Timing: 2.0 + 1.5 + 1.5 + 1.5 + 1.0 + 2.0 + 2.0 + 1.0 + 2.5 = **15.0s ✓**. Headline verbatim and first ✓. Disclosure on screen 0:02-0:13 ✓. Categories real, no invented model ✓. One flame highlight per frame ✓. Money in mono ✓. Safe area ✓. End card microcopy complete ✓.
 
 ## Aspect variants
 

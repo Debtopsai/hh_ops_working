@@ -2,7 +2,7 @@
 
 **Script:** `HireHospo_friday-glasswasher_script_15s.md` · **Hook** (specific truth, bar / pub, Solution Aware) · **PAS-lite**
 **Total shots:** 9 · **Aspect ratio:** 9:16 (1080×1920) · **Theme:** dark steel (provisional system; canvas #12141A)
-**HireHospo intro at:** 0:07 (47%) · **CTA:** Apply now
+**HireHospo intro at:** 0:07 (47%) · **CTA:** Get our latest stock list today
 
 ## Shot list
 
@@ -12,11 +12,11 @@
 | 2 | 0:02-0:03.5 | EQUIP dead machine | Glasswasher control panel, unlit, in a dark under-bar. Everything around it is working; this is not | `—` *(no text; a single dead indicator dot in mute grey)* | "The glasswasher just died." | Room tone only; the absence of a machine cycle is the sound design | Hard cut |
 | 3 | 0:03.5-0:05.5 | GFX glass count | Mono counter climbing over a steel sink edge, glasses stacking as ghosted outlines | **240 GLASSES** *(mono, counting, no flame)* | "Every glass in the place..." | Tap running; count-up tick underneath (−18dB) | Hard cut |
 | 4 | 0:05.5-0:07 | GFX hand-wash | The counter keeps climbing past the VO; a mono line resolves beneath it | `HAND-WASH` *(mono, mute grey - this frame stays cold)* | "...is now a hand-wash." | Water fills the mix; music near-drops | Hard cut (beat of black, 4 frames) |
-| 5 | 0:07-0:09 | GFX bridge / **hard reset** | HireHospo wordmark resolves centre on steel, lifts to top third; approval timeline draws in below, four mono steps | HireHospo · `APPLY` → `CREDIT CHECK` → `APPROVED` *(flame)* → `DELIVERED 1-3 BUSINESS DAYS · AFTER DEPOSIT` · *microcopy: Subject to credit approval* | "HireHospo finances the replacement." | Water **cuts dead**; lift; clean UI tick on APPROVED (−12dB) | Hard cut |
-| 6 | 0:09-0:10.5 | EQUIP hero plinth | Glasswasher lit on a brushed-steel plinth, warm key from upper left - the same machine from shot 2, now running | `GLASSWASHERS` / `$2,300-$4,000` *(mono chips)* | "Refurbished glasswashers..." | Single rack clack; a short wash-cycle hum starts (−18dB) | Match cut (plinth holds) |
+| 5 | 0:07-0:09 | GFX bridge / **hard reset** | HireHospo wordmark resolves centre on steel, lifts to top third; approval timeline draws in below, four mono steps | HireHospo · `APPLY` → `CREDIT CHECK` → `APPROVED` *(flame)* → `DELIVERED 1-3 BUSINESS DAYS · AFTER DEPOSIT` · *microcopy: Subject to credit approval* | "It's on our stock list." | Water **cuts dead**; lift; clean UI tick on APPROVED (−12dB) | Hard cut |
+| 6 | 0:09-0:10.5 | EQUIP hero plinth | Glasswasher lit on a brushed-steel plinth, warm key from upper left - the same machine from shot 2, now running | `GLASSWASHERS` / `$2,300-$4,000` *(mono chips)* | "Refurbished..." | Single rack clack; a short wash-cycle hum starts (−18dB) | Match cut (plinth holds) |
 | 7 | 0:10.5-0:11.5 | Refurb badge | Condition badge stamps on over the plinth's lower left | **`REFURBISHED · WITH WARRANTY`** *(flame border, stamp settle)* | "...with warranty." | Stamp settle; light metallic ring | Hard cut |
-| 8 | 0:11.5-0:13 | GFX entry figure | The daily figure resolves large and mono, its footnote attached beneath in the same block - **never separable** | **From $4.66/day** · `+ GST · SUBJECT TO CREDIT APPROVAL` *(footnote, mute, mono)* | "From $4.66 a day plus GST." | Till/receipt tick (−16dB) | Hard cut |
-| 9 | 0:13-0:15 | End card | HireHospo wordmark, value line, flame CTA pill, mono subline, URL | HireHospo · *Premium kitchen equipment, refurbished and warranted, on low weekly payments.* · **Apply now** *(flame pill, #14161A text)* · `APPROVED IN 24 TO 48 HOURS · SUBJECT TO CREDIT APPROVAL` · `hirehospo.com` | "Apply now." | Button (−16dB); music settles, short tail | Hold to end |
+| 8 | 0:11.5-0:12.5 | GFX entry figure | The daily figure resolves large and mono, its footnote attached beneath in the same block - **never separable** | **From $4.66/day** · `+ GST · SUBJECT TO CREDIT APPROVAL` *(footnote, mute, mono)* | "From $4.66 a day plus GST." | Till/receipt tick (−16dB) | Hard cut |
+| 9 | 0:12.5-0:15 | End card | HireHospo wordmark, value line, flame CTA pill, mono subline, URL | HireHospo · *Premium kitchen equipment, refurbished and warranted, on low weekly payments.* · **Get our latest stock list today** *(flame pill, #14161A text)* · `REFURBISHED · WITH WARRANTY · + GST · SUBJECT TO CREDIT APPROVAL` · `hirehospo.com` | "Get our latest stock list today." | Button (−16dB); music settles, short tail | Hold to end |
 
 ## Frames to build (Claude Code hand-off)
 
@@ -52,7 +52,7 @@ Hard visual reset at **0:07** (the bridge, shot 5) - the water cutting dead is a
 
 ## Audit
 
-Shots: **9** (15s budget = 8-10 ✓). Timing: 2.0 + 1.5 + 2.0 + 1.5 + 2.0 + 1.5 + 1.0 + 1.5 + 2.0 = **15.0s ✓**. Cuts land on emphasis and reveals ✓. Bridge reset at 0:07 (within 7-9s ✓). Equipment is real catalogue gear, category-tagged, no invented model ✓. One flame highlight per frame ✓. Money in mono with footnote locked ✓. Safe area ✓. Wordmark at bridge + end card only ✓. End card carries the full required microcopy ✓. **6 of 9 shots reuse frames from `fitout-quote-shock`** ✓.
+Shots: **9** (15s budget = 8-10 ✓). Timing: 2.0 + 1.5 + 2.0 + 1.5 + 2.0 + 1.5 + 1.0 + 1.0 + 2.5 = **15.0s ✓**. Cuts land on emphasis and reveals ✓. Bridge reset at 0:07 (within 7-9s ✓). Equipment is real catalogue gear, category-tagged, no invented model ✓. One flame highlight per frame ✓. Money in mono with footnote locked ✓. Safe area ✓. Wordmark at bridge + end card only ✓. End card carries the full required microcopy ✓. **6 of 9 shots reuse frames from `fitout-quote-shock`** ✓.
 
 ## Aspect variants
 

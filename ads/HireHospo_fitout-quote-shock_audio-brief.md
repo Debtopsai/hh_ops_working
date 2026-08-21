@@ -27,9 +27,9 @@
 | 0:00-0:04 | "The fit-out quote came back. Sixteen thousand, eight hundred." | Flat and factual. **Full stop after "back"** - a real 0.4s pause before the number. Say the figure plainly, no lift on the last syllable. This is a fact being read off a page, not a reveal. |
 | 0:04-0:055 | "Three machines." | Slower. Small stress on **"Three"**. |
 | 0:05.5-0:07 | "One cheque. Before you've opened." | Quietest line in the ad. Drop volume and pitch slightly. **Beat of silence after "cheque."** "Before you've opened" is almost thrown away - no emphasis, which is what makes it land. |
-| 0:07-0:09 | "HireHospo finances the fit-out instead." | The only line that gains warmth. Stress **"instead"**, not the brand name. Steady, no lift at the end. |
+| 0:07-0:09 | "All on our stock list." | The only line that gains warmth. Stress **"stock list"** - it is the thing the ad is sending them to. Steady, no lift at the end. The brand is on screen, not in this line; do not add it back. |
 | 0:09-0:12 | "Refurbished Starline and Turbofan, with warranty." | Even and confident - **this is the line most likely to be read apologetically. It must not be.** "Refurbished" carries the same weight as "with warranty". No hedging, no softening. |
-| 0:12-0:15 | "Low weekly payments, plus GST. Apply now." | **"Plus GST" is spoken, not swallowed** - same level and clarity as the rest of the line. "Apply now" is an instruction delivered calmly, full stop, no rise. |
+| 0:12-0:15 | "Get our latest stock list today." | Calm and even, six words across three seconds - unhurried. Small stress on **"stock list"**. Full stop, no rise, no smile. "+ GST" is no longer spoken here; it is burned in on the split frame and the end card, which satisfies the requirement. |
 
 - Record **3 reads of the hook** (flatter / slightly warmer / slower with a longer pause before the figure) and **2 reads of the CTA** (neutral and half a degree warmer) for the editor to choose.
 - Record an alternate 10s-cut take of the hook: "The fit-out quote came back. Sixteen thousand, eight hundred." at a 0.2s tighter pause.

@@ -29,10 +29,10 @@
 | 0:00-0:02 | "You can afford the oven." | **Delivered as a concession, not a compliment.** Flat, matter-of-fact, slightly warm. You are conceding a point before anyone has argued it. Full stop, then a real **0.5s pause** - the pause is the pattern interrupt, not the words. |
 | 0:02-0:04 | "That's not the problem." | Lower and quieter than the first line, not louder. Small stress on **"that's"**. The instinct will be to punch this line; resist it. Underplaying it is what makes it feel true. |
 | 0:04-0:09 | "The problem is $20,000 leaving your account, and the six months after that." | Even and unhurried - the longest line in the ad and it must not accelerate. Small stress on **"leaving"**. **A real comma pause before "and the six months after that"**, then deliver that clause more quietly, almost as an afterthought. That clause is the actual argument of the ad. |
-| 0:09-0:11 | "HireHospo finances it instead." | The only line that gains warmth. Stress **"instead"**, not the brand name. Steady, no lift at the end. |
+| 0:09-0:11 | "It's on our stock list." | The only line that gains warmth. Stress **"stock list"**. Steady, no lift at the end. The brand is on screen, not in this line; do not add it back. |
 | 0:11-0:14 | "A refurbished Rational combi. With warranty." | **The single most important read in the ad.** "Refurbished" and "Rational" must carry equal confidence - a refurbished premium brand is the whole proposition, and any hesitation on "refurbished" turns it into an apology. Full stop before "With warranty", delivered as a closed statement, not a reassurance. |
-| 0:14-0:17 | "Approved in 24 to 48 hours." | Plain and procedural. This is a process fact. No warmth needed. |
-| 0:17-0:20 | "Low weekly payments, plus GST. Apply now." | **"Plus GST" spoken at full level and clarity** - never swallowed or rushed. "Apply now" is an instruction delivered calmly. Full stop, no rise, no smile. |
+| 0:14-0:16.5 | "Approved in 24 to 48 hours." | Plain and procedural. This is a process fact. No warmth needed. |
+| 0:16.5-0:20 | "Get our latest stock list today." | Calm and even, six words across three and a half seconds - the most unhurried line in the set. Small stress on **"stock list"**. Full stop, no rise, no smile. "+ GST" is burned in on the end card rather than spoken. |
 
 - Record **3 reads of the two hook lines** (flat / half a degree warmer / with a longer pause between them) and **2 reads of the Rational line** - the confidence on "refurbished" is worth having options for.
 - **Do not** record any alternate take containing a weekly or daily figure. There is no version of this ad that carries one.
