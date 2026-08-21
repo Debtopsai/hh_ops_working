@@ -28,7 +28,7 @@
 | 0:00-0:03.5 | "Friday, seven o'clock. The glasswasher just died." | **Two separate statements, not one sentence.** Full stop and a real 0.5s pause after "o'clock". "The glasswasher just died" is delivered completely flat - no drama, no sympathy. It is a fact about a Friday. |
 | 0:03.5-0:07 | "Every glass in the place is now a hand-wash." | Slightly slower than the hook. Small stress on **"every"**. The line ends but the counter keeps going - **leave the tail dry, no trailing warmth**, so the silence after it feels like the night continuing. |
 | 0:07-0:09 | "It's on our stock list." | The only line that gains warmth. Stress **"stock list"**. Steady, no lift at the end. The brand is on screen, not in this line; do not add it back. |
-| 0:09-0:13 | "Fully serviced, with warranty. From $4.66 a day." | **The most important read in the ad.** "Fully serviced" must carry the same confidence as "with warranty" - not a hedge, not an apology. Then a small pause before the figure. **"Plus GST" is spoken at full level and clarity, never trailed off or rushed** - it is a legal requirement, and it also sounds more honest, which helps. |
+| 0:09-0:13 | "Fully serviced, with warranty. From $4.66 a day." | **The most important read in the ad.** "Fully serviced" must carry the same confidence as "with warranty" - not a hedge, not an apology. Then a small pause before the figure. No GST line in this read - see the claim check in the script. |
 | 0:13-0:15 | "Get our latest stock list today." | An instruction delivered calmly. Full stop. No rise, no smile. |
 
 - Record **3 reads of the hook** (flatter / slightly warmer / with a longer pause after "o'clock") and **2 reads of the $4.66 line** (neutral and half a degree warmer) for the editor.
@@ -56,4 +56,4 @@
 - Music **−6 to −9 dB under VO**; the hook may ride unducked. The water at 0:05.5 is the one cue permitted to sit **above** the music bed.
 - **VO is the priority track.** Sidechain the bed off the VO, 40ms attack / 220ms release.
 - **Master: −14 LUFS integrated, −1.0 dBTP.**
-- **Silent-read requirement:** the ad must carry fully with sound off. Burned-in captions plus on-screen text deliver every claim, including `+ GST` and `SUBJECT TO CREDIT APPROVAL`. The audio reset at 0:07 has a matching visual reset precisely so the muted version loses nothing structural.
+- **Silent-read requirement:** the ad must carry fully with sound off. Burned-in captions plus on-screen text deliver every claim, including `SUBJECT TO CREDIT APPROVAL`. The audio reset at 0:07 has a matching visual reset precisely so the muted version loses nothing structural.

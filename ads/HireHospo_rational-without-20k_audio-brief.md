@@ -32,7 +32,7 @@
 | 0:09-0:11 | "It's on our stock list." | The only line that gains warmth. Stress **"stock list"**. Steady, no lift at the end. The brand is on screen, not in this line; do not add it back. |
 | 0:11-0:14 | "A fully serviced Rational combi. With warranty." | **The single most important read in the ad.** "Fully serviced" and "Rational" must carry equal confidence - a fully serviced premium brand is the whole proposition, and any hesitation there turns it into an apology. Full stop before "With warranty", delivered as a closed statement, not a reassurance. |
 | 0:14-0:16.5 | "Approved in 24 to 48 hours." | Plain and procedural. This is a process fact. No warmth needed. |
-| 0:16.5-0:20 | "Get our latest stock list today." | Calm and even, six words across three and a half seconds - the most unhurried line in the set. Small stress on **"stock list"**. Full stop, no rise, no smile. "+ GST" is burned in on the end card rather than spoken. |
+| 0:16.5-0:20 | "Get our latest stock list today." | Calm and even, six words across three and a half seconds - the most unhurried line in the set. Small stress on **"stock list"**. Full stop, no rise, no smile.  |
 
 - Record **3 reads of the two hook lines** (flat / half a degree warmer / with a longer pause between them) and **2 reads of the Rational line** - the confidence on "fully serviced" is worth having options for.
 - **Do not** record any alternate take containing a weekly or daily figure. There is no version of this ad that carries one.
@@ -62,4 +62,4 @@
 - Music **−6 to −9 dB under VO**; the hook (0:00-0:04) rides unducked because the bed is already at 2/10 and the VO is sparse.
 - **VO is the priority track.** Sidechain the bed off the VO, 40ms attack / 220ms release. The long line at 0:04-0:09 needs the gentlest release setting in the set - it should not pump.
 - **Master: −14 LUFS integrated, −1.0 dBTP.**
-- **Silent-read requirement:** the ad must carry fully with sound off. The hook is typographic, the agitation is a contracting bar, the promise is two ticked ledger lines - all three read silent. Burned-in captions plus on-screen text deliver every claim, including `+ GST` and `SUBJECT TO CREDIT APPROVAL`.
+- **Silent-read requirement:** the ad must carry fully with sound off. The hook is typographic, the agitation is a contracting bar, the promise is two ticked ledger lines - all three read silent. Burned-in captions plus on-screen text deliver every claim, including `SUBJECT TO CREDIT APPROVAL`.

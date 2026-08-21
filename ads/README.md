@@ -114,7 +114,7 @@ Gates run across all 24 files, all passing:
   approval-timeline frame.
 - **No specific weekly or daily payment for a specific product.** `$4.66/day` - the sole approved
   entry figure - appears only in `friday-glasswasher` (glasswashers, $2,300-$4,000, one of the three
-  cheapest categories), with its `+ GST · SUBJECT TO CREDIT APPROVAL` footnote locked to it as one
+  cheapest categories), with its `SUBJECT TO CREDIT APPROVAL` footnote locked to it as one
   indivisible block. It is explicitly prohibited in the other two builds.
 - **Catalogue-true gear.** Only three products are named across the whole set - Starline M2
   (Commercial Dishwashers), Turbofan E31D4 (Convection Ovens), Rational SCC WE101 (Combi Ovens) -

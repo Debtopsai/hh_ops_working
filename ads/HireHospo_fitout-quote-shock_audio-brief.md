@@ -29,7 +29,7 @@
 | 0:05.5-0:07 | "One cheque. Before you've opened." | Quietest line in the ad. Drop volume and pitch slightly. **Beat of silence after "cheque."** "Before you've opened" is almost thrown away - no emphasis, which is what makes it land. |
 | 0:07-0:09 | "All on our stock list." | The only line that gains warmth. Stress **"stock list"** - it is the thing the ad is sending them to. Steady, no lift at the end. The brand is on screen, not in this line; do not add it back. |
 | 0:09-0:12 | "Fully serviced Starline and Turbofan. With warranty." | Even and confident - **this is the line most likely to be read apologetically. It must not be.** "Fully serviced" carries the same weight as "with warranty". No hedging, no softening. |
-| 0:12-0:15 | "Get our latest stock list today." | Calm and even, six words across three seconds - unhurried. Small stress on **"stock list"**. Full stop, no rise, no smile. "+ GST" is no longer spoken here; it is burned in on the split frame and the end card, which satisfies the requirement. |
+| 0:12-0:15 | "Get our latest stock list today." | Calm and even, six words across three seconds - unhurried. Small stress on **"stock list"**. Full stop, no rise, no smile.  |
 
 - Record **3 reads of the hook** (flatter / slightly warmer / slower with a longer pause before the figure) and **2 reads of the CTA** (neutral and half a degree warmer) for the editor to choose.
 - Record an alternate 10s-cut take of the hook: "The fit-out quote came back. Sixteen thousand, eight hundred." at a 0.2s tighter pause.
@@ -55,4 +55,4 @@
 - Music **−6 to −9 dB under VO**; the hook (0:00-0:04) may ride undicked since the VO is sparse there. SFX peaks duck a further **3-6 dB** so nothing competes with a spoken figure.
 - **VO is the priority track** at all times. Sidechain the music bed off the VO with a 40ms attack / 220ms release.
 - **Master: −14 LUFS integrated, −1.0 dBTP.** True-peak limit last, after the tail.
-- **Silent-read requirement:** the ad must carry fully with sound off - burned-in captions plus on-screen text deliver every claim, including `+ GST` and `SUBJECT TO CREDIT APPROVAL`. The mix is enhancement, never load-bearing.
+- **Silent-read requirement:** the ad must carry fully with sound off - burned-in captions plus on-screen text deliver every claim, including `SUBJECT TO CREDIT APPROVAL`. The mix is enhancement, never load-bearing.

@@ -30,7 +30,7 @@
 | 0:00-0:04 | "Fifty thousand dollars of equipment. Sitting in a quote." | Flat and factual. Full stop after "equipment", then a real 0.4s pause. **"Sitting in a quote" is the important half** - deliver it slightly slower and slightly quieter, with a small stress on **"sitting"**. That word is the entire premise: the gear exists, it just is not moving. |
 | 0:04-0:07.5 | "Not in your kitchen. Because of the number." | Two flat statements. **No sympathy in the read** - the moment it sounds sympathetic it becomes a sales line. A real pause between them. "Because of the number" is the quietest phrase in the ad, almost thrown away. |
 | 0:07.5-0:10 | "Up to fifty thousand dollars." | The only line that gains warmth. **"Up to" must be clearly articulated** - do not let it run together as "upto"; it is the approved wording and the whole claim rests on it. Steady, no lift at the end. The brand is on screen, not in this line. |
-| 0:10-0:12 | "Fully serviced. With warranty." | "Fully serviced" carries the same confidence as "with warranty" - **never apologetic**. Closed statement, full stop. "+ GST" is burned in on the payment-model frame and the end card rather than spoken. |
+| 0:10-0:12 | "Fully serviced. With warranty." | "Fully serviced" carries the same confidence as "with warranty" - **never apologetic**. Closed statement, full stop. No GST line anywhere in this ad - see the claim check in the script. |
 | 0:12-0:15 | "Get our latest stock list today." | Calm and even, six words across three seconds - unhurried. Small stress on **"stock list"**. Full stop, no rise, no smile. |
 
 - Record **3 reads of the hook** (flatter / slightly warmer / with a longer pause before "Sitting in a quote") and **2 reads of the CTA**.
@@ -57,4 +57,4 @@
 - Music **−6 to −9 dB under VO**; the hook may ride unducked. SFX peaks duck a further **3-6 dB**.
 - **VO is the priority track.** Sidechain the bed off the VO, 40ms attack / 220ms release.
 - **Master: −14 LUFS integrated, −1.0 dBTP.**
-- **Silent-read requirement:** the ad must carry fully with sound off. Burned-in captions plus on-screen text deliver every claim, including `FUNDING UP TO $50,000`, `+ GST` and `SUBJECT TO CREDIT APPROVAL`. The quote-closing and paper-clearing beats are visual first and audio second, so nothing structural is lost muted.
+- **Silent-read requirement:** the ad must carry fully with sound off. Burned-in captions plus on-screen text deliver every claim, including `FUNDING UP TO $50,000` and `SUBJECT TO CREDIT APPROVAL`. The quote-closing and paper-clearing beats are visual first and audio second, so nothing structural is lost muted.

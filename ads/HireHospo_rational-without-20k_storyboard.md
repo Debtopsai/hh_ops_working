@@ -18,7 +18,7 @@
 | 8 | 0:12.5-0:14 | Serviced badge | Condition badge stamps on over the plinth's lower left | **`FULLY SERVICED · WITH WARRANTY`** *(flame border, stamp settle)* | "With warranty." | Stamp settle; light metallic ring | Hard cut |
 | 9 | 0:14-0:15.5 | GFX approval timeline (return) | The timeline from shot 6 returns, compressed to a single line, `APPROVED` already lit; the hours resolve beneath it | `APPROVED IN 24 TO 48 HOURS` *(mono)* | "Approved in 24 to 48 hours." | Soft approval tick | Hard cut |
 | 10 | 0:15.5-0:17.5 | GFX capital-preservation ledger | Two mono ledger lines, each with a `#58C97B` tick landing in turn. **The only frame in the set where both sides win** | `OVEN IN THE KITCHEN` ✓ · `CAPITAL IN THE BUSINESS` ✓ | *(no VO - let the frame land)* | Two soft approval ticks, 400ms apart (−16dB) | Hard cut |
-| 11 | 0:17.5-0:20 | End card | HireHospo wordmark, value line, flame CTA pill, mono subline, URL | HireHospo · *Premium kitchen equipment, fully serviced and warranted, on low weekly payments.* · **low weekly payments + GST** · **Get our latest stock list today** *(flame pill, #14161A text)* · `FULLY SERVICED · WITH WARRANTY · + GST · SUBJECT TO CREDIT APPROVAL` · `hirehospo.com` | "Get our latest stock list today." | Till/receipt tick; button (−16dB); settle, short tail | Hold to end |
+| 11 | 0:17.5-0:20 | End card | HireHospo wordmark, value line, flame CTA pill, mono subline, URL | HireHospo · *Premium kitchen equipment, fully serviced and warranted, on low weekly payments.* · **low weekly payments** · **Get our latest stock list today** *(flame pill, #14161A text)* · `FULLY SERVICED · WITH WARRANTY · SUBJECT TO CREDIT APPROVAL` · `hirehospo.com` | "Get our latest stock list today." | Till/receipt tick; button (−16dB); settle, short tail | Hold to end |
 
 ## Frames to build (Claude Code hand-off)
 
@@ -33,7 +33,7 @@ Shared system: provisional HireHospo dark-steel tokens (a real kit/brand book in
 | `frame-hero-plinth` | Shot 7 | #12141A + brushed-steel gradient plinth | Rational SCC WE101 cut-out, brand + category chips | Plinth push-in 2%; a warm reflection travels the door glass over 1.2s | **REUSED**, re-parameterised. Product must be **active** on the live catalogue |
 | `frame-serviced-badge` | Shot 8 | (overlay) | `FULLY SERVICED · WITH WARRANTY` | Stamp settle: scale 1.08 → 1.0 in 0.25s, 2° rotate correction | **REUSED** unchanged. This frame's one flame highlight |
 | `frame-capital-ledger` | Shot 10 | #12141A | Two ledger lines with `approve` ticks | Line 1 ticks at 0.3s, line 2 at 0.7s; both hold to the cut | **NEW.** The promise, stated as arithmetic. Ticks are `#58C97B` and **small - never a fill** |
-| `frame-end-card` | Shot 11 | #12141A | Wordmark, value line, payment model, CTA pill, microcopy, URL | Pill scales 0.96 → 1.0; microcopy fades at +0.2s | **REUSED**, with the `low weekly payments + GST` line enabled |
+| `frame-end-card` | Shot 11 | #12141A | Wordmark, value line, payment model, CTA pill, microcopy, URL | Pill scales 0.96 → 1.0; microcopy fades at +0.2s | **REUSED**, with the `low weekly payments` line enabled |
 
 ## Production notes
 

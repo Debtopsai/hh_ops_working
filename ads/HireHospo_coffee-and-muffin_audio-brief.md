@@ -29,11 +29,11 @@
 | 0:00-0:03 | "Fifty thousand dollars' worth of equipment." | Even and factual. Small stress on **"equipment"**. Full stop, then a real **0.5s pause** while the image comes up. The pause is where the viewer starts wondering what the second half is. |
 | 0:03-0:07.5 | "For the price of a coffee and a muffin a day." | **The line the ad rests on - deliver it completely straight.** Same pitch, same warmth, same pace as the first line. No stress on "coffee", none on "muffin", none on "day". No smile. It is a price comparison stated as a fact, and stating it flatly is what makes it land as true rather than as a slogan. |
 | 0:07.5-0:09.5 | "All on our stock list." | Steady, matter-of-fact. Stress **"stock list"**. No lift. The brand is on screen, not in this line; do not add it back. |
-| 0:09.5-0:12.5 | "Fully serviced, with warranty. From $14.99 a day." | "Fully serviced" carries the same confidence as "with warranty" - **never apologetic**. **"From" is load-bearing** and must be clearly articulated. "+ GST" is no longer spoken here; it is burned into the disclosure block beneath the figure, which satisfies the requirement. |
+| 0:09.5-0:12.5 | "Fully serviced, with warranty. From $14.99 a day." | "Fully serviced" carries the same confidence as "with warranty" - **never apologetic**. **"From" is load-bearing** and must be clearly articulated.  |
 | 0:12.5-0:15 | "Get our latest stock list today." | Calm and even. Small stress on **"stock list"**. Full stop, no rise, no smile. |
 
 - Record **4 reads of the coffee-and-muffin line** - flat / flatter / flattest / one deliberately warm. Take the flattest one that is still engaging. Directors reliably over-perform this line; having an underplayed take in the bin protects the ad from itself.
-- **Record the alternate figure pickup:** "From [RATE] a day, plus GST." with the figure as a separate punch-in, so a change from Credit does not need a second session.
+- **Record the alternate figure pickup:** "From [RATE] a day" with the figure as a separate punch-in, so a change from Credit does not need a second session.
 
 ## SFX - mapped to storyboard timestamps
 
@@ -55,4 +55,4 @@
 - Music **−6 to −9 dB under VO**; the headline may ride unducked (the bed is at 4/10 and the VO is sparse).
 - **VO is the priority track.** Sidechain the bed off the VO, 40ms attack / 220ms release.
 - **Master: −14 LUFS integrated, −1.0 dBTP.**
-- **Silent-read requirement:** the ad carries fully muted - the headline is on screen for its full seven and a half seconds and the disclosure block is burned in beneath the figure. Captions plus on-screen text deliver every claim, including `+ GST` and `SUBJECT TO CREDIT APPROVAL`.
+- **Silent-read requirement:** the ad carries fully muted - the headline is on screen for its full seven and a half seconds and the disclosure block is burned in beneath the figure. Captions plus on-screen text deliver every claim, including `SUBJECT TO CREDIT APPROVAL`.

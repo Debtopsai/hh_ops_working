@@ -37,7 +37,7 @@ approve   #58C97B   small approval ticks only (never a fill)
 accentink #14161A   text on a flame surface - always
 ```
 
-- **Type:** Space Grotesk (display; semibold headings, bold figures, tight tracking) · Inter (body) · **JetBrains Mono for all money, terms and chips** (prices, "+ GST", "FULLY SERVICED · WITH WARRANTY", category labels - uppercase, 0.08em tracking). Money always in mono; it reads like a ledger, which is the brand.
+- **Type:** Space Grotesk (display; semibold headings, bold figures, tight tracking) · Inter (body) · **JetBrains Mono for all money, terms and chips** (prices, "FULLY SERVICED · WITH WARRANTY", category labels - uppercase, 0.08em tracking). Money always in mono; it reads like a ledger, which is the brand.
 - **One flame highlight per frame**, on the key beat only. Frames `frame-category-grid` (shots 3-4) carry **none** - the cold beat is deliberate.
 - Brushed-stainless gradient permitted **only** on the plinth frame. No dot-grid, no neo-brutalist borders - those belong to sibling brands.
 - **Motion:** transform + opacity only. Settles ~0.5s ease-out. A "stamp" settle for the serviced badge (scale 1.08 → 1.0, 0.25s). Respect `prefers-reduced-motion`.
@@ -53,8 +53,8 @@ Copy below is **verbatim and locked**. Do not rewrite, shorten, "improve", or ad
 | `frames/02-category-grid.html` | Shots 3-4 · 0:04-0:07 | 3.0s | `THREE MACHINES` → `ONE CHEQUE` | Three equal steel tiles fade up 150ms apart; at 1.5s they slide together (0.4s) and collapse into a single bar; `$16,800` desaturates ink → mute over 0.3s. **No flame in this frame.** |
 | `frames/03-approval-timeline.html` | Shot 5 · 0:07-0:09 | 2.0s | `HireHospo` · `APPLY` · `CREDIT CHECK` · `APPROVED` · `DELIVERED 1-3 BUSINESS DAYS` · `Subject to credit approval` | **Hard reset** - full layout change. Wordmark resolves 0.5s and lifts to top third; four mono steps draw left→right 150ms apart; `APPROVED` fills flame with a stamp settle; microcopy fades in at +0.2s |
 | `frames/04-hero-plinth.html` | Shots 6-7 · 0:09-0:12 | 3.0s | `STARLINE M2` / `COMMERCIAL DISHWASHERS` → `TURBOFAN E31D4` / `CONVECTION OVENS` · `FULLY SERVICED · WITH WARRANTY` | Brushed-steel plinth push-in 2% across the whole beat; product cross-dissolves at 1.5s; condition badge stamps on at 2.0s (scale 1.08 → 1.0, 0.25s, 2° rotate correction) |
-| `frames/05-split.html` | Shot 8 · 0:12-0:13.5 | 1.5s | `$16,800` · `low weekly payments + GST` | Top block drops 4px and desaturates to mute; bottom block lifts 8px as a flame fill wipes left→right over 0.35s |
-| `frames/06-end-card.html` | Shot 9 · 0:13.5-0:15 | 1.5s | `HireHospo` · `Premium kitchen equipment, fully serviced and warranted, on low weekly payments.` · `Get our latest stock list today` · `FULLY SERVICED · WITH WARRANTY · + GST · SUBJECT TO CREDIT APPROVAL` · `hirehospo.com` | CTA pill scales 0.96 → 1.0 with a flame fill; microcopy fades at +0.2s; everything holds still from 1.0s (this frame is the thumbnail-safe hold) |
+| `frames/05-split.html` | Shot 8 · 0:12-0:13.5 | 1.5s | `$16,800` · `low weekly payments` | Top block drops 4px and desaturates to mute; bottom block lifts 8px as a flame fill wipes left→right over 0.35s |
+| `frames/06-end-card.html` | Shot 9 · 0:13.5-0:15 | 1.5s | `HireHospo` · `Premium kitchen equipment, fully serviced and warranted, on low weekly payments.` · `Get our latest stock list today` · `FULLY SERVICED · WITH WARRANTY · SUBJECT TO CREDIT APPROVAL` · `hirehospo.com` | CTA pill scales 0.96 → 1.0 with a flame fill; microcopy fades at +0.2s; everything holds still from 1.0s (this frame is the thumbnail-safe hold) |
 
 **Build `frame-end-card`, `frame-approval-timeline`, `frame-quote-shock` and `frame-split` as parameterised, reusable components** - the sibling ads `friday-glasswasher` and `rational-without-20k` reuse all four with different content. Take the copy, figures and chip labels as data, not hard-coded strings.
 
@@ -78,7 +78,7 @@ ad/fitout-quote-shock/
 - **NZ English** throughout.
 - **Compliance - non-negotiable, check every frame:**
   - Approved claims only. Nothing invented, nothing added.
-  - **"+ GST"** appears wherever a payment is referenced (frames 05 and 06).
+  - **No GST line appears anywhere** - removed by client direction. Do not reinstate it.
   - **"Subject to credit approval"** appears on frame 03 and frame 06.
   - **No specific weekly or daily payment for a specific product.** Frame 05 shows the payment *model*, never a number.
   - `$16,800` is the **outright-purchase cost** - the thing the ad is arguing against. Never style it as a HireHospo price or place it near the flame CTA treatment.
@@ -96,4 +96,4 @@ ad/fitout-quote-shock/
 4. Build frames in order 01 → 06.
 5. Build the animatic in `index.html`: frames in sequence at the exact durations in §5, summing to **15.0s**.
 6. Write `README.md`: which tokens were used, which frames are reusable and how to parameterise them, the ⚠ items still needing verification (the $16,800 composite total, the three price bands, active status of Starline M2 and Turbofan E31D4, wordmark asset availability), and the screen-record instructions.
-7. **Self-review before you finish:** animatic totals exactly 15.0s · every copy string matches §5 character-for-character · "+ GST" present on frames 05 and 06 · "Subject to credit approval" present on frames 03 and 06 · no weekly/daily figure anywhere · gear catalogue-true · one flame highlight per frame (and none on frame 02) · all content inside the safe area (clear top 250px / bottom 320px) · `?record` renders clean at 1080×1920 · `prefers-reduced-motion` degrades to fades.
+7. **Self-review before you finish:** animatic totals exactly 15.0s · every copy string matches §5 character-for-character · "Subject to credit approval" present on frames 03 and 06 · no weekly/daily figure anywhere · gear catalogue-true · one flame highlight per frame (and none on frame 02) · all content inside the safe area (clear top 250px / bottom 320px) · `?record` renders clean at 1080×1920 · `prefers-reduced-motion` degrades to fades.
