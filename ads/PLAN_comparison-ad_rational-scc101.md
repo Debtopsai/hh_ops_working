@@ -77,41 +77,64 @@ figure. The structure of the ad survives either way; only the number moves.
 
 | | |
 |---|---|
-| Length | **12s** primary · 6s cutdown · 15s only if the 12s tests short |
-| Cut rate | **Every 1.0 to 1.5s.** No beat holds longer than 1.5s except the end card |
+| Length | **14s** primary · 6s cutdown |
+| Cut rate | **Every 1.0 to 1.5s.** Nothing dwells except the end card |
 | Aspect | **9:16 (1080×1920)** primary · 4:5 and 1:1 reflows |
-| Sound | **Full mix** - VO, kitchen SFX, music bed at 108 BPM. Deliberate contrast with the silent reference |
+| Sound | **Full mix** - VO, kitchen SFX, bed at 108 BPM. Deliberate contrast with the silent reference |
 | Captions | Burned in, every line, bottom-centre inside the safe zone |
 | Style | Person-free motion graphics plus one real product cut-out, dark steel system |
-| Safe area | Clear top 250px and bottom 320px |
 
-**Pace note.** The reference ad is a static card, so the instinct is to beat it on information. Wrong
-lever. Beat it on **rate of change** - a frame that moves every second reads as urgent even when the
-argument is identical. Numbers slam in rather than count up. Nothing dwells.
+**Pace note.** Beat the static reference on **rate of change**, not on information. Numbers slam in
+rather than count up. Benefit lines fire as staggered on-screen text so the muted read is as fast as
+the sound-on read.
+
+**No arithmetic on screen.** No "36 months x $189/week = $29,484", no totals, no working. The maths
+is what Sales does after credit approval. The ad talks benefits.
 
 ---
 
-## 5. Beat-by-beat structure (12s, fast cut)
+## 5. Beat-by-beat structure (14s, fast cut, benefit-led)
 
 | Time | Cut | VO | On screen |
 |---|---|---|---|
 | 0:00-0:01 | 1 | "Same oven." | Rational SCC101 centre, hard light-up. `RATIONAL SCC101` |
-| 0:01-0:02 | 2 | "Two ways to pay." | Oven splits into two identical cut-outs, snapping left and right |
-| 0:02-0:03 | 3 | "Thirty thousand today." | **$30,000** slams in left. No count-up |
-| 0:03-0:04 | 4 | - | Three crosses fire left, 200ms apart. `CAPITAL GONE` · `ONE MODEL` · `YOUR REPAIR RISK` |
-| 0:04-0:05 | 5 | "Or twenty-seven a day." | **FROM $27.00/DAY** slams in right, flame |
-| 0:05-0:06 | 6 | - | Three ticks fire right, 200ms apart. `OWN IT AT END OF TERM` · `CAPITAL STAYS` · `SERVICED, WITH WARRANTY` |
-| 0:06-0:07.5 | 7 | "Three years." | `36 MONTHS × $189/WEEK` |
-| 0:07.5-0:09 | 8 | "Twenty-nine, four eighty-four." | **$29,484** slams in beneath, against `$30,000` greyed |
-| 0:09-0:10 | 9 | "And it's yours." | `YOU OWN IT` ticks, flame |
-| 0:10-0:12 | 10 | "Get our latest stock list today." | End card, CTA pill, `hirehospo.com`, microcopy |
+| 0:01-0:02.5 | 2 | "Two ways to pay." | Oven splits into two identical cut-outs, snapping left and right |
+| 0:02.5-0:04 | 3 | "Thirty thousand today." | **$30,000** slams in left. No count-up |
+| 0:04-0:05 | 4 | - | Three crosses fire left, 200ms apart: `CAPITAL GONE` · `ONE MODEL` · `YOUR REPAIR RISK` |
+| 0:05-0:07 | 5 | "Or twenty-seven a day." | **FROM $27.00/DAY** slams in right, flame |
+| 0:07-0:08 | 6 | "Keep your capital." | `NO LARGE CAPITAL OUTLAY` fires |
+| 0:08-0:09.5 | 7 | "Keep your cashflow." | `CASHFLOW STAYS IN THE BUSINESS` fires |
+| 0:09.5-0:10.5 | 8 | - | `FULLY SERVICED, WITH WARRANTY` · `NZ SUPPORT BY WASHPRO` fire, 200ms apart |
+| 0:10.5-0:11.5 | 9 | "Own it at the end." | `OWN IT AT END OF TERM` ticks, flame |
+| 0:11.5-0:14 | 10 | "Get our latest stock list today." | End card, CTA pill, `hirehospo.com`, microcopy |
 
-**10 cuts in 12 seconds.** 25 words, 2.08 wps overall, no beat over 2.6. The conceded tick from move 5
-moves to on-screen only (`✓ OWN IT DAY ONE` under the $30,000) so it stays honest without costing VO
-time.
+**10 cuts in 14 seconds.** 28 words, 2.0 wps overall, no beat over 2.5.
 
-**6s cutdown:** keep cuts 1, 3, 5, 8, 10. VO: "Same oven. Thirty thousand today, or twenty-seven a
-day. Get our latest stock list today."
+**To hold 12s:** move "Own it at the end" to on-screen only and trim the hook to "Same oven." The
+benefit lines are the ad now, so cut around them, never into them.
+
+**6s cutdown:** cuts 1, 3, 5, 7, 10. VO: "Same oven. Thirty thousand today, or twenty-seven a day.
+Keep your cashflow. Get our latest stock list today."
+
+---
+
+## 5b. Benefit language
+
+Sourced from `docs/BUSINESS_OVERVIEW.md`, compiled from hirehospo.com. **⚠ The live site was
+unreachable from this environment, so re-check these against current site copy before build.**
+
+| Benefit | Wording to use | Where it comes from |
+|---|---|---|
+| Capital | **"Keep your capital"** / `NO LARGE CAPITAL OUTLAY` | Value prop: "Low weekly payments, no large capital outlay" |
+| Cashflow | **"Keep your cashflow"** / `CASHFLOW STAYS IN THE BUSINESS` | "so a hospitality operator can preserve cashflow" |
+| Ownership | **"Own it at the end"** / `OWN IT AT END OF TERM` | Lease-to-Own 36 months, ownership transfers |
+| Condition | `FULLY SERVICED, WITH WARRANTY` | Approved condition pair |
+| Support | `NZ SUPPORT BY WASHPRO` | "Local support via Washpro - NZ-based delivery, install, service" |
+| Approvals | `APPROVED IN 24 TO 48 HOURS` | "Fast approvals (24-48 hours)" - hold in reserve, does not fit 14s |
+| Scale | `3,000+ NZ HOSPITALITY BUSINESSES` | Website figure - **⚠ verify before use**, strong trust line for a longer cut |
+| Upgrade | `UPGRADE PATH AT END OF TERM` | Rent 12m only, **not** Lease-to-Own. Do not use on this ad |
+
+Reserve lines are for the 20s or 30s variant. Do not stack more than four benefits in 14s.
 
 ---
 
