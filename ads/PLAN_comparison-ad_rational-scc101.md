@@ -93,7 +93,12 @@ is what Sales does after credit approval. The ad talks benefits.
 
 ---
 
-## 5. Beat-by-beat structure (14s, fast cut, benefit-led)
+## 5. Beat-by-beat structure (14s, fast cut, outcome-led)
+
+**The benefit ladder runs outcome first, money last.** Capital and cashflow are not what the operator
+wants; they are what stops them getting what they want. So the ad sells the kitchen they have been
+planning, then removes the obstacle in the final line. "Without the thirty thousand" is the payoff,
+not the premise.
 
 | Time | Cut | VO | On screen |
 |---|---|---|---|
@@ -102,39 +107,48 @@ is what Sales does after credit approval. The ad talks benefits.
 | 0:02.5-0:04 | 3 | "Thirty thousand today." | **$30,000** slams in left. No count-up |
 | 0:04-0:05 | 4 | - | Three crosses fire left, 200ms apart: `CAPITAL GONE` · `ONE MODEL` · `YOUR REPAIR RISK` |
 | 0:05-0:07 | 5 | "Or twenty-seven a day." | **FROM $27.00/DAY** slams in right, flame |
-| 0:07-0:08 | 6 | "Keep your capital." | `NO LARGE CAPITAL OUTLAY` fires |
-| 0:08-0:09.5 | 7 | "Keep your cashflow." | `CASHFLOW STAYS IN THE BUSINESS` fires |
-| 0:09.5-0:10.5 | 8 | - | `FULLY SERVICED, WITH WARRANTY` · `NZ SUPPORT BY WASHPRO` fire, 200ms apart |
-| 0:10.5-0:11.5 | 9 | "Own it at the end." | `OWN IT AT END OF TERM` ticks, flame |
+| 0:07-0:09 | 6-7 | "Consistent food, every service." | `CONSISTENT RESULTS, EVERY SERVICE` fires, then `THE MENU YOU ACTUALLY WANT TO RUN` 400ms later |
+| 0:09-0:11.5 | 8-9 | "Without the thirty thousand." | `KEEP YOUR CAPITAL` · `KEEP YOUR CASHFLOW` fire 200ms apart, then `OWN IT AT END OF TERM` ticks in flame |
 | 0:11.5-0:14 | 10 | "Get our latest stock list today." | End card, CTA pill, `hirehospo.com`, microcopy |
 
-**10 cuts in 14 seconds.** 28 words, 2.0 wps overall, no beat over 2.5.
+**10 cuts in 14 seconds.** 28 words, 2.0 wps, no beat over 2.5.
 
-**To hold 12s:** move "Own it at the end" to on-screen only and trim the hook to "Same oven." The
-benefit lines are the ad now, so cut around them, never into them.
+**The line the whole ad is built to deliver:** *"Get the machines you really want. Without the
+thirty thousand."* Use it verbatim as the primary ad copy above the video, and as the thumbnail
+frame.
 
-**6s cutdown:** cuts 1, 3, 5, 7, 10. VO: "Same oven. Thirty thousand today, or twenty-seven a day.
-Keep your cashflow. Get our latest stock list today."
+**6s cutdown:** cuts 1, 3, 5, 6, 10. VO: "Same oven. Thirty thousand today, or twenty-seven a day.
+Without the thirty thousand. Get our latest stock list today."
 
 ---
 
 ## 5b. Benefit language
 
-Sourced from `docs/BUSINESS_OVERVIEW.md`, compiled from hirehospo.com. **⚠ The live site was
-unreachable from this environment, so re-check these against current site copy before build.**
+Outcome benefits lead. Financial benefits support. Never the other way round.
 
-| Benefit | Wording to use | Where it comes from |
-|---|---|---|
-| Capital | **"Keep your capital"** / `NO LARGE CAPITAL OUTLAY` | Value prop: "Low weekly payments, no large capital outlay" |
-| Cashflow | **"Keep your cashflow"** / `CASHFLOW STAYS IN THE BUSINESS` | "so a hospitality operator can preserve cashflow" |
-| Ownership | **"Own it at the end"** / `OWN IT AT END OF TERM` | Lease-to-Own 36 months, ownership transfers |
-| Condition | `FULLY SERVICED, WITH WARRANTY` | Approved condition pair |
-| Support | `NZ SUPPORT BY WASHPRO` | "Local support via Washpro - NZ-based delivery, install, service" |
-| Approvals | `APPROVED IN 24 TO 48 HOURS` | "Fast approvals (24-48 hours)" - hold in reserve, does not fit 14s |
-| Scale | `3,000+ NZ HOSPITALITY BUSINESSES` | Website figure - **⚠ verify before use**, strong trust line for a longer cut |
-| Upgrade | `UPGRADE PATH AT END OF TERM` | Rent 12m only, **not** Lease-to-Own. Do not use on this ad |
+| Tier | Benefit | Wording to use | Note |
+|---|---|---|---|
+| **1 Outcome** | Food quality | **"Consistent food, every service"** / `CONSISTENT RESULTS, EVERY SERVICE` | What a combi is actually for. Keep it a **capability** statement, never a results guarantee |
+| **1 Outcome** | The kitchen they planned | `THE MENU YOU ACTUALLY WANT TO RUN` | Concrete and non-promissory. Prefer this over "grow your business", which is a bare promise with nothing behind it |
+| **1 Outcome** | The gear itself | **"Get the machines you really want"** | The primary ad-copy line |
+| **2 Money** | Capital | **"Without the thirty thousand"** / `KEEP YOUR CAPITAL` | The payoff line, lands last |
+| **2 Money** | Cashflow | `KEEP YOUR CASHFLOW` | From "preserve cashflow" |
+| **2 Money** | Ownership | `OWN IT AT END OF TERM` | Lease-to-Own 36 months |
+| **3 Reserve** | Condition | `FULLY SERVICED, WITH WARRANTY` | For the 20s cut |
+| **3 Reserve** | Support | `NZ SUPPORT BY WASHPRO` | For the 20s cut |
+| **3 Reserve** | Approvals | `APPROVED IN 24 TO 48 HOURS` | For the 20s cut |
+| **3 Reserve** | Scale | `3,000+ NZ HOSPITALITY BUSINESSES` | ⚠ verify before use |
 
-Reserve lines are for the 20s or 30s variant. Do not stack more than four benefits in 14s.
+**Do not use:** "grow your business" or "create success" as bare claims - no substantiation and they
+read as filler. The concrete version of the same idea is the menu line above. **Upgrade path** belongs
+to Rent 12m, not this Lease-to-Own ad.
+
+**⚠ Source note.** Financial benefit wording comes from `docs/BUSINESS_OVERVIEW.md`, compiled from
+hirehospo.com. The live site was unreachable from this environment, so re-check against current site
+copy before build.
+
+**No arithmetic on screen.** No totals, no working, no "36 months x $189/week". The maths is Sales'
+job after credit approval.
 
 ---
 
