@@ -28,7 +28,8 @@ mute #838896 · flame #FF9B2E (the ONLY "go" fill) · flamedark #D97C14
 warmtint #2A2318 · approve #58C97B (small ticks only) · accentink #14161A
 ```
 - **Type:** Space Grotesk (display) · Inter (body) · **JetBrains Mono for money, chips and terms**. The **hero line is display type, not mono** - it is a sentence.
-- **The left column carries no flame at any point.** Not on `$30,000`, not on the conceded tick. Flame belongs to the right column's rate and to the payoff.
+- **The left column carries no flame at any point.** Not on `$30,000`, not on its two ticks. Flame belongs to the right column's rate and to the payoff.
+- **Ticks are `approve` and small; crosses are `mute`. Never a fill, never flame.**
 - **Motion:** transform + opacity only. **Elements slam in over 120ms - no easing in, no count-ups.** Respect `prefers-reduced-motion`.
 - **Never redraw the logo.**
 
@@ -37,12 +38,14 @@ warmtint #2A2318 · approve #58C97B (small ticks only) · accentink #14161A
 | File | Shots | Duration | Verbatim copy | Motion |
 |---|---|---|---|---|
 | `frames/01-oven-split.html` | 1-2 · 0:00-0:02.5 | 2.5s | `RATIONAL SCC101` | Hard light-up at 0.0s, no fade. At 1.0s the cut-out duplicates and the two copies snap apart over 180ms. **Same source asset both sides, never mirrored** |
-| `frames/02-compare.html` | 3-7 · 0:02.5-0:09 | 6.5s | `$30,000` · `✓ OWN IT DAY ONE` · `CAPITAL GONE` · `ONE MODEL` · `YOUR REPAIR RISK` · `FROM $27.00/DAY` · `CONSISTENT RESULTS, EVERY SERVICE` · `THE MENU YOU ACTUALLY WANT TO RUN` | Every element **slams** in over 120ms. `$30,000` at 0.0s, tick at 0.6s, three crosses at 1.5s 200ms apart, `FROM $27.00/DAY` at 2.5s in flame, outcome lines at 4.5s and 5.5s |
+| `frames/02-compare.html` | 3-8 · 0:02.5-0:09 | 6.5s | **Heads:** `$30,000` ‖ `FROM $27.00/DAY` · **Row 1:** `OWN IT DAY ONE` ‖ `OWN IT AT END OF TERM` · **Row 2:** `30K OUT OF YOUR POCKET` ‖ `KEEP 30K IN YOUR POCKET` · **Row 3:** `LARGE UPFRONT` ‖ `LOW WEEKLY PAYMENTS` · **Row 4:** `TAX DEDUCTIBLE*` ‖ `TAX DEDUCTIBLE*` · `*Seek independent tax advice for your circumstances` | Every element **slams** in over 120ms. `$30,000` at 0.0s. `FROM $27.00/DAY` at 1.5s in flame, table frame draws. Then four rows fire **both sides simultaneously** at 3.5s, 4.25s, 5.0s, 5.75s. Disclaimer resolves at 5.9s |
 | `frames/03-hero-line.html` | 8 · 0:09-0:11.5 | 2.5s | `GET THE MACHINES YOU REALLY WANT` | **Both columns clear the frame first.** Line resolves over 0.4s, then holds **dead still** for 2.1s. **Nothing else is in this frame at any point** |
 | `frames/04-payoff.html` | 9 · 0:11.5-0:13.5 | 2.0s | `WITHOUT THE $30K` · `KEEP YOUR CAPITAL` · `KEEP YOUR CASHFLOW` · `OWN IT AT END OF TERM` | `$30K` strikes through, draw L→R over 0.3s, in flame. Three benefit chips fire beneath, 200ms apart |
 | `frames/05-end-card.html` | 10 · 0:13.5-0:16 | 2.5s | `HireHospo` · `Get our latest stock list today` · `FULLY SERVICED · WITH WARRANTY · SUBJECT TO CREDIT APPROVAL` · `hirehospo.com` | **REUSE** unchanged. Pill scales 0.96 → 1.0 |
 
-**`03-hero-line` is the ad.** It will feel wrong to leave the frame that empty for two and a half seconds. It is correct. Do not add the oven behind it, a background texture, a chip, a gradient sweep, or any secondary motion. The line lands precisely because everything else just left.
+**`03-hero-line` is the ad.** The table clears completely before it.
+
+** It will feel wrong to leave the frame that empty for two and a half seconds. It is correct. Do not add the oven behind it, a background texture, a chip, a gradient sweep, or any secondary motion. The line lands precisely because everything else just left.
 
 ## 6. Deliverable
 ```
@@ -60,7 +63,10 @@ ad/machines-you-really-want/
   - **No GST line anywhere** - removed by client direction. Do not reinstate.
   - **`from $27.00/day`** must keep **"from"** and match the HireHospo portal brochure exactly.
   - **`$30,000` is the buy-outright price** - the thing the ad argues against. Never style it as a HireHospo figure, never in flame.
-  - **`✓ OWN IT DAY ONE` must stay** on the left column. Conceding one true point is what stops the comparison reading as rigged.
+  - **The table is four rows and rows 1 and 4 match on both sides.** Do not convert it into a clean sweep of ticks against crosses. Conceding half the rows is what makes it read as analysis rather than as a rigged card, and it is where the design's credibility comes from.
+  - **`OWN IT AT END OF TERM` on the right is not negotiable.** Lease-to-Own transfers ownership at the end of the 36-month term. **Never render `OWN IT DAY ONE` on the right column** - that misstates the contract terms.
+  - **`30K OUT OF YOUR POCKET` on the left, never `30K DEBT`.** A cash purchase creates no debt, it spends capital.
+  - **`TAX DEDUCTIBLE*` must keep its asterisk, and the disclaimer `*Seek independent tax advice for your circumstances` must render as a DOM child of the table block** - no independent animation, no reflow that separates them, minimum 24px at 1080 width. Tax treatment depends on the customer's circumstances and differs between the two options.
   - **`CONSISTENT RESULTS, EVERY SERVICE`** is a capability statement, not a results guarantee. Do not escalate the wording.
   - **Never add** "stays off your balance sheet" or "change or upgrade at any time" - both are excluded, and why is in the script's claim check.
   - **"Subject to credit approval"** on the end card. Single CTA. No approval hype, no pressure, no discount language.

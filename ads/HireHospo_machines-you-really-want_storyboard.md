@@ -8,16 +8,28 @@
 
 | # | Time | Shot | Visual | On screen | VO | SFX | Cut |
 |---|---|---|---|---|---|---|---|
-| 1 | 0:00-0:01 | EQUIP hero | SCC101 cut-out, centre, on a brushed-steel plinth. Hard light-up rather than a fade - the frame arrives already lit | `RATIONAL SCC101` *(mono chip)* | "Same oven." | Low oven-door thunk (−15dB) | Hard cut |
-| 2 | 0:01-0:02.5 | GFX split | The single oven duplicates and the two copies snap apart, left and right, 180ms. **Same asset both sides, not flipped** | - | "Two ways to pay." | Snap ×2 (−16dB) | Hard cut |
-| 3 | 0:02.5-0:04 | GFX side A | **$30,000** slams into the left column, mono, no count-up. One tick resolves beneath it | **$30,000** · `✓ OWN IT DAY ONE` *(tick in `approve`)* | "Thirty thousand today." | Till tick (−16dB) | Hard cut |
-| 4 | 0:04-0:05 | GFX side A cons | Three crosses fire down the left column, 200ms apart, all in `mute`. **No flame anywhere on this side** | `CAPITAL GONE` · `ONE MODEL` · `YOUR REPAIR RISK` | - | Three dry ticks (−18dB) | Hard cut |
-| 5 | 0:05-0:07 | GFX side B | **FROM $27.00/DAY** slams into the right column in flame | **FROM $27.00/DAY** | "Or twenty-seven a day." | Till tick, warmer (−16dB) | Hard cut |
-| 6 | 0:07-0:08 | GFX outcome 1 | First outcome line fires under the right column | `CONSISTENT RESULTS, EVERY SERVICE` | - | Soft tick (−18dB) | Hard cut |
-| 7 | 0:08-0:09 | GFX outcome 2 | Second outcome line fires 400ms later | `THE MENU YOU ACTUALLY WANT TO RUN` | - | Soft tick (−18dB) | Hard cut |
-| 8 | 0:09-0:11.5 | **TXT hero** | **Both columns clear the frame.** The hero line takes the full width on bare steel. This is the only frame in the ad with nothing else on it | **GET THE MACHINES YOU REALLY WANT** *(display, full width)* | "Get the machines you really want." | Bed lifts one step; no SFX (−) | Hard cut |
-| 9 | 0:11.5-0:13.5 | **TXT payoff** | `$30K` appears and strikes through; three benefit chips fire beneath, 200ms apart | **WITHOUT THE ~~$30K~~** *(flame)* · `KEEP YOUR CAPITAL` · `KEEP YOUR CASHFLOW` · `OWN IT AT END OF TERM` | "Without the thirty thousand." | Strike (−14dB); three ticks (−18dB) | Hard cut |
-| 10 | 0:13.5-0:16 | End card | Wordmark, CTA pill, microcopy, URL | HireHospo · **Get our latest stock list today** *(flame pill, #14161A text)* · `FULLY SERVICED · WITH WARRANTY · SUBJECT TO CREDIT APPROVAL` · `hirehospo.com` | "Get our latest stock list today." | Button (−16dB); settle, short tail | Hold to end |
+| 1 | 0:00-0:01 | EQUIP hero | SCC101 cut-out centre on a brushed-steel plinth. Hard light-up, not a fade | `RATIONAL SCC101` | "Same oven." | Oven-door thunk (−15dB) | Hard cut |
+| 2 | 0:01-0:02.5 | GFX split | The oven duplicates and the copies snap apart, 180ms. **Same asset both sides, never mirrored** | - | "Two ways to pay." | Snap ×2 (−16dB) | Hard cut |
+| 3 | 0:02.5-0:04 | GFX price A | **$30,000** slams into the left head. Right column still empty | **$30,000** *(mono)* | "Thirty thousand today." | Till tick (−16dB) | Hard cut |
+| 4 | 0:04-0:06 | GFX price B | **FROM $27.00/DAY** slams into the right head, flame. Both heads now set, table frame draws | **FROM $27.00/DAY** | "Or twenty-seven a day." | Till tick, warmer (−16dB) | Hard cut |
+| 5 | 0:06-0:06.75 | **Row 1 (same)** | Both sides fire together, both ticked `approve` | `OWN IT DAY ONE` ✓ ‖ `OWN IT AT END OF TERM` ✓ | - | Double tick (−18dB) | Hard cut |
+| 6 | 0:06.75-0:07.5 | **Row 2 (differs)** | Left cross `mute`, right tick `approve` | `30K OUT OF YOUR POCKET` ✗ ‖ `KEEP 30K IN YOUR POCKET` ✓ | - | Dry tick / warm tick | Hard cut |
+| 7 | 0:07.5-0:08.25 | **Row 3 (differs)** | Left cross, right tick | `LARGE UPFRONT` ✗ ‖ `LOW WEEKLY PAYMENTS` ✓ | - | Dry tick / warm tick | Hard cut |
+| 8 | 0:08.25-0:09 | **Row 4 (same)** | Both ticked. Disclaimer resolves beneath the table in `mute` | `TAX DEDUCTIBLE*` ✓ ‖ `TAX DEDUCTIBLE*` ✓ · *\*Seek independent tax advice for your circumstances* | - | Double tick (−18dB) | Hard cut |
+| 9 | 0:09-0:11.5 | **TXT hero** | **The whole table clears.** The line takes full width on bare steel. Only frame in the ad with nothing else on it | **GET THE MACHINES YOU REALLY WANT** *(display)* | "Get the machines you really want." | Bed lifts one step, percussion pulls out. **No SFX** | Hard cut |
+| 10 | 0:11.5-0:13.5 | **TXT payoff** | `$30K` strikes through L→R | **WITHOUT THE ~~$30K~~** *(flame)* | "Without the thirty thousand." | Strike (−14dB) | Hard cut |
+| 11 | 0:13.5-0:16 | End card | Wordmark, CTA pill, microcopy, URL | HireHospo · **Get our latest stock list today** · `FULLY SERVICED · WITH WARRANTY · SUBJECT TO CREDIT APPROVAL` · `hirehospo.com` | "Get our latest stock list today." | Button (−16dB); settle, tail | Hold |
+
+## Table design
+
+Four rows, both columns visible throughout. **Rows 1 and 4 match on both sides; rows 2 and 3 differ.**
+That symmetry is the design: conceding half the rows makes the card read as analysis, so attention
+lands on the two rows carrying the argument. Do not "improve" it into a clean sweep.
+
+- Left column carries **no flame at any point**, including its two ticks. Ticks are `approve`, crosses `mute`.
+- Right column's only flame is the rate in the head.
+- Rows fire **both sides simultaneously**, 750ms apart from each other. The rhythm is same / differ / differ / same.
+- The tax disclaimer is a DOM child of the table block, minimum 24px at 1080 width, and cannot be cropped away at any aspect ratio.
 
 ## Frames to build
 
@@ -52,7 +64,7 @@ No single reset - the whole ad is resets. The structural beat is **shot 8 at 0:0
 
 ## Audit
 
-Shots: **10**. Timing: 1.0 + 1.5 + 1.5 + 1.0 + 2.0 + 1.0 + 1.0 + 2.5 + 2.0 + 2.5 = **16.0s ✓**. Hero line verbatim at 0:09 ✓. Left column flame-free ✓. Conceded tick present ✓. No arithmetic ✓. Money in mono ✓. Safe area ✓. End card microcopy complete ✓.
+Shots: **11**. Timing: 1.0 + 1.5 + 1.5 + 2.0 + 0.75 + 0.75 + 0.75 + 0.75 + 2.5 + 2.0 + 2.5 = **16.0s ✓**. Hero line verbatim at 0:09 ✓. Left column flame-free ✓. Conceded tick present ✓. No arithmetic ✓. Money in mono ✓. Safe area ✓. End card microcopy complete ✓.
 
 ## Aspect variants
 

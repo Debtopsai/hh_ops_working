@@ -10,19 +10,52 @@
 |---|---|---|---|---|---|---|
 | 0:00-0:01 | 1 | Hook | "Same oven." | `RATIONAL SCC101` | SCC101 centre frame, hard light-up on a steel plinth | Oven-door thunk, low |
 | 0:01-0:02.5 | 2 | Hook | "Two ways to pay." | - | The oven splits into two identical cut-outs, snapping left and right | Snap ×2 |
-| 0:02.5-0:04 | 3 | Side A | "Thirty thousand today." | **$30,000** *(mono, left)* · `✓ OWN IT DAY ONE` | Figure slams in. **No count-up** | Till tick |
-| 0:04-0:05 | 4 | Side A | - | `CAPITAL GONE` · `ONE MODEL` · `YOUR REPAIR RISK` | Three crosses fire, 200ms apart, in `mute` | Three dry ticks |
-| 0:05-0:07 | 5 | Side B | "Or twenty-seven a day." | **FROM $27.00/DAY** *(flame, right)* | Figure slams in right | Till tick, warmer |
-| 0:07-0:09 | 6-7 | Outcome | *(no VO - let the text fire)* | `CONSISTENT RESULTS, EVERY SERVICE` → `THE MENU YOU ACTUALLY WANT TO RUN` | Two lines fire 400ms apart under the right column | Two soft ticks |
-| 0:09-0:11.5 | 8 | **Hero line** | "Get the machines you really want." | **GET THE MACHINES YOU REALLY WANT** *(display, full width)* | Both columns clear. The line takes the whole frame | Bed lifts one step |
-| 0:11.5-0:13.5 | 9 | **Hero payoff** | "Without the thirty thousand." | **WITHOUT THE $30K** *(flame)* · `KEEP YOUR CAPITAL` · `KEEP YOUR CASHFLOW` · `OWN IT AT END OF TERM` | `$30K` strikes through as the three benefit chips fire beneath | Strike; three ticks |
-| 0:13.5-0:16 | 10 | CTA | "Get our latest stock list today." | **Get our latest stock list today** · *Fully serviced, with warranty · Subject to credit approval* · `hirehospo.com` | End card | Button; settle + tail |
+| 0:02.5-0:04 | 3 | Side A price | "Thirty thousand today." | **$30,000** *(mono, left)* | Figure slams in left. **No count-up.** Right column still empty | Till tick |
+| 0:04-0:06 | 4 | Side B price | "Or twenty-seven a day." | **FROM $27.00/DAY** *(flame, right)* | Figure slams in right. Both column heads now set | Till tick, warmer |
+| 0:06-0:06.75 | 5 | **Row 1 - same** | - | `OWN IT DAY ONE` ✓ **‖** `OWN IT AT END OF TERM` ✓ | Both sides fire together, both ticked in `approve` | Double tick |
+| 0:06.75-0:07.5 | 6 | **Row 2 - differs** | - | `30K OUT OF YOUR POCKET` ✗ **‖** `KEEP 30K IN YOUR POCKET` ✓ | Left cross in `mute`, right tick in `approve` | Cross tick / warm tick |
+| 0:07.5-0:08.25 | 7 | **Row 3 - differs** | - | `LARGE UPFRONT` ✗ **‖** `LOW WEEKLY PAYMENTS` ✓ | Left cross, right tick | Cross tick / warm tick |
+| 0:08.25-0:09 | 8 | **Row 4 - same** | - | `TAX DEDUCTIBLE*` ✓ **‖** `TAX DEDUCTIBLE*` ✓ | Both ticked. Disclaimer line resolves beneath the table: *\*Seek independent tax advice for your circumstances* | Double tick |
+| 0:09-0:11.5 | 9 | **Hero line** | "Get the machines you really want." | **GET THE MACHINES YOU REALLY WANT** *(display, full width)* | Both columns clear. The line takes the whole frame | Bed lifts, then percussion pulls out |
+| 0:11.5-0:13.5 | 10 | **Hero payoff** | "Without the thirty thousand." | **WITHOUT THE $30K** *(flame, struck through)* | `$30K` strikes through L→R | Strike |
+| 0:13.5-0:16 | 11 | CTA | "Get our latest stock list today." | **Get our latest stock list today** · *Fully serviced, with warranty · Subject to credit approval* · `hirehospo.com` | End card | Button; settle + tail |
+
+### The side-by-side table (client-specified, three corrections applied)
+
+| | **Buy outright** · $30,000 | **Lease-to-Own** · from $27.00/day |
+|---|---|---|
+| 1 | ✓ OWN IT DAY ONE | ✓ **OWN IT AT END OF TERM** |
+| 2 | ✗ **30K OUT OF YOUR POCKET** | ✓ KEEP 30K IN YOUR POCKET |
+| 3 | ✗ LARGE UPFRONT | ✓ **LOW WEEKLY PAYMENTS** |
+| 4 | ✓ TAX DEDUCTIBLE* | ✓ TAX DEDUCTIBLE* |
+
+*\*Seek independent tax advice for your circumstances.*
+
+**Why rows 1 and 4 match on purpose:** conceding two of four rows is what makes the comparison read as
+analysis rather than as a rigged card. The eye goes straight to rows 2 and 3, which are the argument.
+This is a better structure than the reference ad's three-crosses-against-three-ticks, and it is the
+client's own idea - keep it.
 
 - **Why it beats the reference:** the reference presents both columns at once as a silent static card, so the viewer reads it like a table and leaves. This sequences the comparison, moves every second, has sound, concedes one honest point to the buy-outright side, and resolves into a line about what the operator actually wants rather than about finance.
 - **Bridge intent:** the comparison is not the argument, it is the setup. Two columns establish that the same machine is available two ways, the outcome lines say what the machine is for, and the hero line names the thing the operator has been putting off. "Without the thirty thousand" then removes the only reason they had not done it. The offer never has to be argued for because by that point it is the only obstacle left standing.
 - **Audit:** hero line verbatim and lands at 0:09 ✓ · single CTA ✓ · 30 words / 1.88 wps (max beat 2.50 wps) ✓ · 10 cuts in 16s, nothing dwells over 2.5s ✓ · specifics: SCC101, $30,000, $27.00/day, four benefit lines ✓ · catalogue-true ✓ · roles clean ✓ · no approval hype, pressure, or discount language ✓ · **no arithmetic, totals or working on screen** ✓ · no GST line (client direction) ✓ · "Subject to credit approval" on the end card ✓.
 
 ### ⚠ Claim check
+
+**Three corrections applied to the client-supplied table. Do not revert any of them.**
+
+- **`OWN IT DAY ONE` on the right side was false and is now `OWN IT AT END OF TERM`.** Lease-to-Own
+  transfers ownership at the end of the 36-month term, not on day one. As supplied it misstated the
+  contract terms, and it is the single most checkable claim in the ad.
+- **`30K DEBT` on the left was backwards and is now `30K OUT OF YOUR POCKET`.** Paying cash outright
+  creates no debt, it spends capital; if anything the ongoing obligation sits on the finance side. As
+  supplied a competitor could have dismantled the whole card with one comment. The replacement is true
+  and mirrors the right-hand line properly.
+- **`TAX DEDUCTIBLE` now carries an asterisk and a disclaimer.** Treatment depends on the customer's
+  entity and circumstances, and it genuinely differs between the two options (depreciation on a
+  purchase versus payments on a lease). The reference ad carries this exact disclaimer for this exact
+  reason. **⚠ Confirm with an accountant that HireHospo is comfortable making the claim at all** - the
+  safe alternative is to drop row 4 and run a three-row table.
 
 1. **`from $27.00/day`** is already published on the HireHospo portal brochure. Keep **"from"** and keep it identical to the portal, or the two contradict each other.
 2. **No GST line, by client direction.** NZ B2B may quote ex-GST **only where stated**. A published $27.00/day that silently excludes GST is exposed under the Fair Trading Act. Cleanest fix is a GST-inclusive figure on both the ad and the portal. Credit to confirm.
