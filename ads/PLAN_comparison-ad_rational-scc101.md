@@ -77,26 +77,41 @@ figure. The structure of the ad survives either way; only the number moves.
 
 | | |
 |---|---|
-| Length | **15s** primary · 6s cutdown for retargeting |
+| Length | **12s** primary · 6s cutdown · 15s only if the 12s tests short |
+| Cut rate | **Every 1.0 to 1.5s.** No beat holds longer than 1.5s except the end card |
 | Aspect | **9:16 (1080×1920)** primary · 4:5 and 1:1 reflows |
-| Sound | **Full mix** - VO, kitchen SFX, music bed. Deliberate contrast with the silent reference. |
+| Sound | **Full mix** - VO, kitchen SFX, music bed at 108 BPM. Deliberate contrast with the silent reference |
 | Captions | Burned in, every line, bottom-centre inside the safe zone |
 | Style | Person-free motion graphics plus one real product cut-out, dark steel system |
 | Safe area | Clear top 250px and bottom 320px |
 
+**Pace note.** The reference ad is a static card, so the instinct is to beat it on information. Wrong
+lever. Beat it on **rate of change** - a frame that moves every second reads as urgent even when the
+argument is identical. Numbers slam in rather than count up. Nothing dwells.
+
 ---
 
-## 5. Beat-by-beat structure
+## 5. Beat-by-beat structure (12s, fast cut)
 
-| Time | Beat | VO | On screen |
+| Time | Cut | VO | On screen |
 |---|---|---|---|
-| 0:00-0:03 | **Hook** | "Same oven. Two ways to pay." | Rational SCC101 centre frame, alone, lit on a steel plinth. `RATIONAL SCC101 · 10 TRAY ELECTRIC COMBI` |
-| 0:03-0:06 | **Side A alone** | "Thirty thousand dollars today." | Oven slides left. **$30,000** counts up and locks. Column A builds: one tick, then the crosses. **Nothing on the right yet.** |
-| 0:06-0:08 | **The reveal** | "Or twenty-seven dollars a day." | Hard cut. The same oven appears on the right. **From $27.00/day** resolves in flame. |
-| 0:08-0:12 | **The reconcile** | "Three years. Twenty-nine, four eighty-four. And it's yours." | The bridge line: `36 MONTHS × $189/WEEK = $29,484` then `YOU OWN IT` ticks on |
-| 0:12-0:15 | **CTA** | "Get our latest stock list today." | End card, CTA pill, `hirehospo.com`, microcopy |
+| 0:00-0:01 | 1 | "Same oven." | Rational SCC101 centre, hard light-up. `RATIONAL SCC101` |
+| 0:01-0:02 | 2 | "Two ways to pay." | Oven splits into two identical cut-outs, snapping left and right |
+| 0:02-0:03 | 3 | "Thirty thousand today." | **$30,000** slams in left. No count-up |
+| 0:03-0:04 | 4 | - | Three crosses fire left, 200ms apart. `CAPITAL GONE` · `ONE MODEL` · `YOUR REPAIR RISK` |
+| 0:04-0:05 | 5 | "Or twenty-seven a day." | **FROM $27.00/DAY** slams in right, flame |
+| 0:05-0:06 | 6 | - | Three ticks fire right, 200ms apart. `OWN IT AT END OF TERM` · `CAPITAL STAYS` · `SERVICED, WITH WARRANTY` |
+| 0:06-0:07.5 | 7 | "Three years." | `36 MONTHS × $189/WEEK` |
+| 0:07.5-0:09 | 8 | "Twenty-nine, four eighty-four." | **$29,484** slams in beneath, against `$30,000` greyed |
+| 0:09-0:10 | 9 | "And it's yours." | `YOU OWN IT` ticks, flame |
+| 0:10-0:12 | 10 | "Get our latest stock list today." | End card, CTA pill, `hirehospo.com`, microcopy |
 
-Word count 31, pace 2.07 wps. Hard visual reset at **0:06** on the reveal.
+**10 cuts in 12 seconds.** 25 words, 2.08 wps overall, no beat over 2.6. The conceded tick from move 5
+moves to on-screen only (`✓ OWN IT DAY ONE` under the $30,000) so it stays honest without costing VO
+time.
+
+**6s cutdown:** keep cuts 1, 3, 5, 8, 10. VO: "Same oven. Thirty thousand today, or twenty-seven a
+day. Get our latest stock list today."
 
 ---
 
