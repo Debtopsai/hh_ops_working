@@ -142,39 +142,51 @@ describe('Section 8.4, out of catalogue leads', () => {
 
   test('an unrecognised enquiry is unclassified and NOT assumed in catalogue', () => {
     const r = c.classify('a widget thingamajig');
-    assert.equal(r.category, 'unclassified');
+    assert.equal(r.outcome, 'unclassified');
     assert.equal(r.inCatalogue, null);
   });
 
-  test('a mixed enquiry counts as out of catalogue but records the rest', () => {
+  test('a vague but real answer is its own state, not an unclassified one', () => {
+    // "Kitchen" and "Various" are answers. Treating them as no-answer, or as
+    // in catalogue, would both be wrong.
+    for (const v of ['Kitchen', 'Various', 'Catering equipment']) {
+      assert.equal(c.classify(v).outcome, 'vague', `"${v}" should be vague`);
+    }
+  });
+
+  test('a mixed enquiry counts as worth having, not as wasted spend', () => {
+    // This test previously asserted the opposite, and the opposite was wrong.
+    // Real data settled it: one lead named eleven financeable items plus a
+    // range hood. Classifying that lead as out of catalogue would charge a
+    // good lead to wasted spend and argue for narrowing ad copy that works.
     const r = c.classify('coffee machine and a dishwasher');
-    assert.equal(r.inCatalogue, false);
-    assert.ok(r.alsoMatched.includes('dishwashers'));
+    assert.equal(r.outcome, 'mixed');
+    assert.equal(r.inCatalogue, true);
+    assert.ok(r.inCategories.includes('dishwashers'));
+    assert.ok(r.outCategories.includes('coffee'));
   });
 
-  test('the roughly 19% out of catalogue share reproduces', () => {
-    // 12 of 63 leads out of catalogue is 19.0%, matching the brief's estimate.
-    const enquiries = [
-      ...Array(12).fill('coffee machine'),
-      ...Array(51).fill('commercial dishwasher'),
-    ];
-    const summary = summariseDemand(enquiries.map((e) => c.classify(e)), { cpl: new Decimal('10.41') });
-    assert.equal(summary.outOfCatalogue, 12);
-    assert.equal(summary.total, 63);
-    assert.equal(Math.round(summary.outOfCatalogueShare * 1000) / 10, 19.0);
-    assert.equal(serialise(summary.estimatedWastedSpend.value), '124.92'); // 12 x 10.41
-    assert.equal(summary.estimatedWastedSpend.isEstimate, true);
+  test('mixed leads are excluded from the wasted spend estimate', () => {
+    const summary = summariseDemand([
+      c.classify('coffee machine'),                    // pure out, wasted
+      c.classify('coffee machine and a dishwasher'),   // mixed, worth having
+      c.classify('commercial dishwasher'),             // pure in
+    ], { cpl: new Decimal('10.41') });
+    assert.equal(summary.outOfCatalogue, 1);
+    assert.equal(summary.mixed, 1);
+    assert.equal(summary.worthHaving, 2);
+    assert.equal(serialise(summary.estimatedWastedSpend.value), '10.41');
   });
 
-  test('out of catalogue share is of classified leads, so unclassified cannot deflate it', () => {
+  test('the share is of classified leads, so vague answers cannot deflate it', () => {
     const summary = summariseDemand([
       c.classify('coffee machine'),
       c.classify('commercial dishwasher'),
-      c.classify('a widget thingamajig'),
+      c.classify('Various'),
       c.classify(''),
     ]);
     assert.equal(summary.outOfCatalogueShare, 0.5); // 1 of 2 classified, not 1 of 4
-    assert.equal(summary.unclassified, 1);
+    assert.equal(summary.vague, 1);
     assert.equal(summary.unstated, 1);
   });
 });
@@ -376,11 +388,19 @@ describe('Panel 7 rolls up, and is never optional', () => {
     assert.match(a.message, /Proposal Sent/);
     assert.match(a.message, /silently wrong/);
   });
-  test('duplicate pixels, stale stages, missing HubSpot and aggregate attribution all surface', () => {
+  test('duplicate pixels, stale stages and missing HubSpot all surface', () => {
     const codes = panel.alerts.map((a) => a.code);
-    for (const c of ['duplicate_pixels', 'stage_events_stale', 'hubspot_unavailable', 'aggregate_attribution']) {
+    for (const c of ['duplicate_pixels', 'stage_events_stale', 'hubspot_unavailable']) {
       assert.ok(codes.includes(c), `missing alert ${c}`);
     }
+  });
+
+  test('a disconnected HubSpot does not ALSO raise the attribution warning', () => {
+    // "Not connected" and "connected but the join is dead" are different
+    // problems with different fixes. Raising both when only the first applies
+    // makes the panel noisier and the real one harder to find.
+    const codes = panel.alerts.map((a) => a.code);
+    assert.ok(!codes.includes('aggregate_attribution'));
   });
   test('both expected pixels are present', () => assert.deepEqual(panel.pixels.expectedButMissing, []));
   test('the raw lead count stays visible next to the deduplicated one', () => {
@@ -448,5 +468,53 @@ describe('Sales cycle median', () => {
   test('an empty set gives null, not zero', () => assert.equal(medianDays([]), null));
   test('incomplete pairs are excluded rather than counted as same day', () => {
     assert.equal(medianDays([{ from: '2026-08-01T00:00:00Z', to: null }]), null);
+  });
+});
+
+
+describe('Connected HubSpot with a dead lead to deal join', () => {
+  // The actual state of portal 47462529 on 26 August 2026: the campaign join
+  // matches 66 leads, and not one of them reaches a deal.
+  const nowMs = Date.parse('2026-08-26T12:00:00Z');
+  const panel = buildHealthPanel({
+    datasets: fx.datasets,
+    lastStageEventAt: '2026-08-26T06:00:00Z',
+    lastRefreshAt: '2026-08-26T11:30:00Z',
+    stageClassification: { unmapped: 0, unmappedLabels: [] },
+    leadDedupe: null,
+    hubspotAvailable: false,
+    hubspotConnected: true,
+    attribution: {
+      mode: 'aggregate',
+      campaignJoin: { ok: true, matched: 66, property: 'hs_analytics_source_data_2' },
+      dealJoin: { ok: false, cohortLeadsWithDeals: 0, dealsWithContacts: 1, totalDeals: 49 },
+    },
+    dealQuality: { missingTerm: 49, contractRevenueComputable: false, note: 'Every deal has an empty term.' },
+    cohortSize: 66,
+    nowMs,
+  });
+
+  test('says the join is broken, not that HubSpot is missing', () => {
+    const codes = panel.alerts.map((a) => a.code);
+    assert.ok(codes.includes('lead_to_deal_join_broken'));
+    assert.ok(!codes.includes('hubspot_unavailable'), 'HubSpot IS connected, so that alert would be wrong');
+  });
+
+  test('the alert names the numbers that prove it', () => {
+    const a = panel.alerts.find((x) => x.code === 'lead_to_deal_join_broken');
+    assert.match(a.message, /66 leads matched/);
+    assert.match(a.message, /1 of 49 deals/);
+    assert.equal(a.level, 'critical');
+  });
+
+  test('the missing term blocks contract revenue and says so', () => {
+    const a = panel.alerts.find((x) => x.code === 'no_deal_term');
+    assert.ok(a);
+    assert.match(a.message, /Contract revenue, LTV and LTV:CAC cannot be computed/);
+  });
+
+  test('attribution stays aggregate while the deal join is dead', () => {
+    assert.equal(panel.attributionMode, 'aggregate');
+    assert.ok(panel.alerts.some((x) => x.code === 'aggregate_attribution'));
   });
 });

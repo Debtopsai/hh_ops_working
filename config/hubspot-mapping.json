@@ -1,42 +1,112 @@
 {
   "_comment": [
-    "HubSpot property mapping. Every value is null because the schema has not been",
-    "discovered. See docs/hubspot-schema.md.",
+    "HubSpot property mapping. Discovered 26 August 2026 against portal 47462529.",
+    "Every name below was read from the live schema. None is a guess.",
     "",
-    "These are deliberately null rather than plausible guesses. A guessed property name",
-    "would make the pipeline appear to work while producing wrong numbers, which is the",
-    "one outcome the brief rules out. The pipeline checks for nulls and reports HubSpot",
-    "as unavailable rather than falling back to a guess.",
+    "Read docs/hubspot-schema.md before relying on any of this. The short version:",
+    "the LEAD side is in good shape and the DEAL side is not. Leads carry campaign",
+    "attribution on 66 of 67 records. Deals carry no contact association, no term,",
+    "no delivery charge, and a stage that is never advanced past Prospect Inquiry.",
     "",
-    "Fill these in from the output of: node scripts/discover-hubspot.mjs"
+    "Properties recorded as null genuinely do not exist in this portal. Properties",
+    "with observedFillPct 0 exist but are empty on every deal, which is worse than",
+    "not existing: it looks like a working mapping and returns nothing."
   ],
-  "discovered": false,
-  "discoveredAt": null,
-  "pipelineId": null,
+  "discovered": true,
+  "discoveredAt": "2026-08-26",
+  "portalId": "47462529",
+  "pipelineId": "148114589",
+  "pipelineLabel": "Contract Pipeline",
+
   "attributionMode": "aggregate",
-  "_attributionModeComment": "One of 'traced' or 'aggregate'. Set to 'traced' only when a reliable lead level join key is confirmed at or above the joinKeyReliableFillPct threshold. Anything else stays 'aggregate' and the dashboard labels the affected metrics as period counts rather than traced cohorts.",
+  "_attributionModeComment": [
+    "Campaign level attribution is reliable: 66 of 67 Meta lead records appear as",
+    "HubSpot contacts carrying the campaign name. Lead level attribution to a DEAL",
+    "does not exist at all: zero of those 66 contacts has an associated deal.",
+    "So the mode is aggregate, and stage counts past 'lead' are unavailable rather",
+    "than merely approximate. Do not set this to 'traced' until deals carry a",
+    "contact association."
+  ],
+
   "joinKey": {
-    "property": null,
-    "objectType": null,
-    "fillPct": null,
-    "reliable": false
+    "property": "hs_analytics_source_data_2",
+    "objectType": "CONTACT",
+    "level": "campaign",
+    "matchValue": "hh brochure campaign 01/08 2026",
+    "_matchValueComment": "The Meta campaign name, lowercased by HubSpot. Meta campaign 120250374716300748 is 'HH Brochure Campaign 01/08 2026'. Matching is case insensitive. If the campaign is renamed in Meta, this value must be updated or the lead cohort silently empties.",
+    "observedFillPct": 98.5,
+    "observedMatched": 66,
+    "observedExpected": 67,
+    "reliable": true,
+    "reliableForDeals": false,
+    "dealJoinFillPct": 0
   },
+
+  "leadCohort": {
+    "_comment": "Additional signals that corroborate the campaign join. All observed on 100% of the sampled cohort.",
+    "analyticsSource": "hs_analytics_source",
+    "analyticsSourceValue": "PAID_SOCIAL",
+    "analyticsSourceData1": "hs_analytics_source_data_1",
+    "analyticsSourceData1Value": "Facebook",
+    "objectSourceDetail": "hs_object_source_detail_1",
+    "objectSourceDetailValue": "Brochure Form (Instant Access)",
+    "lifecycleStage": "lifecyclestage"
+  },
+
   "deal": {
+    "weeklyPayment": "weekly_total_cost",
+    "_weeklyPaymentComment": "Confirmed populated. NOTE: the standard 'amount' property also carries the weekly figure on these records, NOT the contract value. Do not map 'amount' to contract value.",
+
+    "rentInAdvanceWeeks": "rent_in_advance__weeks_",
+    "rentInAdvanceAmount": "product_upfront_rental",
+    "securityDepositWeeks": "security_deposit_weeks",
+    "securityDepositAmount": "security_deposit_amount",
+    "_depositComment": "The deposit structure is stored as two separate week counts rather than a '6+6' string, which is better. Advance is prepayment, security is a refundable bond, neither is revenue. See the revenue rule.",
+
+    "termWeeks": "finance_custom_term_weeks",
+    "termRaw": "finance_term",
+    "productType": "finance_option",
+    "_termComment": "These three properties EXIST but are empty on every deal in the portal. Contract revenue cannot be computed without a term, so it is reported as [TBC] rather than defaulted to 52 or 156 weeks.",
+
     "contractValue": null,
-    "weeklyPayment": null,
-    "termWeeks": null,
-    "termRaw": null,
-    "productType": null,
-    "depositStructure": null,
+    "deliveryAndInstallCharge": null,
     "depositClearedDate": null,
     "deliveryDate": null,
-    "deliveryAndInstallCharge": null,
-    "closedWonDate": null,
-    "stageId": null
+    "_missingComment": "No property exists for any of these. Delivery and install is part of contract revenue and has no home in the CRM. Deposit cleared date is what separates signed from funded, and it is not here either: it will have to come from GoCardless.",
+
+    "paymentStartDate": "payment_start_date",
+    "contractStartDate": "contract_start_date",
+    "closedWonDate": "closedate",
+    "isClosedWon": "hs_is_closed_won",
+    "stageId": "dealstage",
+    "pipeline": "pipeline",
+    "createdAt": "createdate",
+    "name": "dealname"
   },
+
+  "dealFillRates": {
+    "_comment": "Observed over all 49 deals in the portal, 26 August 2026. This is why the funnel cannot be built from deals yet.",
+    "weekly_total_cost": 100,
+    "rent_in_advance__weeks_": 85,
+    "security_deposit_amount": 100,
+    "finance_term": 0,
+    "finance_option": 0,
+    "finance_custom_term_weeks": 0,
+    "closedate": 0,
+    "contract_start_date": 0,
+    "hs_analytics_source": 0,
+    "num_associated_contacts": 2
+  },
+
   "contact": {
-    "equipmentEnquiry": null,
-    "companyName": null,
-    "region": null
+    "equipmentEnquiry": "what_type_of_equipment_are_you_after",
+    "_equipmentEnquiryComment": "No trailing colon in the internal name. The Meta field is 'what_type_of_equipment_are_you_after:' WITH a colon, and the colon survives in the HubSpot label but not the property name.",
+    "companyName": "company",
+    "region": "state",
+    "country": "country",
+    "lifecycleStage": "lifecyclestage",
+    "leadStatus": "hs_lead_status",
+    "createdAt": "createdate",
+    "numAssociatedDeals": "num_associated_deals"
   }
 }

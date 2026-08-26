@@ -15,6 +15,7 @@ import { buildSnapshot } from '../../src/lib/snapshot.mjs';
 import { buildClassifier } from '../../src/lib/equipment.mjs';
 import { buildStageMap, classifyStages, cumulativeCounts } from '../../src/lib/stage-map.mjs';
 import { stripLead, deduplicateLeads, newSalt } from '../../src/lib/leads.mjs';
+import { fetchLeadCohort, fetchDeals, assessAttribution } from '../../src/lib/hubspot.mjs';
 import { GRAPH_VERSION } from '../../src/lib/meta.mjs';
 
 export const config = { schedule: '@hourly' };
@@ -118,7 +119,7 @@ export default async function handler(req) {
     // raw array never leaves this scope and is never logged.
     const classifier = buildClassifier(cfg['equipment-catalogue']);
     let leadDedupe = null;
-    let demandClassifications = null;
+    let demandClassifications = null; // may also be filled from the HubSpot cohort below
     try {
       if (campaignId) {
         const salt = newSalt();
@@ -138,12 +139,51 @@ export default async function handler(req) {
       console.warn(`Lead records unavailable: ${leadErr.message}`);
     }
 
-    // HubSpot: short circuited until the schema has been discovered. No guessed
-    // property names, so no plausible but wrong funnel.
+    // HubSpot. The schema is discovered (see docs/hubspot-schema.md), so this
+    // runs for real. What it can and cannot produce is a data problem in the
+    // portal, not a wiring problem here: the lead cohort is reliable, and the
+    // lead to deal join does not exist.
     const hubspotMapping = cfg['hubspot-mapping'];
-    const hubspotAvailable = Boolean(hubspotMapping.discovered && process.env.HUBSPOT_ACCESS_TOKEN);
+    const hubspotToken = process.env.HUBSPOT_ACCESS_TOKEN;
+    const hubspotAvailable = Boolean(hubspotMapping.discovered && hubspotToken);
     const stageMap = buildStageMap(cfg['stage-map']);
-    const stageClassification = hubspotAvailable ? classifyStages([], stageMap) : null;
+
+    let cohort = null;
+    let deals = null;
+    let attribution = { mode: hubspotMapping.attributionMode ?? 'aggregate', campaignJoin: { ok: false }, dealJoin: { ok: false } };
+    let stageClassification = null;
+
+    if (hubspotAvailable) {
+      try {
+        const hsSalt = newSalt();
+        [cohort, deals] = await Promise.all([
+          fetchLeadCohort({ token: hubspotToken, mapping: hubspotMapping, classifier, salt: hsSalt }),
+          fetchDeals({ token: hubspotToken, mapping: hubspotMapping, stageMap }),
+        ]);
+        attribution = assessAttribution({ cohort, deals, mapping: hubspotMapping });
+
+        if (deals?.available) {
+          stageClassification = {
+            counts: deals.counts,
+            unmapped: deals.counts.unmapped ?? 0,
+            unmappedLabels: deals.unmappedStageIds,
+            deadByReason: [],
+          };
+        }
+
+        // The demand panel comes from the HubSpot cohort where Meta lead
+        // records are unavailable, since HubSpot carries the same enquiry text.
+        if (cohort?.available && !demandClassifications) {
+          demandClassifications = cohort.leads
+            .filter((l) => l.outcome)
+            .map((l) => ({ outcome: l.outcome, inCatalogue: l.inCatalogue, category: l.equipmentCategory, label: l.equipmentLabel }));
+        }
+      } catch (hsErr) {
+        // A HubSpot failure must not take the Meta side down with it, and must
+        // not be silent. No contact detail is included in the message.
+        console.warn(`HubSpot unavailable: ${hsErr.message}`);
+      }
+    }
 
     const snapshot = buildSnapshot({
       campaignTotal: campaignRows[0] ?? totalRows(dailyRows),
@@ -161,10 +201,18 @@ export default async function handler(req) {
       contractsSigned: null,
       contractsFunded: null,
       fundingDataAvailable: Boolean(process.env.GOCARDLESS_ACCESS_TOKEN) && hubspotAvailable,
-      hubspotAvailable,
-      attributionMode: hubspotMapping.attributionMode ?? 'aggregate',
+      // The funnel past "lead" needs the lead to deal join, not merely a
+      // HubSpot connection. Passing hubspotAvailable here would render stage
+      // counts that look real and are not attributable to this campaign.
+      hubspotAvailable: hubspotAvailable && attribution.dealJoin.ok,
+      hubspotConnected: hubspotAvailable,
+      attribution,
+      attributionMode: attribution.mode,
       representativeDeal: null,
       assumptions: cfg.assumptions,
+      equipmentCatalogue: cfg['equipment-catalogue'],
+      dealQuality: deals?.quality ?? null,
+      cohortSize: cohort?.count ?? null,
       dateRange: { since, until },
       lastRefreshAt: new Date().toISOString(),
       lastStageEventAt: null,

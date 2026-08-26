@@ -212,7 +212,7 @@ describe('Panel 7 and the honesty rules', () => {
   test('health is critical: HubSpot absent, stage events stale, two pixels live', () => {
     assert.equal(snap.health.status, 'critical');
     const codes = snap.health.alerts.map((a) => a.code);
-    for (const c of ['hubspot_unavailable', 'stage_events_stale', 'duplicate_pixels', 'aggregate_attribution']) {
+    for (const c of ['hubspot_unavailable', 'stage_events_stale', 'duplicate_pixels']) {
       assert.ok(codes.includes(c), `missing ${c}`);
     }
   });

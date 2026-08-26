@@ -797,8 +797,133 @@
     "note": "Low Weekly Payment #3 carries 74.6% of spend. Performance depends on one creative."
   },
   "demand": {
-    "available": false,
-    "reason": "Lead records were not retrieved, so the equipment enquiry field could not be classified."
+    "total": 58,
+    "inCatalogue": 38,
+    "mixed": 3,
+    "worthHaving": 41,
+    "outOfCatalogue": 10,
+    "vague": 7,
+    "unstated": 0,
+    "unclassified": 0,
+    "classified": 51,
+    "outOfCatalogueShare": 19.6,
+    "inCatalogueShare": 80.4,
+    "categories": [
+      {
+        "category": "bakeryAndDough",
+        "count": 7,
+        "label": "Bakery and dough"
+      },
+      {
+        "category": "vague",
+        "count": 7,
+        "label": "Stated but not specific"
+      },
+      {
+        "category": "dishwashers",
+        "count": 5,
+        "label": "Commercial dishwashers"
+      },
+      {
+        "category": "fryers",
+        "count": 4,
+        "label": "Fryers and pasta cookers"
+      },
+      {
+        "category": "refrigeration",
+        "count": 4,
+        "label": "Refrigeration"
+      },
+      {
+        "category": "rangesAndCooktops",
+        "count": 4,
+        "label": "Ranges and cooktops"
+      },
+      {
+        "category": "ovensUnspecified",
+        "count": 4,
+        "label": "Ovens, type unspecified"
+      },
+      {
+        "category": "combiOvens",
+        "count": 4,
+        "label": "Combi ovens"
+      },
+      {
+        "category": "foodPrep",
+        "count": 3,
+        "label": "Food prep and slicing"
+      },
+      {
+        "category": "ice",
+        "count": 2,
+        "label": "Ice makers"
+      },
+      {
+        "category": "frozenDrinks",
+        "count": 2,
+        "label": "Slushie and smoothie machines"
+      },
+      {
+        "category": "griddlesAndSalamanders",
+        "count": 2,
+        "label": "Griddles and salamanders"
+      },
+      {
+        "category": "plumbing",
+        "count": 2,
+        "label": "Sinks and plumbing"
+      },
+      {
+        "category": "holdingAndDisplay",
+        "count": 2,
+        "label": "Holding and display"
+      },
+      {
+        "category": "glasswashers",
+        "count": 1,
+        "label": "Glasswashers"
+      },
+      {
+        "category": "coffee",
+        "count": 1,
+        "label": "Coffee equipment"
+      },
+      {
+        "category": "nonHospitality",
+        "count": 1,
+        "label": "Not hospitality equipment"
+      },
+      {
+        "category": "convectionOvens",
+        "count": 1,
+        "label": "Convection ovens"
+      },
+      {
+        "category": "ventilation",
+        "count": 1,
+        "label": "Extraction and ventilation"
+      },
+      {
+        "category": "other",
+        "count": 1,
+        "label": "Other non catalogue"
+      }
+    ],
+    "estimatedWastedSpend": {
+      "value": "104.10",
+      "basis": "out of catalogue leads charged at the average CPL. Mixed enquiries are excluded: they named financeable equipment too.",
+      "isEstimate": true
+    },
+    "outCategories": [
+      "coffee",
+      "ice",
+      "frozenDrinks",
+      "plumbing",
+      "ventilation",
+      "nonHospitality",
+      "other"
+    ]
   },
   "segments": {
     "platform": [
@@ -1012,13 +1137,18 @@
       },
       {
         "level": "critical",
-        "code": "hubspot_unavailable",
-        "message": "HubSpot is not connected. The schema has not been discovered, so every funnel figure past \"lead\" is unavailable. See docs/hubspot-schema.md."
+        "code": "lead_to_deal_join_broken",
+        "message": "HubSpot is connected and the campaign join works (66 leads matched), but not one of them has an associated deal. 1 of 49 deals in the pipeline have any contact at all. Qualified, quoted, signed and funded cannot be attributed to this campaign and are shown as [TBC]. See docs/hubspot-schema.md."
+      },
+      {
+        "level": "critical",
+        "code": "no_deal_term",
+        "message": "Every one of the 49 deals has an empty term. The finance_term and finance_custom_term_weeks properties exist but are unpopulated. Contract revenue, LTV and LTV:CAC cannot be computed from live deals until finance_term or finance_custom_term_weeks is populated."
       },
       {
         "level": "warning",
         "code": "aggregate_attribution",
-        "message": "No reliable lead level join key between HubSpot deals and Meta leads. Stage counts are period totals, not traced cohorts. Sales cycle, lead to close rate and quote to close rate are unavailable at lead level."
+        "message": "Attribution is campaign level, not lead level. Stage counts are period totals rather than traced cohorts, and sales cycle, lead to close rate and quote to close rate are unavailable."
       }
     ],
     "pixels": {
@@ -1072,7 +1202,33 @@
     },
     "leads": null,
     "hubspotAvailable": false,
+    "hubspotConnected": true,
+    "attribution": {
+      "mode": "aggregate",
+      "campaignJoin": {
+        "ok": true,
+        "matched": 66,
+        "property": "hs_analytics_source_data_2",
+        "matchValue": "hh brochure campaign 01/08 2026"
+      },
+      "dealJoin": {
+        "ok": false,
+        "cohortLeadsWithDeals": 0,
+        "dealsWithContacts": 1,
+        "totalDeals": 49
+      },
+      "reason": "No lead in the campaign cohort has an associated deal, and deals arrive from a separate integration with no contact attached."
+    },
     "attributionMode": "aggregate",
+    "dealQuality": {
+      "missingTerm": 49,
+      "missingWeekly": 0,
+      "withContacts": 1,
+      "withoutContacts": 48,
+      "contractRevenueComputable": false,
+      "note": "Every one of the 49 deals has an empty term. The finance_term and finance_custom_term_weeks properties exist but are unpopulated."
+    },
+    "cohortSize": 66,
     "generatedAt": "2026-08-26T12:00:00.000Z"
   },
   "compliance": {
@@ -1110,5 +1266,6 @@
     "note": "Platform and region splits must each independently sum to campaign spend. If they do not, the date range or filter is wrong."
   },
   "__isSample": true,
-  "__sampleNote": "Real campaign data, 1 to 25 August 2026, verified against the section 9 validation baselines. HubSpot, lead level records and GoCardless were not reachable when this was generated, so the figures that depend on them show [TBC] rather than a plausible invention."
+  "__sampleNote": "Real campaign data, 1 to 25 August 2026, verified against the section 9 validation baselines. The demand panel is real: 58 equipment enquiries from HubSpot, classified. The funnel past \"lead\" shows [TBC] because no lead in the campaign cohort has an associated deal, and contract revenue shows the section 9 figures because the term is empty on every deal in HubSpot. See docs/hubspot-schema.md.",
+  "__representativeDealSource": "Weekly payment and deposit confirmed in HubSpot (Ciao Cusina, 19 August 2026). Term and install charge from section 9 of the brief, not from the CRM."
 }

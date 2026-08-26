@@ -417,16 +417,18 @@ function renderDemand(s) {
   }
   el('demand').innerHTML = `
     <div class="tiles" style="margin-bottom:16px">
-      ${tile({ label: 'In catalogue', value: `${num(d.inCatalogue)}`, foot: d.inCatalogueShare === null ? null : `${d.inCatalogueShare}% of classified` })}
+      ${tile({ label: 'Worth having', value: `${num(d.worthHaving ?? d.inCatalogue)}`, foot: d.inCatalogueShare === null ? null : `${d.inCatalogueShare}% of classified` })}
       ${tile({ label: 'Out of catalogue', value: `${num(d.outOfCatalogue)}`, foot: d.outOfCatalogueShare === null ? null : `${d.outOfCatalogueShare}% of classified`, status: (d.outOfCatalogueShare ?? 0) > 15 ? 'amber' : null })}
       ${tile({ label: 'Estimated wasted spend', value: d.estimatedWastedSpend ? money(d.estimatedWastedSpend.value) : `<span class="tbc">${TBC}</span>`, foot: d.estimatedWastedSpend ? 'Estimate, at average CPL' : null })}
-      ${tile({ label: 'Not stated or unclassified', value: num((d.unstated ?? 0) + (d.unclassified ?? 0)) })}
+      ${tile({ label: 'Mixed enquiries', value: num(d.mixed ?? 0), foot: 'Named financeable and non financeable kit. Counted as worth having' })}
+      ${tile({ label: 'Stated but not specific', value: num(d.vague ?? 0), foot: 'Excluded from the share' })}
+      ${tile({ label: 'Unclassified', value: num((d.unstated ?? 0) + (d.unclassified ?? 0)), status: (d.unclassified ?? 0) > 0 ? 'amber' : null, foot: (d.unclassified ?? 0) > 0 ? 'A rising count means the keyword list needs extending' : null })}
     </div>
     <table><thead><tr><th>Category</th><th class="num">Leads</th><th>In catalogue</th></tr></thead><tbody>
       ${(d.categories ?? []).map((c) => `<tr>
         <td>${esc(c.label ?? c.category)}</td>
         <td class="num">${num(c.count)}</td>
-        <td>${c.category === 'unstated' || c.category === 'unclassified' ? '<span class="pill">Unknown</span>' : (d.outCategories ?? []).includes(c.category) ? '<span class="pill out">Out</span>' : '<span class="pill in">In</span>'}</td>
+        <td>${['unstated', 'unclassified', 'vague'].includes(c.category) ? '<span class="pill">Neither</span>' : (d.outCategories ?? []).includes(c.category) ? '<span class="pill out">Out</span>' : '<span class="pill in">In</span>'}</td>
       </tr>`).join('')}
     </tbody></table>`;
 }
@@ -474,7 +476,17 @@ function renderHealth(s) {
     item('Last stage event', stage.hoursSince === null ? TBC : `${stage.hoursSince}h ago`, stage.alert ? 'alert' : ''),
     item('Unmapped stages', mapping.unmapped === null || mapping.unmapped === undefined ? TBC : num(mapping.unmapped), mapping.alert ? 'alert' : ''),
     item('Live pixels', num(pixels.activeCount), pixels.duplicatePixelWarning ? 'warn' : ''),
-    item('HubSpot', h.hubspotAvailable ? 'Connected' : 'Not connected', h.hubspotAvailable ? '' : 'alert'),
+    item(
+      'HubSpot',
+      h.hubspotConnected === false ? 'Not connected' : h.attribution?.dealJoin?.ok ? 'Connected' : 'Join broken',
+      h.hubspotConnected === false || h.attribution?.dealJoin?.ok === false ? 'alert' : '',
+    ),
+    item('Campaign cohort', h.cohortSize === null || h.cohortSize === undefined ? TBC : `${num(h.cohortSize)} leads`, ''),
+    item(
+      'Leads reaching a deal',
+      h.attribution ? num(h.attribution.dealJoin.cohortLeadsWithDeals) : TBC,
+      h.attribution && h.attribution.dealJoin.cohortLeadsWithDeals === 0 ? 'alert' : '',
+    ),
     item('Attribution mode', esc(h.attributionMode ?? TBC), h.attributionMode === 'aggregate' ? 'warn' : ''),
     leads ? item('Lead submissions', `${num(leads.uniqueCount)} of ${num(leads.rawCount)}`, leads.duplicateCount > 0 ? 'warn' : '') : item('Lead submissions', TBC),
   ].join('');

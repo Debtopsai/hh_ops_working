@@ -164,6 +164,10 @@ export function buildSnapshot({
   contractsFunded = null,
   fundingDataAvailable = false,
   hubspotAvailable = false,
+  hubspotConnected = null,
+  attribution = null,
+  dealQuality = null,
+  cohortSize = null,
   attributionMode = 'aggregate',
   representativeDeal = null,
   assumptions,
@@ -207,7 +211,8 @@ export function buildSnapshot({
 
   const health = buildHealthPanel({
     datasets, lastStageEventAt, lastRefreshAt,
-    stageClassification, leadDedupe, hubspotAvailable, attributionMode,
+    stageClassification, leadDedupe, hubspotAvailable, hubspotConnected,
+    attribution, dealQuality, cohortSize,
     nowMs, thresholds: assumptions.thresholds,
     expectedPixels: meta.expectedPixels ?? [],
   });

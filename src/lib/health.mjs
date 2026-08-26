@@ -139,7 +139,10 @@ export function buildHealthPanel({
   stageClassification,
   leadDedupe,
   hubspotAvailable,
-  attributionMode,
+  hubspotConnected = null,
+  attribution = null,
+  dealQuality = null,
+  cohortSize = null,
   nowMs = Date.now(),
   thresholds = {},
   expectedPixels = [],
@@ -148,6 +151,8 @@ export function buildHealthPanel({
   const stageEvents = stageEventFreshness(lastStageEventAt, { nowMs, thresholdHours: thresholds.staleStageEventHours ?? 48 });
   const metaSync = metaSyncFreshness(lastRefreshAt, { nowMs, thresholdHours: thresholds.staleMetaSyncHours ?? 6 });
 
+  const attributionMode = attribution?.mode ?? 'aggregate';
+  const connected = hubspotConnected ?? hubspotAvailable;
   const unmappedCount = stageClassification?.unmapped ?? null;
   const unmappedAlert = unmappedCount !== null && unmappedCount > 0;
 
@@ -162,18 +167,39 @@ export function buildHealthPanel({
       message: `${unmappedCount} stage event${unmappedCount === 1 ? '' : 's'} did not match the stage map: ${(stageClassification.unmappedLabels ?? []).map((u) => `"${u.label}" (${u.count})`).join(', ')}. A stage name has changed and the funnel is silently wrong. Correct config/stage-map.json.`,
     });
   }
-  if (!hubspotAvailable) {
+  if (!connected) {
     alerts.push({
       level: 'critical',
       code: 'hubspot_unavailable',
-      message: 'HubSpot is not connected. The schema has not been discovered, so every funnel figure past "lead" is unavailable. See docs/hubspot-schema.md.',
+      message: 'HubSpot is not connected. Every funnel figure past "lead" is unavailable. See docs/hubspot-schema.md.',
+    });
+  } else if (attribution && !attribution.dealJoin.ok) {
+    // Connected, and the join is still dead. This is a different and more
+    // useful statement than "not connected", and it names the number that
+    // proves it.
+    alerts.push({
+      level: 'critical',
+      code: 'lead_to_deal_join_broken',
+      message:
+        `HubSpot is connected and the campaign join works (${attribution.campaignJoin.matched} leads matched), but not one of them has an associated deal. ` +
+        `${attribution.dealJoin.dealsWithContacts} of ${attribution.dealJoin.totalDeals} deals in the pipeline have any contact at all. ` +
+        'Qualified, quoted, signed and funded cannot be attributed to this campaign and are shown as [TBC]. See docs/hubspot-schema.md.',
     });
   }
-  if (attributionMode === 'aggregate') {
+
+  if (dealQuality && dealQuality.contractRevenueComputable === false) {
+    alerts.push({
+      level: 'critical',
+      code: 'no_deal_term',
+      message: `${dealQuality.note} Contract revenue, LTV and LTV:CAC cannot be computed from live deals until finance_term or finance_custom_term_weeks is populated.`,
+    });
+  }
+
+  if (connected && attribution?.dealJoin.ok === false && attribution.campaignJoin.ok) {
     alerts.push({
       level: 'warning',
       code: 'aggregate_attribution',
-      message: 'No reliable lead level join key between HubSpot deals and Meta leads. Stage counts are period totals, not traced cohorts. Sales cycle, lead to close rate and quote to close rate are unavailable at lead level.',
+      message: 'Attribution is campaign level, not lead level. Stage counts are period totals rather than traced cohorts, and sales cycle, lead to close rate and quote to close rate are unavailable.',
     });
   }
 
@@ -200,7 +226,11 @@ export function buildHealthPanel({
         }
       : null,
     hubspotAvailable,
+    hubspotConnected: connected,
+    attribution,
     attributionMode,
+    dealQuality,
+    cohortSize,
     generatedAt: new Date(nowMs).toISOString(),
   };
 }

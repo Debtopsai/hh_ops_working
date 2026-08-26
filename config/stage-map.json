@@ -1,40 +1,115 @@
 {
   "_comment": [
-    "Stage mapping, section 8.2 of the brief. This is configuration, not code, so a stage",
+    "Stage mapping, section 8.2 of the brief. Configuration, not code, so a stage",
     "name change can be corrected without a redeploy.",
     "",
-    "byStageId is the correct long term key: a HubSpot deal stage has an opaque internal id",
-    "and a display label that any CRM user can rename. Keying on the label means an ordinary",
-    "rename silently breaks the funnel. byStageId is empty until the schema discovery in",
-    "docs/hubspot-schema.md has been run.",
+    "TWO SEPARATE FEEDS, and they do not agree. This matters.",
     "",
-    "byLabel handles the stage names currently observed arriving at Meta. Matching is case",
-    "insensitive and whitespace insensitive, which is why QUALIFIED and QualifiedLead are",
-    "listed separately rather than being assumed equivalent by normalisation alone.",
+    "  byStageId  HubSpot deal stages, discovered 26 August 2026. Keyed on the",
+    "             opaque stage id, never the label, because a label is a display",
+    "             string any CRM user can rename.",
     "",
-    "Anything not listed here lands in unmapped and is surfaced on the data health panel.",
-    "A non zero unmapped count means a stage name has changed and the funnel is silently wrong."
+    "  byLabel    The stage names observed arriving at Meta as pixel events",
+    "             (QUALIFIED, QualifiedLead, Quote Sent, Send Quote, CONVERTED).",
+    "             NONE of these is a HubSpot deal stage label. HubSpot's labels",
+    "             are the defaults: Qualified To Buy, Contract Sent, Closed Won.",
+    "             So the Meta stage feed is NOT coming from HubSpot deal stages.",
+    "             It comes from somewhere else, most likely Zoho or a mapping",
+    "             inside the sync. Until that source is identified, the Meta",
+    "             stage events cannot be reconciled against the CRM.",
+    "",
+    "Anything unrecognised lands in unmapped and is surfaced on the data health",
+    "panel. A non zero unmapped count means a stage name has changed."
   ],
-  "byStageId": {},
+  "byStageId": {
+    "_comment": "Contract Pipeline (148114589) and the default Sales Pipeline. Discovered 26 August 2026.",
+    "251084371": "inquiry",
+    "251084372": "qualified",
+    "251084373": "qualified",
+    "251084374": "qualified",
+    "251084375": "quoted",
+    "251084376": "won",
+    "251084377": "dead",
+    "appointmentscheduled": "inquiry",
+    "qualifiedtobuy": "qualified",
+    "presentationscheduled": "qualified",
+    "decisionmakerboughtin": "qualified",
+    "contractsent": "quoted",
+    "closedwon": "won",
+    "closedlost": "dead"
+  },
   "byLabel": {
-    "qualified": ["QUALIFIED", "QualifiedLead"],
-    "quoted": ["Quote Sent", "Send Quote"],
-    "dead": ["Unqualified", "Blocked", "BAD"],
-    "won": ["CONVERTED"],
-    "ignore": ["LEADS"]
+    "qualified": [
+      "QUALIFIED",
+      "QualifiedLead"
+    ],
+    "quoted": [
+      "Quote Sent",
+      "Send Quote"
+    ],
+    "dead": [
+      "Unqualified",
+      "Blocked",
+      "BAD"
+    ],
+    "won": [
+      "CONVERTED"
+    ],
+    "ignore": [
+      "LEADS"
+    ]
   },
   "_ignoreComment": "LEADS is not a stage. It is listed so it does not inflate the unmapped alarm, but it is excluded from every funnel count.",
-  "funnelOrder": ["lead", "qualified", "quoted", "won"],
+  "funnelOrder": [
+    "lead",
+    "inquiry",
+    "qualified",
+    "quoted",
+    "won"
+  ],
   "cumulative": {
-    "_comment": "Quotes issued is defined as deals at quote stage or beyond, and qualified likewise. A deal that reached won also counts as quoted and qualified.",
-    "qualified": ["qualified", "quoted", "won"],
-    "quoted": ["quoted", "won"],
-    "won": ["won"]
+    "_comment": "Quotes issued is deals at quote stage or beyond, and qualified likewise. A deal that reached won also counts as quoted and qualified.",
+    "inquiry": [
+      "inquiry",
+      "qualified",
+      "quoted",
+      "won"
+    ],
+    "qualified": [
+      "qualified",
+      "quoted",
+      "won"
+    ],
+    "quoted": [
+      "quoted",
+      "won"
+    ],
+    "won": [
+      "won"
+    ]
   },
   "deadReasons": {
     "_comment": "Panel 2 shows dead leads as a separate branch with a reason breakdown.",
     "Unqualified": "Did not meet credit or business criteria",
     "Blocked": "Blocked",
     "BAD": "Bad data or bad faith enquiry"
+  },
+  "stageLabels": {
+    "_comment": "For display only. Never match on these.",
+    "251084371": "Prospect Inquiry",
+    "251084372": "Qualified To Buy",
+    "251084373": "Presentation Scheduled",
+    "251084374": "Decision Maker Bought-In",
+    "251084375": "Contract Sent",
+    "251084376": "Closed Won",
+    "251084377": "Closed Lost"
+  },
+  "observedStageDistribution": {
+    "_comment": "All 49 deals, 26 August 2026. THIS IS THE PROBLEM. 47 of 49 deals sit in Prospect Inquiry, including deals with payment start dates and cleared deposits. Zero deals have ever reached Closed Won, while the customer database shows 24 active paying customers. The stage field is not maintained, so it cannot be used to count signed or won.",
+    "251084371": 47,
+    "251084375": 1,
+    "251084376": 0,
+    "other": 1,
+    "usableForFunnel": false
   }
 }

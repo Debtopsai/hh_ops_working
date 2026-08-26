@@ -147,3 +147,84 @@ npm run validate          # section 9 baselines only
 Reconciliation is also computed live on every refresh, not just at build time.
 If a future date range or filter breaks a split, the dashboard reports it on
 panel 7 rather than quietly showing a wrong number.
+
+---
+
+## HubSpot validation, 26 August 2026
+
+Added after the CRM was connected. Full findings in `docs/hubspot-schema.md`.
+
+### The equipment classifier, validated against real text
+
+Section 8.4 estimated "roughly 19%" of leads request equipment HireHospo does
+not finance. All 58 real enquiries were retrieved and classified:
+
+| Outcome | Count |
+|---|---|
+| In catalogue | 38 |
+| Mixed, named financeable and non financeable kit | 3 |
+| **Out of catalogue** | **10** |
+| Stated but not specific | 7 |
+| Unclassified | **0** |
+
+**19.6% out of catalogue**, against the brief's estimate of roughly 19%. Two
+independent methods agreeing to within a percentage point is the strongest
+evidence available that both are right.
+
+Estimated wasted spend NZ$104.10 at the average CPL.
+
+The corpus is committed at `test/fixtures/equipment-enquiries.json`, equipment
+text only, and the assertions are in `test/equipment-corpus.test.mjs`.
+
+### Four classifier defects that only real text exposed
+
+Every one of these passed the original synthetic tests and failed on live data.
+
+1. **A bare "Oven" matched nothing.** Six of the 58 leads said exactly that.
+2. **"lpg griller" missed**, because a strict word boundary rejects the `er`
+   suffix on `grill`. Matching now tolerates `s`, `es`, `er` and `ers` but not
+   `ing`, so `sinks` still matches `sink` and `sinking` still does not.
+3. **A mixed enquiry was written off.** One lead named eleven financeable items
+   plus one range hood and was classified out of catalogue on the range hood
+   alone. Mixed enquiries are now their own outcome and count as worth having.
+   Charging those three leads to wasted spend would have overstated it by 29%
+   and argued for narrowing ad copy that is working.
+4. **`"filling  machine"` has a double space** and failed a literal keyword
+   match. Whitespace is now collapsed before matching. This was the last
+   unclassified enquiry.
+
+Real submissions also include `speed owen`, `Gas hop`, `slushi machines` and
+`comercial indin cooking cook top`. A classifier tuned on tidy invented examples
+scores well on tidy invented examples.
+
+### The one contract, confirmed and unattributable
+
+The section 9 signed contract is confirmed in HubSpot as
+`CIAO CUSINA LIMITED (9343046) Registered - Lease agreement`, created
+19 August 2026:
+
+| Field | HubSpot value | Section 9 |
+|---|---|---|
+| `weekly_total_cost` | 115 | $115/wk |
+| `rent_in_advance__weeks_` / `product_upfront_rental` | 6 / 690 | 6 weeks advance |
+| `security_deposit_weeks` / `security_deposit_amount` | 6 / 690 | 6 weeks security |
+| Term | **empty** | 156 weeks |
+| Delivery and install | **no such property** | $895 |
+
+The weekly payment and the 6+6 deposit reconcile exactly. The term and the
+install charge do not exist in the CRM, so the $18,835 contract revenue figure
+rests on section 9 of the brief, not on CRM data. The dashboard labels it.
+
+**The deal has no associated contact**, and there is no contact record for Ciao
+Cusina in the portal. So the attribution of that contract to the Meta campaign
+is a human judgement. It may well be right. The dashboard cannot verify it and
+does not claim to.
+
+### What cannot be validated, and why
+
+| Metric | Blocked by |
+|---|---|
+| Qualified leads, quotes issued | No deal carries a contact, so no deal is attributable to a lead |
+| Contracts signed, contracts funded | `dealstage` never advances. Zero deals have reached Closed Won, for a business with 24 active paying customers |
+| Contract revenue from live deals | Term empty on all 49 deals |
+| Sales cycle median | Requires the lead to deal join |

@@ -13,15 +13,40 @@ All figures ex GST, NZD.
 
 | Build step | State |
 |---|---|
-| 1. HubSpot schema discovery | **BLOCKED.** No HubSpot access. See `docs/hubspot-schema.md` |
+| 1. HubSpot schema discovery | **Done.** Schema discovered 26 August 2026. See `docs/hubspot-schema.md` |
 | 2. Meta ingestion, validated against section 9 | **Done.** 25 of 26 baselines exact, 1 brief error found. See `docs/validation-baselines.md` |
-| 3. HubSpot ingestion, stage map, funnel | **Built, waiting on step 1.** No guessed field names |
-| 4. Unit economics with configurable margin | **Done** |
+| 3. HubSpot ingestion, stage map, funnel | **Ingestion done. Funnel blocked by CRM data**, not by code |
+| 4. Unit economics with configurable margin | **Done.** Live contract revenue blocked by a missing term |
 | 5. Data health panel | **Done** |
 | 6. GoCardless, signed against funded | **Not started.** Phase 2 |
 
-Until steps 1 and 6 land, contract counts are labelled "signed, funding
-unconfirmed" and every funnel figure past "lead" shows `[TBC]`.
+## What the CRM discovery found
+
+The brief asked one question above all others: does a reliable join key exist
+between HubSpot deals and Meta leads? The answer is split, and the split is the
+finding.
+
+| Join | Works? | Evidence |
+|---|---|---|
+| Meta lead to HubSpot **contact** | **Yes, 98.5%** | 66 of 67 lead records matched by campaign |
+| HubSpot contact to HubSpot **deal** | **No, 0%** | Zero of those 66 has an associated deal |
+
+Three things block the funnel, and none of them is a code problem:
+
+1. **Deals carry no contact.** 48 of 49 deals have no contact attached at all,
+   so there is nothing to join a lead to.
+2. **Deal stages are never advanced.** 47 of 49 sit in "Prospect Inquiry" and
+   **zero** have ever reached Closed Won, for a business with 24 active paying
+   customers. `dealstage` cannot count signed or won.
+3. **Term length is empty on every deal.** `finance_term` and
+   `finance_custom_term_weeks` exist and are unpopulated, so contract revenue
+   cannot be computed from live deals.
+
+What this does unlock, and it is real: the lead cohort, and the demand panel
+built from 58 actual equipment enquiries.
+
+Until the CRM issues and GoCardless are resolved, contract counts are labelled
+"signed, funding unconfirmed" and every funnel figure past "lead" shows `[TBC]`.
 
 ## Two things need Raj before go live
 
@@ -84,7 +109,7 @@ the repository, in a config file, or in client side code.**
 | `META_PIXEL_IDS` | No | Comma separated. `1677961872820124,1336169581641781` |
 | `APPROVED_DAILY_RATE_CLAIM` | No | For example `$4.66/day`. Drives the compliance banner |
 | `DASHBOARD_WINDOW_DAYS` | No | Defaults to 30 |
-| `HUBSPOT_ACCESS_TOKEN` | Not yet | Ignored until the schema is discovered |
+| `HUBSPOT_ACCESS_TOKEN` | Yes | Private app token. Read only scopes, see `docs/hubspot-schema.md` |
 | `GOCARDLESS_ACCESS_TOKEN` | Phase 2 | |
 
 ### Access control, not optional
@@ -120,10 +145,15 @@ in the generated payload.
 | `config/stage-map.json` | Stage name to funnel bucket. Section 8.2 |
 | `config/assumptions.json` | Gross margin, failure rate, terms, thresholds |
 | `config/equipment-catalogue.json` | In and out of catalogue keywords. Section 8.4 |
-| `config/hubspot-mapping.json` | HubSpot property names. All null until discovered |
+| `config/hubspot-mapping.json` | HubSpot property names, pipeline and the campaign match value |
 
-If a stage name changes in the CRM, correct `config/stage-map.json`. The
-unmapped count on panel 7 is the alarm that tells you to.
+If a stage name changes in the CRM, correct `config/stage-map.json`, which is
+keyed on stage **ID** rather than label for exactly that reason. The unmapped
+count on panel 7 is the alarm that tells you to.
+
+If the Meta campaign is renamed, update `joinKey.matchValue` in
+`config/hubspot-mapping.json` or the lead cohort silently empties. Panel 7
+reports the cohort size so a drop to zero is visible.
 
 ## Known data faults being handled
 
@@ -132,7 +162,7 @@ unmapped count on panel 7 is the alarm that tells you to.
 | Two live pixels (8.1) | Both read, deduplicated by id, warning banner shown |
 | Duplicated stage names (8.2) | Stage map as config, unmapped surfaced as an alarm |
 | Sync gap (8.3) | Freshness indicator, alerts past 48 hours |
-| Out of catalogue leads (8.4) | Keyword classifier, share and estimated wasted spend |
+| Out of catalogue leads (8.4) | Keyword classifier tuned on all 58 real enquiries. 19.6% out of catalogue, against the brief's estimate of roughly 19% |
 | Duplicate submissions (8.5) | Deduplicated on hashed phone or email, raw count kept visible |
 
 Three traps found during the build and handled, none of them in the brief:
@@ -142,7 +172,13 @@ Three traps found during the build and handled, none of them in the brief:
 2. The datasets endpoint returns **duplicate rows per pixel**, some carrying a
    `last_fired_time` of unix zero as a null sentinel.
 3. There are **zero custom conversions** on the ad account, so the stage labels
-   cannot be enumerated from that endpoint.
+   cannot be enumerated from that endpoint. The Meta stage event names
+   (QUALIFIED, Quote Sent, CONVERTED) are also **not** HubSpot deal stage
+   labels, so that feed comes from somewhere else entirely and cannot yet be
+   reconciled against the CRM.
+4. The standard HubSpot `amount` property on these deals carries the **weekly**
+   figure, not the contract value. Mapping it to contract value would
+   understate every contract by roughly 156 times.
 
 ## Layout
 
@@ -152,8 +188,8 @@ docs/                   metric definitions, validation, HubSpot blocker
 netlify/functions/      refresh (scheduled) and dashboard-data (read)
 public/                 static front end and the validated sample
 scripts/                HubSpot discovery, sample generation
-src/lib/                money, meta, revenue, funnel, stage-map, equipment, leads, health, snapshot
-test/                   baselines, revenue rule, pipeline, end to end
+src/lib/                money, meta, hubspot, revenue, funnel, stage-map, equipment, leads, health, snapshot
+test/                   baselines, revenue rule, pipeline, equipment corpus, end to end
 ```
 
 ## House rules
