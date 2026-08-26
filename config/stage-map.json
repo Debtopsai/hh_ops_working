@@ -1,0 +1,40 @@
+{
+  "_comment": [
+    "Stage mapping, section 8.2 of the brief. This is configuration, not code, so a stage",
+    "name change can be corrected without a redeploy.",
+    "",
+    "byStageId is the correct long term key: a HubSpot deal stage has an opaque internal id",
+    "and a display label that any CRM user can rename. Keying on the label means an ordinary",
+    "rename silently breaks the funnel. byStageId is empty until the schema discovery in",
+    "docs/hubspot-schema.md has been run.",
+    "",
+    "byLabel handles the stage names currently observed arriving at Meta. Matching is case",
+    "insensitive and whitespace insensitive, which is why QUALIFIED and QualifiedLead are",
+    "listed separately rather than being assumed equivalent by normalisation alone.",
+    "",
+    "Anything not listed here lands in unmapped and is surfaced on the data health panel.",
+    "A non zero unmapped count means a stage name has changed and the funnel is silently wrong."
+  ],
+  "byStageId": {},
+  "byLabel": {
+    "qualified": ["QUALIFIED", "QualifiedLead"],
+    "quoted": ["Quote Sent", "Send Quote"],
+    "dead": ["Unqualified", "Blocked", "BAD"],
+    "won": ["CONVERTED"],
+    "ignore": ["LEADS"]
+  },
+  "_ignoreComment": "LEADS is not a stage. It is listed so it does not inflate the unmapped alarm, but it is excluded from every funnel count.",
+  "funnelOrder": ["lead", "qualified", "quoted", "won"],
+  "cumulative": {
+    "_comment": "Quotes issued is defined as deals at quote stage or beyond, and qualified likewise. A deal that reached won also counts as quoted and qualified.",
+    "qualified": ["qualified", "quoted", "won"],
+    "quoted": ["quoted", "won"],
+    "won": ["won"]
+  },
+  "deadReasons": {
+    "_comment": "Panel 2 shows dead leads as a separate branch with a reason breakdown.",
+    "Unqualified": "Did not meet credit or business criteria",
+    "Blocked": "Blocked",
+    "BAD": "Bad data or bad faith enquiry"
+  }
+}

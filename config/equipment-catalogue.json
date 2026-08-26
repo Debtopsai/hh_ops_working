@@ -1,0 +1,65 @@
+{
+  "_comment": [
+    "Keyword classifier over the Meta lead field 'what_type_of_equipment_are_you_after:'",
+    "(note the trailing colon in the Meta field name). Section 8.4 of the brief.",
+    "",
+    "Roughly 19% of leads request equipment HireHospo does not finance. This classifier is a",
+    "live measure of whether the ad copy is filtering properly, so the out of catalogue list",
+    "is evaluated FIRST. Order matters: 'ice maker' must not be swept into 'refrigeration'",
+    "by a loose keyword, or the wasted spend measure quietly reports zero.",
+    "",
+    "KNOWN CONFLICT, needs a decision. Section 8.4 lists ice makers as NOT financed, while",
+    "docs/BUSINESS_OVERVIEW.md lists a catalogue category called 'refrigeration & ice'. The",
+    "brief is treated as authoritative here and ice is classified out of catalogue, but this",
+    "is flagged rather than resolved silently. If ice makers are in fact financed, move the",
+    "'ice' entry from outOfCatalogue into the refrigeration category. No code change needed."
+  ],
+  "matching": {
+    "caseSensitive": false,
+    "wholeWordish": true,
+    "_comment": "Matching is done on word boundaries so 'sink' does not match 'sinking' and 'range' does not match 'arrangement'. A lead matching more than one in catalogue category is counted once, under its first match, and its other matches are recorded."
+  },
+  "outOfCatalogue": {
+    "_comment": "Evaluated before the in catalogue list. Every one of these was observed in real lead data.",
+    "coffee": ["coffee machine", "coffee", "espresso", "barista", "grinder", "la marzocco", "rocket"],
+    "ice": ["ice maker", "ice machine", "icemaker", "ice"],
+    "plumbing": ["sink", "sinks", "hand basin", "wash basin", "tap", "dishwash sink"],
+    "ventilation": ["extract fan", "extraction", "extractor", "canopy", "rangehood", "range hood", "ventilation", "exhaust"],
+    "nonHospitality": ["earthmoving", "excavator", "digger", "tractor", "forklift", "trailer", "vehicle", "car", "truck"],
+    "other": ["furniture", "table", "chair", "shelving", "pos", "till", "signage"]
+  },
+  "inCatalogue": {
+    "dishwashers": ["dishwasher", "dish washer", "passthrough", "pass through", "hood type", "undercounter dishwasher", "warewash"],
+    "glasswashers": ["glasswasher", "glass washer", "glass machine"],
+    "combiOvens": ["combi oven", "combi", "rational", "convotherm", "combination oven"],
+    "convectionOvens": ["convection oven", "convection", "turbofan", "bake off", "bakeoff"],
+    "rangesAndCooktops": ["range", "cooktop", "cook top", "stove", "oven range", "gas burner", "burner", "hob", "wok", "stock pot"],
+    "griddlesAndSalamanders": ["griddle", "grill", "salamander", "chargrill", "char grill", "hot plate", "hotplate", "flat top"],
+    "fryers": ["fryer", "deep fryer", "fry", "pasta cooker"],
+    "pizzaAndConveyorOvens": ["pizza oven", "pizza", "conveyor oven", "conveyor", "deck oven"],
+    "bakeryAndDough": ["dough", "mixer", "planetary mixer", "prover", "proofer", "bakery", "spiral mixer", "dough roller", "sheeter"],
+    "holdingAndDisplay": ["bain marie", "bain-marie", "holding cabinet", "food warmer", "heated display", "display cabinet", "hot cupboard", "gantry", "pie warmer"],
+    "refrigeration": ["fridge", "refrigerator", "refrigeration", "freezer", "chiller", "blast chiller", "cool room", "coolroom", "under bench fridge", "prep fridge"],
+    "foodPrep": ["food prep", "slicer", "vegetable prep", "veg prep", "food processor", "bowl cutter", "mincer", "vacuum sealer", "vac pack"]
+  },
+  "categoryLabels": {
+    "dishwashers": "Commercial dishwashers",
+    "glasswashers": "Glasswashers",
+    "combiOvens": "Combi ovens",
+    "convectionOvens": "Convection ovens",
+    "rangesAndCooktops": "Ranges and cooktops",
+    "griddlesAndSalamanders": "Griddles and salamanders",
+    "fryers": "Fryers and pasta cookers",
+    "pizzaAndConveyorOvens": "Pizza and conveyor ovens",
+    "bakeryAndDough": "Bakery and dough",
+    "holdingAndDisplay": "Holding and display",
+    "refrigeration": "Refrigeration",
+    "foodPrep": "Food prep and slicing",
+    "coffee": "Coffee equipment",
+    "ice": "Ice makers",
+    "plumbing": "Sinks and plumbing",
+    "ventilation": "Extraction and ventilation",
+    "nonHospitality": "Not hospitality equipment",
+    "other": "Other non catalogue"
+  }
+}

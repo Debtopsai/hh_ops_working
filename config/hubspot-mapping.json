@@ -1,0 +1,42 @@
+{
+  "_comment": [
+    "HubSpot property mapping. Every value is null because the schema has not been",
+    "discovered. See docs/hubspot-schema.md.",
+    "",
+    "These are deliberately null rather than plausible guesses. A guessed property name",
+    "would make the pipeline appear to work while producing wrong numbers, which is the",
+    "one outcome the brief rules out. The pipeline checks for nulls and reports HubSpot",
+    "as unavailable rather than falling back to a guess.",
+    "",
+    "Fill these in from the output of: node scripts/discover-hubspot.mjs"
+  ],
+  "discovered": false,
+  "discoveredAt": null,
+  "pipelineId": null,
+  "attributionMode": "aggregate",
+  "_attributionModeComment": "One of 'traced' or 'aggregate'. Set to 'traced' only when a reliable lead level join key is confirmed at or above the joinKeyReliableFillPct threshold. Anything else stays 'aggregate' and the dashboard labels the affected metrics as period counts rather than traced cohorts.",
+  "joinKey": {
+    "property": null,
+    "objectType": null,
+    "fillPct": null,
+    "reliable": false
+  },
+  "deal": {
+    "contractValue": null,
+    "weeklyPayment": null,
+    "termWeeks": null,
+    "termRaw": null,
+    "productType": null,
+    "depositStructure": null,
+    "depositClearedDate": null,
+    "deliveryDate": null,
+    "deliveryAndInstallCharge": null,
+    "closedWonDate": null,
+    "stageId": null
+  },
+  "contact": {
+    "equipmentEnquiry": null,
+    "companyName": null,
+    "region": null
+  }
+}

@@ -1,0 +1,57 @@
+{
+  "_comment": [
+    "Configurable inputs. Section 6 of the brief requires the gross margin and the payment",
+    "failure rate to be adjustable rather than baked in. Section 11 records that the gross",
+    "margin is not yet confirmed by Raj, which is why grossMargin.confirmed is false: the",
+    "dashboard presents a sensitivity range and says so, rather than presenting a single",
+    "figure it cannot stand behind."
+  ],
+  "grossMargin": {
+    "default": 0.25,
+    "min": 0.10,
+    "max": 0.50,
+    "step": 0.01,
+    "confirmed": false,
+    "confirmationNote": "Section 11 item 1. Awaiting Raj. The business overview cites roughly 30% margin on equipment, which is context, not confirmation. Until confirmed, LTV:CAC is a sensitivity range, not a figure.",
+    "sensitivityPoints": [0.20, 0.25, 0.30]
+  },
+  "paymentFailureRate": {
+    "default": 0.105,
+    "portfolio": 0.105,
+    "excludingChronicAccounts": 0.037,
+    "min": 0.0,
+    "max": 0.30,
+    "step": 0.001,
+    "note": "Risk adjusted revenue discounts the weekly payment stream by this rate. Delivery and install are not discounted: they are collected once, up front, not as part of the weekly stream."
+  },
+  "terms": {
+    "_comment": "Read the term from the deal. These are defaults used only when the deal does not carry one, and their use is always reported.",
+    "rent": { "weeks": 52, "label": "Rent" },
+    "leaseToOwn": { "weeks": 156, "label": "Lease to Own" }
+  },
+  "depositStructures": {
+    "_comment": "First number is weeks of rent in advance, second is weeks of security bond. Neither is incremental revenue. See the revenue rule.",
+    "standard": "10+10",
+    "recognised": ["10+10", "8+8", "6+6", "4+4", "4+3"]
+  },
+  "thresholds": {
+    "frequencyAmber": 3.0,
+    "frequencyRed": 4.0,
+    "staleStageEventHours": 48,
+    "staleMetaSyncHours": 6,
+    "ltvCacReference": 3.0,
+    "joinKeyReliableFillPct": 90
+  },
+  "region": {
+    "_comment": "Rent and Lease to Own are Auckland region only. Out of region leads are flagged, not silently counted.",
+    "serviced": ["Auckland Region", "Auckland"],
+    "flagOutOfRegion": true
+  },
+  "currency": {
+    "code": "NZD",
+    "symbol": "NZ$",
+    "gstNote": "+ GST",
+    "gstRate": 0.15,
+    "_comment": "Every figure in this dashboard is ex GST. The gstRate is recorded for reference only. Nothing in the pipeline computes a GST inclusive figure."
+  }
+}

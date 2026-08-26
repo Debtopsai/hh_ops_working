@@ -1,0 +1,43 @@
+{
+  "_comment": "Real Meta responses captured 26 August 2026 for campaign 120250374716300748, ad account 2139666836427566, time_range 2026-08-01 to 2026-08-25. Verbatim, including the two different results shapes, the null ctr, the non breaking spaces and the trailing cost_per_result annotations. These are the section 9 validation baselines as they actually arrive.",
+  "campaignTotal": [
+    {"id":"120250374716300748","name":"HH Brochure Campaign 01/08 2026","amount_spent":"NZ$656.01 NZD","impressions":"39707","reach":"10220","frequency":"3.885225","clicks":"884","ctr":"2.23%","cpm":"NZ$16.52 NZD","cpc":"NZ$0.74 NZD","results":{"indicator":"actions:leadgen.other","values":[{"attribution_windows":["default"],"value":"63"}]},"cost_per_result":{"value":"NZ$10.41 NZD (Leads (form))"}}
+  ],
+  "byPlatform": [
+    {"publisher_platform":"facebook","amount_spent":"NZ$572.26 NZD","impressions":"35516","clicks":"812","ctr":"2.29%","results":{"indicator":"actions:leadgen.other","values":[{"attribution_windows":["default"],"value":"58"}]},"cost_per_result":{"value":"NZ$9.87 NZD (Leads (form))"},"id":"120250374716300748","name":"HH Brochure Campaign 01/08 2026"},
+    {"publisher_platform":"instagram","amount_spent":"NZ$83.75 NZD","impressions":"4191","clicks":"72","ctr":"1.72%","results":{"indicator":"actions:leadgen.other","values":[{"attribution_windows":["default"],"value":"5"}]},"cost_per_result":{"value":"NZ$16.75 NZD (Leads (form))"},"id":"120250374716300748","name":"HH Brochure Campaign 01/08 2026"}
+  ],
+  "byRegion": [
+    {"region":"Auckland Region","amount_spent":"NZ$654.49 NZD","impressions":"39638","clicks":"882","results":{"indicator":"actions:leadgen.other","values":[{"attribution_windows":["default"],"value":"63"}]},"id":"120250374716300748","name":"HH Brochure Campaign 01/08 2026"},
+    {"region":"Northland Region","amount_spent":"NZ$0.13 NZD","impressions":"8","clicks":"0","results":{"indicator":"actions:leadgen.other","value":"Not available"},"id":"120250374716300748","name":"HH Brochure Campaign 01/08 2026"},
+    {"region":"Waikato","amount_spent":"NZ$1.39 NZD","impressions":"61","clicks":"2","results":{"indicator":"actions:leadgen.other","value":"Not available"},"id":"120250374716300748","name":"HH Brochure Campaign 01/08 2026"}
+  ],
+  "byAge": [
+    {"age":"18-24","amount_spent":"NZ$3.92 NZD","impressions":"253","clicks":"3","results":{"indicator":"actions:leadgen.other","value":"Not available"},"id":"120250374716300748"},
+    {"age":"25-34","amount_spent":"NZ$91.27 NZD","impressions":"6923","clicks":"152","results":{"indicator":"actions:leadgen.other","values":[{"attribution_windows":["default"],"value":"8"}]},"id":"120250374716300748"},
+    {"age":"35-44","amount_spent":"NZ$203.48 NZD","impressions":"13818","clicks":"254","results":{"indicator":"actions:leadgen.other","values":[{"attribution_windows":["default"],"value":"15"}]},"id":"120250374716300748"},
+    {"age":"45-54","amount_spent":"NZ$212.06 NZD","impressions":"11981","clicks":"285","results":{"indicator":"actions:leadgen.other","values":[{"attribution_windows":["default"],"value":"22"}]},"id":"120250374716300748"},
+    {"age":"55-64","amount_spent":"NZ$118.13 NZD","impressions":"5671","clicks":"151","results":{"indicator":"actions:leadgen.other","values":[{"attribution_windows":["default"],"value":"12"}]},"id":"120250374716300748"},
+    {"age":"65+","amount_spent":"NZ$27.15 NZD","impressions":"1061","clicks":"39","results":{"indicator":"actions:leadgen.other","values":[{"attribution_windows":["default"],"value":"6"}]},"id":"120250374716300748"}
+  ],
+  "weekly": [
+    {"date_start":"2026-08-01","date_stop":"2026-08-07","amount_spent":"NZ$220.38 NZD","impressions":"11919","clicks":"323","ctr":"2.71%","frequency":"2.632288","results":{"indicator":"actions:leadgen.other","values":[{"attribution_windows":["default"],"value":"24"}]},"id":"120250374716300748"},
+    {"date_start":"2026-08-08","date_stop":"2026-08-14","amount_spent":"NZ$210.85 NZD","impressions":"13429","clicks":"291","ctr":"2.17%","frequency":"2.219669","results":{"indicator":"actions:leadgen.other","values":[{"attribution_windows":["default"],"value":"16"}]},"id":"120250374716300748"},
+    {"date_start":"2026-08-15","date_stop":"2026-08-21","amount_spent":"NZ$144.83 NZD","impressions":"8571","clicks":"153","ctr":"1.79%","frequency":"2.123637","results":{"indicator":"actions:leadgen.other","values":[{"attribution_windows":["default"],"value":"14"}]},"id":"120250374716300748"}
+  ],
+  "byAd": [
+    {"id":"120250374716320748","name":"Low Weekly Payment #3","amount_spent":"NZ$489.31 NZD","impressions":"30284","clicks":"708","ctr":"2.34%","frequency":"3.382176","results":{"indicator":"actions:leadgen.other","values":[{"attribution_windows":["default"],"value":"47"}]},"cost_per_result":{"value":"NZ$10.41 NZD (Leads (form))"}},
+    {"id":"120250455841910748","name":"Quick Process","amount_spent":"NZ$28.36 NZD","impressions":"964","clicks":"14","ctr":"1.45%","frequency":"1.673611","results":{"indicator":"actions:leadgen.other","value":"Not available"},"cost_per_result":{"value":"Not available (Leads (form))"}},
+    {"id":"120250508799450748","name":"Quick Process","amount_spent":"NZ$5.67 NZD","impressions":"214","clicks":"0","ctr":"0.00%","frequency":"1.215909","results":{"indicator":"actions:leadgen.other","value":"Not available"},"cost_per_result":{"value":"Not available (Leads (form))"}},
+    {"id":"120250456485650748","name":"From $3.99/day (A)","amount_spent":"NZ$116.07 NZD","impressions":"7436","clicks":"139","ctr":"1.87%","frequency":"2.170461","results":{"indicator":"actions:leadgen.other","values":[{"attribution_windows":["default"],"value":"12"}]},"cost_per_result":{"value":"NZ$9.67 NZD (Leads (form))"}},
+    {"id":"120250375584860748","name":"From $3.99/day (A)","amount_spent":"NZ$16.46 NZD","impressions":"798","clicks":"23","ctr":"2.88%","frequency":"1.723542","results":{"indicator":"actions:leadgen.other","values":[{"attribution_windows":["default"],"value":"4"}]},"cost_per_result":{"value":"NZ$4.12 NZD (Leads (form))"}},
+    {"id":"120250375563230748","name":"Quick Process #1","amount_spent":"NZ$0.00 NZD","impressions":"0","clicks":"0","ctr":null,"frequency":"0","results":{"indicator":"actions:leadgen.other","value":"Not available"},"cost_per_result":{"value":"Not available (Leads (form))"}},
+    {"id":"120250375584670748","name":"From $6.99/day (B)","amount_spent":"NZ$0.14 NZD","impressions":"11","clicks":"0","ctr":"0.00%","frequency":"1","results":{"indicator":"actions:leadgen.other","value":"Not available"},"cost_per_result":{"value":"Not available (Leads (form))"}}
+  ],
+  "datasets": [
+    {"dataset_id":"1336169581641781","name":"HireHospo","creation_time":"2026-08-03T01:27:22-0700","is_active":true,"last_fired_time":"2026-08-25T21:11:00-0700","server_last_fired_time":"2026-08-25T21:11:00-0700","business_id":"3749476771982294"},
+    {"dataset_id":"1677961872820124","name":"HireHospo NZ Ad Account Pixel","creation_time":"2025-02-05T21:41:24-0800","is_active":true,"last_fired_time":"2026-08-26T01:26:34-0700","server_last_fired_time":"2026-08-26T01:26:34-0700","business_id":"3749476771982294"},
+    {"dataset_id":"1336169581641781","name":"HireHospo","creation_time":"2026-08-03T01:27:23-0700","is_active":true,"last_fired_time":"1969-12-31T16:00:00-0800","server_last_fired_time":"2026-08-25T21:11:00-0700","business_id":"3749476771982294"},
+    {"dataset_id":"1677961872820124","name":"HireHospo NZ Ad Account Pixel","creation_time":"2025-12-11T21:24:35-0800","is_active":true,"last_fired_time":"1969-12-31T16:00:00-0800","server_last_fired_time":"2026-08-26T01:26:34-0700","business_id":"3749476771982294"}
+  ]
+}

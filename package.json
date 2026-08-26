@@ -1,0 +1,19 @@
+{
+  "name": "hirehospo-acquisition-dashboard",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "HireHospo paid acquisition dashboard: Meta spend through to funded contracts and unit economics.",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "test": "node --test test/*.test.mjs",
+    "validate": "node --test test/baselines.test.mjs",
+    "dev": "netlify dev"
+  },
+  "dependencies": {
+    "@netlify/blobs": "^8.1.0",
+    "decimal.js": "^10.4.3"
+  }
+}
