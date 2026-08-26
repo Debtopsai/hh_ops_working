@@ -30,7 +30,7 @@ let body = bodyMatch[1].trim();
 // static label stating the range that is actually shown.
 body = body.replace(
   /<div class="controls">[\s\S]*?<\/div>/,
-  '<div class="controls"><span class="sub">1 to 25 August 2026, fixed preview</span></div>',
+  '',
 );
 
 // The artifact has no server, so the fetch and fallback are replaced by a
@@ -53,7 +53,7 @@ const inlinedJs = js
 const out = `<title>HireHospo Acquisition Dashboard</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Sora:wght@600&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
 <style>
 ${css}
 </style>

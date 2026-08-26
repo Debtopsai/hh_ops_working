@@ -7,7 +7,7 @@
 <title>HireHospo acquisition dashboard</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Sora:wght@600&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
 <link rel="stylesheet" href="/styles.css">
 </head>
 <body>
@@ -18,6 +18,7 @@
       <h1>HireHospo acquisition dashboard</h1>
       <div class="sub" id="subtitle">Loading</div>
     </div>
+    <div id="status-slot"></div>
     <div class="controls">
       <label for="range" class="sub">Date range</label>
       <select id="range">
@@ -83,14 +84,9 @@
     <section class="panel">
       <h2>Panel 4. Creative fatigue</h2>
       <p class="panel-note" id="fatigue-note"></p>
-      <div class="chart-legend">
-        <span><i class="swatch" style="background:#4ea3ff"></i> CTR %</span>
-        <span><i class="swatch" style="background:#f5a524"></i> Frequency</span>
-        <span><i class="swatch" style="background:#3a4150"></i> Spend</span>
-      </div>
-      <svg class="chart" id="fatigue-chart" role="img" aria-label="Click through rate and frequency over time"></svg>
-      <h3 style="font-size:12.5px;color:var(--ink-dim);margin:20px 0 8px;font-weight:600">Spend per creative</h3>
-      <table id="creative-table"></table>
+      <div class="chart-stack" id="fatigue-charts"></div>
+      <h3 class="sub-head" style="margin-top:26px">Spend per creative</h3>
+      <div class="table-scroll"><table id="creative-table"></table></div>
     </section>
 
     <!-- Panel 5 -->
@@ -112,7 +108,7 @@
       <h2>Panel 7. Data health</h2>
       <p class="panel-note">This panel is not optional. Every number above it depends on it.</p>
       <div class="health-grid" id="health"></div>
-      <div id="reconciliation" style="margin-top:16px"></div>
+      <div id="reconciliation" style="margin-top:20px"></div>
     </section>
 
     <footer>

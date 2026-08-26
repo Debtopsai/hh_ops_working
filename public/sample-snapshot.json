@@ -788,8 +788,8 @@
         "leads": 0,
         "cpl": null,
         "ctr": null,
-        "frequency": "0.0000",
-        "frequencyStatus": "ok"
+        "frequency": null,
+        "frequencyStatus": null
       }
     ],
     "topShare": "74.6",

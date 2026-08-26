@@ -86,8 +86,11 @@ function creativeConcentration(adRows, totalSpend) {
     sharePct: totalSpend.isZero() ? null : s(r.spend.div(totalSpend).times(100), 1),
     impressions: r.impressions, leads: r.leads,
     cpl: s(r.cpl), ctr: s(r.ctr),
-    frequency: r.frequency ? s(r.frequency, 4) : null,
-    frequencyStatus: r.frequency ? (r.frequency.gte(4) ? 'red' : r.frequency.gte(3) ? 'amber' : 'ok') : null,
+    // Frequency is impressions over reach. With no impressions there is no
+    // frequency, and reporting 0.00 as "ok" would claim delivery that never
+    // happened.
+    frequency: r.frequency && r.impressions > 0 ? s(r.frequency, 4) : null,
+    frequencyStatus: r.frequency && r.impressions > 0 ? (r.frequency.gte(4) ? 'red' : r.frequency.gte(3) ? 'amber' : 'ok') : null,
   }));
   const top = withShare[0] ?? null;
   return {

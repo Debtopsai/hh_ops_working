@@ -161,13 +161,34 @@ function renderBanners(s) {
     });
   }
 
-  el('banners').innerHTML = [...extra, ...alerts]
-    .map((a) => `<div class="banner ${a.level === 'critical' ? 'critical' : 'warning'}"><span class="dot"></span><div>${esc(a.message)}</div></div>`)
-    .join('');
+  const all = [...extra, ...alerts];
+  const bannerHtml = (a) => {
+    const level = a.level === 'critical' ? 'critical' : 'warning';
+    // The word carries the severity. Colour alone never does.
+    return `<div class="banner ${level}"><span class="tag">${level === 'critical' ? 'Critical' : 'Check'}</span><div>${esc(a.message)}</div></div>`;
+  };
+  const critical = all.filter((a) => a.level === 'critical');
+  const rest = all.filter((a) => a.level !== 'critical');
+
+  // Criticals are always open. The rest fold away, so a wall of amber does not
+  // bury the numbers the panel exists to show.
+  el('banners').innerHTML =
+    critical.map(bannerHtml).join('') +
+    (rest.length
+      ? `<details class="more-checks"><summary>${rest.length} further ${rest.length === 1 ? 'check' : 'checks'}</summary>${rest.map(bannerHtml).join('')}</details>`
+      : '');
+
+  // Summary before detail: one pill in the masthead for the overall state.
+  const status = s.health?.status ?? 'ok';
+  const counts = { critical: alerts.filter((a) => a.level === 'critical').length, warning: alerts.filter((a) => a.level !== 'critical').length };
+  const statusText = status === 'critical'
+    ? `${counts.critical} critical ${counts.critical === 1 ? 'issue' : 'issues'}`
+    : status === 'warning' ? `${counts.warning} to check` : 'All checks passing';
+  el('status-slot').innerHTML = `<span class="status-pill ${esc(status)}">${esc(statusText)}</span>`;
 }
 
-function tile({ label, value, foot, delta, status }) {
-  const cls = status === 'red' ? ' red' : status === 'amber' ? ' amber' : '';
+function tile({ label, value, foot, delta, status, hero = false }) {
+  const cls = (status === 'red' ? ' red' : status === 'amber' ? ' amber' : '') + (hero ? ' hero' : '');
   const isTbc = String(value).includes(TBC);
   return `<div class="tile${cls}">
     <div class="label">${esc(label)}</div>
@@ -189,9 +210,9 @@ function renderHeadline(s) {
   };
 
   el('headline-tiles').innerHTML = [
-    tile({ label: 'Spend', value: money(h.spend), delta: c ? deltaOf(c.spendChangePct) : null }),
+    { ...{}, ...{} } && tile({ label: 'Spend', value: money(h.spend), delta: c ? deltaOf(c.spendChangePct) : null, hero: true }),
     tile({ label: 'Leads', value: num(h.leads), foot: h.leadsDeduplicated !== h.leads ? `${h.leadsDeduplicated} after deduplication` : null, delta: c ? deltaOf(c.leadsChangePct) : null }),
-    tile({ label: 'Cost per lead', value: money(h.cpl) }),
+    tile({ label: 'Cost per lead', value: money(h.cpl), hero: true }),
     tile({
       label: 'Contracts funded',
       value: h.contractsFunded === null ? `<span class="tbc">${TBC}</span>` : num(h.contractsFunded),
@@ -216,30 +237,34 @@ function renderFunnel(s) {
     <div>Stage</div><div></div>
     <div class="num">Count</div>
     <div class="num col-rate">Of leads</div>
-    <div class="num">Cost each</div>
+    <div class="num col-cost">Cost each</div>
   </div>`;
 
   const rows = f.stages.map((st) => {
     const available = st.count !== null && st.count !== undefined;
-    const width = available ? Math.max((st.count / maxCount) * 100, st.count > 0 ? 2 : 0) : 100;
+    const width = available ? Math.max((st.count / maxCount) * 100, st.count > 0 ? 1.5 : 0) : 0;
     return `<div class="funnel-row">
-      <div class="name">${esc(st.label)}</div>
-      <div class="funnel-bar"><div class="fill${available ? '' : ' unavailable'}" style="width:${width}%"></div></div>
+      <div class="name${available ? '' : ' off'}">${esc(st.label)}</div>
+      <div class="funnel-bar">
+        ${available
+          ? `<div class="track"></div><div class="fill" style="width:${width}%"></div>`
+          : '<div class="unavailable">not measurable</div>'}
+      </div>
       <div class="num${available ? '' : ' tbc'}">${available ? num(st.count) : TBC}</div>
       <div class="num col-rate${st.rateFromLeads === null ? ' tbc' : ''}">${st.rateFromLeads === null ? TBC : pct(st.rateFromLeads)}</div>
-      <div class="num${st.costPerUnit === null ? ' tbc' : ''}">${st.costPerUnit === null ? TBC : money(st.costPerUnit, { gst: false })}</div>
+      <div class="num col-cost${st.costPerUnit === null ? ' tbc' : ''}">${st.costPerUnit === null ? TBC : money(st.costPerUnit, { gst: false })}</div>
     </div>`;
   }).join('');
 
   el('funnel').innerHTML = head + rows;
 
   const dead = f.dead ?? {};
-  el('dead-branch').innerHTML = `<h3>Dead leads</h3>` + (
+  el('dead-branch').innerHTML = `<h3 class="sub-head">Dead leads</h3>` + (
     dead.total === null || dead.total === undefined
       ? `<p class="panel-note">${TBC}. Dead lead reasons come from HubSpot, which is not connected.</p>`
-      : `<table><thead><tr><th>Reason</th><th class="num">Count</th></tr></thead><tbody>` +
+      : `<div class="table-scroll"><table><thead><tr><th>Reason</th><th class="num">Count</th></tr></thead><tbody>` +
         (dead.byReason ?? []).map((d) => `<tr><td>${esc(d.reason)}</td><td class="num">${num(d.count)}</td></tr>`).join('') +
-        `<tr><td><strong>Total</strong></td><td class="num"><strong>${num(dead.total)}</strong></td></tr></tbody></table>`
+        `<tr><td><strong>Total</strong></td><td class="num"><strong>${num(dead.total)}</strong></td></tr></tbody></table></div>`
   ) + `<p class="panel-note" style="margin-top:10px">${esc(f.fundingNote ?? '')}</p>`;
 }
 
@@ -342,62 +367,195 @@ function renderEconomics(s) {
   el('econ-caveat').textContent = ue.caveat ?? '';
 }
 
-/** Inline SVG line chart. No external library, which the CSP would block anyway. */
+/* ---------------------------------------------------------------------------
+ * Charts. Inline SVG, no library (the CSP would block one anyway).
+ *
+ * ONE MEASURE PER PLOT. The previous version drew CTR, frequency and daily
+ * spend on a single plot with three different y-scales, which invents a
+ * correlation that is not in the data: the alignment of the scales is
+ * arbitrary. Three measures now means three plots sharing an x-axis.
+ * ------------------------------------------------------------------------- */
+
+const SVG_NS = 'http://www.w3.org/2000/svg';
+
+/** Nice round upper bound for an axis, so gridlines land on readable numbers. */
+function niceMax(v) {
+  if (!Number.isFinite(v) || v <= 0) return 1;
+  const mag = 10 ** Math.floor(Math.log10(v));
+  const n = v / mag;
+  return (n <= 1 ? 1 : n <= 2 ? 2 : n <= 2.5 ? 2.5 : n <= 5 ? 5 : 10) * mag;
+}
+
+function shortDate(iso) {
+  if (!iso) return '';
+  const [, m, d] = iso.split('-');
+  return `${Number(d)} ${['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'][Number(m) - 1]}`;
+}
+
+/**
+ * One chart, one measure, one scale.
+ *
+ * @param {object} opts
+ * @param {'line'|'bar'} opts.kind
+ * @param {Array<{x: string, y: number|null}>} opts.data
+ * @param {Array<{value:number,colour:string,label:string}>} [opts.thresholds]
+ * @param {(v:number)=>string} opts.format
+ */
+function drawChart(container, { kind, title, unit, data, thresholds = [], format, id, caption = null }) {
+  const points = data.filter((d) => d.y !== null && Number.isFinite(d.y));
+  if (!points.length) { container.innerHTML = ''; return; }
+
+  const block = document.createElement('div');
+  block.className = 'chart-block';
+  block.innerHTML = `<div class="chart-title"><span class="t">${esc(title)}</span><span class="u">${esc(unit)}</span></div>
+    <svg class="chart" id="${id}" role="img" aria-label="${esc(title)} over time"></svg>
+    <div class="chart-tip" id="${id}-tip"></div>
+    ${caption ? `<div class="chart-caption">${esc(caption)}</div>` : ''}`;
+  container.appendChild(block);
+
+  const svg = block.querySelector('svg');
+  const tip = block.querySelector('.chart-tip');
+  const W = Math.max(svg.clientWidth || container.clientWidth || 900, 320);
+  const H = 132;
+  const padL = 46, padR = 14, padT = 10, padB = 22;
+  const innerW = W - padL - padR, innerH = H - padT - padB;
+
+  const maxThreshold = thresholds.length ? Math.max(...thresholds.map((t) => t.value)) : 0;
+  const top = niceMax(Math.max(...points.map((d) => d.y), maxThreshold) * 1.08);
+  const x = (i) => padL + (points.length === 1 ? innerW / 2 : (i / (points.length - 1)) * innerW);
+  const y = (v) => padT + innerH - (v / top) * innerH;
+
+  const parts = [];
+
+  // Recessive grid. Solid hairlines, one shade off the surface, never dashed.
+  for (const frac of [0, 0.5, 1]) {
+    const v = top * frac;
+    parts.push(`<line x1="${padL}" y1="${y(v).toFixed(1)}" x2="${W - padR}" y2="${y(v).toFixed(1)}" stroke="#262B36" stroke-width="1"/>`);
+    parts.push(`<text x="${padL - 8}" y="${(y(v) + 3.5).toFixed(1)}" fill="#626A7C" font-size="9.5" text-anchor="end" font-family="IBM Plex Mono, monospace">${format(v)}</text>`);
+  }
+
+  // Thresholds are dashed on purpose: a threshold IS a projected line, and the
+  // dash distinguishes it from the grid rather than decorating it.
+  for (const t of thresholds) {
+    if (t.value > top) continue;
+    parts.push(`<line x1="${padL}" y1="${y(t.value).toFixed(1)}" x2="${W - padR}" y2="${y(t.value).toFixed(1)}" stroke="${t.colour}" stroke-width="1" stroke-dasharray="3 4" opacity="0.75"/>`);
+    parts.push(`<text x="${W - padR}" y="${(y(t.value) - 5).toFixed(1)}" fill="${t.colour}" font-size="9.5" text-anchor="end" font-family="IBM Plex Mono, monospace">${esc(t.label)}</text>`);
+  }
+
+  if (kind === 'bar') {
+    const bw = Math.max(innerW / points.length - 3, 2);
+    points.forEach((d, i) => {
+      const h = Math.max((d.y / top) * innerH, d.y > 0 ? 2 : 0);
+      // 4px rounded data-end anchored to the baseline.
+      parts.push(`<rect x="${(x(i) - bw / 2).toFixed(1)}" y="${(padT + innerH - h).toFixed(1)}" width="${bw.toFixed(1)}" height="${h.toFixed(1)}" fill="#6980E6" rx="3" opacity="0.85"/>`);
+    });
+  } else {
+    const line = points.map((d, i) => `${i ? 'L' : 'M'}${x(i).toFixed(1)},${y(d.y).toFixed(1)}`).join(' ');
+    const area = `${line} L${x(points.length - 1).toFixed(1)},${(padT + innerH).toFixed(1)} L${padL.toFixed(1)},${(padT + innerH).toFixed(1)} Z`;
+    parts.push(`<defs><linearGradient id="${id}-g" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#6980E6" stop-opacity="0.30"/>
+      <stop offset="100%" stop-color="#6980E6" stop-opacity="0"/>
+    </linearGradient></defs>`);
+    parts.push(`<path d="${area}" fill="url(#${id}-g)"/>`);
+    parts.push(`<path d="${line}" fill="none" stroke="#6980E6" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>`);
+    // Emphasised endpoint, with a surface ring so it reads over the line.
+    const last = points[points.length - 1];
+    parts.push(`<circle cx="${x(points.length - 1).toFixed(1)}" cy="${y(last.y).toFixed(1)}" r="4.5" fill="#8B9DF0" stroke="#12151C" stroke-width="2"/>`);
+  }
+
+  // x-axis ticks, thinned so labels never collide.
+  const every = Math.max(1, Math.ceil(points.length / 7));
+  points.forEach((d, i) => {
+    if (i % every !== 0 && i !== points.length - 1) return;
+    parts.push(`<text x="${x(i).toFixed(1)}" y="${H - 5}" fill="#626A7C" font-size="9.5" text-anchor="middle" font-family="IBM Plex Mono, monospace">${esc(shortDate(d.x))}</text>`);
+  });
+
+  // Hover layer: a crosshair and a tooltip. The values are also in the table
+  // below, so the tooltip enhances rather than gates.
+  parts.push(`<line class="crosshair" x1="0" y1="${padT}" x2="0" y2="${padT + innerH}" stroke="#6980E6" stroke-width="1" opacity="0"/>`);
+  parts.push(`<circle class="cursor-dot" r="4.5" fill="#8B9DF0" stroke="#12151C" stroke-width="2" opacity="0"/>`);
+  parts.push(`<rect x="${padL}" y="${padT}" width="${innerW}" height="${innerH}" fill="transparent" class="hit"/>`);
+
+  svg.setAttribute('viewBox', `0 0 ${W} ${H}`);
+  svg.setAttribute('width', String(W));
+  svg.setAttribute('height', String(H));
+  svg.innerHTML = parts.join('');
+
+  const crosshair = svg.querySelector('.crosshair');
+  const dot = svg.querySelector('.cursor-dot');
+  const hit = svg.querySelector('.hit');
+
+  const move = (clientX) => {
+    const box = svg.getBoundingClientRect();
+    const scale = W / box.width;
+    const px = (clientX - box.left) * scale;
+    let idx = Math.round(((px - padL) / innerW) * (points.length - 1));
+    idx = Math.max(0, Math.min(points.length - 1, idx));
+    const d = points[idx];
+    crosshair.setAttribute('x1', x(idx).toFixed(1));
+    crosshair.setAttribute('x2', x(idx).toFixed(1));
+    crosshair.setAttribute('opacity', '0.45');
+    dot.setAttribute('cx', x(idx).toFixed(1));
+    dot.setAttribute('cy', y(d.y).toFixed(1));
+    dot.setAttribute('opacity', '1');
+    tip.innerHTML = `<div class="d">${esc(shortDate(d.x))}</div><div class="v">${format(d.y)} ${esc(unit)}</div>`;
+    tip.style.opacity = '1';
+    const left = (x(idx) / scale) - tip.offsetWidth / 2;
+    tip.style.left = `${Math.max(0, Math.min(left, box.width - tip.offsetWidth))}px`;
+    tip.style.top = `${(y(d.y) / scale) - tip.offsetHeight - 12 + 24}px`;
+  };
+
+  hit.addEventListener('mousemove', (e) => move(e.clientX));
+  hit.addEventListener('mouseleave', () => {
+    crosshair.setAttribute('opacity', '0');
+    dot.setAttribute('opacity', '0');
+    tip.style.opacity = '0';
+  });
+}
+
 function renderFatigue(s) {
   const f = s.fatigue;
   const series = (f.daily ?? []).filter((d) => d.dateStart);
   el('fatigue-note').textContent = `${f.periodFrequencyNote ?? ''} ${f.note ?? ''}`.trim();
 
-  const svg = el('fatigue-chart');
-  if (!series.length) { svg.innerHTML = ''; return; }
-
-  const W = 1000, H = 220, padL = 40, padR = 40, padT = 14, padB = 28;
-  const innerW = W - padL - padR, innerH = H - padT - padB;
-
-  const ctrs = series.map((d) => Number(d.ctr ?? 0));
-  const freqs = series.map((d) => Number(d.frequency ?? 0));
-  const spends = series.map((d) => Number(d.spend ?? 0));
-  const maxCtr = Math.max(...ctrs, 1) * 1.15;
-  const maxFreq = Math.max(...freqs, Number(f.frequencyThresholds?.red ?? 4)) * 1.15;
-  const maxSpend = Math.max(...spends, 1);
-
-  const x = (i) => padL + (series.length === 1 ? innerW / 2 : (i / (series.length - 1)) * innerW);
-  const yCtr = (v) => padT + innerH - (v / maxCtr) * innerH;
-  const yFreq = (v) => padT + innerH - (v / maxFreq) * innerH;
-
-  const bars = series.map((d, i) => {
-    const bw = Math.max(innerW / series.length - 2, 2);
-    const h = (Number(d.spend) / maxSpend) * innerH * 0.32;
-    return `<rect x="${(x(i) - bw / 2).toFixed(1)}" y="${(padT + innerH - h).toFixed(1)}" width="${bw.toFixed(1)}" height="${h.toFixed(1)}" fill="#3a4150" rx="1"/>`;
-  }).join('');
-
-  const path = (vals, yFn) => vals.map((v, i) => `${i ? 'L' : 'M'}${x(i).toFixed(1)},${yFn(v).toFixed(1)}`).join(' ');
+  const host = el('fatigue-charts');
+  host.innerHTML = '';
+  if (!series.length) return;
 
   const amber = Number(f.frequencyThresholds?.amber ?? 3);
   const red = Number(f.frequencyThresholds?.red ?? 4);
-  const thresholdLine = (v, colour, label) => `
-    <line x1="${padL}" y1="${yFreq(v).toFixed(1)}" x2="${W - padR}" y2="${yFreq(v).toFixed(1)}" stroke="${colour}" stroke-width="1" stroke-dasharray="4 4" opacity="0.55"/>
-    <text x="${W - padR + 4}" y="${(yFreq(v) + 3).toFixed(1)}" fill="${colour}" font-size="10" font-family="monospace">${label}</text>`;
 
-  const ticks = series.map((d, i) => (i % Math.ceil(series.length / 7) === 0
-    ? `<text x="${x(i).toFixed(1)}" y="${H - 8}" fill="#6b7484" font-size="10" text-anchor="middle" font-family="monospace">${d.dateStart.slice(8)}/${d.dateStart.slice(5, 7)}</text>`
-    : '')).join('');
+  drawChart(host, {
+    id: 'ch-ctr', kind: 'line', title: 'Click through rate', unit: '%',
+    data: series.map((d) => ({ x: d.dateStart, y: d.ctr === null ? null : Number(d.ctr) })),
+    format: (v) => v.toFixed(1),
+  });
 
-  svg.setAttribute('viewBox', `0 0 ${W} ${H}`);
-  svg.setAttribute('preserveAspectRatio', 'none');
-  svg.innerHTML = `
-    ${bars}
-    ${thresholdLine(amber, '#f5a524', `${amber.toFixed(1)}`)}
-    ${thresholdLine(red, '#f2545b', `${red.toFixed(1)}`)}
-    <path d="${path(ctrs, yCtr)}" fill="none" stroke="#4ea3ff" stroke-width="2" stroke-linejoin="round"/>
-    <path d="${path(freqs, yFreq)}" fill="none" stroke="#f5a524" stroke-width="1.6" stroke-linejoin="round" opacity="0.9"/>
-    ${ticks}
-    <text x="${padL - 6}" y="${padT + 8}" fill="#4ea3ff" font-size="10" text-anchor="end" font-family="monospace">${maxCtr.toFixed(1)}%</text>
-    <text x="${W - padR + 4}" y="${padT + 8}" fill="#f5a524" font-size="10" font-family="monospace">${maxFreq.toFixed(1)}</text>`;
+  // Frequency is reach based, so a daily figure and a period figure are
+  // different measures. The 3.0 and 4.0 thresholds describe the PERIOD figure,
+  // and drawing them on a daily axis would invite the reader to conclude the
+  // campaign is nowhere near fatigue when the period figure is 3.89. The daily
+  // series is plotted on its own scale and the period figure is stated beside it.
+  const periodFreq = f.periodFrequency === null || f.periodFrequency === undefined ? null : Number(f.periodFrequency);
+  const freqState = periodFreq === null ? null : periodFreq >= red ? 'above the 4.0 red threshold' : periodFreq >= amber ? 'above the 3.0 amber threshold' : 'below the 3.0 amber threshold';
+  drawChart(host, {
+    id: 'ch-freq', kind: 'line', title: 'Frequency, per day', unit: 'impressions per person',
+    data: series.map((d) => ({ x: d.dateStart, y: d.frequency === null ? null : Number(d.frequency) })),
+    format: (v) => v.toFixed(1),
+    caption: periodFreq === null
+      ? 'Period frequency is unavailable.'
+      : `Over the whole period, frequency is ${periodFreq.toFixed(2)}, ${freqState}. A daily figure is not comparable to it: the same person seen on two days is one reached person, not two.`,
+  });
+
+  drawChart(host, {
+    id: 'ch-spend', kind: 'bar', title: 'Daily spend', unit: 'NZ$ ex GST',
+    data: series.map((d) => ({ x: d.dateStart, y: d.spend === null ? null : Number(d.spend) })),
+    format: (v) => v.toFixed(0),
+  });
 
   const creatives = f.creatives ?? [];
   el('creative-table').innerHTML =
-    `<thead><tr><th>Creative</th><th class="num">Spend</th><th class="num">Share</th><th class="num">Leads</th><th class="num">CPL</th><th class="num">CTR</th><th class="num">Frequency</th></tr></thead><tbody>` +
+    `<thead><tr><th>Creative</th><th class="num">Spend</th><th class="num">Share</th><th class="num">Leads</th><th class="num">CPL</th><th class="num">CTR</th><th>Frequency</th></tr></thead><tbody>` +
     creatives.map((c) => `<tr>
       <td>${esc(c.name ?? TBC)}</td>
       <td class="num">${money(c.spend, { gst: false })}</td>
@@ -405,7 +563,7 @@ function renderFatigue(s) {
       <td class="num">${num(c.leads)}</td>
       <td class="num">${c.cpl === null ? `<span class="tbc">${TBC}</span>` : money(c.cpl, { gst: false })}</td>
       <td class="num">${c.ctr === null ? `<span class="tbc">${TBC}</span>` : pct(c.ctr, 2)}</td>
-      <td class="num">${c.frequency === null ? `<span class="tbc">${TBC}</span>` : `<span class="pill ${c.frequencyStatus ?? ''}">${Number(c.frequency).toFixed(2)}</span>`}</td>
+      <td>${c.frequency === null ? `<span class="tbc">${TBC}</span>` : `<span class="pill ${c.frequencyStatus ?? ''}">${Number(c.frequency).toFixed(2)}</span>`}</td>
     </tr>`).join('') + `</tbody>`;
 }
 
@@ -424,34 +582,34 @@ function renderDemand(s) {
       ${tile({ label: 'Stated but not specific', value: num(d.vague ?? 0), foot: 'Excluded from the share' })}
       ${tile({ label: 'Unclassified', value: num((d.unstated ?? 0) + (d.unclassified ?? 0)), status: (d.unclassified ?? 0) > 0 ? 'amber' : null, foot: (d.unclassified ?? 0) > 0 ? 'A rising count means the keyword list needs extending' : null })}
     </div>
-    <table><thead><tr><th>Category</th><th class="num">Leads</th><th>In catalogue</th></tr></thead><tbody>
+    <div class="table-scroll"><table><thead><tr><th>Category</th><th class="num">Leads</th><th>In catalogue</th></tr></thead><tbody>
       ${(d.categories ?? []).map((c) => `<tr>
         <td>${esc(c.label ?? c.category)}</td>
         <td class="num">${num(c.count)}</td>
         <td>${['unstated', 'unclassified', 'vague'].includes(c.category) ? '<span class="pill">Neither</span>' : (d.outCategories ?? []).includes(c.category) ? '<span class="pill out">Out</span>' : '<span class="pill in">In</span>'}</td>
       </tr>`).join('')}
-    </tbody></table>`;
+    </tbody></table></div>`;
 }
 
 function segmentTable(title, rows, keyLabel) {
-  if (!rows || !rows.length) return `<div><h3 style="font-size:12.5px;color:var(--ink-dim);margin:0 0 8px">${esc(title)}</h3><p class="panel-note">${TBC}</p></div>`;
+  if (!rows || !rows.length) return `<div><h3 class="sub-head">${esc(title)}</h3><p class="panel-note">${TBC}</p></div>`;
   return `<div>
-    <h3 style="font-size:12.5px;color:var(--ink-dim);margin:0 0 8px;font-weight:600">${esc(title)}</h3>
-    <table><thead><tr><th>${esc(keyLabel)}</th><th class="num">Spend</th><th class="num">Leads</th><th class="num">CPL</th></tr></thead><tbody>
+    <h3 class="sub-head">${esc(title)}</h3>
+    <div class="table-scroll"><table><thead><tr><th>${esc(keyLabel)}</th><th class="num">Spend</th><th class="num">Leads</th><th class="num">CPL</th></tr></thead><tbody>
       ${rows.map((r) => `<tr>
         <td>${esc(r.key)}</td>
         <td class="num">${money(r.spend, { gst: false })}</td>
         <td class="num">${num(r.leads)}</td>
         <td class="num">${r.cpl === null ? `<span class="tbc">${TBC}</span>` : money(r.cpl, { gst: false })}</td>
       </tr>`).join('')}
-    </tbody></table>
+    </tbody></table></div>
   </div>`;
 }
 
 function renderSegments(s) {
   const seg = s.segments ?? {};
   const outOfRegion = seg.outOfRegion?.hasOutOfRegion
-    ? `<p class="panel-note" style="margin-top:8px;color:var(--amber)">Out of region spend flagged: ${seg.outOfRegion.rows.map((r) => `${esc(r.region)} ${money(r.spend, { gst: false }).replace(/<[^>]+>/g, '')}`).join(', ')}. ${esc(seg.outOfRegion.note)}</p>`
+    ? `<p class="panel-note" class="region-flag">Out of region spend flagged: ${seg.outOfRegion.rows.map((r) => `${esc(r.region)} ${money(r.spend, { gst: false }).replace(/<[^>]+>/g, '')}`).join(', ')}. ${esc(seg.outOfRegion.note)}</p>`
     : '';
 
   el('segments').innerHTML =
@@ -498,21 +656,21 @@ function renderHealth(s) {
   };
 
   el('reconciliation').innerHTML = `
-    <h3 style="font-size:12.5px;color:var(--ink-dim);margin:0 0 8px;font-weight:600">Reconciliation</h3>
+    <h3 class="sub-head">Reconciliation</h3>
     <p class="panel-note" style="margin:0 0 8px">${esc(r.note ?? '')}</p>
-    <table><thead><tr><th>Breakdown</th><th class="num">Sum</th><th>Status</th></tr></thead><tbody>
+    <div class="table-scroll"><table><thead><tr><th>Breakdown</th><th class="num">Sum</th><th>Status</th></tr></thead><tbody>
       <tr><td><strong>Campaign spend</strong></td><td class="num"><strong>${money(r.campaignSpend, { gst: false })}</strong></td><td></td></tr>
       ${check('Platform split', r.platformSum ?? null)}
       ${check('Region split', r.regionSum ?? null)}
       ${check('Age split', r.ageSum ?? null)}
       ${check('Ad level', r.adSum ?? null)}
       ${check('Daily series', r.dailySum ?? null)}
-    </tbody></table>
+    </tbody></table></div>
     ${(pixels.pixels ?? []).length ? `
-    <h3 style="font-size:12.5px;color:var(--ink-dim);margin:18px 0 8px;font-weight:600">Pixels</h3>
-    <table><thead><tr><th>Pixel</th><th>Name</th><th class="num">Last fired</th></tr></thead><tbody>
+    <h3 class="sub-head" style="margin-top:22px">Pixels</h3>
+    <div class="table-scroll"><table><thead><tr><th>Pixel</th><th>Name</th><th class="num">Last fired</th></tr></thead><tbody>
       ${pixels.pixels.map((p) => `<tr><td>${esc(p.id)}</td><td>${esc(p.name ?? TBC)}</td><td class="num">${p.hoursSinceLastFired === null ? `<span class="tbc">${TBC}</span>` : `${p.hoursSinceLastFired}h ago`}</td></tr>`).join('')}
-    </tbody></table>` : ''}`;
+    </tbody></table></div>` : ''}`;
 }
 
 el('refresh').addEventListener('click', load);
@@ -520,6 +678,14 @@ el('range').addEventListener('change', () => {
   // The cached document covers a fixed window written by the scheduled refresh.
   // Changing the range here re-requests it; the server decides what it holds.
   load();
+});
+
+// Charts are measured in pixels rather than scaled with preserveAspectRatio,
+// which keeps stroke widths honest, so they are redrawn when the width changes.
+let resizeTimer;
+window.addEventListener('resize', () => {
+  clearTimeout(resizeTimer);
+  resizeTimer = setTimeout(() => { if (SNAPSHOT) renderFatigue(SNAPSHOT); }, 180);
 });
 
 load();
