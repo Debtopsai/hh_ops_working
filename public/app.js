@@ -120,7 +120,7 @@ function render() {
 
   const range = s.dateRange ? `${nzDate(s.dateRange.since)} to ${nzDate(s.dateRange.until)}` : TBC;
   el('subtitle').innerHTML = s.__isSample
-    ? `Validated sample data, ${range}. Live cache unavailable.`
+    ? `Validated data, ${range}${s.__sampleReason ? `. ${esc(s.__sampleReason)}` : ''}.`
     : `${range}. Refreshed ${nzDateTime(s.generatedAt)}.`;
 
   renderBanners(s);

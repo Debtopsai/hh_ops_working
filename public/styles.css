@@ -12,8 +12,8 @@
   --amber: #f5a524;
   --red: #f2545b;
   --tbc: #6b7484;
-  --mono: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace;
-  --sans: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --mono: "IBM Plex Mono", ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace;
+  --sans: "IBM Plex Sans", system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
 }
 
 * { box-sizing: border-box; }
@@ -30,7 +30,7 @@ body {
 .wrap { max-width: 1280px; margin: 0 auto; padding: 24px 20px 80px; }
 
 header.masthead { display: flex; flex-wrap: wrap; gap: 16px; align-items: baseline; justify-content: space-between; padding-bottom: 16px; border-bottom: 1px solid var(--line); }
-header.masthead h1 { font-size: 20px; margin: 0; letter-spacing: -0.01em; }
+header.masthead h1 { font-size: 20px; margin: 0; letter-spacing: -0.012em; font-weight: 600; text-wrap: balance; }
 header.masthead .sub { color: var(--ink-dim); font-size: 13px; }
 
 .controls { display: flex; gap: 10px; align-items: center; flex-wrap: wrap; }
@@ -58,7 +58,7 @@ section.panel > .panel-note { color: var(--ink-faint); font-size: 12.5px; margin
 .tiles { display: grid; grid-template-columns: repeat(auto-fit, minmax(168px, 1fr)); gap: 12px; }
 .tile { background: var(--panel-2); border: 1px solid var(--line); border-radius: 10px; padding: 14px 15px; }
 .tile .label { font-size: 11.5px; text-transform: uppercase; letter-spacing: 0.05em; color: var(--ink-dim); }
-.tile .value { font-size: 25px; font-variant-numeric: tabular-nums; margin-top: 5px; letter-spacing: -0.02em; font-family: var(--mono); }
+.tile .value { font-variant-numeric: tabular-nums; font-size: 25px; font-variant-numeric: tabular-nums; margin-top: 5px; letter-spacing: -0.02em; font-family: var(--mono); }
 .tile .value.tbc { color: var(--tbc); font-size: 19px; }
 .tile .value { white-space: nowrap; }
 .tile .gst { font-size: 11px; color: var(--ink-faint); margin-left: 4px; font-family: var(--sans); white-space: nowrap; }

@@ -80,8 +80,32 @@ npx http-server public -p 8899
 
 ## Deploying
 
-Netlify. The front end is static, the data layer is a scheduled function, and
-the cache is Netlify Blobs.
+**Netlify project:** `hirehospo-acquisition-dashboard`
+(`d5479819-bb29-499a-9b1c-82806474e028`), team `iWise`. Created but **not yet
+deployed**: the build session's egress policy blocks `api.netlify.com`,
+`app.netlify.com` and `netlify-mcp.netlify.app`, so the bundle could not be
+uploaded from there.
+
+Two ways to finish it, either is fine:
+
+1. **Connect the repo** in the Netlify UI, at
+   <https://app.netlify.com/projects/hirehospo-acquisition-dashboard>. Point it
+   at this repository and branch. Netlify then builds on every push, which is
+   the arrangement you want long term.
+2. **Deploy from a machine with network access:**
+   ```bash
+   npx netlify-cli deploy --prod --site d5479819-bb29-499a-9b1c-82806474e028
+   ```
+
+Before it holds live data, turn on password protection or SSO under Site
+settings, Access control. See "Access control, not optional" below.
+
+A frozen preview of the dashboard, built from the same code against the
+validated August figures, is published as an artifact. Regenerate it with
+`node scripts/build-artifact.mjs`.
+
+The front end is static, the data layer is a scheduled function, and the cache
+is Netlify Blobs.
 
 ```
 Front end     public/, static, no framework
