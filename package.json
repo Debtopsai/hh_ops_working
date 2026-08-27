@@ -10,10 +10,15 @@
   "scripts": {
     "test": "node --test test/*.test.mjs",
     "validate": "node --test test/baselines.test.mjs",
-    "dev": "netlify dev"
+    "dev": "netlify dev",
+    "bundle": "esbuild public/app.js --bundle --format=esm --loader:.json=json --outfile=public/app.bundle.js --target=es2020",
+    "build": "npm run bundle && node scripts/build-sample.mjs && node scripts/build-artifact.mjs"
   },
   "dependencies": {
     "@netlify/blobs": "^8.1.0",
     "decimal.js": "^10.4.3"
+  },
+  "devDependencies": {
+    "esbuild": "^0.28.2"
   }
 }

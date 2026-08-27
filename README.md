@@ -100,9 +100,36 @@ Two ways to finish it, either is fine:
 Before it holds live data, turn on password protection or SSO under Site
 settings, Access control. See "Access control, not optional" below.
 
-A frozen preview of the dashboard, built from the same code against the
-validated August figures, is published as an artifact. Regenerate it with
-`node scripts/build-artifact.mjs`.
+### The published page is live
+
+The artifact does not wait on the Netlify deploy. It reads **live data through
+the viewer's own claude.ai connectors** (Meta Ads and HubSpot) using the
+artifact `mcp` capability, so calls run on the viewer's credentials and no token
+is in the file.
+
+Three data paths, tried in order:
+
+| Path | When | Badge |
+|---|---|---|
+| Live, via the viewer's connectors | The `mcp` capability is granted | `LIVE` |
+| The cached document from `/api/dashboard` | Served by Netlify | `CACHED` |
+| The inlined validated snapshot | Neither is available | `FROZEN` |
+
+Whichever path serves it, the figures are computed by the **same libraries** that
+reproduce the section 9 baselines, not by a looser browser implementation. The
+live path is tested against the captured August responses in
+`test/live.test.mjs`, and reproduces spend, leads and CPL exactly.
+
+Each section watches its connector independently, so one failure annotates its
+own section rather than blanking the page. Every connector error code gets its
+own message naming the action that would fix it (reconnect, add the connector,
+wait), because collapsing them into one banner hides the fix.
+
+The HubSpot call requests **only** the equipment enquiry and the campaign key.
+No name, email, phone or company property is ever asked for, and a test asserts
+that.
+
+Rebuild with `npm run build` (bundle, sample, artifact).
 
 The front end is static, the data layer is a scheduled function, and the cache
 is Netlify Blobs.
@@ -207,13 +234,14 @@ Three traps found during the build and handled, none of them in the brief:
 ## Layout
 
 ```
-config/                 editable configuration
+config/                 editable configuration, including live.json for the published page
 docs/                   metric definitions, validation, HubSpot blocker
 netlify/functions/      refresh (scheduled) and dashboard-data (read)
 public/                 static front end and the validated sample
 scripts/                HubSpot discovery, sample generation
 src/lib/                money, meta, hubspot, revenue, funnel, stage-map, equipment, leads, health, snapshot
-test/                   baselines, revenue rule, pipeline, equipment corpus, end to end
+src/live/               connector calls and snapshot composition for the published page
+test/                   baselines, revenue rule, pipeline, equipment corpus, live layer, end to end
 ```
 
 ## House rules

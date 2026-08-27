@@ -1,13 +1,29 @@
 /**
  * HireHospo acquisition dashboard, front end.
  *
- * Reads the cached document from /api/dashboard. Never calls a third party API
- * and never sees a token.
+ * Three data paths, tried in order:
  *
- * House rules throughout: every price shows "+ GST", every unavailable value
- * shows [TBC] rather than a plausible invention, dates are NZ format, and NZ
- * English is used in all copy.
+ *   1. LIVE, through the viewer's own claude.ai connectors. The page holds no
+ *      token: calls run on the viewer's credentials via the artifact `mcp`
+ *      capability, and each section watches independently so one failing
+ *      connector annotates its own section rather than blanking the page.
+ *   2. The cached document from /api/dashboard, when this is served by Netlify.
+ *   3. The frozen validated snapshot, so the dashboard can still be reviewed.
+ *
+ * Whichever path serves it, the figures are computed by the same libraries that
+ * reproduce the section 9 validation baselines.
  */
+import { composeSnapshot, windowFor } from '../src/live/compose.mjs';
+import { startLiveFeed, describeError, META_SERVER, HUBSPOT_SERVER } from '../src/live/live.mjs';
+import assumptions from '../config/assumptions.json';
+import equipmentCatalogue from '../config/equipment-catalogue.json';
+import liveConfig from '../config/live.json';
+
+const CONFIGS = { assumptions, equipmentCatalogue };
+
+/* House rules throughout: every price shows "+ GST", every unavailable value
+ * shows [TBC] rather than a plausible invention, dates are NZ format, and NZ
+ * English is used in all copy. */
 
 const TBC = '[TBC]';
 
@@ -76,40 +92,115 @@ const UI = { blue: '#3B82F6', green: '#34D399', violet: '#A78BFA', amber: '#FBBF
 /* ------------------------------------------------------------------------- */
 
 let SNAPSHOT = null;
+let MCP = null;
+let stopFeed = null;
+let windowDays = Number(liveConfig.defaultWindowDays ?? 30);
+let liveState = null;
 
-async function load() {
-  el('loading').hidden = false;
-  el('dashboard').hidden = true;
+/** Live first. The capability resolves later than the first script run, and
+ *  null when this view cannot run it, so the page renders without it and lights
+ *  live data up when it arrives. */
+async function boot() {
+  await loadFallback();                       // something on screen immediately
   try {
-    const res = await fetch('/api/dashboard', { headers: { accept: 'application/json' } });
-    if (!res.ok && res.status === 404) return fallbackToSample('the refresh endpoint is not deployed yet');
-    let json;
-    try { json = await res.json(); } catch { return fallbackToSample('the refresh endpoint did not return dashboard data'); }
-    if (json.available === false) return fallbackToSample(json.reason ?? 'the cache has not been written');
-    SNAPSHOT = json;
-    render();
-  } catch {
-    fallbackToSample('the dashboard data endpoint could not be reached');
+    MCP = await globalThis.claude?.use?.('mcp');
+  } catch { MCP = null; }
+  if (!MCP) return;                            // frozen snapshot stands
+  startLive();
+}
+
+function startLive() {
+  if (!MCP) return;
+  if (stopFeed) { stopFeed(); stopFeed = null; }
+  el('dashboard').classList.add('refreshing');
+  const range = windowFor(windowDays);
+  try {
+    stopFeed = startLiveFeed({
+      mcp: MCP,
+      meta: liveConfig.meta,
+      hubspot: liveConfig.hubspot,
+      range,
+      onChange: (state) => {
+        liveState = state;
+        // Nothing usable arrived yet, so keep whatever is on screen.
+        if (!state.parts.campaign) { renderLiveNotices(state); return; }
+        SNAPSHOT = composeSnapshot({
+          parts: state.parts, errors: state.errors, storedAt: state.storedAt,
+          range, configs: CONFIGS, liveConfig,
+        });
+        el('dashboard').classList.remove('refreshing');
+        render();
+      },
+    });
+  } catch (err) {
+    liveState = { parts: {}, errors: { page: describeError(err, META_SERVER) }, storedAt: {} };
+    el('dashboard').classList.remove('refreshing');
+    renderLiveNotices(liveState);
   }
 }
 
+/** The cached document, then the frozen snapshot. */
+async function loadFallback() {
+  try {
+    const res = await fetch('/api/dashboard', { headers: { accept: 'application/json' } });
+    if (res.ok) {
+      const json = await res.json();
+      if (json.available !== false) { SNAPSHOT = json; render(); return; }
+      return fallbackToSample(json.reason ?? 'the cache has not been written');
+    }
+  } catch { /* no server: this is the published page */ }
+  return fallbackToSample('this view has no scheduled refresh behind it');
+}
+
 /**
- * When the live cache is unavailable, fall back to the validated sample so the
- * dashboard can be reviewed before credentials are in place. That sample is
- * REAL campaign data verified against the section 9 baselines, not invented
- * figures, and it is labelled as a sample wherever it appears.
+ * The frozen snapshot is REAL campaign data verified against the section 9
+ * baselines, not invented figures, and it is labelled as frozen wherever it
+ * appears.
  */
 async function fallbackToSample(reason) {
   try {
     const res = await fetch('/sample-snapshot.json');
-    if (!res.ok) throw new Error('no sample available');
+    if (!res.ok) throw new Error('no sample');
     SNAPSHOT = await res.json();
-    SNAPSHOT.__isSample = true;
-    SNAPSHOT.__sampleReason = reason;
-    render();
   } catch {
-    el('loading').innerHTML = `<p>The dashboard data is unavailable.</p><p style="color:var(--ink-3)">${esc(reason ?? 'Unknown error')}</p>`;
+    // The published page inlines the frozen snapshot instead of fetching it.
+    const inline = globalThis.__HH_SNAPSHOT__;
+    if (!inline) {
+      el('loading').innerHTML = `<p>The dashboard data is unavailable.</p><p style="color:var(--ink-3)">${esc(reason ?? 'Unknown error')}</p>`;
+      return;
+    }
+    SNAPSHOT = inline;
   }
+  SNAPSHOT.__isSample = true;
+  SNAPSHOT.__sampleReason = reason;
+  render();
+}
+
+/** Per section connector failures, each with the action that would fix it. */
+function renderLiveNotices(state) {
+  const host = el('live-notices');
+  if (!host) return;
+  const errs = Object.entries(state?.errors ?? {});
+  if (!errs.length) { host.innerHTML = ''; return; }
+
+  // Some sections may still be live. The tag says which, so a page reading
+  // real figures is never labelled as though nothing loaded.
+  const anyLive = Object.keys(state?.parts ?? {}).length > 0;
+  const tagFor = (e) => (!e.retract ? 'Stale' : anyLive ? 'Partial' : 'Live off');
+
+  // When every failure shares a code it is one condition, so it is stated once
+  // rather than repeated identically per section.
+  const codes = new Set(errs.map(([, e]) => e.code));
+  if (codes.size === 1 && errs.length > 1) {
+    const [, first] = errs[0];
+    const scope = anyLive ? ` ${errs.length} of the dashboard's sections could not be read.` : '';
+    host.innerHTML = `<div class="banner ${first.retract ? 'critical' : 'warning'}">
+      <span class="tag">${tagFor(first)}</span>
+      <div>${esc(first.message)}${esc(scope)}</div></div>`;
+    return;
+  }
+  host.innerHTML = errs.map(([key, e]) => `<div class="banner ${e.retract ? 'critical' : 'warning'}">
+    <span class="tag">${tagFor(e)}</span><div>${esc(e.message)} (${esc(key)})</div></div>`).join('');
 }
 
 function render() {
@@ -128,6 +219,7 @@ function render() {
   renderFatigue(s);
   renderDemand(s);
   renderHealth(s);
+  renderLiveNotices(liveState);
 
   el('footer-text').innerHTML =
     `All figures ex GST, NZD. Rent is 52 weeks, Lease to Own is 156 weeks. ` +
@@ -139,6 +231,9 @@ function renderMasthead(s) {
   const h = s.headline;
   const status = s.health?.status ?? 'ok';
   const criticals = (s.health?.alerts ?? []).filter((a) => a.level === 'critical').length;
+
+  const modeBadge = el('mode-badge');
+  if (modeBadge) modeBadge.textContent = s.__live ? 'LIVE' : s.__isSample ? 'FROZEN' : 'CACHED';
 
   const badge = el('status-badge');
   badge.hidden = false;
@@ -163,7 +258,26 @@ function renderMasthead(s) {
 function renderContext(s) {
   el('range-from').textContent = s.dateRange ? nzDate(s.dateRange.since) : TBC;
   el('range-to').textContent = s.dateRange ? nzDate(s.dateRange.until) : TBC;
-  el('range-source').textContent = s.__isSample ? 'Frozen preview' : `Refreshed ${nzDateTime(s.generatedAt)}`;
+
+  const source = el('range-source');
+  if (s.__live) {
+    // Freshness comes from the served result, not the local clock.
+    const stamp = s.__sections?.storedAt?.campaign;
+    source.innerHTML = `<span class="live-dot"></span>Live, ${stamp ? nzDateTime(new Date(stamp).toISOString()) : 'just now'}`;
+  } else if (s.__isSample) {
+    source.innerHTML = '<span class="live-dot frozen"></span>Frozen preview';
+  } else {
+    source.innerHTML = `<span class="live-dot"></span>Cached, ${nzDateTime(s.generatedAt)}`;
+  }
+
+  const sel = el('range-select');
+  if (sel) {
+    sel.value = String(windowDays);
+    sel.disabled = !MCP;
+    sel.title = MCP ? 'Choose the reporting window' : 'Live data is unavailable, so the window is fixed to the frozen snapshot';
+  }
+  const btn = el('refresh');
+  if (btn) { btn.disabled = !MCP; btn.title = MCP ? 'Re-read from the connectors' : 'Live data is unavailable'; }
 }
 
 function renderBanners(s) {
@@ -701,4 +815,14 @@ window.addEventListener('resize', () => {
   }, 180);
 });
 
-load();
+const rangeSel = el('range-select');
+if (rangeSel) {
+  rangeSel.addEventListener('change', () => {
+    windowDays = Number(rangeSel.value);
+    startLive();
+  });
+}
+const refreshBtn = el('refresh');
+if (refreshBtn) refreshBtn.addEventListener('click', () => startLive());
+
+boot();

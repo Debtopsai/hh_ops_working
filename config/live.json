@@ -1,0 +1,25 @@
+{
+  "_comment": [
+    "Identifiers the published page needs to ask the viewer's connectors for the",
+    "right data. None of these is a secret: they are account and campaign ids,",
+    "and every call runs on the viewer's own credentials.",
+    "",
+    "If the Meta campaign is renamed, hubspot.matchValue must be updated too or",
+    "the lead cohort silently empties. The data health panel reports the cohort",
+    "size so a drop to zero is visible rather than quiet."
+  ],
+  "meta": {
+    "adAccountId": "2139666836427566",
+    "campaignId": "120250374716300748",
+    "campaignName": "HH Brochure Campaign 01/08 2026",
+    "businessId": "3749476771982294",
+    "pixelIds": ["1677961872820124", "1336169581641781"],
+    "approvedDailyRateClaim": "$4.66/day"
+  },
+  "hubspot": {
+    "joinProperty": "hs_analytics_source_data_2",
+    "matchValue": "hh brochure campaign 01/08 2026",
+    "equipmentProperty": "what_type_of_equipment_are_you_after"
+  },
+  "defaultWindowDays": 30
+}

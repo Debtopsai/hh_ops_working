@@ -314,3 +314,16 @@ footer { margin-top: 36px; padding-top: 18px; border-top: 1px solid var(--line);
   .funnel-row { grid-template-columns: 104px 1fr 62px; }
   .funnel-row .col-rate, .funnel-head.col-rate, .funnel-row .col-cost, .funnel-head.col-cost { display: none; }
 }
+
+
+/* Range selector and refresh sit in the context bar, styled as its fields. */
+select.value-box { appearance: none; cursor: pointer; padding-right: 30px;
+  background-image: linear-gradient(45deg, transparent 50%, var(--ink-3) 50%), linear-gradient(135deg, var(--ink-3) 50%, transparent 50%);
+  background-position: calc(100% - 15px) calc(50% + 1px), calc(100% - 10px) calc(50% + 1px);
+  background-size: 5px 5px, 5px 5px; background-repeat: no-repeat; }
+select.value-box:hover, button.value-box:hover { border-color: var(--blue); }
+button.value-box { font: inherit; font-size: 13.5px; color: var(--ink); }
+.live-dot { display: inline-block; width: 7px; height: 7px; border-radius: 50%; background: var(--green); margin-right: 6px; vertical-align: 1px; }
+.live-dot.frozen { background: var(--ink-3); }
+.section-error { font-size: 12px; color: var(--amber); margin-top: 8px; }
+.refreshing { opacity: 0.55; transition: opacity 0.15s ease; }

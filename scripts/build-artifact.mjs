@@ -1,12 +1,15 @@
 #!/usr/bin/env node
 /**
- * Builds a single self-contained HTML file from the dashboard front end, with
- * the snapshot inlined, for publishing as a shareable preview.
+ * Builds a single self-contained HTML file for publishing as an Artifact.
  *
- * The real dashboard is the Netlify deployment, which refreshes hourly. This
- * is a frozen copy of one snapshot: same code paths, same figures, no network.
- * It exists so the dashboard can be reviewed and the sliders driven before the
- * API tokens are in place.
+ * The published page is LIVE where it can be: it asks the viewer's own Meta Ads
+ * and HubSpot connectors for data through the artifact `mcp` capability, using
+ * the viewer's credentials. No token is in this file.
+ *
+ * The frozen snapshot is inlined as the fallback, so the page still shows real,
+ * validated figures when the capability is unavailable, a connector is not
+ * connected, or permission is declined. It is labelled FROZEN when that
+ * happens, never presented as current.
  */
 import { readFileSync, writeFileSync } from 'node:fs';
 
@@ -14,39 +17,19 @@ const root = new URL('../', import.meta.url);
 const read = (p) => readFileSync(new URL(p, root), 'utf8');
 
 const css = read('public/styles.css');
-const js = read('public/app.js');
+const bundle = read('public/app.bundle.js');
 const html = read('public/index.html');
 const snapshot = JSON.parse(read('public/sample-snapshot.json'));
 
-// Pull the page body out of index.html, between <div class="wrap"> and </div>
-// before the script tag. Simpler and less brittle: take everything between the
-// body tags and drop the script include.
-const bodyMatch = html.match(/<body>([\s\S]*?)<script src="\/app\.js"[^>]*><\/script>\s*<\/body>/);
+const bodyMatch = html.match(/<body>([\s\S]*?)<script src="\/app\.bundle\.js"[^>]*><\/script>\s*<\/body>/);
 if (!bodyMatch) throw new Error('Could not extract the page body from index.html');
-let body = bodyMatch[1].trim();
+const body = bodyMatch[1].trim();
 
-// The frozen preview has no server to re-query, so the "Source" field states
-// what it is rather than implying a live refresh.
-body = body.replace(
-  /<div class="field"><label>Source<\/label><div class="value-box" id="range-source"><\/div><\/div>/,
-  '<div class="field"><label>Source</label><div class="value-box" id="range-source"></div></div>',
-);
-
-// The artifact has no server, so the fetch and fallback are replaced by a
-// direct read of the inlined snapshot. Everything downstream is untouched.
-const inlinedJs = js
-  .replace(
-    /async function load\(\) \{[\s\S]*?\n\}\n/,
-    `async function load() {
-  // Inlined snapshot. No network: this is a frozen copy of one refresh.
-  SNAPSHOT = JSON.parse(document.getElementById('snapshot-data').textContent);
-  SNAPSHOT.__isSample = true;
-  SNAPSHOT.__sampleReason = 'Frozen preview of one refresh, not the live hourly data';
-  render();
-}
-`,
-  )
-  .replace(/async function fallbackToSample\([\s\S]*?\n\}\n/, '');
+// JSON embedded in a script tag must not be able to close it.
+const safeJson = (v) => JSON.stringify(v)
+  .replace(/</g, '\\u003c')
+  .replace(/\u2028/g, '\\u2028')
+  .replace(/\u2029/g, '\\u2029');
 
 const out = `<title>HireHospo Acquisition Dashboard</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -56,15 +39,19 @@ const out = `<title>HireHospo Acquisition Dashboard</title>
 ${css}
 </style>
 ${body}
-<script type="application/json" id="snapshot-data">${JSON.stringify(snapshot).replace(/</g, '\\u003c')}</script>
+<script>
+/* Fallback only. Real campaign data, 1 to 25 August 2026, verified against the
+   section 9 validation baselines. Used when live connector data is not
+   available, and labelled FROZEN when it is. */
+globalThis.__HH_SNAPSHOT__ = ${safeJson(snapshot)};
+</script>
 <script type="module">
-${inlinedJs}
+${bundle}
 </script>
 `;
 
 const target = new URL('public/dashboard-artifact.html', root);
 writeFileSync(target, out);
-const kb = (Buffer.byteLength(out) / 1024).toFixed(0);
-console.log(`Wrote public/dashboard-artifact.html (${kb} KB)`);
-console.log(`  spend ${snapshot.headline.spend}, leads ${snapshot.headline.leads}, CPL ${snapshot.headline.cpl}`);
-console.log(`  health ${snapshot.health.status}, ${snapshot.health.alerts.length} alerts`);
+console.log(`Wrote public/dashboard-artifact.html (${(Buffer.byteLength(out) / 1024).toFixed(0)} KB)`);
+console.log(`  fallback: spend ${snapshot.headline.spend}, leads ${snapshot.headline.leads}, CPL ${snapshot.headline.cpl}`);
+console.log(`  live path: Meta Ads + HubSpot via the mcp capability`);
