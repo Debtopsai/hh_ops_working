@@ -96,6 +96,7 @@ let MCP = null;
 let stopFeed = null;
 let windowDays = Number(liveConfig.defaultWindowDays ?? 30);
 let liveState = null;
+let connectorNotice = null;
 
 /** Live first. The capability resolves later than the first script run, and
  *  null when this view cannot run it, so the page renders without it and lights
@@ -106,7 +107,38 @@ async function boot() {
     MCP = await globalThis.claude?.use?.('mcp');
   } catch { MCP = null; }
   if (!MCP) return;                            // frozen snapshot stands
+  await checkConnectors();
   startLive();
+}
+
+/**
+ * The connector names this page declares are display names, and a display name
+ * that does not match produces server_not_found, which reads like "you have not
+ * connected Meta Ads" even when the viewer has. Asking the runtime which
+ * connectors are actually present turns that dead end into a fixable message
+ * that names the real ones.
+ */
+async function checkConnectors() {
+  let available;
+  try {
+    const tools = await MCP.listTools?.();
+    if (!Array.isArray(tools)) return;
+    available = [...new Set(tools.map((t) => t?.server).filter(Boolean))];
+  } catch {
+    return;                                    // not diagnostic, so say nothing
+  }
+  if (!available.length) return;
+
+  const missing = [META_SERVER, HUBSPOT_SERVER].filter((want) => !available.includes(want));
+  if (!missing.length) return;
+
+  connectorNotice = {
+    level: missing.length === 2 ? 'critical' : 'warning',
+    message:
+      `This page asks for ${missing.join(' and ')}, which ${missing.length === 1 ? 'is' : 'are'} not among the connectors on this account. ` +
+      `Available here: ${available.join(', ')}. ` +
+      'If one of those is the right connector under a different name, say so and the page can be pointed at it.',
+  };
 }
 
 function startLive() {
@@ -180,8 +212,12 @@ async function fallbackToSample(reason) {
 function renderLiveNotices(state) {
   const host = el('live-notices');
   if (!host) return;
+  const notice = connectorNotice
+    ? `<div class="banner ${connectorNotice.level}"><span class="tag">Connector</span><div>${esc(connectorNotice.message)}</div></div>`
+    : '';
+
   const errs = Object.entries(state?.errors ?? {});
-  if (!errs.length) { host.innerHTML = ''; return; }
+  if (!errs.length) { host.innerHTML = notice; return; }
 
   // Some sections may still be live. The tag says which, so a page reading
   // real figures is never labelled as though nothing loaded.
@@ -194,12 +230,12 @@ function renderLiveNotices(state) {
   if (codes.size === 1 && errs.length > 1) {
     const [, first] = errs[0];
     const scope = anyLive ? ` ${errs.length} of the dashboard's sections could not be read.` : '';
-    host.innerHTML = `<div class="banner ${first.retract ? 'critical' : 'warning'}">
+    host.innerHTML = notice + `<div class="banner ${first.retract ? 'critical' : 'warning'}">
       <span class="tag">${tagFor(first)}</span>
       <div>${esc(first.message)}${esc(scope)}</div></div>`;
     return;
   }
-  host.innerHTML = errs.map(([key, e]) => `<div class="banner ${e.retract ? 'critical' : 'warning'}">
+  host.innerHTML = notice + errs.map(([key, e]) => `<div class="banner ${e.retract ? 'critical' : 'warning'}">
     <span class="tag">${tagFor(e)}</span><div>${esc(e.message)} (${esc(key)})</div></div>`).join('');
 }
 
