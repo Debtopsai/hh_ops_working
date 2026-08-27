@@ -7,113 +7,131 @@
 <title>HireHospo acquisition dashboard</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Sora:wght@600&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500&display=swap">
 <link rel="stylesheet" href="/styles.css">
 </head>
 <body>
+
+<header class="masthead">
+  <div class="masthead-inner">
+    <div class="brand">
+      <h1>HireHospo</h1>
+      <span class="badge" id="mode-badge">ACQUISITION</span>
+      <span class="badge" id="status-badge" hidden></span>
+    </div>
+    <div class="stat-line" id="stat-line"></div>
+
+    <div class="tabs" role="tablist" id="tabs">
+      <button class="tab" role="tab" id="tab-acquisition" aria-controls="panel-acquisition" aria-selected="true">Acquisition</button>
+      <button class="tab" role="tab" id="tab-funnel" aria-controls="panel-funnel" aria-selected="false">Funnel &amp; economics</button>
+      <button class="tab" role="tab" id="tab-creative" aria-controls="panel-creative" aria-selected="false">Creative</button>
+      <button class="tab" role="tab" id="tab-demand" aria-controls="panel-demand" aria-selected="false">Demand</button>
+      <button class="tab" role="tab" id="tab-health" aria-controls="panel-health" aria-selected="false">Data health<span class="count" id="health-count" hidden></span></button>
+    </div>
+  </div>
+</header>
+
 <div class="wrap">
-
-  <header class="masthead">
-    <div>
-      <h1>HireHospo acquisition dashboard</h1>
-      <div class="sub" id="subtitle">Loading</div>
-    </div>
-    <div id="status-slot"></div>
-    <div class="controls">
-      <label for="range" class="sub">Date range</label>
-      <select id="range">
-        <option value="30" selected>Last 30 days</option>
-        <option value="7">Last 7 days</option>
-        <option value="14">Last 14 days</option>
-        <option value="90">Last 90 days</option>
-      </select>
-      <button id="refresh" type="button">Reload</button>
-    </div>
-  </header>
-
-  <div class="banners" id="banners"></div>
-
   <div id="loading" class="loading">Loading dashboard data</div>
 
   <main id="dashboard" hidden>
+    <div class="banners" id="banners"></div>
 
-    <!-- Panel 1 -->
-    <section class="panel">
-      <h2>Panel 1. Headline</h2>
-      <p class="panel-note" id="headline-note">All figures ex GST, NZD.</p>
+    <div class="context-bar">
+      <span class="ctx-label">Date range</span>
+      <div class="field"><label for="range-from">From</label><div class="value-box" id="range-from"></div></div>
+      <div class="field"><label for="range-to">To</label><div class="value-box" id="range-to"></div></div>
+      <div class="field"><label>Source</label><div class="value-box" id="range-source"></div></div>
+    </div>
+
+    <!-- Acquisition -->
+    <section class="tabpanel" role="tabpanel" id="panel-acquisition" aria-labelledby="tab-acquisition">
       <div class="tiles" id="headline-tiles"></div>
-    </section>
 
-    <!-- Panel 2 -->
-    <section class="panel">
-      <h2>Panel 2. Funnel</h2>
-      <p class="panel-note" id="funnel-note"></p>
-      <div class="funnel" id="funnel"></div>
-      <div class="dead-branch" id="dead-branch"></div>
-    </section>
-
-    <!-- Panel 3 -->
-    <section class="panel">
-      <h2>Panel 3. Unit economics</h2>
-      <p class="panel-note">Gross revenue against media only CAC. The margin assumption is an input, not a finding.</p>
-
-      <div class="slider-row">
-        <label for="margin">Gross margin</label>
-        <input type="range" id="margin" min="10" max="50" step="1" value="25">
-        <span class="slider-value" id="margin-value">25%</span>
-        <span class="unconfirmed" id="margin-unconfirmed"></span>
-      </div>
-      <div class="slider-row">
-        <label for="failure">Payment failure rate</label>
-        <input type="range" id="failure" min="0" max="300" step="1" value="105">
-        <span class="slider-value" id="failure-value">10.5%</span>
-        <span class="unconfirmed" id="failure-note"></span>
+      <div class="panel">
+        <h2>Platform split</h2>
+        <p class="panel-note" id="platform-note"></p>
+        <div class="donut-layout">
+          <svg class="chart" id="platform-donut" style="height:220px" role="img" aria-label="Spend by platform"></svg>
+          <div class="legend-cards" id="platform-legend"></div>
+        </div>
       </div>
 
-      <div class="tiles" id="econ-tiles"></div>
+      <div class="panel">
+        <h2>Segments</h2>
+        <p class="panel-note">Spend, leads and cost per lead by region, age band and day of week.</p>
+        <div class="grid-2" id="segments"></div>
+      </div>
+    </section>
 
-      <div class="grid-2" style="margin-top:20px">
-        <div class="working" id="revenue-working"></div>
-        <div class="working" id="sensitivity-working"></div>
+    <!-- Funnel and economics -->
+    <section class="tabpanel" role="tabpanel" id="panel-funnel" aria-labelledby="tab-funnel" hidden>
+      <div class="panel">
+        <h2>Funnel</h2>
+        <p class="panel-note" id="funnel-note"></p>
+        <div class="funnel" id="funnel"></div>
+        <div class="dead-branch" id="dead-branch"></div>
       </div>
 
-      <p class="caveat" id="econ-caveat"></p>
+      <div class="panel">
+        <h2>Unit economics</h2>
+        <p class="panel-note">Gross revenue against media only CAC. The margin assumption is an input, not a finding.</p>
+
+        <div class="slider-row">
+          <label for="margin">Gross margin</label>
+          <input type="range" id="margin" min="10" max="50" step="1" value="25">
+          <span class="slider-value" id="margin-value">25%</span>
+          <span class="unconfirmed" id="margin-unconfirmed"></span>
+        </div>
+        <div class="slider-row">
+          <label for="failure">Payment failure rate</label>
+          <input type="range" id="failure" min="0" max="300" step="1" value="105">
+          <span class="slider-value" id="failure-value">10.5%</span>
+          <span class="unconfirmed" id="failure-note"></span>
+        </div>
+
+        <div class="tiles" id="econ-tiles"></div>
+
+        <div class="grid-2" style="margin-top:18px">
+          <div class="working" id="revenue-working"></div>
+          <div class="working" id="sensitivity-working"></div>
+        </div>
+
+        <p class="caveat" id="econ-caveat"></p>
+      </div>
     </section>
 
-    <!-- Panel 4 -->
-    <section class="panel">
-      <h2>Panel 4. Creative fatigue</h2>
-      <p class="panel-note" id="fatigue-note"></p>
-      <div class="chart-stack" id="fatigue-charts"></div>
-      <h3 class="sub-head" style="margin-top:26px">Spend per creative</h3>
-      <div class="table-scroll"><table id="creative-table"></table></div>
+    <!-- Creative -->
+    <section class="tabpanel" role="tabpanel" id="panel-creative" aria-labelledby="tab-creative" hidden>
+      <div class="panel">
+        <h2>Creative fatigue</h2>
+        <p class="panel-note" id="fatigue-note"></p>
+        <div class="chart-stack" id="fatigue-charts"></div>
+        <h3 class="sub-head" style="margin-top:26px">Spend per creative</h3>
+        <div class="table-scroll"><table id="creative-table"></table></div>
+      </div>
     </section>
 
-    <!-- Panel 5 -->
-    <section class="panel">
-      <h2>Panel 5. Demand</h2>
-      <p class="panel-note">Equipment categories from the enquiry field, in catalogue against out of catalogue.</p>
-      <div id="demand"></div>
+    <!-- Demand -->
+    <section class="tabpanel" role="tabpanel" id="panel-demand" aria-labelledby="tab-demand" hidden>
+      <div class="panel">
+        <h2>Equipment demand</h2>
+        <p class="panel-note">What leads actually asked for, in catalogue against out of catalogue.</p>
+        <div id="demand"></div>
+      </div>
     </section>
 
-    <!-- Panel 6 -->
-    <section class="panel">
-      <h2>Panel 6. Segments</h2>
-      <p class="panel-note">Spend, leads and CPL by platform, region, age band and day of week.</p>
-      <div class="grid-2" id="segments"></div>
+    <!-- Data health -->
+    <section class="tabpanel" role="tabpanel" id="panel-health" aria-labelledby="tab-health" hidden>
+      <div class="panel">
+        <h2>Data health</h2>
+        <p class="panel-note">This panel is not optional. Every number in the dashboard depends on it.</p>
+        <div class="health-grid" id="health"></div>
+        <div id="reconciliation" style="margin-top:22px"></div>
+      </div>
     </section>
 
-    <!-- Panel 7 -->
-    <section class="panel" id="health-panel">
-      <h2>Panel 7. Data health</h2>
-      <p class="panel-note">This panel is not optional. Every number above it depends on it.</p>
-      <div class="health-grid" id="health"></div>
-      <div id="reconciliation" style="margin-top:20px"></div>
-    </section>
-
-    <footer>
-      <div id="footer-text"></div>
-    </footer>
+    <footer><div id="footer-text"></div></footer>
   </main>
 </div>
 <script src="/app.js" type="module"></script>

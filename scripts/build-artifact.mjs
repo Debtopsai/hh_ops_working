@@ -25,12 +25,11 @@ const bodyMatch = html.match(/<body>([\s\S]*?)<script src="\/app\.js"[^>]*><\/sc
 if (!bodyMatch) throw new Error('Could not extract the page body from index.html');
 let body = bodyMatch[1].trim();
 
-// The frozen preview has no server to re-query, so a date range selector and a
-// reload button would both promise something they cannot do. Replaced with a
-// static label stating the range that is actually shown.
+// The frozen preview has no server to re-query, so the "Source" field states
+// what it is rather than implying a live refresh.
 body = body.replace(
-  /<div class="controls">[\s\S]*?<\/div>/,
-  '',
+  /<div class="field"><label>Source<\/label><div class="value-box" id="range-source"><\/div><\/div>/,
+  '<div class="field"><label>Source</label><div class="value-box" id="range-source"></div></div>',
 );
 
 // The artifact has no server, so the fetch and fallback are replaced by a
@@ -47,13 +46,12 @@ const inlinedJs = js
 }
 `,
   )
-  .replace(/async function fallbackToSample\([\s\S]*?\n\}\n/, '')
-  .replace(/el\('refresh'\)\.addEventListener[\s\S]*?\}\);\n/, '');
+  .replace(/async function fallbackToSample\([\s\S]*?\n\}\n/, '');
 
 const out = `<title>HireHospo Acquisition Dashboard</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Sora:wght@600&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500&display=swap">
 <style>
 ${css}
 </style>
