@@ -311,3 +311,177 @@ new angles. Hold V3 for a cold prospecting set. Do **not** rebuild the "Quick Pr
 | 50k equipment from $14.99 a day | Split into two facts, never fused | ⚠ figure to confirm — §6.1 |
 | Most competitive prices in the market | Retained, paired with the price beat | ⚠ needs evidence — §6.3 |
 | We'll beat the price | "Find the same unit cheaper and we'll beat it" | ⚠ needs terms — §6.4 |
+
+---
+
+## 9. Organic social — Facebook & Instagram posts
+
+Same campaign, different job. Organic posts reach people who already follow you, plus anyone
+who taps through from the ad to check whether you're real. **The grid has to corroborate the
+ad** — if the paid creative says "3,000+ kitchens, Auckland wide" and the profile is empty,
+the ad's credibility drains out through the profile visit.
+
+Three mechanical differences from the paid copy:
+
+1. **Instagram captions can't carry a clickable link.** The route is link-in-bio, or
+   comment-to-DM.
+2. **Comment-to-DM ("comment STOCKLIST") is the better play** — comments are an engagement
+   signal, so the post earns reach while it collects leads. It needs either a DM automation
+   (ManyChat or similar) or someone replying manually. If neither exists, use "send us a
+   message" instead; a comment prompt you don't answer is worse than no prompt.
+3. **Truncation points differ.** Instagram cuts at ~125 characters before "…more"; Facebook
+   shows roughly 3 lines on mobile. Both are front-loaded below.
+
+**Compliance does not change for organic.** The Fair Trading Act doesn't care whether a claim
+was paid for. "+ GST" and "Normal lending criteria apply" stay on every post, and the $50k /
+$14.99 separation (§6.1) holds exactly as it does in the ads.
+
+### 9.1 Facebook
+
+**FB1 — Stocklist drop (the workhorse)**
+
+```
+Our latest stocklist is out — and there's $50,000 of commercial kitchen equipment on it.
+
+Ovens. Dishwashers. Ranges. Fryers. Every unit fully serviced, every unit with warranty.
+Payments start from $14.99 a day + GST.
+
+We fit out kitchens Auckland wide, Takapuna to Pukekohe, and 3,000+ Kiwi hospitality
+kitchens have been supplied through us and Washpro.
+
+Most competitive prices in the market. Find the same unit cheaper and we'll beat it.
+
+Want the current list? Comment STOCKLIST below and we'll send it through.
+
++ GST. Normal lending criteria apply.
+```
+
+**FB2 — The capital hit (best organic engagement; opens on the problem, not the offer)**
+
+```
+The oven costs what a car costs. Nobody tells you that before you sign the lease.
+
+Here's the part that gets missed: you don't have to buy it outright to cook on it.
+
+There's $50,000 of commercial kitchen equipment on our stocklist right now — ovens,
+dishwashers, ranges, fryers — with payments from $14.99 a day + GST instead of one
+enormous cheque. All fully serviced. All with warranty.
+
+Delivered and installed Auckland wide, 1–3 business days.
+
+3,000+ Kiwi hospitality kitchens have done it this way.
+
+Comment STOCKLIST and we'll send you the current list.
+
++ GST. Normal lending criteria apply.
+```
+
+**FB3 — Price challenge (short; pairs with a static image)**
+
+```
+Find it cheaper and we'll beat the price.
+
+$50,000 of commercial kitchen equipment on the stocklist — ovens, dishwashers, ranges,
+fryers. Fully serviced, all with warranty, from $14.99 a day + GST.
+
+Auckland wide. 3,000+ Kiwi kitchens fitted out.
+
+Comment STOCKLIST for the current list.
+
++ GST. Normal lending criteria apply. Price beat on like-for-like available stock.
+```
+
+### 9.2 Instagram
+
+**IG1 — Feed / Reel (the workhorse)**
+
+```
+$50,000 of commercial kitchen equipment. Payments from $14.99 a day + GST.
+
+Ovens. Dishwashers. Ranges. Fryers.
+All on the current stocklist. All fully serviced. All with warranty.
+
+We fit out kitchens Auckland wide — Takapuna to Pukekohe. 3,000+ Kiwi hospitality
+kitchens supplied so far.
+
+Most competitive prices in the market. Find the same unit cheaper and we'll beat it.
+
+Comment STOCKLIST and we'll send you the current list. Or tap the link in bio.
+
++ GST. Normal lending criteria apply.
+```
+
+**IG2 — The capital hit**
+
+```
+The oven costs what a car costs. That's the part nobody warns you about.
+
+You don't have to buy it outright to cook on it.
+
+$50,000 of commercial kitchen equipment is on our stocklist right now — ovens,
+dishwashers, ranges, fryers — from $14.99 a day + GST.
+
+Fully serviced. All with warranty. Delivered Auckland wide in 1–3 business days.
+
+3,000+ Kiwi hospitality kitchens have done it this way.
+
+Comment STOCKLIST for the list. Link in bio.
+
++ GST. Normal lending criteria apply.
+```
+
+**IG3 — Short (Reels, where the caption is barely read)**
+
+```
+$50,000 of kitchen gear. From $14.99 a day + GST.
+
+Ovens, dishwashers, ranges, fryers. Fully serviced, all with warranty.
+Auckland wide. 3,000+ Kiwi kitchens fitted out.
+
+Find it cheaper? We'll beat it.
+
+Comment STOCKLIST for the current list.
+
++ GST. Normal lending criteria apply.
+```
+
+### 9.3 Instagram Stories — 5 frames
+
+| Frame | On-screen text | Sticker |
+|---|---|---|
+| 1 | **$50,000 of kitchen gear** | — |
+| 2 | **From $14.99 a day** · + GST | — |
+| 3 | Ovens · Dishwashers · Ranges · Fryers — fully serviced, with warranty | — |
+| 4 | **Auckland wide.** Takapuna to Pukekohe | Question: "What are you fitting out?" |
+| 5 | **Get the stocklist** · + GST · Normal lending criteria apply | Link sticker |
+
+Frame 4's question sticker is the one that earns the reach — replies push the whole sequence
+up in the story order for everyone else.
+
+### 9.4 Hashtags
+
+Use **8–12 per post**, mixing local and category. Rotate the set between posts rather than
+pasting the same block every time.
+
+**Auckland / local**
+`#AucklandHospitality` `#AucklandCafe` `#AucklandRestaurant` `#AucklandEats`
+`#NZHospitality` `#KiwiHospo` `#AucklandBusiness` `#TamakiMakaurau`
+
+**Category / trade**
+`#CommercialKitchen` `#CommercialKitchenEquipment` `#HospitalityEquipment` `#CafeFitout`
+`#RestaurantFitout` `#KitchenFitout` `#CafeOwner` `#RestaurantOwner` `#HospoLife`
+`#FoodTruckNZ` `#CommercialOven`
+
+**Finance** (use sparingly — one per post at most, they pull a non-hospitality audience)
+`#EquipmentFinance` `#BusinessFinanceNZ`
+
+### 9.5 Posting notes
+
+- **Reel beats feed video for reach.** Post the ad creative as a Reel first, then keep the
+  static price-challenge image for the feed grid.
+- **Cross-post the Reel to Facebook** rather than writing a separate FB video post — one
+  render, two placements.
+- **Don't boost these while the paid campaign runs.** A boosted post competes with your own
+  ad set in the same Auckland auction and pushes your CPM up.
+- **Reply to every STOCKLIST comment within the hour** if you can. Comment velocity in the
+  first 60 minutes is what decides how far the post travels.
