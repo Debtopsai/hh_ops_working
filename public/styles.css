@@ -322,7 +322,8 @@ select.value-box { appearance: none; cursor: pointer; padding-right: 30px;
   background-position: calc(100% - 15px) calc(50% + 1px), calc(100% - 10px) calc(50% + 1px);
   background-size: 5px 5px, 5px 5px; background-repeat: no-repeat; }
 select.value-box:hover, button.value-box:hover { border-color: var(--blue); }
-button.value-box { font: inherit; font-size: 13.5px; color: var(--ink); }
+button.value-box { font: inherit; font-size: 13.5px; color: var(--ink); background: var(--void); border: 1px solid var(--line); }
+button.value-box:disabled, select.value-box:disabled { opacity: 0.45; cursor: not-allowed; }
 .live-dot { display: inline-block; width: 7px; height: 7px; border-radius: 50%; background: var(--green); margin-right: 6px; vertical-align: 1px; }
 .live-dot.frozen { background: var(--ink-3); }
 .section-error { font-size: 12px; color: var(--amber); margin-top: 8px; }

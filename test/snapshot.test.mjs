@@ -270,3 +270,41 @@ describe('Period comparison', () => {
     assert.equal(build().headline.comparison, null);
   });
 });
+
+
+describe('The cached document never carries lead level records', () => {
+  // "Do not expose a public endpoint that returns lead-level records."
+  // The scheduled refresh writes this document to Netlify Blobs and serves it
+  // from /api/dashboard, so lead rows must never reach it. The lead level view
+  // is live only: the browser reads it with the viewer's own credentials and
+  // discards it.
+  const snap = build({
+    demandClassifications: [buildClassifier(equipConfig).classify('commercial dishwasher')],
+    leadDedupe: { rawCount: 67, uniqueCount: 63, duplicateCount: 4, noContactKeyCount: 0, unique: [], duplicates: [] },
+  });
+
+  test('buildSnapshot produces no leads.rows, whatever it is given', () => {
+    assert.equal(snap.leads?.rows, undefined);
+  });
+
+  test('no per lead field name appears anywhere in the payload', () => {
+    const payload = JSON.stringify(snap);
+    // NOT dayOfWeek: segments.dayOfWeek is an aggregate breakdown of spend and
+    // leads by weekday, which is exactly the kind of view the brief permits.
+    // These are the markers of a per lead ROW.
+    for (const field of ['submittedAt', 'timeOfDay', 'ageDays', 'hs_full_name_or_email', 'lifecyclestage', 'hs_lead_status', 'equipmentLabel']) {
+      assert.ok(!payload.includes(field), `cached document contains ${field}`);
+    }
+  });
+
+  test('the aggregate day of week segment IS present, and is not a lead record', () => {
+    assert.ok(Array.isArray(snap.segments.dayOfWeek));
+    assert.equal(snap.segments.dayOfWeek.length, 7);
+    // Spend and leads per weekday, with no row belonging to any one person.
+    assert.ok(snap.segments.dayOfWeek.every((d) => 'spend' in d && 'leads' in d && !('company' in d)));
+  });
+
+  test('aggregate demand still comes through, since that is not lead level', () => {
+    assert.equal(snap.demand.total, 1);
+  });
+});

@@ -25,6 +25,7 @@
       <button class="tab" role="tab" id="tab-acquisition" aria-controls="panel-acquisition" aria-selected="true">Acquisition</button>
       <button class="tab" role="tab" id="tab-funnel" aria-controls="panel-funnel" aria-selected="false">Funnel &amp; economics</button>
       <button class="tab" role="tab" id="tab-creative" aria-controls="panel-creative" aria-selected="false">Creative</button>
+      <button class="tab" role="tab" id="tab-leads" aria-controls="panel-leads" aria-selected="false">Leads</button>
       <button class="tab" role="tab" id="tab-demand" aria-controls="panel-demand" aria-selected="false">Demand</button>
       <button class="tab" role="tab" id="tab-health" aria-controls="panel-health" aria-selected="false">Data health<span class="count" id="health-count" hidden></span></button>
     </div>
@@ -120,6 +121,15 @@
         <div class="chart-stack" id="fatigue-charts"></div>
         <h3 class="sub-head" style="margin-top:26px">Spend per creative</h3>
         <div class="table-scroll"><table id="creative-table"></table></div>
+      </div>
+    </section>
+
+    <!-- Leads -->
+    <section class="tabpanel" role="tabpanel" id="panel-leads" aria-labelledby="tab-leads" hidden>
+      <div class="panel">
+        <h2>Leads</h2>
+        <p class="panel-note" id="leads-note"></p>
+        <div id="leads"></div>
       </div>
     </section>
 

@@ -48,16 +48,48 @@ export function metaArgs({ adAccountId, campaignId, since, until, level = 'campa
   return args;
 }
 
-/** HubSpot contact search for the campaign lead cohort. */
+/** HubSpot contact search for the campaign lead cohort, aggregate use. */
 export function hubspotArgs({ joinProperty, matchValue, equipmentProperty, limit = 100 }) {
   return {
     objectType: 'CONTACT',
     filterGroups: [{ filters: [{ propertyName: joinProperty, operator: 'EQ', value: matchValue }] }],
     // Deliberately narrow. The equipment enquiry and the campaign key are all
-    // this page needs, so no name, email or phone number is ever requested.
+    // the aggregate panels need, so no email or phone number is requested.
     properties: [equipmentProperty, joinProperty],
     limit,
     chatInsights: { userIntent: 'Show equipment demand for the acquisition dashboard', satisfaction: 'NEUTRAL' },
+  };
+}
+
+/**
+ * The lead level list, with each lead's status.
+ *
+ * "Aggregate views are fine. A lead detail view needs auth." This runs only in
+ * a view that already has the capability, using the viewer's own HubSpot
+ * credentials, and the result is never written anywhere: not to the Netlify
+ * cache, not to browser storage, not to a log.
+ *
+ * Email and phone are still NOT requested. Seeing which leads exist and where
+ * each one has got to does not need them, and HubSpot itself is one click away
+ * for anyone who needs to make contact.
+ */
+export function hubspotLeadArgs({ joinProperty, matchValue, equipmentProperty, limit = 100 }) {
+  return {
+    objectType: 'CONTACT',
+    filterGroups: [{ filters: [{ propertyName: joinProperty, operator: 'EQ', value: matchValue }] }],
+    properties: [
+      equipmentProperty,
+      'createdate',
+      'company',
+      'lifecyclestage',
+      'hs_lead_status',
+      'num_associated_deals',
+      'hs_analytics_source_data_1',
+      'state',
+    ],
+    sorts: [{ propertyName: 'createdate', direction: 'DESCENDING' }],
+    limit,
+    chatInsights: { userIntent: 'Show the campaign leads and the status of each one', satisfaction: 'NEUTRAL' },
   };
 }
 
@@ -164,6 +196,7 @@ export function startLiveFeed({ mcp, meta, hubspot, range, onChange }) {
   }
   if (hubspot?.joinProperty && hubspot?.matchValue && hubspot?.equipmentProperty) {
     watch('cohort', HUBSPOT_SERVER, HUBSPOT_TOOL, hubspotArgs(hubspot));
+    watch('leads', HUBSPOT_SERVER, HUBSPOT_TOOL, hubspotLeadArgs(hubspot));
   }
 
   return () => { for (const u of unsubs) { try { u(); } catch { /* already gone */ } } };

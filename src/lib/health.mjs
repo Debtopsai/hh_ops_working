@@ -177,12 +177,18 @@ export function buildHealthPanel({
     // Connected, and the join is still dead. This is a different and more
     // useful statement than "not connected", and it names the number that
     // proves it.
+    // The deal side counts are only known when deals were actually fetched. The
+    // live path does not fetch them, so the sentence is omitted rather than
+    // rendered as "null of null".
+    const dealCounts = Number.isFinite(attribution.dealJoin.dealsWithContacts) && Number.isFinite(attribution.dealJoin.totalDeals)
+      ? `${attribution.dealJoin.dealsWithContacts} of ${attribution.dealJoin.totalDeals} deals in the pipeline have any contact at all. `
+      : '';
     alerts.push({
       level: 'critical',
       code: 'lead_to_deal_join_broken',
       message:
         `HubSpot is connected and the campaign join works (${attribution.campaignJoin.matched} leads matched), but not one of them has an associated deal. ` +
-        `${attribution.dealJoin.dealsWithContacts} of ${attribution.dealJoin.totalDeals} deals in the pipeline have any contact at all. ` +
+        dealCounts +
         'Qualified, quoted, signed and funded cannot be attributed to this campaign and are shown as [TBC]. See docs/hubspot-schema.md.',
     });
   }

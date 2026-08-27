@@ -9,6 +9,7 @@
 import { normaliseResponse } from '../lib/meta.mjs';
 import { buildSnapshot } from '../lib/snapshot.mjs';
 import { buildClassifier } from '../lib/equipment.mjs';
+import { profileLead, summariseLeads } from '../lib/lead-profile.mjs';
 
 /** The Meta tool returns ad_entities as a JSON encoded string. normaliseResponse handles both. */
 const rows = (payload) => (payload ? normaliseResponse(payload) : []);
@@ -31,6 +32,12 @@ export function composeSnapshot({ parts, errors, storedAt, range, configs, liveC
   const previousRows = rows(parts.previous);
 
   const cohort = parts.cohort ? classifyCohort(parts.cohort, classifier, liveConfig.hubspot.equipmentProperty) : null;
+
+  // The lead level list. LIVE ONLY: this is never written to the Netlify cache,
+  // never persisted, and never leaves the viewer's browser.
+  const leadRows = Array.isArray(parts.leads?.results)
+    ? parts.leads.results.map((r) => profileLead(r, { classifier, equipmentProperty: liveConfig.hubspot.equipmentProperty, nowMs }))
+    : null;
   const cohortCount = parts.cohort?.total ?? (Array.isArray(parts.cohort?.results) ? parts.cohort.results.length : null);
 
   // The lead to deal join is a property of the CRM, not of this page. It stays
@@ -74,6 +81,13 @@ export function composeSnapshot({ parts, errors, storedAt, range, configs, liveC
       approvedDailyRateClaim: liveConfig.meta.approvedDailyRateClaim,
     },
   });
+
+  snapshot.leads = leadRows
+    ? { available: true, rows: leadRows, summary: summariseLeads(leadRows, { nowMs }), total: parts.leads?.total ?? leadRows.length }
+    : {
+        available: false,
+        reason: 'Lead level records are read live from HubSpot with your own credentials. They are never cached, so this view is empty unless live data is on.',
+      };
 
   snapshot.__live = true;
   snapshot.__sections = {

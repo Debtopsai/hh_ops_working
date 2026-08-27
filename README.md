@@ -163,6 +163,30 @@ the repository, in a config file, or in client side code.**
 | `HUBSPOT_ACCESS_TOKEN` | Yes | Private app token. Read only scopes, see `docs/hubspot-schema.md` |
 | `GOCARDLESS_ACCESS_TOKEN` | Phase 2 | |
 
+### The lead level view
+
+The Leads tab shows every lead in the campaign cohort with the day and time it
+arrived, its age, the business, what it asked for, how specific that ask was,
+and its CRM status.
+
+It is **live only, by design**. The brief allows it ("aggregate views are fine,
+a lead detail view needs auth") and this is how that auth is met: the rows are
+read from HubSpot with the **viewer's own credentials**, in the browser, and are
+never cached, never persisted and never written to the Netlify blob. A test
+asserts the cached document carries no per lead field.
+
+**Email and phone are not requested at all.** Seeing which leads exist and where
+each has got to does not need them, and HubSpot is one click away for anyone who
+needs to make contact.
+
+**Age band is not available per lead**, and the page says so rather than leaving
+a puzzling gap. Meta reports age only as an aggregate breakdown of spend and
+results, so it appears under Segments and cannot be attached to a person.
+HubSpot carries no age property either. What the per lead view does carry is the
+enquiry itself, which is the more useful signal: a lead naming eleven items is
+fitting out a venue, one naming a single item is replacing a machine, and the
+table distinguishes them.
+
 ### Access control, not optional
 
 **The site must sit behind Netlify password protection or SSO before it holds

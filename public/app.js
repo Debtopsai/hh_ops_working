@@ -253,6 +253,7 @@ function render() {
   renderFunnel(s);
   renderEconomics(s);
   renderFatigue(s);
+  renderLeads(s);
   renderDemand(s);
   renderHealth(s);
   renderLiveNotices(liveState);
@@ -741,6 +742,80 @@ function renderFatigue(s) {
     </tr>`).join('') + `</tbody>`;
 }
 
+/**
+ * The lead level view.
+ *
+ * Live only, by design: lead records are read from HubSpot with the viewer's
+ * own credentials and are never cached, never persisted, and never written to
+ * the Netlify blob. Email and phone are not fetched at all.
+ */
+function renderLeads(s) {
+  const L = s.leads;
+  const note = el('leads-note');
+  const host = el('leads');
+
+  if (!L || L.available === false) {
+    note.textContent = 'Lead level detail needs live data.';
+    host.innerHTML = `<p class="panel-note">${TBC}. ${esc(L?.reason ?? 'No lead records available.')}</p>`;
+    return;
+  }
+
+  const sum = L.summary;
+  note.textContent = `${L.rows.length} leads, read live with your credentials. Nothing on this tab is stored: it is fetched when you open the page and discarded when you close it. Email and phone are never requested.`;
+
+  const tiles = [
+    tile({ glyph: '#', label: 'Leads', value: num(L.rows.length), rule: 'blue', foot: sum.medianAgeDays === null ? null : `Average age ${sum.medianAgeDays} days` }),
+    tile({ glyph: '!', label: 'No status set', value: num(sum.unset), rule: sum.unset > 0 ? 'amber' : 'green', foot: sum.unset > 0 ? `${Math.round((sum.unset / Math.max(L.rows.length, 1)) * 100)}% of leads have never been marked` : null }),
+    tile({ glyph: '*', label: 'Older than a week, untouched', value: num(sum.stale), rule: sum.stale > 0 ? 'red' : 'green', foot: sum.stale > 0 ? 'No status set and more than 7 days old' : null }),
+    tile({ glyph: 'x', label: 'Reached a deal', value: num(sum.withDeal), rule: sum.withDeal > 0 ? 'green' : 'muted', foot: sum.withDeal === 0 ? 'No lead in this cohort has an associated deal' : null }),
+    tile({ glyph: '~', label: 'Busiest day', value: sum.busiestDay ? esc(sum.busiestDay.key) : `<span class="tbc">${TBC}</span>`, rule: 'violet', foot: sum.busiestDay ? `${sum.busiestDay.count} leads submitted` : null }),
+    tile({ glyph: '^', label: 'Busiest time', value: sum.busiestTime ? esc(sum.busiestTime.key) : `<span class="tbc">${TBC}</span>`, rule: 'violet', foot: sum.busiestTime ? `${sum.busiestTime.count} leads submitted` : null }),
+  ].join('');
+
+  const distribution = (title, rows, colour) => `
+    <div>
+      <h3 class="sub-head">${esc(title)}</h3>
+      <div class="table-scroll"><table><tbody>
+      ${rows.map((r) => {
+        const max = Math.max(...rows.map((x) => x.count), 1);
+        return `<tr><td style="width:34%">${esc(r.key)}</td>
+          <td><div style="background:${colour};height:9px;border-radius:3px;width:${Math.max((r.count / max) * 100, 2)}%"></div></td>
+          <td class="num" style="width:60px">${num(r.count)}</td></tr>`;
+      }).join('')}
+      </tbody></table></div>
+    </div>`;
+
+  const table = `
+    <h3 class="sub-head" style="margin-top:24px">Every lead</h3>
+    <div class="table-scroll"><table>
+      <thead><tr>
+        <th>Submitted</th><th>Day</th><th>Time</th><th class="num">Age</th>
+        <th>Business</th><th>Wants</th><th>Enquiry</th><th>Catalogue</th><th>Status</th>
+      </tr></thead>
+      <tbody>
+      ${L.rows.map((r) => `<tr>
+        <td>${r.submittedAt ? esc(nzDate(r.submittedAt)) : TBC}</td>
+        <td>${r.dayOfWeek ? esc(r.dayOfWeek) : TBC}</td>
+        <td>${r.timeOfDay ? esc(r.timeOfDay) : TBC}</td>
+        <td class="num">${r.ageDays === null ? TBC : `${r.ageDays}d`}</td>
+        <td>${r.company ? esc(r.company) : `<span class="tbc">Not given</span>`}</td>
+        <td>${r.equipmentLabel ? esc(r.equipmentLabel) : `<span class="tbc">${TBC}</span>`}</td>
+        <td>${esc(r.depth.label)}</td>
+        <td>${r.inCatalogue === null ? '<span class="pill">Neither</span>' : r.inCatalogue ? '<span class="pill in">In</span>' : '<span class="pill out">Out</span>'}</td>
+        <td><span class="pill ${r.status.tone === 'ok' ? 'ok' : r.status.tone === 'warn' ? 'amber' : ''}">${esc(r.status.label)}</span></td>
+      </tr>`).join('')}
+      </tbody>
+    </table></div>`;
+
+  host.innerHTML = `<div class="tiles" style="margin-bottom:20px">${tiles}</div>
+    <div class="grid-2">
+      ${distribution('When leads arrive, by day', sum.byDay, MARK.violet)}
+      ${distribution('When leads arrive, by time of day', sum.byTime, MARK.blue)}
+    </div>
+    <p class="caveat" style="margin-top:18px">${esc(sum.ageBandNote)}</p>
+    ${table}`;
+}
+
 function renderDemand(s) {
   const d = s.demand;
   if (!d || d.available === false) {
@@ -824,7 +899,7 @@ function renderHealth(s) {
 }
 
 /* ---------- Tabs ---------- */
-const TABS = ['acquisition', 'funnel', 'creative', 'demand', 'health'];
+const TABS = ['acquisition', 'funnel', 'creative', 'leads', 'demand', 'health'];
 function selectTab(name) {
   for (const t of TABS) {
     const tab = el(`tab-${t}`);
