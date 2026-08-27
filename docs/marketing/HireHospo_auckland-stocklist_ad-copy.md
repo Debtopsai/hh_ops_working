@@ -3,7 +3,7 @@
 **Slug:** `auckland-stocklist` · **Market:** Auckland, NZ · **Objective:** Leads (instant form)
 **Source script:** "$50,000 worth of equipment. From $14.99 a day. Ovens, dishwashers, ranges,
 fryers all on our stocklist, fully serviced. With warranty. Get our latest stocklist today."
-**Compiled:** 27 August 2026 · **Read §6 before publishing — two nuggets need substantiation.**
+**Compiled:** 27 August 2026 · **Read §6 before publishing — three claims need sign-off.**
 
 ---
 
@@ -62,7 +62,7 @@ service area. **Use the arc, not the abstraction, wherever there's room.**
 ### V1 — Payment Reframe (control; mirrors the winning ad) ★ lead with this
 
 ```
-$50,000 of commercial kitchen equipment on our books. Payments from $14.99 a day + GST.
+Finance up to $50,000 of commercial kitchen equipment. Payments from $14.99 a day + GST.
 
 Ovens. Dishwashers. Ranges. Fryers. All on our current stocklist, fully serviced,
 all with warranty.
@@ -82,8 +82,7 @@ Get our latest stocklist today.
 ```
 Auckland operators: our latest stocklist is out.
 
-Ovens, dishwashers, ranges and fryers — up to $50,000 of equipment, with payments from
-$14.99 a day + GST. Every unit fully serviced and warranted.
+Ovens, dishwashers, ranges and fryers — finance up to $50,000 of equipment, with payments from $14.99 a day + GST. Every unit fully serviced and warranted.
 
 We deliver and install Auckland wide, North Shore to Pukekohe, in 1–3 business days.
 3,000+ Kiwi kitchens fitted out so far.
@@ -101,9 +100,7 @@ Get the stocklist.
 ```
 The oven costs what a car costs. That's the part nobody warns you about.
 
-There's another way to do it. $50,000 of commercial kitchen equipment sits on our
-stocklist right now — ovens, dishwashers, ranges, fryers — with payments from $14.99
-a day + GST instead of one enormous cheque.
+There's another way to do it. Our stocklist runs from bench-top gear to full production kitchens — ovens, dishwashers, ranges, fryers — and we'll finance up to $50,000 of it, with payments from $14.99 a day + GST instead of one enormous cheque.
 
 Fully serviced. All with warranty. Delivered Auckland wide.
 
@@ -119,8 +116,7 @@ Get our latest stocklist today.
 ```
 Find it cheaper and we'll beat the price. That's the whole offer.
 
-Ovens, dishwashers, ranges, fryers — up to $50,000 of commercial kitchen equipment,
-from $14.99 a day + GST. Fully serviced, all with warranty, delivered Auckland wide.
+Ovens, dishwashers, ranges, fryers — finance up to $50,000 of commercial kitchen equipment, from $14.99 a day + GST. Fully serviced, all with warranty, delivered Auckland wide.
 
 Most competitive prices in the market, and we back it: same unit, better price
 in writing, we'll beat it.
@@ -135,7 +131,7 @@ Get our latest stocklist today.
 ### V5 — Short Form (for Reels / Stories, where copy is barely read)
 
 ```
-$50,000 of kitchen equipment. From $14.99 a day + GST.
+Finance up to $50,000 of kitchen equipment. From $14.99 a day + GST.
 
 Ovens, dishwashers, ranges, fryers — fully serviced, all with warranty.
 Auckland wide. 3,000+ Kiwi kitchens fitted out.
@@ -152,8 +148,7 @@ Get the stocklist.
 ```
 Our stocklist changes every week. Here's what's on it right now.
 
-Ovens, dishwashers, ranges, fryers — up to $50,000 of commercial kitchen equipment,
-payments from $14.99 a day + GST. Every unit fully serviced and warranted.
+Ovens, dishwashers, ranges, fryers — finance up to $50,000 of commercial kitchen equipment, payments from $14.99 a day + GST. Every unit fully serviced and warranted.
 
 Auckland wide, Takapuna to Pukekohe. 3,000+ Kiwi hospitality kitchens supplied.
 
@@ -175,7 +170,7 @@ Get this week's stocklist.
 
 | # | Headline | Chars | Pairs with |
 |---|---|---|---|
-| H1 | `$50k of kitchen gear, from $14.99/day` | 37 | V1, V5 |
+| H1 | `Finance up to $50k. From $14.99/day` | 34 | V1, V5 |
 | H2 | `Auckland wide. 3,000+ kitchens fitted` | 37 | V2 |
 | H3 | `Get this week's stocklist` | 25 | V6, any |
 | H4 | `Find it cheaper? We'll beat it` | 30 | V4 |
@@ -204,7 +199,7 @@ Mapped to the supplied VO, 9:16, with the top 250px and bottom 320px kept clear.
 
 | Beat | VO | On-screen text | Note |
 |---|---|---|---|
-| 0.0–2.5s | "$50,000 worth of equipment." | **$50,000** *(mono, counting up, flame under the last digits)* | Quote-shock frame. Reads as the scale of the stocklist, not the price of one deal. |
+| 0.0–2.5s | ⚠ "We'll finance up to $50,000 of equipment." | **UP TO $50,000** *(mono, counting up, flame under the last digits)* | The funding ceiling — **not** the stocklist's value. "UP TO" must be on the frame; the supplied VO line needs the same fix. |
 | 2.5–5.0s | "From $14.99 a day." | **FROM $14.99/DAY** `+ GST` | ⚠ figure to be confirmed — §6.1 |
 | 5.0–8.5s | "Ovens, dishwashers, ranges, fryers — all on our stocklist." | Category grid, four tiles, one lit | Real catalogue categories |
 | 8.5–10.5s | "Fully serviced. With warranty." | `FULLY SERVICED · WITH WARRANTY` *(stamp settle)* | The objection-killer beat |
@@ -218,23 +213,42 @@ sound-off feed. Keep them inside the central 60%.
 
 ## 6. Compliance flags — clear these before the ad goes live
 
-### 6.1 ⚠ CRITICAL — "$50k equipment from $14.99 a day" cannot run as one sentence
+### 6.1 ⚠ CRITICAL — "$50,000" is the funding ceiling, not the stocklist's value
 
-$14.99/day is **$104.93/week**. Over a 36-month Lease-to-Own that collects **$16,369** in total —
-it cannot fund $50,000 of equipment. On the live book, $50k-scale gear sits near **$365–$414/week
-($52–$59/day)**; the portfolio median deal is $65/week ($9.29/day).
+**$50,000 is the maximum HireHospo will finance.** It is the approved wording in the brand
+reference ("Funding ceiling: up to $50,000") and in the business overview ("Funding up to
+$50,000"). The stocklist itself is worth far more — the 26 May 2026 catalogue snapshot shows
+**241 active products at a ~$3,600 median**, so well over $800,000 of equipment. Any line reading
+"$50,000 of equipment on our stocklist" therefore does two things wrong at once: it misstates the
+offer, and it caps a catalogue that runs an order of magnitude past it. Every variant in this pack
+says **"finance up to $50,000"**.
 
-Read as one claim, "50k equipment from $14.99 a day" is misleading under the Fair Trading Act.
-Read as two facts it's fine. **Every variant above therefore separates them:**
+> ✅ "**Finance up to** $50,000 of commercial kitchen equipment. Payments **from** $14.99 a day + GST."
+> ❌ "$50,000 of equipment on our stocklist." — caps the catalogue, misstates the offer
+> ❌ "$50,000 of equipment for $14.99 a day." — not arithmetically true
 
-> ✅ "$50,000 of equipment **on our books** / **on our stocklist**. Payments **from** $14.99 a day + GST."
-> ❌ "$50,000 of equipment for $14.99 a day."
+**Keep the two figures in separate sentences.** "Up to $50,000" and "from $14.99 a day" are the
+two ends of the offer — a ceiling and a floor — which is honest and conventional in finance
+advertising. Fused into one phrase they read as "$50,000 for $14.99 a day", which is not true:
+$14.99/day is **$104.93/week**, and over a 36-month Lease-to-Own that collects **$16,369** in
+total. On the live book, $50k-scale gear sits near **$365–$414/week ($52–$59/day)**; the median
+deal is $65/week.
 
-**Also confirm the figure itself.** The account has already run **$3.99/day** and **$6.99/day**,
+**The VO needs the same fix.** The supplied script opens "$50,000 worth of equipment" — over a
+stocklist visual, that reads as the catalogue's value. Change it to **"We'll finance up to
+$50,000 of equipment"** and put `UP TO $50,000` on the frame.
+
+**Don't put a dollar total on the stocklist either.** The snapshot figures (241 active products,
+~30 brands, $795–$32,995) are point-in-time and Washpro updates stock constantly, so any total
+goes stale the week you publish it. The copy describes breadth instead — **"everything from
+bench-top gear to full production kitchens"**. If you do want a number, pull it from the live
+catalogue on the day and treat it as a claim needing verification.
+
+**Confirm the $14.99 figure itself.** The account has already run **$3.99/day** and **$6.99/day**,
 and the brand reference carries **$4.66/day**. $14.99 is 3–4× the entry point previously
-advertised and above the portfolio median. Either it's a different (larger) package — in which
-case say which — or it's an error. Confirm what $14.99/day actually buys before this ships, and
-then align the account on one entry figure; four different dailies in market is a trust problem.
+advertised and sits above the portfolio median. Either it's a larger package — in which case say
+which — or it's an error. Then align the account on one entry figure: four different dailies in
+market is a trust problem.
 
 ### 6.2 ⚠ "Over 3,000 happy customers" — attribute it
 
@@ -308,7 +322,7 @@ new angles. Hold V3 for a cold prospecting set. Do **not** rebuild the "Quick Pr
 |---|---|---|
 | Over 3,000 happy customers | "3,000+ Kiwi hospitality kitchens fitted out" | ⚠ reworded — §6.2 |
 | Auckland Wide | "Auckland wide — Takapuna to Pukekohe" | ✅ substantiated — §2 |
-| 50k equipment from $14.99 a day | Split into two facts, never fused | ⚠ figure to confirm — §6.1 |
+| 50k equipment from $14.99 a day | Recast as the funding ceiling: "finance up to $50,000" | ⚠ figure to confirm — §6.1 |
 | Most competitive prices in the market | Retained, paired with the price beat | ⚠ needs evidence — §6.3 |
 | We'll beat the price | "Find the same unit cheaper and we'll beat it" | ⚠ needs terms — §6.4 |
 
@@ -341,10 +355,9 @@ $14.99 separation (§6.1) holds exactly as it does in the ads.
 **FB1 — Stocklist drop (the workhorse)**
 
 ```
-Our latest stocklist is out — and there's $50,000 of commercial kitchen equipment on it.
+Our latest stocklist is out. Everything from bench-top gear to full production kitchens.
 
-Ovens. Dishwashers. Ranges. Fryers. Every unit fully serviced, every unit with warranty.
-Payments start from $14.99 a day + GST.
+Ovens. Dishwashers. Ranges. Fryers. Every unit fully serviced, every unit with warranty. We'll finance up to $50,000 of it, with payments from $14.99 a day + GST.
 
 We fit out kitchens Auckland wide, Takapuna to Pukekohe, and 3,000+ Kiwi hospitality
 kitchens have been supplied through us and Washpro.
@@ -363,9 +376,7 @@ The oven costs what a car costs. Nobody tells you that before you sign the lease
 
 Here's the part that gets missed: you don't have to buy it outright to cook on it.
 
-There's $50,000 of commercial kitchen equipment on our stocklist right now — ovens,
-dishwashers, ranges, fryers — with payments from $14.99 a day + GST instead of one
-enormous cheque. All fully serviced. All with warranty.
+Our stocklist runs from bench-top gear to full production kitchens — ovens, dishwashers, ranges, fryers — and we'll finance up to $50,000 of it, with payments from $14.99 a day + GST instead of one enormous cheque. All fully serviced. All with warranty.
 
 Delivered and installed Auckland wide, 1–3 business days.
 
@@ -381,8 +392,7 @@ Comment STOCKLIST and we'll send you the current list.
 ```
 Find it cheaper and we'll beat the price.
 
-$50,000 of commercial kitchen equipment on the stocklist — ovens, dishwashers, ranges,
-fryers. Fully serviced, all with warranty, from $14.99 a day + GST.
+Finance up to $50,000 of commercial kitchen equipment — ovens, dishwashers, ranges, fryers, straight off the current stocklist. Fully serviced, all with warranty, from $14.99 a day + GST.
 
 Auckland wide. 3,000+ Kiwi kitchens fitted out.
 
@@ -396,7 +406,7 @@ Comment STOCKLIST for the current list.
 **IG1 — Feed / Reel (the workhorse)**
 
 ```
-$50,000 of commercial kitchen equipment. Payments from $14.99 a day + GST.
+Finance up to $50,000 of commercial kitchen equipment. Payments from $14.99 a day + GST.
 
 Ovens. Dishwashers. Ranges. Fryers.
 All on the current stocklist. All fully serviced. All with warranty.
@@ -418,8 +428,7 @@ The oven costs what a car costs. That's the part nobody warns you about.
 
 You don't have to buy it outright to cook on it.
 
-$50,000 of commercial kitchen equipment is on our stocklist right now — ovens,
-dishwashers, ranges, fryers — from $14.99 a day + GST.
+Our stocklist runs from bench-top gear to full production kitchens — ovens, dishwashers, ranges, fryers — and we'll finance up to $50,000 of it, from $14.99 a day + GST.
 
 Fully serviced. All with warranty. Delivered Auckland wide in 1–3 business days.
 
@@ -433,7 +442,7 @@ Comment STOCKLIST for the list. Link in bio.
 **IG3 — Short (Reels, where the caption is barely read)**
 
 ```
-$50,000 of kitchen gear. From $14.99 a day + GST.
+Finance up to $50,000 of kitchen gear. From $14.99 a day + GST.
 
 Ovens, dishwashers, ranges, fryers. Fully serviced, all with warranty.
 Auckland wide. 3,000+ Kiwi kitchens fitted out.
@@ -449,7 +458,7 @@ Comment STOCKLIST for the current list.
 
 | Frame | On-screen text | Sticker |
 |---|---|---|
-| 1 | **$50,000 of kitchen gear** | — |
+| 1 | **Finance up to $50,000** | — |
 | 2 | **From $14.99 a day** · + GST | — |
 | 3 | Ovens · Dishwashers · Ranges · Fryers — fully serviced, with warranty | — |
 | 4 | **Auckland wide.** Takapuna to Pukekohe | Question: "What are you fitting out?" |
