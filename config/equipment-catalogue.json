@@ -4,60 +4,259 @@
     "",
     "Meta field name:    what_type_of_equipment_are_you_after:   (trailing colon)",
     "HubSpot property:   what_type_of_equipment_are_you_after    (no trailing colon)",
-    "The trailing colon survives in the HubSpot LABEL but not the internal name.",
     "",
-    "Tuned against all 58 real enquiries retrieved on 26 August 2026, kept at",
-    "test/fixtures/equipment-enquiries.json. Four defects that only real text",
-    "exposed, all now fixed:",
-    "  1. A bare 'Oven' matched nothing. Six leads said exactly that.",
-    "  2. 'lpg griller' missed, because a strict word boundary rejects the",
-    "     'er' suffix on 'grill'. Matching now tolerates s, es, er and ers,",
-    "     but NOT ing, so 'sinks' still matches 'sink' and 'sinking' does not.",
-    "  3. A lead asking for eleven in catalogue items plus one range hood was",
-    "     classified out of catalogue on the range hood alone. Mixed enquiries",
-    "     are now their own state and count as worth having.",
-    "  4. 'Kitchen', 'Various' and 'Catering equipment' are answers, not",
-    "     non answers, but they are not classifiable either. They now sit in",
-    "     'vague' and are excluded from the in against out share rather than",
-    "     silently deflating it.",
+    "WHAT IS NOT SUPPLIED, confirmed by the owner on 27 August 2026:",
+    "  coffee machines, ice makers, refrigeration, food prep and slicing,",
+    "  slushie and smoothie machines, sinks and plumbing, extraction and ventilation.",
     "",
-    "KNOWN CONFLICT, needs a decision. Section 8.4 lists ice makers as NOT",
-    "financed, while docs/BUSINESS_OVERVIEW.md lists a catalogue category called",
-    "'refrigeration & ice'. The brief is treated as authoritative and ice is out.",
-    "This is worth resolving: four of the 58 real enquiries mention ice."
+    "Two of those, refrigeration and food prep, were previously classified as IN",
+    "catalogue on the strength of section 8.4 of the brief and the July 2026",
+    "business overview, both of which are now out of date. That correction moves",
+    "real leads across the line, so the out of catalogue share and the wasted",
+    "spend estimate both rise. See docs/validation-baselines.md.",
+    "",
+    "Ice is a qualified no: supplied only very occasionally. It is counted out of",
+    "catalogue because the measure exists to show whether the ad copy is filtering",
+    "properly, and an enquiry that usually cannot be filled is not a filtered one.",
+    "occasionallySupplied records the nuance so it is not lost.",
+    "",
+    "Tuned against all 58 real enquiries, kept at",
+    "test/fixtures/equipment-enquiries.json. Out of catalogue is evaluated FIRST,",
+    "longest keyword first, so 'ice maker' is never swept into a broader category."
   ],
   "matching": {
     "caseSensitive": false,
-    "allowedSuffixes": ["s", "es", "er", "ers"],
+    "allowedSuffixes": [
+      "s",
+      "es",
+      "er",
+      "ers"
+    ],
     "_comment": "Out of catalogue is evaluated first so 'ice maker' is never swept into refrigeration. Longer keywords win over shorter ones, so 'pizza oven' beats 'oven' and 'ice maker' beats 'ice'."
   },
   "outOfCatalogue": {
-    "coffee": ["coffee machine", "coffee", "espresso", "barista", "la marzocco"],
-    "ice": ["ice maker", "ice machine", "icemaker", "ice cream machine", "ice cream", "ice"],
-    "frozenDrinks": ["slushi", "slushie", "slush", "slushy", "smoothie", "milkshake machine", "milk shake machine"],
-    "plumbing": ["sink", "kitchen sink", "hand basin", "wash basin", "basin", "tap", "grease trap"],
-    "ventilation": ["extract fan", "extraction", "extractor", "canopy", "rangehood", "range hood", "ventilation", "exhaust"],
-    "nonHospitality": ["earthmoving", "excavator", "digger", "tractor", "forklift", "trailer", "vehicle", "truck"],
-    "other": ["furniture", "chair", "shelving", "pos", "till", "signage", "bench", "preparation table", "prep table", "filling machine"]
+    "coffee": [
+      "coffee machine",
+      "coffee",
+      "espresso",
+      "barista",
+      "la marzocco"
+    ],
+    "ice": [
+      "ice maker",
+      "ice machine",
+      "icemaker",
+      "ice cream machine",
+      "ice cream",
+      "ice"
+    ],
+    "frozenDrinks": [
+      "slushi",
+      "slushie",
+      "slush",
+      "slushy",
+      "smoothie",
+      "milkshake machine",
+      "milk shake machine"
+    ],
+    "plumbing": [
+      "sink",
+      "kitchen sink",
+      "hand basin",
+      "wash basin",
+      "basin",
+      "tap",
+      "grease trap"
+    ],
+    "ventilation": [
+      "extract fan",
+      "extraction",
+      "extractor",
+      "canopy",
+      "rangehood",
+      "range hood",
+      "ventilation",
+      "exhaust"
+    ],
+    "nonHospitality": [
+      "earthmoving",
+      "excavator",
+      "digger",
+      "tractor",
+      "forklift",
+      "trailer",
+      "vehicle",
+      "truck"
+    ],
+    "other": [
+      "furniture",
+      "chair",
+      "shelving",
+      "pos",
+      "till",
+      "signage",
+      "bench",
+      "preparation table",
+      "prep table",
+      "filling machine"
+    ],
+    "refrigeration": [
+      "fridge",
+      "refrigerator",
+      "refrigeration",
+      "freezer",
+      "blast freezer",
+      "chiller",
+      "blast chiller",
+      "walk in chiller",
+      "cool room",
+      "coolroom",
+      "under bench fridge",
+      "prep fridge",
+      "undercounter fridge"
+    ],
+    "foodPrep": [
+      "food prep",
+      "slicer",
+      "vegetable prep",
+      "veg prep",
+      "food processor",
+      "bowl cutter",
+      "blender",
+      "mincer",
+      "vacuum sealer",
+      "vac pack",
+      "paco jet",
+      "pacojet",
+      "robo coupe",
+      "blixer",
+      "blixter"
+    ]
   },
   "inCatalogue": {
-    "dishwashers": ["dishwasher", "dish washer", "passthrough", "pass through", "through pass", "hood type", "warewash"],
-    "glasswashers": ["glasswasher", "glass washer", "glass machine"],
-    "combiOvens": ["combi oven", "combi", "combination oven", "rational", "convotherm", "oven with steam", "steam oven", "speed oven", "speed owen"],
-    "convectionOvens": ["convection oven", "convection", "convention oven", "turbofan", "bake off", "bakeoff"],
-    "ovensUnspecified": ["oven", "owen"],
-    "rangesAndCooktops": ["range", "cooktop", "cook top", "stove", "gas burner", "burner", "hob", "gas hop", "wok", "stock pot"],
-    "griddlesAndSalamanders": ["griddle", "grill", "chargrill", "char grill", "salamander", "hot plate", "hotplate", "flat top"],
-    "fryers": ["fryer", "deep fryer", "deep fry", "fry", "pasta cooker"],
-    "pizzaAndConveyorOvens": ["pizza oven", "pizza", "conveyor oven", "conveyor", "deck oven"],
-    "bakeryAndDough": ["dough", "mixer", "planetary mixer", "spiral mixer", "prover", "proofer", "bakery", "baking", "bread", "dough roller", "sheeter"],
-    "holdingAndDisplay": ["bain marie", "bain-marie", "holding cabinet", "food warmer", "plate warmer", "warmer", "heated display", "display cabinet", "food display", "hot cupboard", "gantry", "pie warmer", "buffet", "salad bar", "saladbar"],
-    "refrigeration": ["fridge", "refrigerator", "refrigeration", "freezer", "blast freezer", "chiller", "blast chiller", "walk in chiller", "cool room", "coolroom", "under bench fridge", "prep fridge", "undercounter fridge"],
-    "foodPrep": ["food prep", "slicer", "vegetable prep", "veg prep", "food processor", "bowl cutter", "blender", "mincer", "vacuum sealer", "vac pack", "paco jet", "pacojet", "robo coupe", "blixer", "blixter"]
+    "dishwashers": [
+      "dishwasher",
+      "dish washer",
+      "passthrough",
+      "pass through",
+      "through pass",
+      "hood type",
+      "warewash"
+    ],
+    "glasswashers": [
+      "glasswasher",
+      "glass washer",
+      "glass machine"
+    ],
+    "combiOvens": [
+      "combi oven",
+      "combi",
+      "combination oven",
+      "rational",
+      "convotherm",
+      "oven with steam",
+      "steam oven",
+      "speed oven",
+      "speed owen"
+    ],
+    "convectionOvens": [
+      "convection oven",
+      "convection",
+      "convention oven",
+      "turbofan",
+      "bake off",
+      "bakeoff"
+    ],
+    "ovensUnspecified": [
+      "oven",
+      "owen"
+    ],
+    "rangesAndCooktops": [
+      "range",
+      "cooktop",
+      "cook top",
+      "stove",
+      "gas burner",
+      "burner",
+      "hob",
+      "gas hop",
+      "wok",
+      "stock pot"
+    ],
+    "griddlesAndSalamanders": [
+      "griddle",
+      "grill",
+      "chargrill",
+      "char grill",
+      "salamander",
+      "hot plate",
+      "hotplate",
+      "flat top"
+    ],
+    "fryers": [
+      "fryer",
+      "deep fryer",
+      "deep fry",
+      "fry",
+      "pasta cooker"
+    ],
+    "pizzaAndConveyorOvens": [
+      "pizza oven",
+      "pizza",
+      "conveyor oven",
+      "conveyor",
+      "deck oven"
+    ],
+    "bakeryAndDough": [
+      "dough",
+      "mixer",
+      "planetary mixer",
+      "spiral mixer",
+      "prover",
+      "proofer",
+      "bakery",
+      "baking",
+      "bread",
+      "dough roller",
+      "sheeter"
+    ],
+    "holdingAndDisplay": [
+      "bain marie",
+      "bain-marie",
+      "holding cabinet",
+      "food warmer",
+      "plate warmer",
+      "warmer",
+      "heated display",
+      "display cabinet",
+      "food display",
+      "hot cupboard",
+      "gantry",
+      "pie warmer",
+      "buffet",
+      "salad bar",
+      "saladbar"
+    ]
   },
   "vague": {
     "_comment": "Hospitality enquiries that are genuine but not specific enough to classify. Counted and reported separately, never folded into in or out.",
-    "vague": ["kitchen", "catering equipment", "kitchen appliances", "baking appliances", "appliances", "equipment", "various", "foh", "front of house", "cafe machine", "cafe mashin", "mashin", "fitout", "fit out", "everything"]
+    "vague": [
+      "kitchen",
+      "catering equipment",
+      "kitchen appliances",
+      "baking appliances",
+      "appliances",
+      "equipment",
+      "various",
+      "foh",
+      "front of house",
+      "cafe machine",
+      "cafe mashin",
+      "mashin",
+      "fitout",
+      "fit out",
+      "everything"
+    ]
   },
   "categoryLabels": {
     "dishwashers": "Commercial dishwashers",
@@ -83,5 +282,11 @@
     "vague": "Stated but not specific",
     "unstated": "Not stated",
     "unclassified": "Unclassified"
+  },
+  "occasionallySupplied": {
+    "_comment": "Not supplied as a rule, but sometimes sourced. Counted out of catalogue, flagged so the distinction survives.",
+    "categories": [
+      "ice"
+    ]
   }
 }

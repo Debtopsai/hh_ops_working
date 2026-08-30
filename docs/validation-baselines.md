@@ -156,22 +156,34 @@ Added after the CRM was connected. Full findings in `docs/hubspot-schema.md`.
 
 ### The equipment classifier, validated against real text
 
-Section 8.4 estimated "roughly 19%" of leads request equipment HireHospo does
-not finance. All 58 real enquiries were retrieved and classified:
+All 58 real enquiries were retrieved and classified.
 
-| Outcome | Count |
-|---|---|
-| In catalogue | 38 |
-| Mixed, named financeable and non financeable kit | 3 |
-| **Out of catalogue** | **10** |
-| Stated but not specific | 7 |
-| Unclassified | **0** |
+**The catalogue definition was corrected on 27 August 2026.** The owner
+confirmed that refrigeration and food prep & slicing are NOT supplied, along
+with coffee machines, ice makers (only very occasionally), slushie and smoothie
+machines, sinks and plumbing, and extraction and ventilation. Section 8.4 of the
+brief and the July 2026 business overview both counted refrigeration and food
+prep as in catalogue. They were wrong.
 
-**19.6% out of catalogue**, against the brief's estimate of roughly 19%. Two
-independent methods agreeing to within a percentage point is the strongest
-evidence available that both are right.
+| Outcome | On the brief's catalogue | **Corrected** |
+|---|---|---|
+| In catalogue | 38 | **32** |
+| Mixed, named supplied and unsupplied kit | 3 | **5** |
+| **Out of catalogue** | 10 | **14** |
+| Stated but not specific | 7 | 7 |
+| Unclassified | 0 | **0** |
+| **Share out of catalogue** | 19.6% | **27.5%** |
+| **Estimated wasted spend** | NZ$104.10 | **NZ$145.74** |
 
-Estimated wasted spend NZ$104.10 at the average CPL.
+**More than a quarter of classified leads want equipment HireHospo does not
+supply**, not the roughly 19% the brief estimated. That is a 40% relative
+increase, and it was hidden by a stale catalogue definition rather than by a
+classifier fault.
+
+Nine of the 58 enquiries touch refrigeration or food prep. Six mention
+refrigeration, five mention food prep, and two of each are pure enquiries that
+cannot be filled at all. The rest are mixed: someone wanting an oven and a
+fridge is still worth a call, they just cannot get everything.
 
 The corpus is committed at `test/fixtures/equipment-enquiries.json`, equipment
 text only, and the assertions are in `test/equipment-corpus.test.mjs`.
@@ -184,11 +196,11 @@ Every one of these passed the original synthetic tests and failed on live data.
 2. **"lpg griller" missed**, because a strict word boundary rejects the `er`
    suffix on `grill`. Matching now tolerates `s`, `es`, `er` and `ers` but not
    `ing`, so `sinks` still matches `sink` and `sinking` still does not.
-3. **A mixed enquiry was written off.** One lead named eleven financeable items
-   plus one range hood and was classified out of catalogue on the range hood
-   alone. Mixed enquiries are now their own outcome and count as worth having.
-   Charging those three leads to wasted spend would have overstated it by 29%
-   and argued for narrowing ad copy that is working.
+3. **A mixed enquiry was written off.** One lead named eleven items plus one
+   range hood and was classified out of catalogue on the range hood alone.
+   Mixed enquiries are now their own outcome and count as worth having.
+   Charging those five leads to wasted spend would overstate it by 36% and
+   argue for narrowing ad copy that is working.
 4. **`"filling  machine"` has a double space** and failed a literal keyword
    match. Whitespace is now collapsed before matching. This was the last
    unclassified enquiry.

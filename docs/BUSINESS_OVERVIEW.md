@@ -63,11 +63,21 @@ Electrolux, Convotherm, Turbofan), active price range ~$795–$32,995 (median
 caveat: it keeps the weekly payment low, gives access to premium brands, and
 the warranty removes the second-hand risk.
 
-13 categories: commercial dishwashers, glasswashers, combi ovens, convection
-ovens, ranges/cooktops/gas burners, griddles/grills/salamanders, deep
-fryers/pasta cookers, pizza & conveyor ovens, bakery & dough equipment,
-holding/display/food warming, refrigeration & ice, food prep & slicing,
-other/specialty.
+**Corrected 27 August 2026 by the owner.** What HireHospo actually finances:
+commercial dishwashers, glasswashers, combi ovens, convection ovens,
+ranges/cooktops/gas burners, griddles/grills/salamanders, deep fryers/pasta
+cookers, pizza & conveyor ovens, bakery & dough equipment, and
+holding/display/food warming.
+
+**Not supplied:** coffee machines, ice makers (only very occasionally),
+refrigeration, food prep & slicing, slushie & smoothie machines, sinks &
+plumbing, extraction & ventilation.
+
+This supersedes the earlier "13 categories" list compiled in July 2026, which
+included refrigeration and food prep & slicing. That was wrong, and it mattered:
+the acquisition dashboard was counting those enquiries as leads worth having.
+Correcting it moved the out of catalogue share of paid leads from 19.6% to
+27.5%. See `docs/validation-baselines.md`.
 
 ## The Washpro Partnership
 

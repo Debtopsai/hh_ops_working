@@ -105,6 +105,9 @@ describe('Section 8.4, out of catalogue leads', () => {
     ['a double sink', 'plumbing'],
     ['extract fan for the kitchen', 'ventilation'],
     ['earthmoving equipment', 'nonHospitality'],
+    // Confirmed by the owner on 27 August 2026: neither is supplied.
+    ['under bench fridge', 'refrigeration'],
+    ['commercial blender', 'foodPrep'],
   ]) {
     test(`"${text}" is out of catalogue (${category})`, () => {
       const r = c.classify(text);
@@ -119,7 +122,6 @@ describe('Section 8.4, out of catalogue leads', () => {
     ['combi oven', 'combiOvens'],
     ['deep fryer', 'fryers'],
     ['pizza oven', 'pizzaAndConveyorOvens'],
-    ['under bench fridge', 'refrigeration'],
     ['planetary mixer', 'bakeryAndDough'],
     ['salamander grill', 'griddlesAndSalamanders'],
   ]) {

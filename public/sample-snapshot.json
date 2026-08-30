@@ -798,20 +798,20 @@
   },
   "demand": {
     "total": 58,
-    "inCatalogue": 38,
-    "mixed": 3,
-    "worthHaving": 41,
-    "outOfCatalogue": 10,
+    "inCatalogue": 32,
+    "mixed": 5,
+    "worthHaving": 37,
+    "outOfCatalogue": 14,
     "vague": 7,
     "unstated": 0,
     "unclassified": 0,
     "classified": 51,
-    "outOfCatalogueShare": 19.6,
-    "inCatalogueShare": 80.4,
+    "outOfCatalogueShare": 27.5,
+    "inCatalogueShare": 72.5,
     "categories": [
       {
         "category": "bakeryAndDough",
-        "count": 7,
+        "count": 9,
         "label": "Bakery and dough"
       },
       {
@@ -830,11 +830,6 @@
         "label": "Fryers and pasta cookers"
       },
       {
-        "category": "refrigeration",
-        "count": 4,
-        "label": "Refrigeration"
-      },
-      {
         "category": "rangesAndCooktops",
         "count": 4,
         "label": "Ranges and cooktops"
@@ -850,9 +845,9 @@
         "label": "Combi ovens"
       },
       {
-        "category": "foodPrep",
+        "category": "holdingAndDisplay",
         "count": 3,
-        "label": "Food prep and slicing"
+        "label": "Holding and display"
       },
       {
         "category": "ice",
@@ -870,14 +865,19 @@
         "label": "Griddles and salamanders"
       },
       {
+        "category": "refrigeration",
+        "count": 2,
+        "label": "Refrigeration"
+      },
+      {
         "category": "plumbing",
         "count": 2,
         "label": "Sinks and plumbing"
       },
       {
-        "category": "holdingAndDisplay",
+        "category": "foodPrep",
         "count": 2,
-        "label": "Holding and display"
+        "label": "Food prep and slicing"
       },
       {
         "category": "glasswashers",
@@ -911,7 +911,7 @@
       }
     ],
     "estimatedWastedSpend": {
-      "value": "104.10",
+      "value": "145.74",
       "basis": "out of catalogue leads charged at the average CPL. Mixed enquiries are excluded: they named financeable equipment too.",
       "isEstimate": true
     },
@@ -922,7 +922,9 @@
       "plumbing",
       "ventilation",
       "nonHospitality",
-      "other"
+      "other",
+      "refrigeration",
+      "foodPrep"
     ]
   },
   "segments": {

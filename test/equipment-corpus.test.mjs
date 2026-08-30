@@ -31,14 +31,18 @@ describe('The whole corpus classifies', () => {
     assert.deepEqual(misses, [], `unclassified: ${JSON.stringify(misses)}`);
   });
 
-  test("the out of catalogue share reproduces the brief's roughly 19%", () => {
-    assert.equal(Math.round(summary.outOfCatalogueShare * 1000) / 10, 19.6);
+  test('more than a quarter of classified leads want equipment HireHospo does not supply', () => {
+    // The brief estimated "roughly 19%". That estimate counted refrigeration
+    // and food prep as in catalogue, and the owner confirmed on 27 August 2026
+    // that neither is supplied. On the corrected catalogue the real share is
+    // 27.5%, which is a 40% relative increase on the figure in the brief.
+    assert.equal(Math.round(summary.outOfCatalogueShare * 1000) / 10, 27.5);
   });
 
   test('estimated wasted spend at the average CPL', () => {
-    // 10 pure out of catalogue leads at NZ$10.41.
-    assert.equal(summary.outOfCatalogue, 10);
-    assert.equal(serialise(summary.estimatedWastedSpend.value), '104.10');
+    // 14 pure out of catalogue leads at NZ$10.41.
+    assert.equal(summary.outOfCatalogue, 14);
+    assert.equal(serialise(summary.estimatedWastedSpend.value), '145.74');
   });
 
   test('the counts add up to the total', () => {
@@ -100,11 +104,14 @@ describe('Longer keywords beat shorter ones', () => {
   });
 });
 
-describe('The three genuinely mixed enquiries', () => {
+describe('Mixed enquiries, after the catalogue correction', () => {
   const mixed = enquiries.filter((e, i) => classified[i].outcome === 'mixed');
 
-  test('exactly three enquiries name both financeable and non financeable kit', () => {
-    assert.equal(mixed.length, 3);
+  test('five enquiries name both supplied and unsupplied kit', () => {
+    // Three before the correction. Moving refrigeration and food prep out
+    // turned two more into mixed, which is the right outcome: a lead wanting an
+    // oven AND a fridge is still worth having, it just cannot get everything.
+    assert.equal(mixed.length, 5);
   });
 
   test('the eleven item enquiry is mixed, not written off on one range hood', () => {
@@ -112,18 +119,23 @@ describe('The three genuinely mixed enquiries', () => {
     assert.equal(r.outcome, 'mixed');
     assert.equal(r.inCatalogue, true);
     // The financeable interest is recorded rather than thrown away.
-    for (const c of ['convectionOvens', 'dishwashers', 'fryers', 'refrigeration', 'holdingAndDisplay']) {
+    for (const c of ['convectionOvens', 'dishwashers', 'fryers', 'holdingAndDisplay']) {
       assert.ok(r.inCategories.includes(c), `expected ${c} in inCategories, got ${r.inCategories.join(', ')}`);
     }
-    assert.ok(r.outCategories.includes('ventilation'));
+    // Refrigeration moved out, so the fridges in this enquiry now sit on the
+    // unsupplied side alongside the range hood and the ice machine.
+    for (const c of ['ventilation', 'refrigeration', 'ice']) {
+      assert.ok(r.outCategories.includes(c), `expected ${c} in outCategories, got ${r.outCategories.join(', ')}`);
+    }
   });
 
   test('mixed leads do not inflate the wasted spend estimate', () => {
-    // 10 pure out, not 13. Charging the three mixed leads to waste would
-    // overstate it by 29% and argue for narrowing ad copy that is working.
-    assert.equal(summary.outOfCatalogue, 10);
-    assert.equal(summary.mixed, 3);
-    assert.equal(summary.worthHaving, 41);
+    // 14 pure out, not 19. Charging the five mixed leads to waste would
+    // overstate it by 36% and argue for narrowing ad copy that is working: each
+    // of those leads still named something HireHospo can supply.
+    assert.equal(summary.outOfCatalogue, 14);
+    assert.equal(summary.mixed, 5);
+    assert.equal(summary.worthHaving, 37);
   });
 });
 
@@ -135,15 +147,38 @@ describe('What people actually asked for', () => {
     assert.ok(ovenish >= 9, `expected at least 9 oven enquiries, got ${ovenish}`);
   });
 
-  test('ice is the largest single out of catalogue category', () => {
-    // Four of the 58 mention ice. Section 8.4 says ice makers are not
-    // financed, while the business overview lists "refrigeration & ice".
-    // This is the conflict flagged in config/equipment-catalogue.json, and
-    // it is worth roughly 4 leads a month either way.
-    const ice = summary.categories.find((c) => c.category === 'ice');
-    assert.equal(ice.count, 2);
-    const iceMentions = enquiries.filter((e) => /ice/i.test(e)).length;
-    assert.equal(iceMentions, 4);
+  test('refrigeration demand was being counted as supplied, and is the single biggest correction', () => {
+    // Counting every enquiry that mentions refrigeration at all, including the
+    // mixed ones where it sits beside something HireHospo can supply.
+    const mentions = classified.filter((c) => c.category === 'refrigeration' || c.outCategories.includes('refrigeration')).length;
+    assert.equal(mentions, 6);
+    // Two of those are pure refrigeration enquiries that cannot be filled at all.
+    assert.equal(summary.categories.find((c) => c.category === 'refrigeration').count, 2);
+  });
+
+  test('food prep demand likewise', () => {
+    const mentions = classified.filter((c) => c.category === 'foodPrep' || c.outCategories.includes('foodPrep')).length;
+    assert.equal(mentions, 5);
+  });
+
+  test('11 of 58 enquiries touch the two categories that were wrongly counted as supplied', () => {
+    // The size of the correction, stated plainly: nearly one enquiry in five.
+    const touched = classified.filter((c) =>
+      ['refrigeration', 'foodPrep'].some((cat) => c.category === cat || c.outCategories.includes(cat))).length;
+    assert.equal(touched, 9);
+  });
+
+  test('the categories the owner named are all classified as unsupplied', () => {
+    const config = read('../config/equipment-catalogue.json');
+    for (const c of ['coffee', 'ice', 'refrigeration', 'foodPrep', 'frozenDrinks', 'plumbing', 'ventilation']) {
+      assert.ok(c in config.outOfCatalogue, `${c} should be out of catalogue`);
+      assert.ok(!(c in config.inCatalogue), `${c} should not also be in catalogue`);
+    }
+  });
+
+  test('ice is recorded as an occasional exception rather than a flat no', () => {
+    const config = read('../config/equipment-catalogue.json');
+    assert.deepEqual(config.occasionallySupplied.categories, ['ice']);
   });
 
   test('seven leads answered but not specifically enough to classify', () => {

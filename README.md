@@ -237,7 +237,7 @@ reports the cohort size so a drop to zero is visible.
 | Two live pixels (8.1) | Both read, deduplicated by id, warning banner shown |
 | Duplicated stage names (8.2) | Stage map as config, unmapped surfaced as an alarm |
 | Sync gap (8.3) | Freshness indicator, alerts past 48 hours |
-| Out of catalogue leads (8.4) | Keyword classifier tuned on all 58 real enquiries. 19.6% out of catalogue, against the brief's estimate of roughly 19% |
+| Out of catalogue leads (8.4) | Keyword classifier tuned on all 58 real enquiries. **27.5% out of catalogue** on the catalogue the owner confirmed on 27 August 2026, against the brief's estimate of roughly 19% |
 | Duplicate submissions (8.5) | Deduplicated on hashed phone or email, raw count kept visible |
 
 Three traps found during the build and handled, none of them in the brief:
