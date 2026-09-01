@@ -3,6 +3,7 @@
 **Asset:** `Hirehospo_Video_AD_03_revision.mp4` — 18.5s, 9:16 (1080×1920 source at 480×854), sound-off safe (all message carried in on-screen type).
 **Slug:** `same-oven-two-ways`
 **ICP:** Restaurant owner / caterer — the premium-combi buyer facing a five-figure capital hit.
+**Service area:** Auckland-wide. Do not write "NZ-wide" or "across New Zealand" in this campaign.
 **Awareness stage:** Solution Aware → Product Aware (the reframe, then the offer).
 **Offer behind the CTA:** the latest stock list (soft, top-of-funnel lead magnet — not the application).
 
@@ -34,10 +35,10 @@ payments, with the capital still in your account.
 
 The machine doesn't know the difference. Your cashflow does.
 
-HireHospo finances refurbished commercial kitchen equipment across New
-Zealand — combi ovens, dishwashers, glasswashers, fryers, ranges,
+HireHospo finances refurbished commercial kitchen equipment for Auckland
+operators — combi ovens, dishwashers, glasswashers, fryers, ranges,
 refrigeration. Every unit refurbished, with warranty, and delivered,
-installed and serviced by Washpro.
+installed and serviced Auckland-wide by Washpro.
 
 Get our latest stock list and see what's available now.
 
@@ -55,8 +56,8 @@ hit, in the same month as wages, stock and rent.
 Same oven, financed: in your kitchen day one, low weekly payments + GST,
 and the $30,000 still working in the business.
 
-Refurbished, with warranty. Delivered, installed and serviced by Washpro,
-NZ-wide. Approved in 24 to 48 hours.
+Refurbished, with warranty. Delivered, installed and serviced Auckland-wide
+by Washpro. Approved in 24 to 48 hours.
 
 Get our latest stock list.
 
@@ -92,7 +93,7 @@ Subject to credit approval.
 |---|---|
 | Low weekly payments + GST. | 26 |
 | Refurbished, with warranty. | 27 |
-| NZ delivery and install. | 24 |
+| Auckland-wide delivery. | 23 |
 
 ### CTA button
 
@@ -115,14 +116,14 @@ day one, on low weekly payments, with the capital still working.
 The oven doesn't know which one you chose. Your cashflow does.
 
 Refurbished commercial kitchen equipment, with warranty. Delivered,
-installed and serviced by Washpro, NZ-wide.
+installed and serviced Auckland-wide by Washpro.
 
 Latest stock list — link in bio.
 
 Payments + GST. Subject to credit approval.
 
-#hirehospo #nzhospitality #commercialkitchen #hospitalitynz
-#restaurantnz #cafeowner #kitchenequipment #combioven
+#hirehospo #aucklandhospitality #commercialkitchen #aucklandeats
+#aucklandrestaurants #aucklandcafe #kitchenequipment #combioven
 ```
 
 ### Feed / Reels caption — B. shorter, tighter hold
@@ -134,14 +135,15 @@ this month.
 That's the whole pitch. The gear you need, on low weekly payments + GST,
 with your capital still in the business.
 
-Refurbished, with warranty. NZ delivery, install and service by Washpro.
+Refurbished, with warranty. Auckland-wide delivery, install and service
+by Washpro.
 
 Latest stock list — link in bio.
 
 Subject to credit approval.
 
-#hirehospo #nzhospo #commercialkitchen #restaurantequipment
-#cafefitout #hospitalitynz
+#hirehospo #aucklandhospo #commercialkitchen #restaurantequipment
+#aucklandcafe #aucklandrestaurants
 ```
 
 ### Stories / Reels sticker copy
