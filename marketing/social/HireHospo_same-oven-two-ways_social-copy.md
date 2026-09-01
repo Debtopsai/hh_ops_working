@@ -106,7 +106,9 @@ One CTA only. Do not stack an "Apply now" against "Get Stock List" in the same a
 
 ## INSTAGRAM
 
-### Feed / Reels caption - A (recommended)
+### Feed / Reels caption - A. APPROVED, USE THIS ONE
+
+Client-locked wording. Do not re-edit without sign-off.
 
 ```
 Same oven. Two ways to pay.
@@ -117,15 +119,19 @@ one, on low weekly payments, with the capital still working.
 The oven doesn't know which one you chose. Your cashflow does.
 
 Refurbished commercial kitchen equipment, with warranty. Delivered,
-installed and serviced Auckland Wide by Washpro.
+installed and serviced.
 
 Latest stock list at the link in bio.
 
-Payments + GST. Subject to credit approval.
+Subject to credit approval.
 
 #hirehospo #aucklandhospitality #commercialkitchen #aucklandeats
 #aucklandrestaurants #aucklandcafe #kitchenequipment #combioven
 ```
+
+Two changes from the earlier draft, both client-directed: Washpro is no
+longer named in the delivery line, and "Payments + GST." is dropped from the
+sign-off. See compliance note 4 on the GST point.
 
 ### Feed / Reels caption - B (shorter, tighter hold)
 
@@ -179,7 +185,7 @@ $30,000 today, or $27.00/day + GST, subject to credit approval.
 1. **Verify `$27.00/day` before this runs paid.** House rule is that ads sell the payment model, never a specific daily or weekly figure for a specific product, because pricing follows credit approval. This creative quotes a per-product daily rate. If the figure is signed off, it needs **"+ GST"** and **"subject to credit approval"** on screen beside it. Neither currently appears anywhere in the 18.5 seconds. Cheapest fix without a re-render: a persistent footnote strip from 0:05 to the end card reading `+ GST. Subject to credit approval.`
 2. **"Tax deductible" is ticked on both columns** with no qualifier. Deductibility depends on the customer's structure and on which product they take, since rent and lease-to-own are treated differently. Add `Seek your own tax advice` as microcopy, or drop the row.
 3. **"Rental Option" is the 12-month Rent product**, no ownership included. The captions avoid ownership language. Do not add "own it at the end" to this creative.
-4. **+ GST appears in every caption variant.** Do not cut it for length.
+4. **GST on the approved Instagram caption.** The locked caption carries "Subject to credit approval" but no "+ GST". The caption itself quotes no payment figure, only the $30,000 purchase price, so the exposure sits in the video: the on-screen **$27.00/day** has no "+ GST" beside it either, which means nothing in the whole ad unit carries it. The on-screen footnote in note 1 is now the only place that can fix it. The remaining Facebook and Instagram variants below still carry "Payments + GST." pending a call on whether to strip them to match.
 5. **"Subject to credit approval" closes every variant.** "Normal lending criteria apply" is the acceptable alternative if legal prefers it.
 6. **No approval hype, no pressure mechanics, no discount language.** Checked.
 7. **No refrigeration named anywhere.** Checked. Note that `docs/BUSINESS_OVERVIEW.md` still lists "refrigeration & ice" as a category and needs correcting.
