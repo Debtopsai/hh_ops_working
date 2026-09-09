@@ -1,6 +1,6 @@
 # The HireHospo First Call
 
-The shape a first call should take with a Meta brochure lead, and where each stage breaks.
+The shape a first call should take with a Meta stock-list lead, and where each stage breaks.
 Use this to locate *where* a call went wrong before scoring *how badly*.
 
 **Target length: 8–12 minutes.** Under 5 means qualification was skipped. Over 20 on a first call
@@ -13,8 +13,8 @@ approval behind it.
 
 Not part of the call, but it decides the call.
 
-**Speed is the whole game.** These are brochure leads at roughly NZ$10 each who filled a form on
-Instagram or Facebook and moved on with their day. Every hour that passes costs contact rate. A
+**Speed is the whole game.** These are stock-list requests at roughly NZ$10 each, filled in on
+Instagram or Facebook by someone who then moved on with their day. Every hour that passes costs contact rate. A
 lead called within an hour is a different conversation from the same lead called on day three —
 on day three the seller is explaining who HireHospo is; within the hour, the ad is still on screen.
 
@@ -28,22 +28,30 @@ can't reference anything the lead recognises.
 
 ## Stage 1 · Opener — 20 to 30 seconds
 
-Three jobs: identify, **name the brochure**, get permission.
+Three jobs: identify, **name the stock list**, get permission.
 
-> "Hi Keryn, it's Urman from HireHospo — you grabbed our equipment brochure off Facebook over the
-> weekend. Have I caught you at an OK moment? … The brochure's a bit generic, so rather than leave
-> you with it, thought I'd find out what you're actually after and see if we can be useful. Can I
-> ask a couple of quick questions?"
+The ad promised "GET OUR LATEST STOCK LIST TODAY". Open exactly where that left them.
 
-Name the brochure, not "your enquiry". Give a reason for calling that serves *them*. Ask permission
-— it costs four seconds and changes the register of everything after it.
+> "Hi Keryn, it's Urman from HireHospo — you asked for our stock list off Facebook over the
+> weekend. Did that come through to you? … Good. The list is long and half of it won't suit you,
+> so rather than let you wade through it I thought I'd find out what you're actually after and
+> point you at the right part. Can I ask a couple of quick questions?"
+
+If the list did **not** reach them, that is the opener:
+
+> "…it looks like that never actually got to you, which is on us. I'll send it the moment we hang
+> up. While I've got you — so I send the right section rather than all of it, what are you after?"
+
+Naming the stock list does three things at once: it proves the call is not random, it matches the
+lead's own memory of what they did, and it gives a reason for the call that serves *them*. Asking
+permission costs four seconds and changes the register of everything after it.
 
 *Breaks here:*
-- Framing a brochure download as a finance enquiry — the lead corrects you and starts on the back foot
+- Framing a stock-list request as a finance enquiry — the lead corrects you and starts on the back foot
+- Calling it "your enquiry" — vague, and the lead cannot place it
+- Never checking whether the promised list arrived, then being surprised by coolness
 - Launching into equipment before permission
 - Apologising for calling, which invites "actually now's not great"
-
----
 
 ## Stage 2 · Qualification — 2 to 4 minutes
 

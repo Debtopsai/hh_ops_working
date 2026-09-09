@@ -1,6 +1,6 @@
 # Objection Playbook
 
-The objections HireHospo's Meta brochure leads actually raise, with compliance-safe answers.
+The objections HireHospo's Meta stock-list leads actually raise, with compliance-safe answers.
 
 **How to use this in a review:** find the objection in the transcript, compare the seller's
 handling to the pattern below, and quote the replacement line. Do not read these out as scripts —
@@ -12,7 +12,7 @@ than a clumsy one delivered at the right one.
 1. **Acknowledge** — repeat it back so they hear that you heard it. One sentence, no "but".
 2. **Isolate** — *"If that were sorted, is there anything else holding you back?"* This is the step
    most calls skip, and it is the one that stops an hour of whack-a-mole.
-3. **Answer** — on their terms, in their numbers, not with a brochure fact.
+3. **Answer** — on their terms, in their numbers, not with a brochure fact recited back.
 4. **Confirm** — *"Does that deal with it?"* An unconfirmed objection comes back.
 
 Skipping straight to (3) is the single most common objection-handling failure. It is technically
@@ -20,25 +20,26 @@ correct and feels, to the customer, like being argued with.
 
 ---
 
-## "I was only after the brochure / I'm just looking"
+## "I just wanted the stock list" / "I'm just looking"
 
 **The most common objection on these leads, and it is not really an objection.** It is an accurate
 description of what they did. Treating it as resistance creates resistance.
 
-Do not counter it. Agree with it, and make the call worth their time anyway:
+Do not counter it. Agree, deliver the thing they asked for, and make the call worth their time:
 
-> "Totally — that's exactly what it's for. The reason I called rather than just leaving you with
-> the PDF: the brochure can't tell you what your weekly would be, because that depends on your
-> setup. Two minutes and I can at least tell you what's realistic for a place like yours. If it's
-> not the right time, that's completely fine."
+> "Totally — and you should have it. The only reason I rang rather than just emailing it: the list
+> changes weekly and half of it won't suit you. Two minutes and I can tell you which part to look
+> at, and roughly what's realistic for a place like yours. If it's not the right time, that's
+> completely fine."
 
 **What it scores:** a seller who pushes past this ("so what equipment were you looking at?") is
-scoring a 2 on Opening. A seller who agrees, lowers stakes, and *still asks for two minutes* is a 5.
+scoring a 2 on Opening. A seller who agrees, honours the stock-list promise, and *still* earns two
+minutes is a 5.
 
-**Watch for:** the seller hearing this as a rejection and rushing to the close out of anxiety.
-It is the opposite — the lead has just told you exactly where they are.
-
----
+**Watch for:** the seller hearing this as rejection and rushing the close out of anxiety. It is the
+opposite — the lead has just told you exactly where they are. And remember these leads named
+specific equipment on the form; "just looking" is usually modesty, not disinterest. The form answer
+is the way back in: *"You mentioned a chilled display — is that for a new site or replacing one?"*
 
 ## "How much is it?" — asked before credit approval
 

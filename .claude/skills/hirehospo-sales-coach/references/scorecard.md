@@ -3,8 +3,9 @@
 Eight scored dimensions, each /5, weighted to a total out of 100. Four compliance gates sit
 **outside** the score as pass/fail — a breach is reported as a breach and never averaged away.
 
-Score the call that happened, against what was achievable with *this* lead. A brochure-downloader
-who agreed to a credit check is a strong call. A hot referral who agreed to the same is a weak one.
+Score the call that happened, against what was achievable with *this* lead. A stock-list enquiry
+turned into an agreed credit check is a strong call. A hot referral that reached the same point is
+a weak one.
 
 ---
 
@@ -28,15 +29,15 @@ passes G2 and G3 — but if credit hasn't run, G1 has still failed.
 
 ### 1 · Opening & framing — weight 10
 
-Does the opener match **what the lead actually did** (downloaded a brochure) rather than what the
-seller wishes they'd done (applied for finance)?
+Does the opener match **what the lead actually did** (asked for the stock list) rather than what
+the seller wishes they'd done (applied for finance)?
 
 | | |
 |---|---|
-| **5** | Names the brochure and the ad's promise, gives a reason for the call the lead would agree with, and earns permission to ask questions. Lead is oriented within 20 seconds |
+| **5** | Names the stock list, confirms whether it arrived, gives a reason for the call the lead would agree with, and earns permission to ask questions. Lead is oriented within 20 seconds |
 | **4** | Correct framing, slightly slow or over-explained |
 | **3** | Generic but harmless — "calling about your enquiry with HireHospo" |
-| **2** | Over-claims intent: treats a brochure download as a finance enquiry. Lead audibly corrects or hesitates |
+| **2** | Over-claims intent: treats a stock-list request as a finance enquiry. Lead audibly corrects or hesitates. Also a 2 for the opposite error — treating a named-equipment enquiry as an idle browse |
 | **1** | No frame at all — straight into pitch or interrogation |
 
 The tell for a 2: the lead says some version of *"I only wanted to have a look"* in the first

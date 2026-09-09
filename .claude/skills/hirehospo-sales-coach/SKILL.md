@@ -22,20 +22,34 @@ specific, quotable rewrites of the moments that cost money.
 
 ## The one thing that governs every review
 
-**Almost every HireHospo lead is a brochure-downloader, not an applicant.**
+**These leads asked what equipment you have in stock. They did not apply for finance.**
 
-The Meta form is literally named `Brochure Form (Instant Access)`. The lead traded an email for a
-PDF. They did not apply for finance, did not ask for a quote, and in most cases were not thinking
-about a 36-month commitment when they tapped the ad.
+Get the distinction exactly right, because both halves of it matter and the CRM hides one of them.
 
-This single fact invalidates the most common failure mode on these calls: **opening as though the
-lead is further down the funnel than they are.** "Hi, I'm calling about your finance enquiry" is
-a mismatch — the lead's own mental model is "I downloaded a brochure." Score every opener against
-what the lead actually did, not what you wish they'd done.
+The ad they responded to reads **"GET OUR LATEST STOCK LIST TODAY"** with the button
+**"Get Stock List"**. HubSpot files the submission under the form name
+`Brochure Form (Instant Access)`, which understates it badly. A brochure download is idle
+curiosity; asking for a stock list is **shopping** — "show me what you've actually got." That is
+why the form answers are so concrete: *"sheeter, 1-1 oven, possibly a deck oven depending on
+space"*, *"chilled food display cabinet"*, *"counter top display chiller and big pie warmer"*.
+These are people mid-fit-out, not browsers.
+
+So treat the intent as warm. But the second half:
+
+**They were promised a stock list. Check they got one.** The ad said "today". If the lead never
+received it, the call opens on an unkept promise, and no opener recovers that as well as simply
+honouring it. Before any call, know whether the list went out — and if it did not, lead with it:
+that turns an apology into the reason for the call.
+
+What is still true is that they did not ask for a quote, a credit check, or a 36-month commitment.
+So the failure mode remains **opening further down the funnel than the lead is** — "I'm calling
+about your finance enquiry" is a mismatch with "I asked what you had in stock". The correct
+opener sits exactly where the ad left them: equipment availability.
 
 Corollary: the goal of a first call is **almost never a signature.** It is a qualified,
 credit-checkable business with a dated next step. Grade the call against that, and mark down calls
-that reach for a close the lead was never set up for.
+that reach for a close the lead was never set up for — and equally, mark down calls that treat a
+specific, named-equipment enquiry as a cold browse.
 
 ## What you produce
 
@@ -113,9 +127,11 @@ Do not soften a compliance breach. Do not pad the score.
 
 ## Other modes
 
-- **Pre-call prep** — pull the lead context, then produce: the opener (matched to the brochure
-  origin), the three qualification questions that matter most for this lead, the objection most
-  likely given their business type, and the next step to aim for.
+- **Pre-call prep** — pull the lead context, then produce: whether the promised stock list was
+  actually sent, the opener (matched to the stock-list origin and their own form answer), the three
+  qualification questions that matter most for this lead, the objection most likely given their
+  business type, and the next step to aim for. Always check the customer database first — a lead
+  who is already a financed customer is a different call entirely, and the CRM will not tell you.
 - **Pattern analysis across calls** — score each, then report only what repeats. Rank by revenue
   cost, not frequency. Three recurring habits maximum.
 - **Roleplay** — play the operator, in character for the ICP, with their real objections. Stay in

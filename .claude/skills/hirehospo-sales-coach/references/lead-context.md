@@ -44,8 +44,11 @@ Reading them:
 
 - **`hs_analytics_source: PAID_SOCIAL`** + **`hs_analytics_source_data_1: Facebook`** — a Meta lead
 - **`recent_conversion_event_name`** — e.g. `Facebook Lead Ads: Brochure Form (Instant Access)`.
-  **Read this before anything else.** It tells you what the lead actually did, and therefore what
-  a realistic call outcome was. A brochure form is a lead magnet, not an application
+  **Read this before anything else, but do not take the name at face value.** The ad behind this
+  form reads "GET OUR LATEST STOCK LIST TODAY" with a "Get Stock List" button — the lead asked what
+  equipment is available, which is shopping intent, not a brochure browse. HubSpot's form label
+  understates the lead. Also establish whether the promised stock list was actually sent; if it was
+  not, that is the opener and the first thing to fix
 - **`hs_analytics_source_data_2`** — the campaign name in lower case, e.g.
   `hh brochure campaign 28/08 2026 (#2)`
 - **`what_type_of_equipment_are_you_after`** — the free-text form answer, e.g. *"Kitchen cookware,
