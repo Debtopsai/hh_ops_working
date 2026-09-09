@@ -1,0 +1,14 @@
+# Call recordings and transcripts contain customer PII — they live outside the repo
+# (~/HireHospo/calls/) but this guards against anything being copied in.
+calls/
+*.m4a
+*.mp3
+*.wav
+transcript.txt
+transcript.json
+call.json
+state.json
+
+__pycache__/
+*.pyc
+.DS_Store
