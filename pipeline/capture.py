@@ -215,15 +215,17 @@ def process(path: Path, model_size: str, language: str, state: dict) -> Path | N
         print(f"  ! cannot stat ({exc}); skipping", file=sys.stderr)
         return None
 
-    slug = slugify(path.stem, recorded)
-    out_dir = OUT_ROOT / slug
-    out_dir.mkdir(parents=True, exist_ok=True)
-
+    # Transcribe BEFORE creating the output directory. Creating it first leaves an empty
+    # orphan folder behind on any failure, which reads as a processed call but holds nothing.
     try:
         result = transcribe(path, model_size, language)
     except Exception as exc:  # noqa: BLE001 - a bad file must not kill the watcher
         print(f"  ! transcription failed: {exc}", file=sys.stderr)
         return None
+
+    slug = slugify(path.stem, recorded)
+    out_dir = OUT_ROOT / slug
+    out_dir.mkdir(parents=True, exist_ok=True)
 
     (out_dir / "transcript.txt").write_text(render_transcript(result), encoding="utf-8")
     (out_dir / "transcript.json").write_text(
