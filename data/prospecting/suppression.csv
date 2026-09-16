@@ -1,0 +1,71 @@
+key_type,key_value,reason,source,source_id,label
+email,accounts@selwyn.org.nz,arrears_do_not_market,customers.csv,HH001,Selwyn Contractors
+phone,+64210535237,arrears_do_not_market,customers.csv,HH001,Selwyn Contractors
+business_name,selwyn contractors,arrears_do_not_market,customers.csv,HH001,Selwyn Contractors
+email,info@curryleaf.co.nz,current_customer,customers.csv,HH003,Curry Leaf
+phone,+64212474348,current_customer,customers.csv,HH003,Curry Leaf
+business_name,curry leaf,current_customer,customers.csv,HH003,Curry Leaf
+email,julianbaleli@gmail.com,current_customer,customers.csv,HH005,Gem Seafood
+phone,+64223199221,current_customer,customers.csv,HH005,Gem Seafood
+business_name,gem seafood,current_customer,customers.csv,HH005,Gem Seafood
+email,mamasilacateringservices@gmail.com,current_customer,customers.csv,HH007,Mama Sila Catering
+phone,+64276363011,current_customer,customers.csv,HH007,Mama Sila Catering
+business_name,mama sila catering,current_customer,customers.csv,HH007,Mama Sila Catering
+email,gm@sohoauckland.com,current_customer,customers.csv,HH008,IPG Hotels (SOHO Auckland)
+business_name,ipg hotels soho auckland,current_customer,customers.csv,HH008,IPG Hotels (SOHO Auckland)
+email,admin@maraetaiboatclub.org.nz,current_customer,customers.csv,HH009,BlueMoonSkyNZZ
+phone,+6421533903,current_customer,customers.csv,HH009,BlueMoonSkyNZZ
+business_name,bluemoonskynzz,current_customer,customers.csv,HH009,BlueMoonSkyNZZ
+email,booksnbrickscafe@gmail.com,current_customer,customers.csv,HH010,Books N Bricks
+business_name,books n bricks,current_customer,customers.csv,HH010,Books N Bricks
+email,ej@rotibros.co.nz,current_customer,customers.csv,HH011,Hiraya Collective (Roti Bros)
+phone,+64211469799,current_customer,customers.csv,HH011,Hiraya Collective (Roti Bros)
+business_name,hiraya collective roti bros,current_customer,customers.csv,HH011,Hiraya Collective (Roti Bros)
+email,om@editauckland.com,current_customer,customers.csv,HH013,NZ Hotel Company
+phone,+6421752404,current_customer,customers.csv,HH013,NZ Hotel Company
+business_name,hotel,current_customer,customers.csv,HH013,NZ Hotel Company
+email,anant168ltd@gmail.com,current_customer,customers.csv,HH014,Onzon de Thai Kitchen
+business_name,onzon de thai kitchen,current_customer,customers.csv,HH014,Onzon de Thai Kitchen
+email,hongxiaochen@hotmail.com,current_customer,customers.csv,HH015,Hav Better (Khao Hom)
+business_name,hav better khao hom,current_customer,customers.csv,HH015,Hav Better (Khao Hom)
+email,peterspies@xtra.co.nz,current_customer,customers.csv,HH016,Kai Rawe
+business_name,kai rawe,current_customer,customers.csv,HH016,Kai Rawe
+email,cinnamonsquared2@gmail.com,past_customer,customers.csv,HH017,Cinnamon Squared
+phone,+64211623144,past_customer,customers.csv,HH017,Cinnamon Squared
+business_name,cinnamon squared,past_customer,customers.csv,HH017,Cinnamon Squared
+email,christad57@gmail.com,current_customer,customers.csv,HH019,Koeksisterpot
+phone,+64272846470,current_customer,customers.csv,HH019,Koeksisterpot
+business_name,koeksisterpot,current_customer,customers.csv,HH019,Koeksisterpot
+email,phillmann@gmail.com,current_customer,customers.csv,HH020,Southern Spit BBQ
+business_name,southern spit bbq,current_customer,customers.csv,HH020,Southern Spit BBQ
+email,jess@juk.co.nz,current_customer,customers.csv,HH021,Eat Shop Do
+phone,+640279370650,current_customer,customers.csv,HH021,Eat Shop Do
+business_name,eat shop do,current_customer,customers.csv,HH021,Eat Shop Do
+email,charles.rivers@lhf.net,past_customer,customers.csv,HH022,Life Health Foods
+business_name,life health foods,past_customer,customers.csv,HH022,Life Health Foods
+business_name,manaia eatery,current_customer,customers.csv,HH024,Manaia Eatery
+email,nobitachoudhary@hotmail.com,current_customer,customers.csv,HH025,Lahoria Trading
+phone,+642702743307,current_customer,customers.csv,HH025,Lahoria Trading
+business_name,lahoria trading,current_customer,customers.csv,HH025,Lahoria Trading
+email,kodurskitchen@gmail.com,current_customer,customers.csv,HH026,Kodur's Kitchen
+phone,+6495582387,current_customer,customers.csv,HH026,Kodur's Kitchen
+business_name,kodur s kitchen,current_customer,customers.csv,HH026,Kodur's Kitchen
+email,urbanvibeparnell@gmail.com,current_customer,customers.csv,HH027,Urban Vibe
+business_name,urban vibe,current_customer,customers.csv,HH027,Urban Vibe
+email,diane@rescued.co.nz,current_customer,customers.csv,HH028,Rescued
+business_name,rescued,current_customer,customers.csv,HH028,Rescued
+email,sonyxavier5@gmail.com,current_customer,customers.csv,HH029,Homely Flavors
+phone,+6421983367,current_customer,customers.csv,HH029,Homely Flavors
+business_name,homely flavors,current_customer,customers.csv,HH029,Homely Flavors
+email,caviarkitchenmbbc@gmail.com,current_customer,customers.csv,HH030,BlueOceanNZ (Caviar Kitchen)
+phone,+6421737085,current_customer,customers.csv,HH030,BlueOceanNZ (Caviar Kitchen)
+business_name,blueoceannz caviar kitchen,current_customer,customers.csv,HH030,BlueOceanNZ (Caviar Kitchen)
+email,paradepretzels@gmail.com,current_customer,customers.csv,HH031,Ottos Pretzelria
+business_name,ottos pretzelria,current_customer,customers.csv,HH031,Ottos Pretzelria
+email,kallupavan09@gmail.com,current_customer,customers.csv,HH032,Essence Cafe
+phone,+64225968136,current_customer,customers.csv,HH032,Essence Cafe
+business_name,essence cafe,current_customer,customers.csv,HH032,Essence Cafe
+email,accounts@lazybetty.co.nz,past_customer,customers.csv,HH038,Lazy Betty
+business_name,lazy betty,past_customer,customers.csv,HH038,Lazy Betty
+email,ronric76_ricafrente@yahoo.com,current_customer,customers.csv,HH044,GOLD RIBBON FOODS LIMITED
+business_name,gold ribbon foods,current_customer,customers.csv,HH044,GOLD RIBBON FOODS LIMITED

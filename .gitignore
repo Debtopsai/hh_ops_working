@@ -1,0 +1,6 @@
+# Raw vendor / scraped exports: large, PII-heavy, re-downloadable from source.
+# Only normalised + staged outputs are tracked.
+data/prospecting/raw/*
+!data/prospecting/raw/.gitkeep
+*.pyc
+__pycache__/
