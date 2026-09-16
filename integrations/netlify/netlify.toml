@@ -1,0 +1,8 @@
+# Merge this into the hirehospo-acquisition-dashboard project's netlify.toml.
+# If the project has no netlify.toml yet, this file is enough on its own.
+
+[build]
+  functions = "netlify/functions"
+
+[functions]
+  node_bundler = "esbuild"
