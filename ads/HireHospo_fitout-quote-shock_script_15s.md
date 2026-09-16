@@ -1,0 +1,22 @@
+## Script - "The Fit-Out Quote" - New cafe owner - Problem Aware - High-stakes warning - PAS - 15s
+
+**Offer focus:** Full fit-out · Rent (12 months) - startups not ready to commit to ownership · **Featured gear:** Commercial Dishwashers ($2,000-$20,000) · Convection Ovens ($2,800-$8,300) · Glasswashers ($2,300-$4,000) - Starline M2 undercounter dishwasher, Turbofan E31D4 convection oven · **HireHospo intro at:** 0:07 (47%) · **CTA:** Get our latest stock list today
+**Format:** person-free motion graphics + real equipment imagery (dark). **Voice:** credit-led operator - underwriting, not selling.
+**Compliance:** approved claims only · **no GST line by client direction (see claim check)** · "Subject to credit approval" on the end card · no quoted weekly price for a specific product · the $16,800 fit-out total is the *cost of buying outright* (the enemy), never a HireHospo figure.
+
+| Time | Section | VO | On-screen text | Visual (dark, no people) | SFX / music |
+|---|---|---|---|---|---|
+| 0:00-0:04 | Hook | "The fit-out quote came back. Sixteen thousand, eight hundred." | **$16,800** *(flame highlight under the last three digits)* | Quote-shock frame: mono figure counting 0 → 16,800 on #12141A, hairline rule beneath | Music in low; count-up tick |
+| 0:04-0:07 | Agitate | "Three machines. One cheque. Before you've opened." | `DISHWASHER` · `CONVECTION OVEN` · `GLASSWASHER` - then **ONE CHEQUE** | Category grid: 3 mono tiles with real price bands, then the figure greys and consolidates into a single line item | Dip; low service ambience, room tone drops out |
+| 0:07-0:09 | Bridge (HireHospo) | "All on our stock list." | HireHospo *(wordmark)* | **Hard visual reset.** Wordmark resolves on steel; approval timeline begins: APPLY → CREDIT CHECK → APPROVED → DELIVERED | Lift; clean UI tick on APPROVED |
+| 0:09-0:12 | Mechanism / proof | "Fully serviced Starline and Turbofan. With warranty." | `FULLY SERVICED · WITH WARRANTY` | Equipment hero plinth: Starline M2 undercounter dishwasher, then Turbofan E31D4 convection oven, brushed-steel plinth, brand + category chip in mono; condition badge stamps on | Rack clack (single); light steel settle |
+| 0:12-0:15 | CTA | "Get our latest stock list today." | Big-number-vs-weekly split → end card: **Get our latest stock list today** · *Fully serviced, with warranty · Subject to credit approval* · `hirehospo.com` | Split frame: $16,800 greys out left, "low weekly payments" lifts in flame right → end card | Till/receipt tick on the split; button on CTA; settle + short tail |
+
+- **Bridge intent honoured:** the hook states the capital hit as a fact, the agitation makes it one indivisible cheque (which is what actually stops a cafe opening), so "All on our stock list" is the only unspoken option finally said out loud - and the servicing proof answers "then why is it affordable" before it is asked, which makes the payment reframe land as arithmetic rather than a pitch.
+- **Audit:** bridge ✓ · offer last ✓ (payment model only appears at 0:12) · specifics: $16,800 fit-out total, three named categories with real bands, Starline M2, Turbofan E31D4, "24 to 48 hours" ✓ · single CTA ✓ · 33 words / 2.20 wps (max beat 2.50 wps) ✓ · claims all on the approved table ✓ · credit-approval microcopy ✓ · catalogue-true ✓ · roles clean (HireHospo finances; no Washpro claim made, so no role-blur) ✓ · no approval hype, pressure, or discount language ✓.
+- **⚠ Claim check:**
+  - **$16,800** is a *composite* illustrative fit-out total, not a catalogue price. Derived from real bands: undercounter dishwasher ~$4,200 + Turbofan convection oven ~$6,400 + glasswasher ~$3,200 + prep/refrigeration ~$3,000. **Confirm against the live catalogue before publishing**, and only ever present it as the outright-purchase cost.
+  - Category price bands are a **26 May 2026 snapshot** - ⚠ verify on hirehospo.com before paid use.
+  - "$4.66/day" is deliberately **not** used here - a full fit-out is outside the cheapest-category zone where that figure is believable.
+  - Starline M2 and Turbofan E31D4 are real financed units from the HireHospo portfolio; confirm both are **active** on the live catalogue and link the product pages in the hand-off.
+- **Shorter-cut trim (10s):** keep the hook (0:00-0:03, drop to "$16,800" on-screen only after 1.5s), cut the category grid to a single 1.5s beat, keep the bridge and the end card whole. Beat map: hook 0-3 · agitate 3-5 · bridge 5-6 · proof 6-8 · CTA 8-10.
