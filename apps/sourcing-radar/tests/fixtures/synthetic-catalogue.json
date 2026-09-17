@@ -1,0 +1,42 @@
+{
+  "result": {
+    "lots": [
+      {
+        "lotId": "AAA-10021",
+        "lotNumber": "21",
+        "name": "Rational SCC 101 combi oven, 10 tray",
+        "details": "<p>Rational SelfCookingCenter, single phase. Ex cafe. Sold as is where is.</p>",
+        "currentBid": "$5,750.00 incl GST",
+        "images": ["/media/lots/10021-1.jpg"],
+        "auction": { "title": "Catering and Hospitality, September", "closes": "2026-09-24T19:00:00+12:00" },
+        "location": "Penrose, Auckland",
+        "viewing": "Thursday 9am to 4pm",
+        "detailUrl": "/lot/10021"
+      },
+      {
+        "lotId": "AAA-10022",
+        "lotNumber": "22",
+        "name": "Hobart domestic stand mixer, 5 litre",
+        "details": "<p>Household kitchen mixer.</p>",
+        "currentBid": "$115.00 incl GST",
+        "images": [],
+        "auction": { "title": "Catering and Hospitality, September", "closes": "2026-09-24T19:00:00+12:00" },
+        "location": "Penrose, Auckland",
+        "viewing": "Thursday 9am to 4pm",
+        "detailUrl": "/lot/10022"
+      },
+      {
+        "lotId": "AAA-10023",
+        "lotNumber": "23",
+        "name": "Starline undercounter glasswasher",
+        "details": "<p>Awaiting valuation.</p>",
+        "currentBid": "Pricing coming soon",
+        "images": ["/media/lots/10023-1.jpg"],
+        "auction": { "title": "Catering and Hospitality, September", "closes": "2026-09-24T19:00:00+12:00" },
+        "location": "Christchurch",
+        "viewing": "Thursday 9am to 4pm",
+        "detailUrl": "/lot/10023"
+      }
+    ]
+  }
+}
