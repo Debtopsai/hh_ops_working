@@ -10,8 +10,16 @@ import { NextResponse, type NextRequest } from 'next/server'
 import { SupabaseIngestStore } from '@/ingest/supabase-store'
 import { runSource } from '@/ingest/runner'
 import { browserSessionClient } from '@/lib/supabase/server'
+import { isPreviewMode } from '@/lib/preview'
 
 export async function POST(request: NextRequest) {
+  if (isPreviewMode()) {
+    return NextResponse.json(
+      { error: 'Preview mode has no database, so a clip cannot be saved. The form is here to show the screen.' },
+      { status: 503 },
+    )
+  }
+
   const supabase = browserSessionClient()
   const { data: auth } = await supabase.auth.getUser()
   if (!auth.user) return NextResponse.json({ error: 'not signed in' }, { status: 401 })

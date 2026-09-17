@@ -2,6 +2,7 @@
 
 import { revalidatePath } from 'next/cache'
 import { browserSessionClient } from '@/lib/supabase/server'
+import { isPreviewMode } from '@/lib/preview'
 
 /**
  * Triage. Every state change records who made it and when, and the other two
@@ -9,6 +10,10 @@ import { browserSessionClient } from '@/lib/supabase/server'
  * user at all: three people must not chase the same machine.
  */
 export async function setListingState(formData: FormData) {
+  // Preview mode has no database to write to, so the buttons render and do
+  // nothing rather than throwing at whoever is looking at the screens.
+  if (isPreviewMode()) return
+
   const listingId = String(formData.get('listingId') ?? '')
   const state = String(formData.get('state') ?? '')
   const note = formData.get('note')

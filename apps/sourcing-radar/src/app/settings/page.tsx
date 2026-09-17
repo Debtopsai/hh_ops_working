@@ -3,6 +3,13 @@ import { browserSessionClient } from '@/lib/supabase/server'
 import { NZ_REGIONS } from '@/lib/region'
 import { WHATSAPP_TEMPLATES, WHATSAPP_TEMPLATE_RATE_NZD } from '@/alerts/templates'
 import { OPEN_ITEMS } from '@/lib/open-items'
+import {
+  isPreviewMode,
+  PREVIEW_CONFIG,
+  PREVIEW_DEVICE_TOKENS,
+  PREVIEW_ME,
+  PREVIEW_USERS,
+} from '@/lib/preview'
 import { createDeviceToken, revokeDeviceToken, savePacingConfig, saveMyAlertSettings } from './actions'
 
 export const dynamic = 'force-dynamic'
@@ -10,6 +17,17 @@ export const dynamic = 'force-dynamic'
 const HOURS = Array.from({ length: 24 }, (_, hour) => hour)
 
 export default async function SettingsPage() {
+  if (isPreviewMode()) {
+    return renderSettings({
+      me: PREVIEW_ME,
+      config: PREVIEW_CONFIG,
+      users: PREVIEW_USERS,
+      tokens: PREVIEW_DEVICE_TOKENS,
+      isAdmin: true,
+      newDeviceToken: null,
+    })
+  }
+
   const supabase = browserSessionClient()
   const { data: auth } = await supabase.auth.getUser()
 
@@ -22,9 +40,26 @@ export default async function SettingsPage() {
     supabase.from('device_tokens').select('*').is('revoked_at', null).order('created_at'),
   ])
 
-  const isAdmin = me?.role === 'admin'
-  const newDeviceToken = cookies().get('radar_new_device_token')?.value ?? null
+  return renderSettings({
+    me,
+    config,
+    users: users ?? [],
+    tokens: tokens ?? [],
+    isAdmin: me?.role === 'admin',
+    newDeviceToken: cookies().get('radar_new_device_token')?.value ?? null,
+  })
+}
 
+interface SettingsView {
+  me: any
+  config: any
+  users: any[]
+  tokens: any[]
+  isAdmin: boolean
+  newDeviceToken: string | null
+}
+
+function renderSettings({ me, config, users, tokens, isAdmin, newDeviceToken }: SettingsView) {
   return (
     <>
       <h1>Settings</h1>
@@ -130,7 +165,7 @@ export default async function SettingsPage() {
             </tr>
           </thead>
           <tbody>
-            {(users ?? []).map((user: any) => (
+            {users.map((user: any) => (
               <tr key={user.id}>
                 <td>{user.email}</td>
                 <td>{user.display_name ?? '-'}</td>
@@ -217,7 +252,7 @@ export default async function SettingsPage() {
               </tr>
             </thead>
             <tbody>
-              {(tokens ?? []).map((token: any) => (
+              {tokens.map((token: any) => (
                 <tr key={token.id}>
                   <td>{token.label}</td>
                   <td>{token.last_seen_at ? new Date(token.last_seen_at).toLocaleString('en-NZ') : 'never'}</td>

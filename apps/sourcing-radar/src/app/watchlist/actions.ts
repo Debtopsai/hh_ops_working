@@ -2,6 +2,7 @@
 
 import { revalidatePath } from 'next/cache'
 import { browserSessionClient } from '@/lib/supabase/server'
+import { isPreviewMode } from '@/lib/preview'
 
 /**
  * The buying profile is configuration, not code, and the founder edits it
@@ -17,6 +18,7 @@ function parseList(value: FormDataEntryValue | null): string[] {
 }
 
 export async function saveWatchTerm(formData: FormData) {
+  if (isPreviewMode()) return
   const supabase = browserSessionClient()
   const id = String(formData.get('id') ?? '')
   const maxPrice = String(formData.get('maxPriceExGst') ?? '').trim()
@@ -43,6 +45,7 @@ export async function saveWatchTerm(formData: FormData) {
 }
 
 export async function toggleWatchTerm(formData: FormData) {
+  if (isPreviewMode()) return
   const supabase = browserSessionClient()
   const id = String(formData.get('id') ?? '')
   const active = formData.get('active') === 'true'
@@ -52,6 +55,7 @@ export async function toggleWatchTerm(formData: FormData) {
 }
 
 export async function addNegativeKeyword(formData: FormData) {
+  if (isPreviewMode()) return
   const supabase = browserSessionClient()
   const keyword = String(formData.get('keyword') ?? '').trim().toLowerCase()
   if (!keyword) return
@@ -60,6 +64,7 @@ export async function addNegativeKeyword(formData: FormData) {
 }
 
 export async function removeNegativeKeyword(formData: FormData) {
+  if (isPreviewMode()) return
   const supabase = browserSessionClient()
   const keyword = String(formData.get('keyword') ?? '')
   if (!keyword) return

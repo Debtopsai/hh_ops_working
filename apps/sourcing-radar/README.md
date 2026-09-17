@@ -23,7 +23,24 @@ Working through it is the first task, and it is an afternoon's work from a
 machine with ordinary internet access. Everything downstream of it is built and
 tested.
 
-## Running it
+## Looking at it without a database
+
+```
+npm install
+PREVIEW_MODE=1 npm run dev     # http://localhost:3000/feed
+```
+
+Preview mode runs all four screens on sample data with no Supabase project, no
+credentials and no discovered endpoints, so the interface can be walked through
+before any of that exists. A banner on every screen says the data is sample
+data. It refuses to start if `SUPABASE_SERVICE_ROLE_KEY` is set, so it cannot be
+left on in front of live data, and the buttons and forms deliberately do nothing
+because there is nothing behind them.
+
+The sample dataset is `src/lib/preview.ts`. Edit it to try a different mix of
+listings, run states or seats.
+
+## Running it properly
 
 ```
 cp .env.example .env.local     # then fill it in

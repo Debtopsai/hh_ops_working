@@ -1,5 +1,13 @@
 import { browserSessionClient } from '@/lib/supabase/server'
 import { NZ_REGIONS } from '@/lib/region'
+import {
+  isPreviewMode,
+  PREVIEW_CATEGORIES,
+  PREVIEW_MATCH_COUNTS,
+  PREVIEW_NEGATIVES,
+  PREVIEW_SOURCES,
+  PREVIEW_TERMS,
+} from '@/lib/preview'
 import { addNegativeKeyword, removeNegativeKeyword, saveWatchTerm, toggleWatchTerm } from './actions'
 
 /**
@@ -14,6 +22,17 @@ import { addNegativeKeyword, removeNegativeKeyword, saveWatchTerm, toggleWatchTe
 export const dynamic = 'force-dynamic'
 
 export default async function WatchlistPage() {
+  if (isPreviewMode()) {
+    return renderWatchlist({
+      terms: PREVIEW_TERMS,
+      negatives: PREVIEW_NEGATIVES.map((keyword) => ({ keyword })),
+      sources: PREVIEW_SOURCES,
+      categories: PREVIEW_CATEGORIES.map((name) => ({ name })),
+      isAdmin: true,
+      counts: PREVIEW_MATCH_COUNTS,
+    })
+  }
+
   const supabase = browserSessionClient()
 
   const [{ data: terms }, { data: negatives }, { data: sources }, { data: categories }, { data: user }] =
@@ -32,6 +51,26 @@ export default async function WatchlistPage() {
 
   const counts = await loadMatchCounts(supabase)
 
+  return renderWatchlist({
+    terms: terms ?? [],
+    negatives: negatives ?? [],
+    sources: sources ?? [],
+    categories: categories ?? [],
+    isAdmin,
+    counts,
+  })
+}
+
+interface WatchlistView {
+  terms: any[]
+  negatives: Array<{ keyword: string }>
+  sources: Array<{ slug: string; name: string }>
+  categories: Array<{ name: string }>
+  isAdmin: boolean
+  counts: { sevenDay: Record<string, number>; thirtyDay: Record<string, number> }
+}
+
+function renderWatchlist({ terms, negatives, sources, categories, isAdmin, counts }: WatchlistView) {
   return (
     <>
       <h1>Watchlist</h1>
@@ -60,7 +99,7 @@ export default async function WatchlistPage() {
           </tr>
         </thead>
         <tbody>
-          {(terms ?? []).map((term: any) => (
+          {terms.map((term: any) => (
             <tr key={term.id}>
               <td>{term.label}</td>
               <td>{(term.keywords ?? []).join(', ')}</td>
@@ -108,7 +147,7 @@ export default async function WatchlistPage() {
                 Category
                 <select name="category" defaultValue="">
                   <option value="">None</option>
-                  {(categories ?? []).map((category: any) => (
+                  {categories.map((category: any) => (
                     <option key={category.name} value={category.name}>
                       {category.name}
                     </option>
@@ -134,7 +173,7 @@ export default async function WatchlistPage() {
             <fieldset style={{ border: '1px solid var(--line)', borderRadius: 8 }}>
               <legend style={{ fontSize: 13, color: 'var(--muted)' }}>Sources</legend>
               <div className="row">
-                {(sources ?? []).map((source: any) => (
+                {sources.map((source: any) => (
                   <label key={source.slug} className="row" style={{ gap: 4 }}>
                     <input type="checkbox" name="sourceSlugs" value={source.slug} defaultChecked />
                     {source.name}
@@ -162,7 +201,7 @@ export default async function WatchlistPage() {
           abandoned in week one.
         </p>
         <div className="row">
-          {(negatives ?? []).map((row: any) => (
+          {negatives.map((row: any) => (
             <form action={removeNegativeKeyword} key={row.keyword}>
               <input type="hidden" name="keyword" value={row.keyword} />
               <button type="submit" disabled={!isAdmin} title={isAdmin ? 'Remove' : 'Admin only'}>

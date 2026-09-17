@@ -11,6 +11,12 @@ type CookiesToSet = Array<{ name: string; value: string; options?: CookieOptions
 export async function middleware(request: NextRequest) {
   let response = NextResponse.next({ request })
 
+  // Preview mode runs the screens on sample data with no Supabase project, so
+  // there is no session to refresh and nothing to sign in to.
+  if (process.env.PREVIEW_MODE === '1' && !process.env.SUPABASE_SERVICE_ROLE_KEY) {
+    return response
+  }
+
   const supabase = createServerClient(
     process.env.NEXT_PUBLIC_SUPABASE_URL!,
     process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!,

@@ -4,9 +4,11 @@ import { randomBytes } from 'node:crypto'
 import { cookies } from 'next/headers'
 import { revalidatePath } from 'next/cache'
 import { browserSessionClient } from '@/lib/supabase/server'
+import { isPreviewMode } from '@/lib/preview'
 import { hashToken } from '@/lib/hash'
 
 export async function saveMyAlertSettings(formData: FormData) {
+  if (isPreviewMode()) return
   const supabase = browserSessionClient()
   const { data: auth } = await supabase.auth.getUser()
   if (!auth.user) return
@@ -27,6 +29,7 @@ export async function saveMyAlertSettings(formData: FormData) {
 }
 
 export async function savePacingConfig(formData: FormData) {
+  if (isPreviewMode()) return
   const supabase = browserSessionClient()
   await supabase
     .from('app_config')
@@ -54,6 +57,7 @@ export async function savePacingConfig(formData: FormData) {
  * log.
  */
 export async function createDeviceToken(formData: FormData) {
+  if (isPreviewMode()) return
   const supabase = browserSessionClient()
   const { data: auth } = await supabase.auth.getUser()
   if (!auth.user) return
@@ -76,6 +80,7 @@ export async function createDeviceToken(formData: FormData) {
 }
 
 export async function revokeDeviceToken(formData: FormData) {
+  if (isPreviewMode()) return
   const supabase = browserSessionClient()
   const id = String(formData.get('id') ?? '')
   if (!id) return

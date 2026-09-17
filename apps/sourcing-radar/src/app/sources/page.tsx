@@ -1,4 +1,11 @@
 import { browserSessionClient } from '@/lib/supabase/server'
+import {
+  isPreviewMode,
+  PREVIEW_HEALTH_ALERTS,
+  PREVIEW_LISTINGS_LAST_24H,
+  PREVIEW_RUNS,
+  PREVIEW_SOURCES,
+} from '@/lib/preview'
 
 /**
  * Source health.
@@ -17,9 +24,45 @@ const STATUS_LABEL: Record<string, string> = {
   not_configured: 'not configured',
   running: 'running',
   skipped: 'skipped',
+  no_runs_yet: 'no runs yet',
+  not_built: 'not built yet',
+}
+
+/**
+ * What is standing between a source and listings. The four cases need different
+ * responses from whoever is looking at this screen, so they are not collapsed
+ * into one "not configured".
+ */
+function setupState(source: any): { status: string; note: string | null } {
+  if (source.adapter_type === 'manual_clip') {
+    return { status: 'no_runs_yet', note: 'Clips are pushed in from the feed and from the extension. There is nothing to poll and nothing to configure.' }
+  }
+  if (source.adapter_type === 'email_inbound') {
+    return { status: 'not_built', note: 'Phase 2 work. The inbound webhook and the alert email parser are not built yet.' }
+  }
+  if (source.adapter_type === 'extension') {
+    return { status: 'not_built', note: 'Phase 3 work. The Chrome extension is not built yet, and the adapter stays off behind the kill switch in Settings until it is.' }
+  }
+  const configured = source.config?.discovered === true
+  if (!configured) {
+    return {
+      status: 'not_configured',
+      note: "Endpoints and field mappings have not been discovered yet. Follow docs/DISCOVERY.md and write the result into this source's config.",
+    }
+  }
+  return { status: 'no_runs_yet', note: null }
 }
 
 export default async function SourcesPage() {
+  if (isPreviewMode()) {
+    return renderSourceHealth({
+      sources: PREVIEW_SOURCES,
+      runs: PREVIEW_RUNS,
+      health: PREVIEW_HEALTH_ALERTS,
+      listingsLast24h: PREVIEW_LISTINGS_LAST_24H,
+    })
+  }
+
   const supabase = browserSessionClient()
   const dayAgo = new Date(Date.now() - 86400_000).toISOString()
 
@@ -34,19 +77,34 @@ export default async function SourcesPage() {
     supabase.from('listings').select('source_slug').gte('first_seen_at', dayAgo).limit(5000),
   ])
 
-  const latestBySource = new Map<string, any>()
-  const lastOkBySource = new Map<string, any>()
-  for (const run of runs ?? []) {
-    if (!latestBySource.has(run.source_slug)) latestBySource.set(run.source_slug, run)
-    if (run.status === 'ok' && !lastOkBySource.has(run.source_slug)) lastOkBySource.set(run.source_slug, run)
-  }
-
   const listingsLast24h: Record<string, number> = {}
   for (const row of recentListings ?? []) {
     listingsLast24h[row.source_slug] = (listingsLast24h[row.source_slug] ?? 0) + 1
   }
 
-  const openHealth = health ?? []
+  return renderSourceHealth({
+    sources: sources ?? [],
+    runs: runs ?? [],
+    health: health ?? [],
+    listingsLast24h,
+  })
+}
+
+interface SourceHealthView {
+  sources: any[]
+  runs: any[]
+  health: any[]
+  listingsLast24h: Record<string, number>
+}
+
+function renderSourceHealth({ sources, runs, health, listingsLast24h }: SourceHealthView) {
+  const latestBySource = new Map<string, any>()
+  const lastOkBySource = new Map<string, any>()
+  for (const run of runs) {
+    if (!latestBySource.has(run.source_slug)) latestBySource.set(run.source_slug, run)
+    if (run.status === 'ok' && !lastOkBySource.has(run.source_slug)) lastOkBySource.set(run.source_slug, run)
+  }
+  const openHealth = health
 
   return (
     <>
@@ -73,11 +131,11 @@ export default async function SourcesPage() {
           </tr>
         </thead>
         <tbody>
-          {(sources ?? []).map((source: any) => {
+          {sources.map((source: any) => {
             const latest = latestBySource.get(source.slug)
             const lastOk = lastOkBySource.get(source.slug)
-            const configured = Object.keys(source.config ?? {}).length > 0 && source.config?.discovered === true
-            const status = latest?.status ?? (configured ? 'no runs yet' : 'not configured')
+            const setup = setupState(source)
+            const status = latest?.status ?? setup.status
 
             return (
               <tr key={source.slug}>
@@ -108,12 +166,7 @@ export default async function SourcesPage() {
                       {latest.listings_seen} seen, {latest.listings_new} new
                     </span>
                   ) : null}
-                  {!configured && source.adapter_type !== 'manual_clip' ? (
-                    <div className="footnote">
-                      Endpoints and field mappings have not been discovered yet. Follow docs/DISCOVERY.md and write
-                      the result into this source's config.
-                    </div>
-                  ) : null}
+                  {setup.note ? <div className="footnote">{setup.note}</div> : null}
                 </td>
               </tr>
             )
