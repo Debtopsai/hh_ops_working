@@ -105,7 +105,7 @@ uncomputable until it is closed.
 
 | # | Gap | Blocks |
 |---|---|---|
-| G1 | **No equipment cost** on any machine row | Gross margin, contract profitability, amortisation — the entire cost side |
+| G1 | **No equipment cost** on any machine row. Catalogue prices exist at `portal.hirehospo.com/brochure`, but those are sell prices, not cost — see 7.7 | Gross margin, contract profitability, amortisation — the entire cost side |
 | G2 | `Supplier` column empty on **47/47** rows | Intercompany split, purchase matching |
 | G3 | `APS` (Washpro asset ref) on only **18/47** rows | Linking a contract to the asset and its purchase invoice |
 | G4 | `Deposit` missing on 15 rows, and repeated at customer level on the rest | Deposit liability, upfront cash, security-deposit balance |
@@ -362,6 +362,59 @@ before the month is closed. Under Model A, accounts `2710`–`2730` in Washpro's
 should be **nil** — if they are not, the same revenue is being recognised twice across
 two entities.
 
+### 7.7 Deriving equipment cost from catalogue price
+
+A priced catalogue exists at `portal.hirehospo.com/brochure`, identified by the owner as
+the price source for the equipment in the book. It is the most promising route to closing
+G1, but it must be used correctly.
+
+**A brochure price is a sell price, not a cost.** Gross margin is
+`(contract value − equipment cost) / contract value`. Substituting the catalogue price for
+equipment cost understates margin by the whole of Washpro's equipment margin, which the
+business overview puts at roughly 30%. Doing so silently would make every margin figure in
+the pack wrong in the same direction, which is worse than reporting nothing.
+
+The catalogue is still valuable, for three distinct jobs:
+
+| Job | Uses catalogue price as | Reliability |
+|---|---|---|
+| **C1** Contract pricing check — does `weekly × term` bear a sensible relationship to the cash price? | Cash/retail price, directly | Actual |
+| **C2** Equipment cash value for a contract with no purchase record | Retail benchmark | Actual, for the SKU |
+| **C3** Equipment **cost** estimate | Retail less an assumed supply margin | **Derived — must be labelled** |
+
+For C3 the derivation is:
+
+```
+equipment_cost_derived = catalogue_price_ex_gst × (1 − supply_margin)
+```
+
+`supply_margin` lives in `config/policy.yaml` (default 0.30, per the stated equipment
+margin and Washpro account `4035`). Every contract costed this way carries
+`cost_basis = 'derived'`, and the monthly pack reports derived-cost contracts as a
+separate count with their share of revenue. Contracts costed from an actual Washpro
+purchase invoice carry `cost_basis = 'actual'` and always take precedence.
+
+**Order of preference for equipment cost, per contract:**
+
+1. Washpro purchase invoice or bill in the ledger — actual
+2. Recorded purchase price on the contract record — actual
+3. Catalogue price less supply margin (C3) — derived, flagged
+4. Category median less supply margin — estimated, flagged, and excluded from any margin
+   figure presented as fact
+
+This ladder is what makes a partial backfill usable: the pack can report actual margin on
+the contracts that have real cost, and a clearly separated estimated margin on the rest,
+rather than blocking entirely or quietly blending the two.
+
+**Matching the catalogue to the book is its own task.** The 47 machine rows carry free-text
+descriptions ("Starline ALC Dishwasher", "Rational CMP61 Combi Oven") and an `APS` asset
+reference on only 18 of them. Linking a row to a catalogue SKU needs a reviewed match, not
+a fuzzy join left to run unattended — a wrong SKU match produces a confident wrong cost.
+Every match is recorded with its method (`aps_ref`, `exact_name`, `reviewed_manual`) so a
+disputed margin can be traced back to the decision that produced it.
+
+---
+
 ---
 
 ## 8. Functional requirements
@@ -450,7 +503,8 @@ says so rather than rendering a confident zero.
 Every run validates the register and refuses to publish a pack that would be misleading.
 
 **Hard failures (block the pack):**
-- A contract with revenue but no equipment cost (G1)
+- A contract with revenue but no equipment cost on any basis (G1)
+- A margin figure presented as actual that includes a `derived` or `estimated` cost (7.7)
 - Total billing variance against GoCardless beyond a set tolerance
 - A duplicate contract (HH042 / HH021, G8)
 - An unmapped Xero account carrying a material balance
@@ -481,6 +535,10 @@ Fields marked **new** close the gaps in Section 3.3.
 | `delivery_date` | date | **new** — recognition starts here |
 | `end_date` | date | Derived; overridden on early termination |
 | `equipment_cost` | decimal | **new — G1, blocks gross margin** |
+| `cost_basis` | enum | **new** — `actual` \| `derived` \| `estimated`, per the 7.7 ladder |
+| `catalogue_sku` | string | **new** — matched brochure SKU |
+| `catalogue_price_ex_gst` | decimal | **new** — brochure sell price, for C1/C2 |
+| `catalogue_match_method` | enum | **new** — `aps_ref` \| `exact_name` \| `reviewed_manual` |
 | `delivery_cost` | decimal | **new — G5** |
 | `install_cost` | decimal | **new — G5** |
 | `lpg_conversion_cost` | decimal | **new — G5** |
@@ -592,7 +650,11 @@ first, it is not.
 - Answer 6.1 (principal vs agent) and 6.2 (lease classification) with the accountant
 - Connect HireHospo's Xero to this workspace
 - Confirm or correct Washpro accounts `2710`–`2730` and `4035` per the 6.1 outcome
-- Backfill equipment cost, supplier and asset reference for all 47 machines (G1–G3)
+- Backfill equipment cost, supplier and asset reference for all 47 machines (G1–G3), using the
+  cost ladder in 7.7 — Washpro purchase records where they exist, catalogue-derived and
+  flagged where they do not
+- Export the `portal.hirehospo.com/brochure` catalogue to `data/catalogue.csv` and match it
+  to the 47 machine rows
 - Resolve HH042 (duplicate) and HH001 (arrears contract with no machine rows)
 
 **Nothing downstream is worth building until equipment cost exists.** Backfilling 47
@@ -624,7 +686,8 @@ flow into the provision automatically; scenario modelling on new business volume
 
 | Risk | Impact | Mitigation |
 |---|---|---|
-| **Equipment cost is unrecoverable for older contracts** | Gross margin impossible for 2024 vintages; the whole cost side degrades | Reconstruct from Washpro purchase records; where genuinely lost, use a documented category estimate, flag those contracts, and never present them as actual |
+| **Equipment cost is unrecoverable for older contracts** | Gross margin impossible for 2024 vintages; the whole cost side degrades | Apply the cost ladder in 7.7: Washpro purchase records first, catalogue price less supply margin second. Flag every derived cost and never present it as actual |
+| **Catalogue sell price is used as equipment cost** | Margin understated across the entire book by roughly the supply margin, consistently and invisibly | 7.7 makes the derivation explicit, puts `supply_margin` in config, and tags every contract with `cost_basis` |
 | **6.1 is never resolved** | If agency is correct but gross lease income is recognised, revenue is overstated ~3.3× ($240k vs ~$72k). If principal is correct but only commission is recognised, it is understated ~70% | Phase 0 gate. Do not build on an unresolved model |
 | **HireHospo Xero does not exist or is unmaintained** | FR1 has no source; the entity-scope decision collapses | Verify in Phase 0. Fallback is a segment carve-out of Washpro's ledger with tracking categories — a materially different project, so confirm early |
 | **Register stays a manual spreadsheet** | Drift between register and ledger; reconciliation permanently fails | Make the register the sub-ledger of record with validation on write (FR2, FR8) |
@@ -641,7 +704,8 @@ flow into the provision automatically; scenario modelling on new business volume
 | Q1 | Principal or agent? (6.1) | Owner + accountant | Phase 0 |
 | Q2 | Does HireHospo have its own Xero, and can it be connected? | Owner | FR1, Phase 0 |
 | Q3 | Recognition basis for monthly accounts — confirm rental basis (6.2) | Accountant | FR4 |
-| Q4 | Can equipment cost be recovered for all 47 contracts? | Washpro | Everything |
+| Q4 | Can **actual** equipment cost be recovered from Washpro purchase records, or is the catalogue-derived estimate (7.7) the best available? | Washpro | Everything |
+| Q4a | What supply margin does Washpro actually charge HireHospo? The 30% in account `4035` is a commission rate, which may not be the equipment margin | Owner + Washpro | 7.7 derivation |
 | Q5 | Useful life and residual for Rent 12m assets (D1) | Accountant | 7.3 |
 | Q6 | Provision matrix sign-off (D2) | Accountant | 7.5 |
 | Q7 | Is overhead allocated to HireHospo or shown unallocated (D3)? | Owner | 7.1 |
