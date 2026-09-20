@@ -107,7 +107,7 @@ uncomputable until it is closed.
 
 | # | Gap | Blocks |
 |---|---|---|
-| G1 | **No equipment cost** on any machine row. *Substantially closed* — list price is now derived by formula for all 47 machines (7.7). Remaining unknown is the supply margin (Q4a), and whether cost belongs in this P&L at all (6.1) | Gross margin, contract profitability, amortisation |
+| ~~G1~~ | ~~No equipment cost~~ — **closed**: HireHospo does not own the equipment, so equipment cost never enters this P&L (6.1, 7.3) | Nothing |
 | G2 | `Supplier` column empty on **47/47** rows | Intercompany split, purchase matching |
 | G3 | `APS` (Washpro asset ref) on only **18/47** rows | Linking a contract to the asset and its purchase invoice |
 | G4 | `Deposit` missing on 15 rows, and repeated at customer level on the rest | Deposit liability, upfront cash, security-deposit balance |
@@ -124,7 +124,8 @@ uncomputable until it is closed.
 
 1. Produce a **monthly HireHospo management P&L** — GST-exclusive, on a consistent
    recognition basis — within 5 working days of month end.
-2. Make **gross margin computable per contract**, which requires closing G1–G3.
+2. Verify the **30% commission** is correctly struck on every contract, and that billed
+   instalments match the pricing formulas (7.7).
 3. **Reconcile three sources** that currently disagree: the contract register, GoCardless
    cash, and the Xero ledger. Report the variance rather than hiding it.
 4. Show the **run-off profile** of the book so expiring revenue is seen before it lands.
@@ -424,11 +425,15 @@ One contract can be cross-checked against a catalogue price directly: M056
 Output: `data/derived_equipment_prices.csv`, one row per machine with its derivation basis
 and confidence. Total derived equipment list value across the book: **$463,229**.
 
-**What this gives, and what it does not.** The derivation yields *list price* — the same
-figure the brochure would have given, obtained from data already in the register. It is
-still **not HireHospo's equipment cost**. The remaining step is the supply margin (Q4a),
-and whether equipment cost belongs in HireHospo's P&L at all depends entirely on the
-principal/agent decision in 6.1.
+**What this is now for.** With the agency model confirmed (6.1), equipment cost never
+enters HireHospo's P&L, so the cost ladder below is no longer on the critical path. Two
+live uses remain:
+
+- **Pricing control.** Every deal should sit on the curve. A contract whose weekly does not
+  reproduce its list price is mispriced or miskeyed — and since revenue is 30% of that
+  weekly, a pricing error is a direct revenue error.
+- **Commission verification.** The formulas give an independent expectation of what each
+  contract should bill, which is a second check on the 30% actually received.
 
 **Cost ladder, per contract:**
 
@@ -446,6 +451,44 @@ failure (FR8), not a footnote.
 sit on the curve, a contract whose weekly does not reproduce its list price is either
 mispriced or miskeyed. Running the check across the book is a one-off exercise that needs
 no new data, and it belongs in Phase 1.
+
+### 7.8 The cost side — what is actually known
+
+Pulled 20 September 2026. Three cost lines chased to source; the rest await access.
+
+| Line | Status | Figure | Source |
+|---|---|---|---|
+| **Advertising (Meta)** | **Actual** | **NZ$1,450.74** lifetime | HireHospo NZ Ad Account `2139666836427566` (business: FlexiHospo) |
+| GoCardless fees | Supplier exists, no figure | — | `GoCardless Ltd` and `GoCardless` both in Washpro's Xero; no bills — paid by direct debit, coded from the bank feed |
+| Credit checks | Supplier exists, no figure | — | `CHECKMATE AUCKLAND NZ` in Washpro's Xero. The owner names **Equifax** as the provider, and Equifax is not a contact in that ledger |
+| Software, wages, professional fees | No figure | — | Needs HireHospo's own Xero |
+
+**Meta spend by campaign (lifetime):**
+
+| Campaign | Spend | Impressions | Clicks |
+|---|---|---|---|
+| HH Brochure Campaign 01/08 2026 | $684.39 | 41,346 | 930 |
+| HH Brochure Campaign 28/08 2026 (#2) | $585.16 | 35,469 | 735 |
+| Lower Funnel Actions (Purchase) | $95.57 | 16,049 | 617 |
+| Lead Ads | $15.13 | 778 | 29 |
+| **Total** | **$1,450.74** | **97,136** | **2,399** |
+
+Blended CPC about **$0.60**; the two brochure campaigns carry 87% of spend. Meta only —
+any Google Ads spend has not been located.
+
+**Two access blockers stand between this table and a complete cost side:**
+
+1. **Xero P&L reporting is refused** for the signed-in user on Washpro's organisation:
+   *"does not have the required Syft reporting permission or role."* An organisation
+   administrator must grant it. This is why GoCardless and credit-check spend carry no
+   figure despite both suppliers existing.
+2. **HireHospo's own Xero is not connected**, so its overheads are entirely unsighted.
+
+**A question the model raises (Q5):** GoCardless collects the full weekly payment, and the
+GoCardless bank account sits in *Washpro's* chart of accounts. It is not established
+whether HireHospo bears the transaction and failure fees at all, or whether the 30% is
+struck net of them. Same for late fees and admin fees — kept, shared, or never seen. These
+decide whether the direct-costs block in 7.1 contains anything at all.
 
 ---
 
@@ -682,11 +725,10 @@ first, it is not.
 - Answer 6.1 (principal vs agent) and 6.2 (lease classification) with the accountant
 - Connect HireHospo's Xero to this workspace
 - Confirm or correct Washpro accounts `2710`–`2730` and `4035` per the 6.1 outcome
-- Confirm the supply margin (Q4a), then apply the 7.7 cost ladder — Washpro purchase
-  records where they exist, formula-derived and flagged where they do not. List price is
-  already derived for all 47 machines in `data/derived_equipment_prices.csv`
-- Backfill supplier and asset reference (G2–G3)
+- Get the Xero reporting role granted (Q11) so account totals can be read
+- Settle Q5: does HireHospo bear GoCardless fees, and who keeps late and admin fees
 - Run the pricing control in 7.7 across the book and resolve any contract off the curve
+- Backfill supplier and asset reference (G2–G3)
 - Resolve HH042 (duplicate) and HH001 (arrears contract with no machine rows)
 
 **Nothing downstream is worth building until equipment cost exists.** Backfilling 47
@@ -736,8 +778,11 @@ flow into the provision automatically; scenario modelling on new business volume
 | Q1 | Principal or agent? (6.1) | Owner + accountant | Phase 0 |
 | Q2 | Does HireHospo have its own Xero, and can it be connected? | Owner | FR1, Phase 0 |
 | Q3 | Recognition basis for monthly accounts — confirm rental basis (6.2) | Accountant | FR4 |
-| Q4 | Can **actual** equipment cost be recovered from Washpro purchase records, or is the formula-derived list price (7.7) the best available? | Washpro | Cost side, only under Model A |
-| Q4a | What supply margin does Washpro actually charge HireHospo? The 30% in account `4035` is a commission rate, which may not be the equipment margin | Owner + Washpro | 7.7 derivation |
+| ~~Q4~~ | ~~Equipment cost~~ — **closed**: HireHospo does not own the equipment (6.1) | — | — |
+| ~~Q4a~~ | ~~Supply margin~~ — **closed**: the 30% is a commission on the weekly payment | — | — |
+| **Q5** | Does HireHospo bear GoCardless fees, or is the 30% struck net of them? Same for late and admin fees | Owner | 7.1 direct costs |
+| **Q11** | Who grants the Xero reporting role so account totals can be read? (7.8) | Org admin | The whole cost side |
+| **Q12** | Is there Google Ads spend as well as Meta? Only Meta has been located | Owner | Overheads |
 | Q5 | Useful life and residual for Rent 12m assets (D1) | Accountant | 7.3 |
 | Q6 | Provision matrix sign-off (D2) | Accountant | 7.5 |
 | Q7 | Is overhead allocated to HireHospo or shown unallocated (D3)? | Owner | 7.1 |
@@ -807,7 +852,7 @@ environment (blocked by egress policy), but Drive holds better primary sources.
 | `Pricing Sheet For Rental & Lease` | **The pricing formulas** (7.7) — the `Machine × 1.6` lease markup and the `70% rental recoup`, plus 11 price/weekly pairs used to validate them |
 | `HH Machines Finance Tracking` | **The 70/30 revenue split** (6.1); per-contract security deposit, weeks upfront, and weekly incl./excl. GST |
 | `Bluemoon Sky NZ Ltd Calculation.xlsx` | A worked arrears position — see below |
-| `Washpro to HH Inventory` | Empty. Named as though it holds the intercompany transfer register, which is exactly what Q4 needs |
+| `Washpro to HH Inventory` | Empty. Named as though it holds the intercompany transfer register |
 | `Products/Active WP` | Not yet read — the active Washpro catalogue, the route to actual per-SKU prices |
 
 **Bluemoon Sky NZ Ltd (HH009) is a live example of the reconciliation failure FR5 exists
