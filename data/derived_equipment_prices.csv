@@ -1,0 +1,48 @@
+machine_id,description,cust_id,type,term_months,weekly_ex_gst,aps_ref,derived_list_price_ex_gst,derivation_basis,confidence
+M001,Starline ALC Dishwasher,HH026,Lease-to-Own (36m),36,94.56,APS1064,9219.6,lease_36m,high
+M002,Rational CMP61 Combi Oven,HH009,Rent (12m),12,134.53,,9993.66,rent_12m,high
+M003,Starline M2 Dishwasher,HH009,Rent (12m),12,70.59,,5243.83,rent_12m,high
+M004,FPG INLINE-3000 Display Cabinet,HH009,Rent (12m),12,58.81,,4368.74,rent_12m,high
+M006,Rational ICC 20 Tray Gas Combi,HH021,Rent (12m),12,365.0,,27114.29,rent_12m,high
+M007,Rational SCC WE101 Combi Oven,HH024,Lease-to-Own (36m),36,160.0,,15600.0,lease_36m,high
+M008,Rational SCCWE101E Combi Oven,HH030,Rent (12m),12,269.15,APS1061,19994.0,rent_12m,high
+M009,Rational SCC101 10 Tray Combi,HH030,Rent (12m),12,245.0,APS983,18200.0,rent_12m,high
+M010,Turbofan E31D4 Convection Oven,HH010,Lease-to-Own (36m),36,41.3,,4026.75,lease_36m,high
+M011,Delta Planetary Mixer 5L,HH010,Lease-to-Own (36m),36,18.0,,1755.0,lease_36m,high
+M012,Delta JET40WI-C 40L Mixer,HH017,Rent (12m),12,33.57,APS112,2493.77,rent_12m,high
+M013,Starline M2 Dishwasher,HH003,Lease-to-Own (36m),36,55.0,APS1080,5362.5,lease_36m,high
+M014,Starline M2 Dishwasher,HH015,Lease-to-Own (36m),36,50.0,,4875.0,lease_36m,high
+M016,Starline M2C Dishwasher,HH016,Lease-to-Own (36m),36,65.0,,6337.5,lease_36m,high
+M019,Turbofan E32D4 Oven,HH025,Lease-to-Own (36m),36,65.0,,6337.5,lease_36m,high
+M020,Starline M1 Dishwasher,HH014,Lease-to-Own (36m),36,45.4,APS1234,4426.5,lease_36m,high
+M021,Waldorf C9D 6 Burner Cooktop,HH014,Lease-to-Own (36m),36,38.9,APS1342,3792.75,lease_36m,high
+M022,Waldorf Gas Fryer,HH014,Lease-to-Own (36m),36,30.46,APS1406,2969.85,lease_36m,high
+M023,Waldorf Gas Deep Fryer,HH005,Lease-to-Own (36m),36,45.0,,4387.5,lease_36m,high
+M024,Rational SCC WE101 Combi Oven,HH005,Lease-to-Own (36m),36,160.0,,15600.0,lease_36m,high
+M025,Blue Seal G594-LS 600mm Gas,HH005,Lease-to-Own (36m),36,50.0,,4875.0,lease_36m,high
+M027,Rational SCC 101G Gas Combi,HH020,Lease-to-Own (36m),36,189.17,APS1355,18444.07,lease_36m,high
+M028,Starline AL8 Dishwasher,HH022,Rent (12m),12,163.14,APS646,12118.97,rent_12m,high
+M029,Rational CM101E 10 Tray Combi,HH007,Lease-to-Own (36m),36,136.35,APS862,13294.12,lease_36m,high
+M030,Blue Seal GT46 Gas Fryer,HH007,Lease-to-Own (36m),36,35.6,APS958,3471.0,lease_36m,high
+M031,Blue Seal Gas Griddle 900mm,HH007,Lease-to-Own (36m),36,44.45,APS980,4333.88,lease_36m,high
+M032,Garland GF 36-6R Gas Range,HH007,Lease-to-Own (36m),36,47.1,APS939,4592.25,lease_36m,high
+M033,Starline AL8 Dishwasher,HH007,Lease-to-Own (36m),36,84.35,,8224.12,lease_36m,high
+M034,Turbofan E33D5 Oven,HH031,Lease-to-Own (36m),36,42.52,,4145.7,lease_36m,high
+M035,Rational SCC WE 201G Combi x2 (consolidated),HH028,Month-to-Month,0,230.0,APS925,17085.71,rent_12m,low
+M038,Starline M2 Dishwasher,HH027,Lease-to-Own (36m),36,60.0,,5850.0,lease_36m,high
+M039,Turbofan E32D4 Oven,HH027,Lease-to-Own (36m),36,55.0,,5362.5,lease_36m,high
+M040,Blue Seal GE56C Gas Range,HH032,Lease-to-Own (36m),36,70.9,,6912.75,lease_36m,high
+M046,Rational SCC WE101 Combi Oven,HH029,Lease-to-Own (36m),36,189.17,,18444.07,lease_36m,high
+M047,Blue Seal Char Grill G594-LS,HH029,Lease-to-Own (36m),36,59.08,,5760.3,lease_36m,high
+M048,Rational SCC61E 6 Tray Combi,HH013,Lease-to-Own (36m),36,130.3,,12704.25,lease_36m,high
+M050,Turbofan E32SUB Oven + Proofer,HH011,Lease-to-Own (36m),36,78.0,,7605.0,lease_36m,high
+M051,Turbofan E31D4 Oven,HH019,Lease-to-Own (36m),36,54.0,,5265.0,lease_36m,high
+M052,Turbofan E32Max Oven,HH008,Lease-to-Own (36m),36,153.69,APS1112,14984.77,lease_36m,high
+M053,Waldorf 800 Gas Tilting Pan,HH008,Lease-to-Own (36m),36,89.83,,8758.42,lease_36m,high
+M054,Rational CD201 20 Tray Combi,HH008,Lease-to-Own (36m),36,35.42,,3453.45,lease_36m,high
+M055,Alto Shaam Holding Cabinet,HH008,Lease-to-Own (36m),36,59.1,APS936,5762.25,lease_36m,high
+M056,Rational SCCWE101E 10 Tray Combi,HH009,Lease-to-Own (36m),36,236.48,,23056.8,lease_36m,high
+M057,Waldorf 4 Burner Gas Cooktop,HH014,Lease-to-Own (36m),36,48.9,,4767.75,lease_36m,high
+M058,Equipment (unspecified),HH038,Rent (12m),12,414.5,,30791.43,rent_12m,high
+M059,Starline M2 Pass-Through Commercial Dishwasher,HH044,Lease-to-Own (Standard),36,61.2,,5967.0,lease_36m,high
+M060,Rational APS1530 20 Tray Combi Oven,HH021,Lease-to-Own (36m),12,360.0,APS1530,35100.0,lease_36m,low
