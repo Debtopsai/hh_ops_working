@@ -458,7 +458,7 @@ Pulled 20 September 2026. Three cost lines chased to source; the rest await acce
 
 | Line | Status | Figure | Source |
 |---|---|---|---|
-| **Advertising (Meta)** | **Actual** | **NZ$1,450.74** lifetime | HireHospo NZ Ad Account `2139666836427566` (business: FlexiHospo) |
+| **Advertising (Meta)** | **Actual** | **$1,456.28** lifetime; **~$9,155/yr** at current pace | HireHospo NZ Ad Account `2139666836427566` (FlexiHospo). Meta is the **only** advertising channel — confirmed by the owner |
 | **GoCardless fees** | **Rate card actual** | **$3,614/yr** as currently collected | Standard NZ plan: 1% + $0.40, capped at $4.00, fees ex-GST. Computed against the register — see below |
 | **Credit checks (Equifax)** | **Unit cost actual** | **$45.36** per check; **$2,721.60** over 60 logged applications | Unit cost from the owner. `CHECKMATE AUCKLAND NZ` is the only credit-bureau contact in Washpro's Xero — Equifax is not, so the billing sits elsewhere |
 | Software, wages, professional fees | No figure | — | Needs HireHospo's own Xero |
@@ -473,8 +473,39 @@ Pulled 20 September 2026. Three cost lines chased to source; the rest await acce
 | Lead Ads | $15.13 | 778 | 29 |
 | **Total** | **$1,450.74** | **97,136** | **2,399** |
 
-Blended CPC about **$0.60**; the two brochure campaigns carry 87% of spend. Meta only —
-any Google Ads spend has not been located.
+**The lifetime total is misleading. Advertising effectively began in July 2026.**
+
+| Month | Spend | Impressions | Clicks | CPC | CPM |
+|---|---|---|---|---|---|
+| Feb 2025 | $110.70 | 16,827 | 646 | $0.17 | $6.58 |
+| *Mar 2025 – Jun 2026* | *nil* | — | — | — | — |
+| Jul 2026 | $70.49 | 3,494 | 88 | $0.80 | $20.17 |
+| Aug 2026 | $773.71 | 46,795 | 1,066 | $0.73 | $16.53 |
+| Sep 2026 (1–20) | $501.38 | 30,427 | 608 | $0.82 | $16.48 |
+| **Total** | **$1,456.28** | **97,543** | **2,408** | | |
+
+A single $110.70 test in February 2025, then **seventeen months of nothing**, then a
+restart in July 2026. September is tracking to about $752 for the full month, so the
+**current run rate is roughly $763/month — $9,155/yr**.
+
+**This makes advertising the largest cost in the business, not the smallest.** Treated as a
+$1,456 lifetime figure it looks trivial. Treated at the pace it is actually running, it is
+**12.7% of commission revenue** — more than GoCardless and credit checks combined. Any
+budget or forecast built on the lifetime number will understate the cost by roughly 6×.
+
+The P&L must therefore report advertising on the **current run rate**, with the monthly
+series visible, not as a cumulative total. A cumulative figure on a channel that was dark
+for seventeen months tells the reader nothing about what next month costs.
+
+**Clicks have become 4.8× more expensive.** The 2025 campaigns (Lower Funnel Actions, Lead
+Ads) bought clicks at $0.16–$0.52; the 2026 brochure campaigns pay $0.74–$0.80, at a CPM
+2.5× higher. Whether that is worse targeting, a different objective, or simply a more
+expensive auction is outside this PRD, but the trend belongs on the dashboard.
+
+**A reconciliation note, in a PRD about reconciliation:** the monthly series sums to
+$1,456.28 while the account-level total reports $1,450.74 — a $5.54 gap. Immaterial in
+itself, but it means even the ad platform does not agree with itself across two endpoints,
+and the pipeline should record which figure it used.
 
 **GoCardless: the fixed fee is the whole story, and it is bigger than it looks.**
 
@@ -552,15 +583,18 @@ the check a direct, measurable saving, and it belongs on the dashboard as
     less credit checks            ~33 applications/yr     -1,485     2.1%
   = GROSS PROFIT                                         $66,853    92.9%
 
-    less advertising              Meta, $1,450.74 lifetime     ?
+    less advertising              Meta at current pace    -9,155    12.7%
     less software, wages, professional fees                     ?     unsighted
-  = NET PROFIT BEFORE TAX                                       ?
+  = CONTRIBUTION before remaining overheads              $57,698    80.2%
 ```
 
-Both direct-cost lines are contingent on Q5. If the 30% is struck net of GoCardless fees,
-the largest line above disappears from HireHospo's P&L and gross profit rises to about
-97%. The overheads below the line are where the real answer now sits — and they need
-HireHospo's own Xero.
+Known costs now total **$14,254/yr, 19.8% of revenue**, and advertising is the largest of
+the three. Two things still move this materially:
+
+1. **Q5.** If the 30% is struck net of GoCardless fees, $3,614 leaves the P&L entirely.
+2. **Software, wages and professional fees are wholly unsighted** and need HireHospo's own
+   Xero. On a business with $71,952 of revenue, a single part-time salary would dominate
+   everything measured above.
 
 **Two access blockers stand between this table and a complete cost side:**
 
@@ -868,7 +902,7 @@ flow into the provision automatically; scenario modelling on new business volume
 | ~~Q4a~~ | ~~Supply margin~~ — **closed**: the 30% is a commission on the weekly payment | — | — |
 | **Q5** | Does HireHospo bear GoCardless fees, or is the 30% struck net of them? Same for late and admin fees | Owner | 7.1 direct costs |
 | **Q11** | Who grants the Xero reporting role so account totals can be read? (7.8) | Org admin | The whole cost side |
-| **Q12** | Is there Google Ads spend as well as Meta? Only Meta has been located | Owner | Overheads |
+| ~~Q12~~ | ~~Google Ads~~ — **closed**: Meta is the only advertising channel |  — | — |
 | **Q13** | Is the $45.36 Equifax fee GST-inclusive or exclusive, and is it one check per application? | Owner | 7.8 credit-check cost |
 | **Q14** | Is there an application log after Sep 2025? The one found stops a year short | Owner | Credit-check volume |
 | **Q15** | What does GoCardless charge for a failed collection and a retry? Not on the rate card supplied | Owner | 7.8 direct costs |
