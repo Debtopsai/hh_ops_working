@@ -459,7 +459,7 @@ Pulled 20 September 2026. Three cost lines chased to source; the rest await acce
 | Line | Status | Figure | Source |
 |---|---|---|---|
 | **Advertising (Meta)** | **Actual** | **NZ$1,450.74** lifetime | HireHospo NZ Ad Account `2139666836427566` (business: FlexiHospo) |
-| GoCardless fees | Supplier exists, no figure | — | `GoCardless Ltd` and `GoCardless` both in Washpro's Xero; no bills — paid by direct debit, coded from the bank feed |
+| **GoCardless fees** | **Rate card actual** | **$3,614/yr** as currently collected | Standard NZ plan: 1% + $0.40, capped at $4.00, fees ex-GST. Computed against the register — see below |
 | **Credit checks (Equifax)** | **Unit cost actual** | **$45.36** per check; **$2,721.60** over 60 logged applications | Unit cost from the owner. `CHECKMATE AUCKLAND NZ` is the only credit-bureau contact in Washpro's Xero — Equifax is not, so the billing sits elsewhere |
 | Software, wages, professional fees | No figure | — | Needs HireHospo's own Xero |
 
@@ -475,6 +475,39 @@ Pulled 20 September 2026. Three cost lines chased to source; the rest await acce
 
 Blended CPC about **$0.60**; the two brochure campaigns carry 87% of spend. Meta only —
 any Google Ads spend has not been located.
+
+**GoCardless: the fixed fee is the whole story, and it is bigger than it looks.**
+
+Standard NZ plan — **1% + $0.40 per transaction, capped at $4.00**, plus 0.3% above $3,000,
+fees quoted ex-GST. No weekly payment approaches $3,000, so the surcharge never applies.
+The cap binds at a collection of $360 or more, which only a handful of contracts reach.
+
+That leaves the **$0.40 fixed component doing most of the damage**, because HireHospo
+collects many small weekly amounts rather than few large ones. Computed against the active
+register (44 collections a week, GST-inclusive):
+
+| | Collections/wk | Annual fee | % of collections | % of HireHospo revenue |
+|---|---|---|---|---|
+| **A — one per machine** (current) | 44 | **$3,614** | 1.31% | **5.0%** |
+| **B — one per customer** | 24 | $2,743 | 0.99% | 3.8% |
+
+**Consolidating collections saves $871/yr, 24% of the fee**, purely by paying $0.40 fewer
+times. The Bluemoon Sky invoices confirm scenario A is what happens today — that customer
+is billed $303.52 and $57.50 as two separate collections on two different days of the week.
+
+Two observations worth carrying into the build:
+
+1. **An earlier draft of this PRD assumed 1% and put the fee at $2,398/yr. The real figure
+   is $3,614 — 51% higher.** The fixed fee is exactly the component a percentage
+   assumption misses, and it is the component that matters on a book of small weeklies.
+2. **At 5.0% of commission revenue, GoCardless is the largest direct cost in the business**
+   — larger than credit checks and Meta combined. That makes Q5 (whether HireHospo bears
+   these fees at all, or the 30% is struck net of them) the single most valuable remaining
+   question on the cost side.
+
+**Failure fees are still unpriced.** The rate card above covers successful collections
+only. Since failed direct debits are a known operational issue, and each failure carries
+its own charge plus a retry, this is a real cost with no figure against it (Q15).
 
 **Credit checks are driven by applications, not contracts — and that is the point.**
 
@@ -510,6 +543,24 @@ the check a direct, measurable saving, and it belongs on the dashboard as
    inc-GST it is $39.44 ex. The P&L needs the ex-GST figure.
 3. **One check per application is an assumption.** A reapplication, a guarantor check, or
    a second entity on the same deal would each add one.
+
+**The cost side as now known (annualised, ex-GST):**
+
+```
+  Commission revenue  (30% of billed instalments)        $71,952
+    less GoCardless fees          as collected today      -3,614     5.0%
+    less credit checks            ~33 applications/yr     -1,485     2.1%
+  = GROSS PROFIT                                         $66,853    92.9%
+
+    less advertising              Meta, $1,450.74 lifetime     ?
+    less software, wages, professional fees                     ?     unsighted
+  = NET PROFIT BEFORE TAX                                       ?
+```
+
+Both direct-cost lines are contingent on Q5. If the 30% is struck net of GoCardless fees,
+the largest line above disappears from HireHospo's P&L and gross profit rises to about
+97%. The overheads below the line are where the real answer now sits — and they need
+HireHospo's own Xero.
 
 **Two access blockers stand between this table and a complete cost side:**
 
@@ -820,6 +871,8 @@ flow into the provision automatically; scenario modelling on new business volume
 | **Q12** | Is there Google Ads spend as well as Meta? Only Meta has been located | Owner | Overheads |
 | **Q13** | Is the $45.36 Equifax fee GST-inclusive or exclusive, and is it one check per application? | Owner | 7.8 credit-check cost |
 | **Q14** | Is there an application log after Sep 2025? The one found stops a year short | Owner | Credit-check volume |
+| **Q15** | What does GoCardless charge for a failed collection and a retry? Not on the rate card supplied | Owner | 7.8 direct costs |
+| **Q16** | Can collections be consolidated to one per customer per week? Worth $871/yr | Owner + Ops | 7.8 |
 | Q5 | Useful life and residual for Rent 12m assets (D1) | Accountant | 7.3 |
 | Q6 | Provision matrix sign-off (D2) | Accountant | 7.5 |
 | Q7 | Is overhead allocated to HireHospo or shown unallocated (D3)? | Owner | 7.1 |
