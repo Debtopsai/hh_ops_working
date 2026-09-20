@@ -22,14 +22,16 @@ cost lives in Washpro's ledger, and HireHospo's own ledger is not reconciled to 
 them. This PRD specifies a pipeline and dashboard that assembles these into a monthly
 HireHospo P&L that the owner can trust and act on.
 
-The system's defining job is **matching**: a finance business that expenses equipment
-when it buys it and books revenue when cash lands will show a loss in every month it
-writes new business and a profit in every month it writes none. That is not a P&L, it is
-a cash diary. Section 7 defines the recognition model that fixes this.
+**The commercial model is now confirmed: HireHospo does not own the equipment and takes
+30% of the weekly payments.** Washpro owns the gear and keeps 70%. This was the single
+largest open question in an earlier draft of this PRD, and settling it removes a large
+part of the system that draft specified — there is no equipment to capitalise, nothing to
+amortise, no depreciation, and no asset to write down on default. Section 7 is the
+recognition model as it now stands; Section 7.3 records what is no longer needed and why.
 
-**Two decisions must be settled before a line of code is written** (Section 6). Both
-change the shape of the entire P&L, and one of them — whether HireHospo is principal or
-agent on a lease — is currently ambiguous in the books that exist today.
+What remains is a commission P&L on a small book, and the work is mostly plumbing:
+recognise 30% of billed instalments, subtract the costs HireHospo actually bears, and
+reconcile three systems that currently disagree.
 
 ---
 
@@ -164,9 +166,17 @@ These are **P0 blockers**. Each changes the reported P&L by a material amount, a
 sensible default exists — they are commercial and accounting-policy questions, not
 engineering ones.
 
-### 6.1 Is HireHospo principal or agent on a lease?
+### 6.1 Principal or agent — RESOLVED: agent
 
-This single question can swing reported revenue by roughly 70%.
+**Confirmed by the owner, 20 September 2026: HireHospo does not own the equipment and
+takes 30% of the weekly payments.** Washpro owns the gear and retains 70%.
+
+Revenue is therefore commission, not gross lease income: about **$71,952/yr** on the
+current active book, not the $239,840 that gross recognition would show. The evidence
+below is retained because it corroborates the split and because both ledgers still need
+to be aligned to it.
+
+The rest of this section records how the question was settled.
 
 Washpro's connected Xero ledger contains:
 
@@ -220,9 +230,11 @@ is on the critical path.
 Resolving 6.1 therefore does not just change the numbers. It changes how much system there
 is to build.
 
-**Recommendation:** confirm with the accountant which model the signed contracts and the
-money flow actually support, and align the ledgers to it before building. Building a
-pipeline on top of two ledgers that disagree produces a confident wrong number.
+**Still to do, even though the model is settled:** Washpro's accounts `2710`/`2720`/`2730`
+recognise HireHospo lease income as Washpro revenue while `4035` books the 30% as a cost.
+That is consistent with the confirmed model, but HireHospo's own ledger must mirror it —
+30% recognised as commission revenue, not 100% as lease income. If both ledgers book the
+gross, the same revenue is counted twice across the two entities.
 
 ### 6.2 Lease classification: finance lease or operating lease?
 
@@ -263,42 +275,40 @@ ingestion from GoCardless.
 
 ### 7.1 Report structure
 
+Everything is **GST-exclusive**. Customer-facing weeklies are quoted + GST, so GoCardless
+collections divide by 1.15 on ingestion.
+
 ```
 REVENUE
-  Lease income — Lease-to-Own            accrued weekly instalments, GST-excl
-  Lease income — Rent                    accrued weekly instalments, GST-excl
-  End-of-term purchase income            discounted buyout proceeds
-  Late fee income                        10% late fee
-  Admin fee income                       $25 + GST per event
-  Other recoveries
+  Commission — Lease-to-Own          30% of instalments billed
+  Commission — Rent                  30% of instalments billed
+  Fee income share                   late fees, admin fees — see Q5 below
 = TOTAL REVENUE
 
 DIRECT COSTS
-  Equipment cost amortisation            capitalised cost released over term (7.3)
-  Delivery and installation              amortised over term alongside equipment
-  LPG conversion                         amortised over term alongside equipment
-  Washpro commission / intercompany      per Model A or B (6.1)
-  GoCardless transaction and failure fees
-  Credit check fees (Checkmate)
-= TOTAL DIRECT COSTS
+  GoCardless transaction fees        per collection
+  GoCardless failure fees            a cost of the product, not an overhead
+  Credit check fees                  Equifax, per application
+= GROSS PROFIT
 
-= GROSS PROFIT                           (and gross margin %)
-
-  Movement in arrears provision          (7.5)
+  Movement in arrears provision      on HireHospo's 30% share only (7.5)
   Bad debts written off
-= NET LEASE CONTRIBUTION
+= NET CONTRIBUTION
 
 OVERHEADS
-  Advertising and marketing
-  Software and subscriptions             HubSpot, Plutio, SwipePages, ThriveDesk
+  Advertising and marketing          Meta; see 7.8 for actuals
+  Software subscriptions             HubSpot, Plutio, SwipePages, ThriveDesk
   Wages and contractors
-  Professional fees                      accounting, legal, Baycorp
+  Professional fees
   Bank fees and interest
   Other administrative
-= TOTAL OVERHEADS
-
 = NET PROFIT BEFORE TAX
 ```
+
+**What is deliberately absent:** equipment cost, delivery, installation, LPG conversion,
+depreciation and amortisation. Washpro owns the assets and bears those costs out of its
+70%. If any of them appear in HireHospo's ledger, that is a coding error to investigate,
+not a line to report.
 
 ### 7.2 Revenue recognition
 
@@ -317,29 +327,21 @@ Contracts are recognised from the **delivery date**, not the contract signature 
 revenue starts when the customer has the equipment. Where delivery date is not recorded,
 fall back to `Start` and flag the row.
 
-### 7.3 Equipment cost amortisation
+### 7.3 Equipment amortisation — not applicable
 
-This is the mechanism that makes the P&L meaningful, and it is the reason G1 is a
-blocker.
+An earlier draft made capitalisation and amortisation the centre of this system: capitalise
+landed cost at delivery, release it over the term, and thereby stop months with new
+business from showing as losses.
 
-At delivery, capitalise the total landed cost to a leased-asset carrying value:
+**Under the confirmed model none of that applies.** HireHospo never buys the equipment, so
+there is no cost to capitalise and no carrying value to amortise. Revenue is 30% of each
+instalment and the cost of the equipment is already netted out in Washpro's 70%. The two
+move together by construction, so the matching problem does not arise.
 
-```
-capitalised_cost = equipment_cost + delivery + installation + LPG_conversion
-```
-
-Release it to direct costs over the contract term:
-
-- **Lease-to-Own (36m)** — ownership transfers, so amortise straight-line to **nil** over
-  36 months. Monthly charge = `capitalised_cost / 36`.
-- **Rent (12m)** — the asset returns and is redeployable, so depreciate over its **useful
-  life** with a residual (D1), not over the 12-month term. The unamortised balance stays
-  on the books for redeployment.
-- **Month-to-month** — depreciate over useful life; no fixed term to amortise against.
-
-On early termination, buyout or repossession, the remaining carrying value is either
-released against the buyout proceeds or written off to bad debts, and the outcome is
-recorded against the contract.
+This subsection is kept rather than deleted because the reasoning matters if the
+commercial arrangement ever changes. If HireHospo begins buying equipment outright — or
+takes ownership of recovered assets and re-leases them — capitalisation becomes necessary
+and this section must be rewritten before those contracts are reported.
 
 ### 7.4 Contract-level margin
 
