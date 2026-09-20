@@ -460,7 +460,7 @@ Pulled 20 September 2026. Three cost lines chased to source; the rest await acce
 |---|---|---|---|
 | **Advertising (Meta)** | **Actual** | **NZ$1,450.74** lifetime | HireHospo NZ Ad Account `2139666836427566` (business: FlexiHospo) |
 | GoCardless fees | Supplier exists, no figure | — | `GoCardless Ltd` and `GoCardless` both in Washpro's Xero; no bills — paid by direct debit, coded from the bank feed |
-| Credit checks | Supplier exists, no figure | — | `CHECKMATE AUCKLAND NZ` in Washpro's Xero. The owner names **Equifax** as the provider, and Equifax is not a contact in that ledger |
+| **Credit checks (Equifax)** | **Unit cost actual** | **$45.36** per check; **$2,721.60** over 60 logged applications | Unit cost from the owner. `CHECKMATE AUCKLAND NZ` is the only credit-bureau contact in Washpro's Xero — Equifax is not, so the billing sits elsewhere |
 | Software, wages, professional fees | No figure | — | Needs HireHospo's own Xero |
 
 **Meta spend by campaign (lifetime):**
@@ -475,6 +475,41 @@ Pulled 20 September 2026. Three cost lines chased to source; the rest await acce
 
 Blended CPC about **$0.60**; the two brochure campaigns carry 87% of spend. Meta only —
 any Google Ads spend has not been located.
+
+**Credit checks are driven by applications, not contracts — and that is the point.**
+
+The golden rule is that no quote goes out without a credit check first, so every applicant
+is checked, including every decline. The cost therefore scales with *application volume*,
+and a decline is pure cost against no revenue. The application log in
+`HH Machines Finance Tracking` gives the volume:
+
+| | |
+|---|---|
+| Applications logged (Nov 2023 – Sep 2025) | **60** (57 unique applicants, 3 reapplied) |
+| Became contracts | 29 |
+| Conversion | **48%** |
+| Credit-check spend at $45.36 each | **$2,721.60** |
+| **Spent on applications that never converted** | **$1,406.16 — 52% of all check spend** |
+| Run rate | ~$123.71/month, ~$1,485/yr |
+
+Against the commission book that is about **2.1% of revenue**, and roughly **1.9× the
+lifetime Meta ad spend**. Combining the two acquisition costs gives **$143.87 per customer
+acquired** (60 checks + $1,450.74 Meta ÷ 29 customers).
+
+That over-half-wasted figure is the number worth watching. It is not a reason to check
+fewer applicants — the rule exists for good reason — but it makes pre-qualification before
+the check a direct, measurable saving, and it belongs on the dashboard as
+*cost per approved application*, not merely total credit-check spend.
+
+**Three caveats on these figures:**
+
+1. **The log stops in September 2025**, a year before this was written, while contracts in
+   the register start as late as April 2026. So 60 applications is a **floor**, not a
+   total, and the real spend is higher.
+2. **Whether $45.36 is GST-inclusive is not established** (Q13). Ex-GST it is $52.16 inc;
+   inc-GST it is $39.44 ex. The P&L needs the ex-GST figure.
+3. **One check per application is an assumption.** A reapplication, a guarantor check, or
+   a second entity on the same deal would each add one.
 
 **Two access blockers stand between this table and a complete cost side:**
 
@@ -783,6 +818,8 @@ flow into the provision automatically; scenario modelling on new business volume
 | **Q5** | Does HireHospo bear GoCardless fees, or is the 30% struck net of them? Same for late and admin fees | Owner | 7.1 direct costs |
 | **Q11** | Who grants the Xero reporting role so account totals can be read? (7.8) | Org admin | The whole cost side |
 | **Q12** | Is there Google Ads spend as well as Meta? Only Meta has been located | Owner | Overheads |
+| **Q13** | Is the $45.36 Equifax fee GST-inclusive or exclusive, and is it one check per application? | Owner | 7.8 credit-check cost |
+| **Q14** | Is there an application log after Sep 2025? The one found stops a year short | Owner | Credit-check volume |
 | Q5 | Useful life and residual for Rent 12m assets (D1) | Accountant | 7.3 |
 | Q6 | Provision matrix sign-off (D2) | Accountant | 7.5 |
 | Q7 | Is overhead allocated to HireHospo or shown unallocated (D3)? | Owner | 7.1 |
