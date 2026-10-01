@@ -6,7 +6,7 @@ Sources read: the handoff, `PRD.md` (all 419 lines), the Ops Desk repo `Debtopsa
 
 ## 1. Where this work lives
 
-The handoff assumes this session opens in `hh-wp-portal`. It opened in `hh_ops_working`, and this session can only push to the branch `claude/hopeful-archimedes-edyjrk` here. I inspected `hh-wp-portal` read-only and wrote these documents here. On 1 October 2026 Raj confirmed the dashboard is a **separate app**, not a module inside Ops Desk. The documents move to the new dashboard repo once it exists.
+The handoff assumes this session opens in `hh-wp-portal`. It opened in `hh_ops_working`, and this session can only push to the branch `claude/hopeful-archimedes-edyjrk` here. I inspected `hh-wp-portal` read-only and wrote these documents here. On 1 October 2026 Raj confirmed the dashboard is a **separate app**, not a module inside Ops Desk, and that it lives in this repo, `hh_ops_working`, under `dashboard/`. A separate repo was tried but could not be reached from this environment.
 
 **Exposure to fix now:** `hh_ops_working` is a **public** repository. Its own `data/README.md` says "keep this repo private". The repo holds `data/customers.csv`, `data/machines.csv`, `data/HireHospo_Database.xlsx` and a signed lease PDF, which together contain customer names, phone numbers, emails, addresses and a company number. This breaks house rule 9 before any dashboard exists. Make the repo private or remove the files and purge them from history. I have not changed anything about it. The interim matching report below uses internal IDs only, so it adds no new personal data.
 

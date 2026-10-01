@@ -10,9 +10,9 @@ Updated 1 October 2026. Every `[TBC]` in `00` to `05` is listed here.
 | A2 | Approve making the Ops Desk CRM the agreement system of record, with the `wh.agreement` clean-up (`00` section 4) | Raj | Phase 1 builds on the Ops Desk active-book rules, with Book tiles badged "unreconciled" |
 | A3 | Create the credentials in `04-credentials-checklist.md` | Raj | The matching report cannot have GoCardless or MYOB counts. Phase 0 exit test not met |
 | A4 | Revenue basis: gross billings (PRD) or the 30% HireHospo share (Ops Desk `calculateFinanceRevenue`). This is open question 3 seen from the revenue side | Raj, accountant | Dashboard shows gross billings. The 1% revenue check against MYOB may fail by design if MYOB books the 30% share |
-| A5 | Create the dashboard repo (name `[TBC]`, suggested `hh-command-dashboard`) and give this session push access | Raj | Docs stay in `hh_ops_working`. Code cannot start |
+| A5 | Repo: decided, `hh_ops_working` under `dashboard/` | Raj | Done, 1 October 2026 |
 | A7 | Dashboard domain, for example `dashboard.hirehospo.com` | Raj | Built against the Railway default URL |
-| A6 | `hh_ops_working` is public and holds customer personal data | Raj | Exposure continues. Make it private or remove the files and purge history |
+| A6 | **Make `hh_ops_working` private before any dashboard code lands.** It is public and holds customer personal data (`data/`). The app code and its config will live here too. Then remove `data/` personal files from history or accept they were exposed | Raj | Dashboard code is not pushed while the repo is public. Docs only |
 
 ## Business answers needed for phase 1
 

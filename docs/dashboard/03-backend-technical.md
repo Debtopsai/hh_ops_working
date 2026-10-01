@@ -1,6 +1,6 @@
 # Command Dashboard: backend technical design, phases 0 and 1
 
-Status: draft for Raj's approval, revised 1 October 2026 for a **separate dashboard app**. Target repo: a new repo, `hh-command-dashboard` `[TBC, Raj: name, and who creates it]`. Ops Desk (`hh-wp-portal`) is a read-only source and gets no code changes.
+Status: draft for Raj's approval, revised 1 October 2026 for a **separate dashboard app**. Target repo: `Debtopsai/hh_ops_working`, with the app in its own top-level folder `dashboard/` (decided by Raj, 1 October 2026). Ops Desk (`hh-wp-portal`) is a read-only source and gets no code changes.
 
 ## 1. Shape
 
@@ -11,13 +11,13 @@ Ops Desk DB (read-only role) ─┤        (service role writes)                
 HubSpot API (phase 0 matching) ┘
 ```
 
-**The app.** Next.js and TypeScript, hosted on Railway, in its own repo. It is not part of Ops Desk: it has its own deploy, URL and logins.
+**The app.** Next.js and TypeScript, hosted on Railway, in `hh_ops_working/dashboard/`. Railway builds from that folder as its root directory. The app is not part of Ops Desk: it has its own deploy, URL and logins. The repo's existing `docs/` and `data/` folders are not part of the build.
 
 **Storage.** A dedicated Supabase project (Postgres with row level security, and Supabase Auth for logins). Everything lives in the schema `wh`, managed by versioned SQL migrations (`supabase/migrations/`). No Prisma.
 
 **Ops Desk as a source.** The dashboard reads the Ops Desk database through a new Postgres role, `dashboard_reader`, that can only `SELECT` the tables listed in section 2.1. The role's connection string is a secret in the dashboard's Railway service. Creating the role is a one-off SQL statement Raj runs on the Ops Desk database (see `04-credentials-checklist.md`). It is not a code change, and `prisma db push` does not touch roles.
 
-**Repo layout**
+**Repo layout** (paths are relative to `dashboard/`)
 
 | Path | Purpose |
 | --- | --- |
@@ -389,6 +389,8 @@ GoCardless collects GST-inclusive amounts, and its payouts are gross collections
 | SQL integration (Vitest against local Supabase in CI) | Migrations apply cleanly from empty. Money fixtures: bond excluded, 10 weeks advance spread over weeks 1 to 10 and not counted twice, fee counted only with a returned payment, weekly rate × paid weeks equals the sum of periods, a variation mid-term, a Rent rollover, a refund after payout. Payout reconciliation on a fixture payout to the cent. Every RLS case in section 7 |
 | UI (Vitest + Testing Library) | Every money element in dashboard components has "+ GST". No component formats GST-inclusive money. Degraded states render their text. Sales users never see P&L tiles |
 | Hand check | `scripts/verify_agreements.py` recomputes three real agreements in Python `Decimal` from raw rows and compares to `m_weekly_revenue` drill-through rows to the cent |
-| House rules | `scripts/check-house-rules.sh` fails on any em dash character or its HTML entity in the diff, `docs/` and `src/`, and lists every `[TBC]` |
+| House rules | `scripts/check-house-rules.sh` fails on any em dash character or its HTML entity in the diff, `docs/dashboard/` and `dashboard/src/`, and lists every `[TBC]` |
 
-CI (GitHub Actions) runs lint, typecheck, format check, unit tests, SQL tests against `supabase start`, and build.
+CI (GitHub Actions, triggered on changes under `dashboard/` and `docs/dashboard/`) runs lint, typecheck, format check, unit tests, SQL tests against `supabase start`, and build.
+
+**Test data.** Fixtures are synthetic. No real customer name, email, phone, address or payment ID is committed, because this repo is public until A6 in `06-open-items.md` is done, and code history outlives a later change to private.
