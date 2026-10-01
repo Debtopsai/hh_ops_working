@@ -52,13 +52,13 @@ Nothing in phases 0 and 1 writes to HubSpot, MYOB, GoCardless or Meta.
 | Sales and operations manager | Urman | Book (customer level), Collections (customer level), Scorecard operational tiles (active customers, active agreements, weekly contracted revenue, cash collected, failure rate). **Not** P&L, COGS, gross margin, or anything from MYOB beyond AR `[TBC, Raj: open question 13]` |
 | Credit, collections | `[TBC who]` | Phase 2. Collections view grant only, if the role exists |
 
-Roles are granted in Ops Desk at Settings, Section Access, as new feature grants. `SUPER_ADMIN` maps to Owner. No other Ops Desk role gets dashboard access by default.
+The dashboard has its own logins (Supabase Auth, invite only). The Owner invites users and sets each one's role. Ops Desk roles do not carry over.
 
 ## 4. Phase 0 functional requirements
 
 | ID | Requirement | Acceptance |
 | --- | --- | --- |
-| F0.1 | Warehouse schema exists in the `wh` schema of the Ops Desk database, created by versioned SQL migrations and untouched by `prisma db push` | A CI test applies the migrations, runs `prisma db push`, and asserts every `wh` table and view still exists with the same columns |
+| F0.1 | Warehouse schema exists in the `wh` schema of the dashboard's own Supabase project, created by versioned SQL migrations | A CI test applies every migration to an empty local Supabase and asserts the expected tables, views, policies and grants |
 | F0.2 | Every raw table keeps the source ID, the full source payload, the source's own updated timestamp and our fetch timestamp | Schema test |
 | F0.3 | The deal thread table exists, keyed on the HubSpot deal ID. It has columns for Meta lead ID, Checkmate reference, Plutio agreement number, GoCardless customer and mandate IDs, MYOB customer card UID and Ops Desk deal ID | Schema test |
 | F0.4 | Read-only matching job pairs every active GoCardless customer with HubSpot deals and MYOB customer cards. Each customer is classified matched, unmatched or ambiguous, with the rule that decided it | Report with real counts, stored in `wh.match_result`, exportable as CSV, shown on a "Deal thread" admin page. The job makes GET requests only, which a unit test asserts against the client |
@@ -83,7 +83,7 @@ The first needs the credentials in `04-credentials-checklist.md`.
 | F1.1 | GoCardless | Customers, mandates, payments, payouts, payout items (including fees), refunds, events | Every 15 minutes incremental, plus webhook. Back-fill from `[TBC, Raj]`, default 12 months before the first run | Idempotent: running twice changes no row. Back-fill re-run produces identical totals |
 | F1.2 | GoCardless webhook | Payment, mandate, payout and refund events | Real time | Bad signature returns 498 and stores nothing. Good signature stores the raw event once, even when delivered twice |
 | F1.3 | MYOB | Monthly P&L by account, sales invoices with lines, customer cards, bills, AR aging | Hourly | Only the HireHospo company file is read. Idempotent upserts |
-| F1.4 | Ops Desk | Deals, equipment lines, contracts, holdings, companies, enquiries, products | Daily snapshot at 01:00, plus on demand | Snapshot copied into `wh.raw_opsdesk_*` so history exists even when Ops Desk rows change |
+| F1.4 | Ops Desk (read-only `dashboard_reader` role) | Deals, equipment lines, contracts, holdings, companies, enquiries, products | Daily snapshot at 01:00, plus on demand | Snapshot copied into `wh.raw_opsdesk_*` so history exists even when Ops Desk rows change |
 | F1.5 | Freshness | Every source records its last successful run | Continuous | A source more than twice its interval late turns its tiles amber and names the source |
 
 ### 5.2 Scorecard money tiles
@@ -132,7 +132,7 @@ Every tile shows this week, last week, the 4-week average, a freshness stamp, an
 
 | ID | Requirement |
 | --- | --- |
-| F1.21 | Every dashboard page view and drill-through is written to the Ops Desk audit log with user, view and filters |
+| F1.21 | Every dashboard page view and drill-through is written to the dashboard's access log (`wh.access_log`) with user, view and filters |
 | F1.22 | Drill-through shows the rows behind a number. The rows sum to the number shown, which is pinned by a test per tile |
 | F1.23 | The Scorecard loads in under 3 seconds with 12 months of data |
 

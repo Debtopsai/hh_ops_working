@@ -6,7 +6,7 @@ Sources read: the handoff, `PRD.md` (all 419 lines), the Ops Desk repo `Debtopsa
 
 ## 1. Where this work lives
 
-The handoff assumes this session opens in `hh-wp-portal`. It opened in `hh_ops_working`, and this session can only push to the branch `claude/hopeful-archimedes-edyjrk` here. I inspected `hh-wp-portal` read-only and wrote these documents here. Once they are approved, they move to `hh-wp-portal/docs/dashboard/` along with the code. That needs a branch in `hh-wp-portal` (its `GIT_WORKFLOW.md` asks for `feat/...`) and push access for the session.
+The handoff assumes this session opens in `hh-wp-portal`. It opened in `hh_ops_working`, and this session can only push to the branch `claude/hopeful-archimedes-edyjrk` here. I inspected `hh-wp-portal` read-only and wrote these documents here. On 1 October 2026 Raj confirmed the dashboard is a **separate app**, not a module inside Ops Desk. The documents move to the new dashboard repo once it exists.
 
 **Exposure to fix now:** `hh_ops_working` is a **public** repository. Its own `data/README.md` says "keep this repo private". The repo holds `data/customers.csv`, `data/machines.csv`, `data/HireHospo_Database.xlsx` and a signed lease PDF, which together contain customer names, phone numbers, emails, addresses and a company number. This breaks house rule 9 before any dashboard exists. Make the repo private or remove the files and purge them from history. I have not changed anything about it. The interim matching report below uses internal IDs only, so it adds no new personal data.
 
@@ -35,24 +35,19 @@ The handoff assumes this session opens in `hh-wp-portal`. It opened in `hh_ops_w
 1. **Revenue definition.** `src/lib/finance/calculations.ts` books "HireHospo revenue" as 30% of rental, with 70% as the Washpro share. The PRD defines weekly revenue as the full customer weekly charge. These are different numbers, and the 1% reconciliation to MYOB only passes if the dashboard and MYOB use the same one. This is open question 3 seen from the other side. Until it is answered, I keep the PRD definition and show it as **gross billings**. The 30% split is ready as a COGS component, switched off.
 2. **Rent in advance.** The same function adds rent in advance to rental revenue at signing, which breaks house rule 5. The dashboard does not use it. The existing `/finance` page keeps doing it until it is retired.
 3. **Security bond GST.** Ops Desk bills the security deposit as a taxable line (`provisioning.ts`, "FLAG-1 RESOLVED: taxable"). A refundable bond is normally not a taxable supply. It never enters dashboard revenue either way, but it changes how cash is converted to ex GST. `[TBC, accountant]`
-4. **Duplicate stats.** The BI cockpit already computes weekly run-rate, active customers, concentration, cash collected and CAC, with known defects listed in `STATS.md` (for example, all-time cash stamped with the selected period). Under the "one computation site per stat" rule, the Command Dashboard metric layer becomes the single site. The BI cockpit and Financial Cockpit tiles it replaces are retired or re-pointed in phase 1, and the register is updated. I have not added a second copy.
+4. **Duplicate stats.** The BI cockpit already computes weekly run-rate, active customers, concentration, cash collected and CAC, with known defects listed in `STATS.md` (for example, all-time cash stamped with the selected period). With a separate dashboard, both will exist side by side. See section 3.
 
 ## 3. Open question 4: inside Ops Desk or a separate Supabase project
 
-**Answer: inside the Ops Desk Postgres on Railway, in its own `wh` schema.** It is not a separate Supabase project.
+**Decided by Raj, 1 October 2026: a separate dashboard.** It has its own repo, Railway service and Supabase project (Postgres with row level security, and Supabase Auth). This overrides PRD decision 1 and the handoff's "build inside Ops Desk".
 
-Reasons:
+Ops Desk becomes a read-only source, read through a dedicated `dashboard_reader` Postgres role. The dashboard makes no code changes to Ops Desk.
 
-- The dashboard needs Ops Desk's login, roles, audit log, enquiries, products and CRM tables. A second project would duplicate logins and copy those tables across a network boundary on a schedule.
-- Ops Desk is not on Supabase, so "Supabase for the warehouse" would mean running a second database product just for this module.
-- Row level security works in plain Postgres. Supabase adds nothing that is needed here.
+Costs of this choice:
 
-Two conditions make it safe:
-
-- **The `wh` schema is outside Prisma.** `prisma db push --accept-data-loss` runs on every deploy and manages the `public` schema only, because the Prisma schema does not enable `multiSchema`. Tables in `wh` are created by versioned SQL files under `warehouse/migrations/`, applied by a pre-deploy step before `db push`. `[TBC, verify in implementation]`: confirm against a scratch database that `db push` leaves `wh` untouched, and pin it with a CI test before the first deploy.
-- **Dashboard reads run as a non-owner role.** Prisma connects as the database owner, which bypasses row level security. Every dashboard query runs inside a transaction that does `SET LOCAL ROLE wh_reader` and sets the viewer's dashboard role, so the policies apply. Details are in `03-backend-technical.md`.
-
-No hard reason against building inside Ops Desk was found.
+- Raj and Urman have a second login.
+- Ops Desk data reaches the dashboard by a daily copy, not live.
+- Ops Desk's own `/business-intelligence` and `/finance` pages keep computing their own versions of run-rate, cash collected and CAC. Those pages will disagree with the dashboard where they have known defects (`STATS.md`). I recommend Ops Desk retires or relabels them, but that is an Ops Desk change, outside this build.
 
 ## 4. Where agreements live (0.2)
 

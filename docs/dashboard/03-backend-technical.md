@@ -1,33 +1,35 @@
 # Command Dashboard: backend technical design, phases 0 and 1
 
-Status: draft for Raj's approval, 1 October 2026. Target repo: `hh-wp-portal`.
+Status: draft for Raj's approval, revised 1 October 2026 for a **separate dashboard app**. Target repo: a new repo, `hh-command-dashboard` `[TBC, Raj: name, and who creates it]`. Ops Desk (`hh-wp-portal`) is a read-only source and gets no code changes.
 
 ## 1. Shape
 
 ```
-GoCardless API + webhook ─┐
-MYOB Business API ────────┼─> Inngest jobs ─> wh.raw_* ─> wh modelled tables ─> wh metric views ─> /api/insights/* ─> /insights pages
-Ops Desk public schema ───┘                        (owner role writes)          (wh_owner_reader / wh_sales_reader read, RLS on)
-HubSpot API (phase 0 matching only) ─┘
+GoCardless API + own webhook ─┐
+MYOB Business API ────────────┼─> Inngest jobs ─> wh.raw_* ─> wh modelled tables ─> wh metric views ─> /api/* ─> dashboard pages
+Ops Desk DB (read-only role) ─┤        (service role writes)                   (RLS by signed-in user's dashboard role)
+HubSpot API (phase 0 matching) ┘
 ```
 
-**Storage.** Everything new lives in the Postgres schema `wh` inside the Ops Desk database. Prisma does not manage it. The decision and its reasons are in `00-phase0-findings.md` section 3.
+**The app.** Next.js and TypeScript, hosted on Railway, in its own repo. It is not part of Ops Desk: it has its own deploy, URL and logins.
 
-**Layout in `hh-wp-portal`**
+**Storage.** A dedicated Supabase project (Postgres with row level security, and Supabase Auth for logins). Everything lives in the schema `wh`, managed by versioned SQL migrations (`supabase/migrations/`). No Prisma.
+
+**Ops Desk as a source.** The dashboard reads the Ops Desk database through a new Postgres role, `dashboard_reader`, that can only `SELECT` the tables listed in section 2.1. The role's connection string is a secret in the dashboard's Railway service. Creating the role is a one-off SQL statement Raj runs on the Ops Desk database (see `04-credentials-checklist.md`). It is not a code change, and `prisma db push` does not touch roles.
+
+**Repo layout**
 
 | Path | Purpose |
 | --- | --- |
-| `warehouse/migrations/NNNN_name.sql` | Forward-only SQL migrations, applied in order and recorded in `wh.schema_migration` |
-| `scripts/warehouse/migrate.ts` | Applies pending migrations. Runs in Railway pre-deploy **before** `prisma db push`, and fails the deploy on error. This is unlike `db push`, which carries on after a failure |
-| `src/lib/warehouse/` | Source clients (GoCardless read client, MYOB read client, HubSpot read client), ingestion, the matching job, the query runner, and the metric registry |
-| `src/lib/inngest/functions/warehouse/*.ts` | Scheduled and event jobs, registered in the existing `src/lib/inngest/functions/index.ts` |
-| `src/app/api/insights/*` | Read-only API routes |
-| `src/app/(portal)/insights/*` | Pages |
-| `tests/unit/warehouse/`, `tests/integration/warehouse/` | Tests. The integration tests run SQL against the CI Postgres service |
+| `supabase/migrations/NNNN_name.sql` | Forward-only schema, view, role and policy migrations |
+| `src/lib/sources/` | Read clients for GoCardless, MYOB, HubSpot and the Ops Desk DB |
+| `src/lib/ingest/`, `src/lib/match/` | Ingestion and the matching job |
+| `src/lib/metrics.ts` | Metric registry: view name, label, definition and visibility, with no formulas |
+| `src/inngest/` | Scheduled and event jobs |
+| `src/app/api/*`, `src/app/(dashboard)/*` | Read-only API and pages |
+| `tests/unit/`, `tests/sql/` | Tests. The SQL tests run against a local Supabase Postgres in CI |
 
-**Source clients are GET-only by construction.** Each client exposes one `get(path, query)` method and has no method that sends a body. A unit test asserts that no other HTTP verb appears in the client module.
-
-The existing Ops Desk GoCardless client has write functions. The warehouse does not import it.
+**Source clients are GET-only by construction.** Each client exposes one `get(path, query)` method. A unit test asserts that no other HTTP verb appears in the client module. The Ops Desk DB client runs as `dashboard_reader`, which has no write grant.
 
 ## 2. Schema
 
@@ -248,7 +250,7 @@ Three properties follow from this view:
 
 ### 3.3 The API
 
-`GET /api/insights/scorecard?week=YYYY-MM-DD` returns one object per tile:
+`GET /api/scorecard?week=YYYY-MM-DD` returns one object per tile:
 
 ```json
 { "key": "weekly_revenue", "label": "Weekly revenue", "gstLabel": "+ GST",
@@ -276,15 +278,14 @@ Money crosses the wire as a cents string and is formatted by one function, `form
 
 Every job writes `wh.source_run`. Every upsert is `insert ... on conflict (source_id) do update ... where payload_hash is distinct from excluded.payload_hash`, so re-runs are no-ops.
 
-`[TBC, Raj]`: confirm Inngest Cloud keys (`INNGEST_EVENT_KEY`, `INNGEST_SIGNING_KEY`) are set on the Railway web service. The existing nightly finance function suggests they are, but I could not check production.
+The app gets its own Inngest app ID and keys (`INNGEST_EVENT_KEY`, `INNGEST_SIGNING_KEY`). It does not share the Ops Desk Inngest app.
 
 ## 5. GoCardless webhook
 
-- Reuse the existing route `/api/integrations/gocardless/webhook` and its HMAC-SHA256 check on the `webhook-signature` header (`GOCARDLESS_WEBHOOK_SECRET`).
-- Change it so a verified event is written to `wh.raw_gc_event` (`on conflict do nothing` on the event ID) **before** the existing `PAYMENTS_ENABLED` gate.
-- The route then sends `wh/gc.event.received` to Inngest.
-- The existing finance behaviour is unchanged.
-- A bad signature stores nothing and returns 498, as GoCardless recommends. `[TBC, check what the route returns today and keep any existing test passing]`
+- The dashboard has **its own endpoint**, `/api/webhooks/gocardless`, registered as a second webhook endpoint in GoCardless with its own secret (`WH_GOCARDLESS_WEBHOOK_SECRET`). The Ops Desk route is not touched.
+- The signature is HMAC-SHA256 of the raw body, from the `Webhook-Signature` header, compared in constant time.
+- A bad signature returns 498, as GoCardless recommends, and stores nothing.
+- A verified event is written to `wh.raw_gc_event` (`on conflict do nothing` on the event ID). The route then sends `wh/gc.event.received` to Inngest and returns 204.
 
 Tests:
 
@@ -301,7 +302,7 @@ Tests:
 | GoCardless | Customer `metadata.hs_deal_ids` (comma-separated; GoCardless allows 3 metadata keys per resource) and mandate `metadata.hs_deal_id` | `64166307992` or `64166307992,44038739285` | Ops Desk when it creates the customer at signing. Existing customers by hand from the matching report |
 | MYOB | Customer card custom field 1, labelled "HubSpot deal", plus `HS:<deal id>` at the start of each sales invoice's customer PO number | `HS:64166307992` | Bookkeeper. `[TBC, confirm custom fields are free in the HireHospo file]` |
 | Plutio | Agreement custom field `hubspot_deal_id` | `64166307992` | The Pabbly flow, after it creates the deal |
-| Ops Desk | `wh.deal_thread.opsdesk_deal_id` | Ops Desk deal ID | Matching job. No Prisma change |
+| Ops Desk | `wh.deal_thread.opsdesk_deal_id` | Ops Desk deal ID | Matching job, in the dashboard database. Nothing written to Ops Desk |
 
 **Matching job.** It reads only. For each GoCardless customer with an active mandate and a payment in the last 8 weeks, rules are applied in order, and the first rule that decides wins:
 
@@ -316,51 +317,39 @@ Duplicate HubSpot deals for the same company count as one company and are flagge
 
 ## 7. Access control and row level security
 
-Roles, created by migration:
+**Logins.** Supabase Auth with email magic link. Sign-up is disabled, and the Owner invites users. Each user has one row in `wh.dashboard_user (user_id uuid primary key references auth.users, role text check (role in ('owner','sales_ops')))`. A user with no row sees a "no access" page and every query returns nothing.
+
+**Role check**, one helper used by every policy:
 
 ```sql
-create role wh_owner_reader nologin nobypassrls;
-create role wh_sales_reader nologin nobypassrls;
-grant usage on schema wh to wh_owner_reader, wh_sales_reader;
--- owner: select on every m_* view and the drill-through views
--- sales: select only on views whose visibility includes sales_ops (section 3.2)
--- neither role is granted anything on raw_* tables, setting, or recon inputs
+create function wh.dashboard_role() returns text
+language sql stable security definer set search_path = '' as $$
+  select role from wh.dashboard_user where user_id = auth.uid()
+$$;
 ```
 
-Customer-level tables (`agreement`, `agreement_snapshot`, `payment`, `deal_thread`, `match_result`) are set up as follows:
+**Policies**
 
-- RLS is enabled and **forced**.
-- A policy allows `select` to `wh_owner_reader` and `wh_sales_reader` only.
-- Every other role sees no rows, and that includes a future credit or collections role until a policy is written for it.
+- RLS is enabled and **forced** on every `wh` table.
+- Customer-level tables (`agreement`, `agreement_snapshot`, `payment`, `deal_thread`, `match_result`):
+  `select` is allowed when `wh.dashboard_role() in ('owner','sales_ops')`.
+- Owner-only tables (`finance_month`, `cogs_component`, `setting`, `recon_run`, `agreement_override`):
+  `select` is allowed when `wh.dashboard_role() = 'owner'`.
+- `raw_*` tables have no policy for `authenticated`, so they read as empty. Only the ingestion jobs touch them, using the service role key, which is server side only.
+- Metric views are created `with (security_invoker = true)`, so a view reads with the caller's rights.
+- Owner-only metrics (`m_weekly_revenue`, `m_fee_revenue`, `m_cogs*`, `m_gross_margin`, `m_pnl_month`) also filter on `wh.dashboard_role() = 'owner'` inside the view. They read agreement tables that sales users may see, so the view filter is what keeps revenue and margin owner-only. The filter is tested, not trusted.
 
-Metric views are created `with (security_invoker = true)` so the policies apply through the view. `[TBC, confirm the production Postgres major version is 15 or later; CI uses 16]`
+**Queries run as the signed-in user.** The API uses the Supabase client with the user's session, never the service role, so a bug in a route cannot return rows the policies deny.
 
-Every API request runs its queries inside one transaction:
+**Audit.** Every request writes `wh.access_log (user_id, at, route, metric_keys, filters)`.
 
-```sql
-begin;
-set local role wh_owner_reader;   -- or wh_sales_reader, from the user's grant
-select ... from wh.m_weekly_revenue where week_start = $1;
-commit;
-```
+**RLS tests**, run against local Supabase in CI with real JWTs for each role:
 
-The role comes from a new Ops Desk feature grant:
-
-- `COMMAND_DASHBOARD_OWNER`, implied by `SUPER_ADMIN`;
-- `COMMAND_DASHBOARD_SALES`.
-
-Both are added to the existing `FeatureGrantKey` enum. A user with neither grant gets 403 before any query runs.
-
-Because the role switch happens in the database, a bug in a route that forgets a UI check still cannot return P&L rows to a sales user.
-
-Every request is written to the existing `AuditLog` with user, route, metric keys and filters.
-
-**RLS tests** run against the real CI Postgres:
-
-- `wh_sales_reader` reading `m_pnl_month`, `m_weekly_revenue`, `m_cogs` or `m_gross_margin` gets permission denied.
-- `wh_sales_reader` can read `m_cash_collected` and `agreement_snapshot`.
-- A role with no grant reads zero rows from `payment`, even with `SELECT` granted, because the policy denies it.
-- `wh_owner_reader` reads everything except `raw_*`.
+- A `sales_ops` user reading `m_pnl_month`, `m_weekly_revenue`, `m_cogs` or `m_gross_margin` gets zero rows.
+- A `sales_ops` user can read `m_cash_collected` and `agreement_snapshot`.
+- A signed-in user with no `dashboard_user` row reads zero rows from every table and view.
+- An anonymous request reads zero rows.
+- No role except the service role reads `raw_*`.
 
 ## 8. Reconciliation and the GST question on cash
 
@@ -397,9 +386,9 @@ GoCardless collects GST-inclusive amounts, and its payouts are gross collections
 | Kind | What |
 | --- | --- |
 | Unit (Vitest) | Week boundaries across the NZ daylight-saving changes (Sunday 27 September 2026 and 5 April 2026). `formatNzdExGst` always appends "+ GST". GET-only source clients. Matching rules on fixed fixtures, including the false pairs found on 1 October 2026 |
-| SQL integration (Vitest + pg against the CI Postgres) | Migrations apply, and `prisma db push` leaves `wh` intact. Money fixtures: bond excluded, 10 weeks advance spread over weeks 1 to 10 and not counted twice, fee counted only with a returned payment, weekly rate × paid weeks equals the sum of periods, a variation mid-term, a Rent rollover, a refund after payout. Payout reconciliation on a fixture payout to the cent. Every RLS case in section 7 |
-| UI (Vitest + Testing Library) | Every money element in `/insights` components has "+ GST". No component formats GST-inclusive money. Degraded states render their text. Sales users never see P&L tiles |
-| Hand check | `scripts/warehouse/verify_agreements.py` recomputes three real agreements in Python `Decimal` from raw rows and compares to `m_weekly_revenue` drill-through rows to the cent |
-| House rules | `scripts/warehouse/check-house-rules.sh` fails on any em dash character or its HTML entity in the diff, `docs/dashboard/` and `src/**/insights/**`, and lists every `[TBC]` |
+| SQL integration (Vitest against local Supabase in CI) | Migrations apply cleanly from empty. Money fixtures: bond excluded, 10 weeks advance spread over weeks 1 to 10 and not counted twice, fee counted only with a returned payment, weekly rate × paid weeks equals the sum of periods, a variation mid-term, a Rent rollover, a refund after payout. Payout reconciliation on a fixture payout to the cent. Every RLS case in section 7 |
+| UI (Vitest + Testing Library) | Every money element in dashboard components has "+ GST". No component formats GST-inclusive money. Degraded states render their text. Sales users never see P&L tiles |
+| Hand check | `scripts/verify_agreements.py` recomputes three real agreements in Python `Decimal` from raw rows and compares to `m_weekly_revenue` drill-through rows to the cent |
+| House rules | `scripts/check-house-rules.sh` fails on any em dash character or its HTML entity in the diff, `docs/` and `src/`, and lists every `[TBC]` |
 
-CI already runs lint, typecheck, tests and build against Postgres 16, so no new CI service is needed.
+CI (GitHub Actions) runs lint, typecheck, format check, unit tests, SQL tests against `supabase start`, and build.

@@ -10,7 +10,8 @@ Updated 1 October 2026. Every `[TBC]` in `00` to `05` is listed here.
 | A2 | Approve making the Ops Desk CRM the agreement system of record, with the `wh.agreement` clean-up (`00` section 4) | Raj | Phase 1 builds on the Ops Desk active-book rules, with Book tiles badged "unreconciled" |
 | A3 | Create the credentials in `04-credentials-checklist.md` | Raj | The matching report cannot have GoCardless or MYOB counts. Phase 0 exit test not met |
 | A4 | Revenue basis: gross billings (PRD) or the 30% HireHospo share (Ops Desk `calculateFinanceRevenue`). This is open question 3 seen from the revenue side | Raj, accountant | Dashboard shows gross billings. The 1% revenue check against MYOB may fail by design if MYOB books the 30% share |
-| A5 | Push access and a `feat/` branch in `hh-wp-portal` for this session | Raj | Docs stay in `hh_ops_working`. Code cannot start there |
+| A5 | Create the dashboard repo (name `[TBC]`, suggested `hh-command-dashboard`) and give this session push access | Raj | Docs stay in `hh_ops_working`. Code cannot start |
+| A7 | Dashboard domain, for example `dashboard.hirehospo.com` | Raj | Built against the Railway default URL |
 | A6 | `hh_ops_working` is public and holds customer personal data | Raj | Exposure continues. Make it private or remove the files and purge history |
 
 ## Business answers needed for phase 1
@@ -33,13 +34,11 @@ Updated 1 October 2026. Every `[TBC]` in `00` to `05` is listed here.
 
 | # | Item | How |
 | --- | --- | --- |
-| T1 | `prisma db push --accept-data-loss` leaves the `wh` schema untouched | CI test before first deploy |
-| T2 | Production Postgres major version is 15 or later (`security_invoker` views) | `select version()` on Railway |
-| T3 | Inngest Cloud keys set on the Railway web service | Railway variables, Inngest dashboard |
+| T1 | Ops Desk database name for the `dashboard_reader` grant (table names are confirmed from the schema) | Railway Postgres settings |
+| T3 | Inngest app created for the dashboard, keys set | Railway variables, Inngest dashboard |
 | T4 | GoCardless payout field for "payout date". The handoff says `payout_date`; the payout resource has `arrival_date` | First real payout pulled |
 | T5 | GoCardless payout item tax fields on fee items | First real payout pulled |
 | T6 | MYOB P&L report endpoint and parameters, and the read-only scope names | MYOB app registration |
-| T7 | What the existing GoCardless webhook route returns on a bad signature | Read the route and its tests before changing it |
 
 ## HubSpot plan items (open question 21 and phase 2)
 
@@ -55,10 +54,10 @@ Updated 1 October 2026. Every `[TBC]` in `00` to `05` is listed here.
 
 ## Judgement calls made (flag if you disagree)
 
-- The warehouse lives in a `wh` schema inside the Ops Desk Postgres, not in Supabase. Ops Desk is not on Supabase.
-- Jobs use Inngest as the handoff says, even though Ops Desk schedules most work on BullMQ.
-- The dashboard is at `/insights`, because `/command` is taken by the catalogue Command Center.
-- The existing `/business-intelligence` and `/finance` cockpits are retired once phase 1 is signed off, to keep one computation site per stat.
+- Separate app (Raj, 1 October 2026): Next.js on Railway, its own Supabase project with RLS and Supabase Auth, Inngest for jobs.
+- Ops Desk is read through a read-only Postgres role, copied daily. No Ops Desk code change.
+- The dashboard gets its own GoCardless webhook endpoint rather than sharing the Ops Desk one.
+- Ops Desk's `/business-intelligence` and `/finance` pages will disagree with the dashboard where they have known defects. Retiring them is an Ops Desk decision, outside this build.
 - Cash collected reconciles exactly on the GST-inclusive gross and displays ex GST (amount × 100 / 115).
 - Token-based name matching is never auto-matched, after it paired the wrong companies on 1 October 2026.
 - The handoff's "all 50 deals in Prospect Inquiry" is corrected: 47 are, 1 is in another stage and 2 have no pipeline. All deals carry USD as currency.

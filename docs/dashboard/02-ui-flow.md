@@ -2,20 +2,21 @@
 
 Status: draft for Raj's approval, 1 October 2026.
 
-## 1. Where it sits in Ops Desk
+## 1. The app
 
-The dashboard is a new **Command** entry at the top of the existing Insights section of the Ops Desk sidebar, route `/insights`. The name `/command` is already taken by the product catalogue Command Center, so it is not reused.
+A separate web app with its own URL `[TBC, Raj: domain, for example dashboard.hirehospo.com]` and its own login. Sign-in is by email magic link, invite only. It has no Ops Desk sidebar; it has its own top navigation.
 
 | Route | View | Owner | Sales and ops manager |
 | --- | --- | --- | --- |
-| `/insights` | Scorecard (landing) | Full | Operational tiles only |
-| `/insights/pnl` | P&L | Full | Hidden from nav. Direct URL shows "You do not have access to this view" |
-| `/insights/book` | Book | Full | Full, customer level |
-| `/insights/collections` | Collections | Full | Full, customer level |
-| `/insights/thread` | Deal thread and data health (admin) | Full | Read only |
-| `/insights/records/[metric]` | Drill-through for any tile | Full | Only for metrics they can see |
+| `/` | Scorecard (landing) | Full | Operational tiles only |
+| `/pnl` | P&L | Full | Hidden from nav. Direct URL shows "You do not have access to this view" |
+| `/book` | Book | Full | Full, customer level |
+| `/collections` | Collections | Full | Full, customer level |
+| `/thread` | Deal thread and data health (admin) | Full | Read only |
+| `/records/[metric]` | Drill-through for any tile | Full | Only for metrics they can see |
+| `/settings` | Users, roles, MYOB connection, reconciled-to date, COGS components | Full | No access |
 
-The existing `/business-intelligence` and `/finance` pages stay until phase 1 is signed off. They then get a banner pointing to `/insights` and are retired, so the business has one computation site per stat.
+Records link out to Ops Desk (customer, deal) and to GoCardless (payment) for anything that needs action. The dashboard itself never changes data.
 
 Server-side access checks run on every page and API route. Hiding a nav item is not the control; row level security is.
 
@@ -53,7 +54,7 @@ Every tile has the same layout, so the owner reads every tile the same way.
 
 **Monday morning read, from Melbourne**
 
-1. Open Ops Desk. Land on `/insights` with "last complete week" preselected on Mondays.
+1. Open the dashboard. Land on `/` with "last complete week" preselected on Mondays.
 2. The scorecard strip reads left to right: weekly revenue, cash collected, COGS (partial), gross margin (partial), weekly contracted revenue, active agreements, active customers, failure rate, data health.
 3. Any amber flag sits on its tile. Clicking the flag opens the reconciliation result: check name, expected, actual, variance, inputs, and run time.
 4. To check a number, click it to open the drill-through. Rows behind weekly revenue are one row per agreement-week: customer, agreement, weekly rate, the period it covers, and whether advance or direct debit covers it. Export CSV.
@@ -61,8 +62,9 @@ Every tile has the same layout, so the owner reads every tile the same way.
 6. Open **Book**. Check net new agreements, end-of-term in 90 days and Rent rollovers. Open an agreement to see its thread and last 8 collections.
 7. Open **Collections**. See today's failures and arrears by age.
 
-**Owner-only settings, on the Deal thread page**
+**Owner-only settings, on `/settings`**
 
+- **Users and roles.** Invite by email; set Owner or Sales and ops manager; remove access.
 - **MYOB reconciled-to date.** Records who set it and when.
 - **COGS components.** Enable or disable each component, with an effective-from date. Washpro cost is ready but disabled pending open question 3.
 - **Agreement status overrides.** For default and recovery, with a mandatory reason. Every override is logged.
@@ -71,7 +73,7 @@ Every tile has the same layout, so the owner reads every tile the same way.
 
 **Daily**
 
-1. Land on `/insights`. Operational tiles only:
+1. Land on `/`. Operational tiles only:
    - active customers;
    - active agreements;
    - weekly contracted revenue;
