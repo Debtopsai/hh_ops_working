@@ -69,6 +69,8 @@ URL flags (on any frame, and `record` also on `index.html`):
 
 ## Recording the 15.0s master
 
+A rendered master is committed: `HireHospo_rational-without-20k_animatic_15s.mp4` (1080×1920, 30fps, 450 frames, exactly 15.000s, H.264). Each frame was captured with `HH.seek()`, so the timing is exact. It still shows the placeholder oven and the set-type wordmark, so re-render it after blockers 1–2 are cleared.
+
 **Option A: screen recorder.** Set a 1080×1920 browser window (Chrome DevTools device mode at 1080×1920, DPR 1). Open `index.html?record` and record from load until the title shows DONE. Trim to 15.0s from the first frame.
 
 **Option B: Playwright (headless, repeatable).**
