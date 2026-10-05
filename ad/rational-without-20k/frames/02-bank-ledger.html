@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en-NZ">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@500;600;700&family=Space+Grotesk:wght@500;600;700&display=block" rel="stylesheet">
+<link rel="stylesheet" href="../shared/tokens.css">
+<title>02 Bank Ledger</title>
+<style>
+  .ledger { position: absolute; top: 470px; left: 140px; right: 140px; background: var(--surface); border: 2px solid var(--line); border-radius: 28px; padding: 56px 56px 30px; }
+  .row { position: relative; display: flex; align-items: center; justify-content: space-between; }
+  .bank { flex-direction: column; align-items: stretch; padding-bottom: 50px; border-bottom: 2px solid var(--line); }
+  .bank .name { font-family: var(--f-mono); font-weight: 600; font-size: 44px; letter-spacing: .08em; color: var(--ink); }
+  .track { margin-top: 34px; height: 30px; border-radius: 15px; background: var(--canvas); overflow: hidden; }
+  .fill { height: 100%; width: 100%; border-radius: 15px; background: var(--ink2); transform-origin: left center; }
+  .delta { margin-top: 36px; align-self: flex-end; font-family: var(--f-mono); font-weight: 700; font-size: 104px; line-height: 1; letter-spacing: -.01em; color: var(--flame); }
+  .item { padding: 44px 0; border-bottom: 2px solid var(--line); }
+  .item:last-child { border-bottom: 0; }
+  .item .name { font-family: var(--f-mono); font-weight: 600; font-size: 50px; letter-spacing: .08em; color: var(--ink); }
+  .item .dots { display: flex; gap: 14px; }
+  .item .dots i { width: 22px; height: 22px; border-radius: 50%; background: var(--ink2); display: block; }
+  .strike { position: absolute; left: 0; right: 0; top: 50%; height: 5px; margin-top: -2px; background: var(--mute); transform-origin: left center; }
+</style>
+</head>
+<body data-dur="4" data-frame="02">
+<div class="viewport"><div class="stage">
+  <div class="ledger" data-anim="fade" data-at="0" data-dur="0.25">
+    <div class="row bank">
+      <div class="name">BANK</div>
+      <div class="track"><div class="fill" data-anim="shrink" data-at="0.5" data-dur="0.4"></div></div>
+      <div class="delta" data-anim="drop" data-at="0.5" data-dur="0.4">−$20,000</div>
+    </div>
+    <div class="row item">
+      <div class="inner row" style="width:100%" data-anim="grey" data-at="2.0" data-dur="0.3"><span class="name">WAGES</span><span class="dots"><i></i><i></i><i></i></span></div>
+      <span class="strike" data-anim="strike" data-at="2.0" data-dur="0.3"></span>
+    </div>
+    <div class="row item">
+      <div class="inner row" style="width:100%" data-anim="grey" data-at="2.6" data-dur="0.3"><span class="name">STOCK</span><span class="dots"><i></i><i></i><i></i></span></div>
+      <span class="strike" data-anim="strike" data-at="2.6" data-dur="0.3"></span>
+    </div>
+  </div>
+  <div class="caption" data-anim="fade" data-at="0.05" data-dur="0.25"><span>That's twenty grand not paying wages, or stock.</span></div>
+</div></div>
+<script src="../shared/stage.js"></script>
+</body>
+</html>

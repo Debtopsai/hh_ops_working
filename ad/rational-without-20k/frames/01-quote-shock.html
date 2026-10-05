@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en-NZ">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@500;600;700&family=Space+Grotesk:wght@500;600;700&display=block" rel="stylesheet">
+<link rel="stylesheet" href="../shared/tokens.css">
+<title>01 Quote Shock</title>
+<style>
+  .k-label { position: absolute; top: 560px; left: 0; right: 0; text-align: center; }
+  .k-figure { position: absolute; top: 640px; left: 0; right: 0; display: flex; justify-content: center; }
+  .k-num { position: relative; font-family: var(--f-mono); font-weight: 700; font-size: 150px; line-height: 1; letter-spacing: -.02em; color: var(--ink); }
+  .k-num .ghost { visibility: hidden; }
+  .k-num .live { position: absolute; inset: 0; text-align: right; font-variant-numeric: tabular-nums; }
+  .k-under { position: absolute; left: 0; right: 0; bottom: -34px; height: 14px; border-radius: 7px; background: var(--flame); transform-origin: left center; }
+  .receipt {
+    position: absolute; top: 960px; left: 50%; width: 560px; margin-left: -280px;
+    background: var(--surface); border: 2px solid var(--line); border-radius: 18px 18px 6px 6px;
+    padding: 40px 44px 46px; text-align: center;
+  }
+  .receipt::after { /* torn edge */
+    content: ""; position: absolute; left: 0; right: 0; bottom: -14px; height: 14px;
+    background: radial-gradient(circle at 10px 0, var(--surface) 9px, transparent 10px) 0 0 / 20px 14px repeat-x;
+  }
+  .receipt .rule { height: 0; border-top: 3px dashed var(--line); margin: 0 0 30px; }
+  .receipt .paid { font-family: var(--f-mono); font-weight: 700; font-size: 52px; letter-spacing: .08em; color: var(--ink); text-transform: uppercase; }
+</style>
+</head>
+<body data-dur="3" data-frame="01">
+<div class="viewport"><div class="stage">
+  <div class="k-label label" data-anim="fade" data-at="0" data-dur="0.3">COMBI OVEN</div>
+  <div class="k-figure">
+    <div class="k-num">
+      <span class="ghost">$20,000</span>
+      <span class="live" data-count-to="20000" data-prefix="$" data-at="0" data-dur="0.7">$20,000</span>
+      <span class="k-under" data-anim="snap" data-at="0.7" data-dur="0.18"></span>
+    </div>
+  </div>
+  <div class="receipt" data-anim="slideup" data-at="1.5" data-dur="0.4">
+    <div class="rule"></div>
+    <div class="paid">PAID IN FULL</div>
+  </div>
+  <div class="caption" data-anim="fade" data-at="0.05" data-dur="0.25"><span>Paying cash for a combi oven?</span></div>
+</div></div>
+<script src="../shared/stage.js"></script>
+</body>
+</html>

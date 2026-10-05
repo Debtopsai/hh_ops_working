@@ -1,0 +1,143 @@
+/* HireHospo provisional design tokens - "Rational Without the $20K"
+   Source: .claude/skills/hirehospo-ad-factory/references/hirehospo-brand.md §10.
+   PROVISIONAL: no official HireHospo kit exists in the repo. A real kit wins. */
+:root {
+  --canvas: #12141A;
+  --surface: #1C1F26;
+  --line: #2A2E37;
+  --ink: #F4F4F2;
+  --ink2: #B9BDC7;
+  --mute: #838896;
+  --flame: #FF9B2E;      /* the only "go" fill - max one highlight per frame */
+  --flamedark: #D97C14;
+  --warmtint: #2A2318;
+  --approve: #58C97B;    /* ticks only, never a fill */
+  --accentink: #14161A;  /* text on flame */
+
+  --f-display: "Space Grotesk", system-ui, sans-serif;
+  --f-body: "Inter", system-ui, sans-serif;
+  --f-mono: "JetBrains Mono", ui-monospace, monospace;
+
+  --ease: cubic-bezier(.22, 1, .36, 1);   /* ease-out settle */
+  --ease-stamp: cubic-bezier(.34, 1.3, .5, 1);
+
+  /* 1080x1920 safe area: top 250, bottom 320 */
+  --safe-top: 250px;
+  --safe-bottom: 320px;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html, body { width: 100%; height: 100%; background: var(--canvas); overflow: hidden; }
+body { font-family: var(--f-body); color: var(--ink); -webkit-font-smoothing: antialiased; }
+
+/* ---------- Stage ---------- */
+.viewport { position: fixed; inset: 0; display: grid; place-items: center; background: #07080B; }
+.stage {
+  position: relative; width: 1080px; height: 1920px; overflow: hidden;
+  background: var(--canvas); transform-origin: center center; flex: none;
+}
+.stage::before { /* soft warm kitchen light, very low */
+  content: ""; position: absolute; inset: 0; pointer-events: none;
+  background: radial-gradient(1200px 900px at 50% 38%, rgba(255,255,255,.035), transparent 70%);
+}
+.safe { position: absolute; left: 90px; right: 90px; top: var(--safe-top); bottom: var(--safe-bottom); }
+.hero { /* central 60% of the canvas width/height */
+  position: absolute; left: 216px; right: 216px; top: 384px; bottom: 384px;
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+}
+
+/* safe-area guides: ?guides - red bands = keep-clear (top 250 / bottom 320), dashed = central 60% */
+.guides .stage {
+  background-image:
+    linear-gradient(rgba(255,0,80,.18), rgba(255,0,80,.18)),
+    linear-gradient(rgba(255,0,80,.18), rgba(255,0,80,.18));
+  background-size: 100% 250px, 100% 320px;
+  background-position: top, bottom;
+  background-repeat: no-repeat;
+}
+.guides .stage::after {
+  content: ""; position: absolute; top: 384px; bottom: 384px; left: 216px; right: 216px;
+  pointer-events: none; z-index: 99; outline: 2px dashed rgba(0,200,255,.6);
+}
+
+/* ---------- Type ---------- */
+.mono { font-family: var(--f-mono); text-transform: uppercase; letter-spacing: .08em; }
+.display { font-family: var(--f-display); font-weight: 600; letter-spacing: -.02em; }
+.label { font-family: var(--f-mono); text-transform: uppercase; letter-spacing: .08em; font-size: 34px; color: var(--ink2); font-weight: 500; }
+.chip {
+  display: inline-flex; align-items: center; gap: 18px;
+  font-family: var(--f-mono); text-transform: uppercase; letter-spacing: .08em; font-weight: 600;
+  font-size: 30px; padding: 22px 32px; border-radius: 999px;
+  background: var(--surface); border: 2px solid var(--line); color: var(--ink2);
+}
+.chip--flame { background: var(--flame); border-color: var(--flame); color: var(--accentink); }
+
+.wordmark { font-family: var(--f-display); font-weight: 600; letter-spacing: -.03em; color: var(--ink); }
+
+/* ---------- Burned-in caption (bottom-centre, inside safe zone) ---------- */
+.caption {
+  position: absolute; left: 90px; right: 90px; bottom: calc(var(--safe-bottom) + 30px);
+  display: flex; justify-content: center; text-align: center;
+}
+.caption span {
+  font-family: var(--f-body); font-weight: 600; font-size: 46px; line-height: 1.25;
+  color: var(--ink); background: rgba(10,11,15,.78); padding: 18px 30px; border-radius: 18px;
+  max-width: 860px;
+}
+
+/* ---------- Brushed steel (plinth frames only) ---------- */
+.steel {
+  background:
+    repeating-linear-gradient(90deg, rgba(255,255,255,.035) 0 2px, rgba(0,0,0,.04) 2px 5px),
+    linear-gradient(180deg, #5A606B 0%, #3A3F48 45%, #262A31 100%);
+}
+
+/* ---------- Ticks ---------- */
+.tick { width: 56px; height: 56px; flex: none; }
+.tick path { stroke: var(--approve); stroke-width: 7; fill: none; stroke-linecap: round; stroke-linejoin: round; }
+
+/* ---------- Motion (transform + opacity only) ----------
+   Elements carry data-anim + data-at/data-dur (seconds); stage.js maps them to CSS vars.
+   Animations only run under .play so the timeline can restart and seek. */
+[data-anim] { --at: 0s; --dur: .5s; }
+.play [data-anim] { animation-duration: var(--dur); animation-delay: var(--at); animation-fill-mode: both; animation-timing-function: var(--ease); }
+.play [data-anim="fade"]     { animation-name: a-fade; }
+.play [data-anim="rise"]     { animation-name: a-rise; }
+.play [data-anim="slideup"]  { animation-name: a-slideup; }
+.play [data-anim="stamp"]    { animation-name: a-stamp; animation-timing-function: var(--ease-stamp); }
+.play [data-anim="snap"]     { animation-name: a-snap; animation-timing-function: cubic-bezier(.2,.9,.1,1); }
+.play [data-anim="drop"]     { animation-name: a-drop; }
+.play [data-anim="grey"]     { animation-name: a-grey; animation-timing-function: ease-out; }
+.play [data-anim="strike"]   { animation-name: a-strike; }
+.play [data-anim="tick"]     { animation-name: a-tick; animation-timing-function: var(--ease-stamp); }
+.play [data-anim="settle"]   { animation-name: a-settle; }
+.play [data-anim="shrink"]   { animation-name: a-shrink; transform-origin: left center; }
+.play [data-anim="out"]      { animation-name: a-out; }
+
+/* before .play, animated elements sit at their start state */
+html:not(.play) [data-anim="fade"], html:not(.play) [data-anim="rise"], html:not(.play) [data-anim="slideup"],
+html:not(.play) [data-anim="stamp"], html:not(.play) [data-anim="snap"], html:not(.play) [data-anim="drop"],
+html:not(.play) [data-anim="tick"], html:not(.play) [data-anim="settle"], html:not(.play) [data-anim="strike"] { opacity: 0; }
+
+@keyframes a-fade    { from { opacity: 0 } to { opacity: 1 } }
+@keyframes a-rise    { from { opacity: 0; transform: translateY(120px) } to { opacity: 1; transform: none } }
+@keyframes a-slideup { from { opacity: 0; transform: translateY(260px) } to { opacity: 1; transform: none } }
+@keyframes a-stamp   { from { opacity: 0; transform: scale(1.15) } 40% { opacity: 1 } to { opacity: 1; transform: scale(1) } }
+@keyframes a-snap    { from { opacity: 0; transform: scaleX(0) } to { opacity: 1; transform: scaleX(1) } }
+@keyframes a-drop    { from { opacity: 0; transform: translateY(-70px) } to { opacity: 1; transform: none } }
+@keyframes a-grey    { from { opacity: 1 } to { opacity: .32 } }
+@keyframes a-strike  { from { opacity: 0; transform: scaleX(0) } to { opacity: 1; transform: scaleX(1) } }
+@keyframes a-tick    { from { opacity: 0; transform: scale(.4) } to { opacity: 1; transform: scale(1) } }
+@keyframes a-settle  { from { opacity: 0; transform: translateY(40px) scale(.96) } to { opacity: 1; transform: none } }
+@keyframes a-shrink  { from { transform: scaleX(1) } to { transform: scaleX(.18) } }
+@keyframes a-out     { from { opacity: 1 } to { opacity: 0 } }
+
+/* Reduced motion: stage.js jumps every timeline to its end state; this is the CSS fallback. */
+@media (prefers-reduced-motion: reduce) {
+  .play [data-anim] { animation-duration: 1ms !important; animation-delay: 0s !important; }
+}
+
+/* ---------- ?record: no chrome, no cursor, true 1080x1920 ---------- */
+.record, .record * { cursor: none !important; }
+.record .viewport { background: var(--canvas); }
+.record .chrome { display: none !important; }

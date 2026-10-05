@@ -1,0 +1,208 @@
+<!doctype html>
+<html lang="en-NZ">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Rational Without $20K</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@500;600;700&family=Space+Grotesk:wght@500;600;700&display=block" rel="stylesheet">
+<link rel="stylesheet" href="shared/tokens.css">
+<style>
+  html, body { overflow: auto; height: auto; }
+  body { background: #0B0C10; padding: 32px 16px 64px; }
+  .wrap { max-width: 1320px; margin: 0 auto; }
+  h1 { font-family: var(--f-display); font-weight: 600; font-size: 28px; letter-spacing: -.01em; }
+  .meta { font-family: var(--f-mono); font-size: 12px; letter-spacing: .08em; text-transform: uppercase; color: var(--mute); margin: 6px 0 28px; }
+  .flag { color: var(--flame); }
+  .grid { display: grid; grid-template-columns: minmax(0, 420px) minmax(0, 1fr); gap: 40px; align-items: start; }
+  @media (max-width: 900px) { .grid { grid-template-columns: 1fr; } }
+
+  /* animatic player */
+  .player { position: sticky; top: 24px; }
+  .screen { position: relative; width: 100%; aspect-ratio: 9 / 16; background: var(--canvas); border-radius: 14px; overflow: hidden; border: 1px solid var(--line); }
+  .screen iframe { position: absolute; left: 0; top: 0; width: 1080px; height: 1920px; border: 0; transform-origin: 0 0; visibility: hidden; pointer-events: none; }
+  .screen iframe.on { visibility: visible; }
+  .controls { display: flex; align-items: center; gap: 12px; margin-top: 14px; }
+  .controls button { font-family: var(--f-mono); font-size: 12px; letter-spacing: .08em; text-transform: uppercase; color: var(--ink); background: var(--surface); border: 1px solid var(--line); border-radius: 999px; padding: 9px 16px; cursor: pointer; }
+  .controls button:hover { border-color: var(--mute); }
+  .tc { font-family: var(--f-mono); font-size: 13px; color: var(--ink2); margin-left: auto; font-variant-numeric: tabular-nums; }
+  .bar { position: relative; height: 26px; margin-top: 12px; cursor: pointer; }
+  .bar .seg { position: absolute; top: 9px; height: 8px; background: var(--surface); border-right: 2px solid #0B0C10; }
+  .bar .seg.on { background: var(--line); }
+  .bar .head { position: absolute; top: 3px; width: 2px; height: 20px; background: var(--ink); }
+
+  /* contact sheet */
+  .sheet { display: grid; grid-template-columns: repeat(auto-fill, minmax(170px, 1fr)); gap: 18px; }
+  .card { cursor: pointer; }
+  .thumb { position: relative; aspect-ratio: 9 / 16; border-radius: 10px; overflow: hidden; border: 1px solid var(--line); background: var(--canvas); }
+  .thumb iframe { position: absolute; left: 0; top: 0; width: 1080px; height: 1920px; border: 0; transform-origin: 0 0; pointer-events: none; }
+  .card.cur .thumb { border-color: var(--ink2); }
+  .cap { font-family: var(--f-mono); font-size: 11px; letter-spacing: .06em; text-transform: uppercase; color: var(--ink2); margin-top: 8px; line-height: 1.5; }
+  .cap b { color: var(--ink); font-weight: 600; }
+  .cap a { color: var(--mute); }
+
+  /* ?record: the player IS the page, at a true 1080x1920 */
+  .record body { padding: 0; background: var(--canvas); overflow: hidden; }
+  .record .wrap { max-width: none; }
+  .record .grid { display: block; }
+  .record .player { position: fixed; inset: 0; }
+  .record .screen { width: 1080px; height: 1920px; aspect-ratio: auto; border: 0; border-radius: 0; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="chrome">
+    <h1>HireHospo · Rational Without the $20K · 15s animatic</h1>
+    <p class="meta">1080×1920 · 7 frames · 15.0s · <span class="flag">⚠ hero oven is a placeholder · wordmark is set type</span> · see README</p>
+  </header>
+  <div class="grid">
+    <section class="player">
+      <div class="screen" id="screen"></div>
+      <div class="controls chrome">
+        <button id="play">Play</button>
+        <button id="restart">Restart</button>
+        <button id="guides">Safe area</button>
+        <span class="tc" id="tc">0:00.0 / 0:15.0</span>
+      </div>
+      <div class="bar chrome" id="bar"></div>
+    </section>
+    <section class="chrome">
+      <div class="sheet" id="sheet"></div>
+    </section>
+  </div>
+</div>
+<script>
+(function () {
+  // Storyboard shot list (authoritative timing). Total must be exactly 15.0s.
+  const SHOTS = [
+    { src: 'frames/01-quote-shock.html',      beat: 'Hook',        dur: 3.0 },
+    { src: 'frames/02-bank-ledger.html',      beat: 'Agitate',     dur: 4.0 },
+    { src: 'frames/03-hero-plinth.html',      beat: 'Bridge',      dur: 1.5 },
+    { src: 'frames/04-refurb-badge.html',     beat: 'Bridge',      dur: 1.5 },
+    { src: 'frames/05-capital-ledger.html',   beat: 'Proof',       dur: 2.5 },
+    { src: 'frames/06-approval-timeline.html', beat: 'CTA lead-in', dur: 1.0 },
+    { src: 'shared/frame-end-card.html',      beat: 'CTA',         dur: 1.5 },
+  ];
+  let acc = 0;
+  SHOTS.forEach(s => { s.start = acc; acc = Math.round((acc + s.dur) * 10) / 10; s.end = acc; });
+  const TOTAL = acc;
+  if (TOTAL !== 15) console.error('Animatic length is ' + TOTAL + 's, expected 15.0s');
+
+  const params = new URLSearchParams(location.search);
+  const RECORD = params.has('record');
+  const root = document.documentElement;
+  if (RECORD) root.classList.add('record');
+
+  const screen = document.getElementById('screen');
+  const sheet = document.getElementById('sheet');
+  const bar = document.getElementById('bar');
+  const tcEl = document.getElementById('tc');
+  const playBtn = document.getElementById('play');
+  const fmt = t => { const m = Math.floor(t / 60), s = (t - m * 60).toFixed(1); return m + ':' + (s < 10 ? '0' : '') + s; };
+
+  // player iframes: one per shot, preloaded and parked at t=0
+  let ready = 0;
+  const frames = SHOTS.map((s, i) => {
+    const f = document.createElement('iframe');
+    f.src = s.src + '?embed' + (RECORD ? '&record' : '');
+    f.title = s.beat; f.tabIndex = -1;
+    screen.appendChild(f);
+    return f;
+  });
+  addEventListener('message', e => {
+    if (!e.data || e.data.hh !== 'ready') return;
+    ready++;
+    if (e.source === frames[0].contentWindow && !RECORD && !playing && pos === 0) post(0, { hh: 'seek', t: SHOTS[0].dur }); // poster
+    if (ready === SHOTS.length && RECORD) startWhenReady();
+  });
+
+  // contact sheet: each card shows its frame frozen at its settled end state
+  const cards = SHOTS.map((s, i) => {
+    const c = document.createElement('div');
+    c.className = 'card';
+    c.innerHTML = '<div class="thumb"><iframe tabindex="-1" loading="lazy" src="' + s.src + '?embed&t=' + s.dur + '" title="' + s.beat + '"></iframe></div>' +
+      '<div class="cap"><b>' + String(i + 1).padStart(2, '0') + ' · ' + s.beat + '</b><br>' + fmt(s.start) + '–' + fmt(s.end) + ' (' + s.dur.toFixed(1) + 's)<br><a href="' + s.src + '" target="_blank">open frame ↗</a></div>';
+    c.addEventListener('click', e => { if (e.target.tagName !== 'A') seekTo(s.start + 0.001); });
+    sheet.appendChild(c);
+    return c;
+  });
+  SHOTS.forEach(s => {
+    const seg = document.createElement('div');
+    seg.className = 'seg';
+    seg.style.left = (s.start / TOTAL * 100) + '%';
+    seg.style.width = (s.dur / TOTAL * 100) + '%';
+    bar.appendChild(seg); s.seg = seg;
+  });
+  const head = document.createElement('div'); head.className = 'head'; bar.appendChild(head);
+
+  function fit() {
+    const w = screen.clientWidth || 1080;
+    const scale = RECORD ? 1 : w / 1080;
+    frames.forEach(f => f.style.transform = scale === 1 ? 'none' : 'scale(' + scale + ')');
+    document.querySelectorAll('.thumb').forEach(th => { const fr = th.querySelector('iframe'); fr.style.transform = 'scale(' + th.clientWidth / 1080 + ')'; });
+  }
+  addEventListener('resize', fit);
+
+  // master clock
+  let playing = false, t0 = 0, pos = 0, cur = -1, raf = 0;
+  const shotAt = t => { for (let i = SHOTS.length - 1; i >= 0; i--) if (t >= SHOTS[i].start) return i; return 0; };
+  const post = (i, msg) => frames[i].contentWindow && frames[i].contentWindow.postMessage(msg, '*');
+
+  function show(i) {
+    if (i === cur) return;
+    frames.forEach((f, j) => f.classList.toggle('on', j === i));
+    cards.forEach((c, j) => c.classList.toggle('cur', j === i));
+    SHOTS.forEach((s, j) => s.seg.classList.toggle('on', j <= i));
+    cur = i;
+  }
+  function paint(t) {
+    head.style.left = (t / TOTAL * 100) + '%';
+    tcEl.textContent = fmt(t) + ' / ' + fmt(TOTAL);
+  }
+  function tick() {
+    pos = Math.min(TOTAL, (performance.now() - t0) / 1000);
+    const i = shotAt(pos);
+    if (i !== cur) { post(i, { hh: 'play' }); show(i); }     // hard cut + restart that frame's timeline
+    paint(pos);
+    if (pos < TOTAL) raf = requestAnimationFrame(tick);
+    else { playing = false; playBtn.textContent = 'Play'; window.ANIMATIC_DONE = true; document.title = 'DONE'; }
+  }
+  function play() {
+    if (pos >= TOTAL) pos = 0;
+    // re-arm: park every frame at 0, then start from pos
+    const i = shotAt(pos);
+    SHOTS.forEach((s, j) => { if (j !== i) post(j, { hh: 'seek', t: 0 }); });
+    if (pos - SHOTS[i].start < 0.01) post(i, { hh: 'play' }); else post(i, { hh: 'seek', t: pos - SHOTS[i].start });
+    cur = -1; show(i);
+    t0 = performance.now() - pos * 1000;
+    playing = true; playBtn.textContent = 'Pause'; window.ANIMATIC_DONE = false;
+    // when resuming mid-shot the frame stays frozen until the next cut; fine for review
+    raf = requestAnimationFrame(tick);
+  }
+  function pause() { cancelAnimationFrame(raf); playing = false; playBtn.textContent = 'Play'; }
+  function seekTo(t) {
+    pause(); pos = Math.max(0, Math.min(TOTAL, t));
+    const i = shotAt(pos); cur = -1; show(i);
+    post(i, { hh: 'seek', t: pos - SHOTS[i].start }); paint(pos);
+  }
+  window.ANIMATIC = { play, pause, seek: seekTo, total: TOTAL, shots: SHOTS };
+
+  playBtn.addEventListener('click', () => playing ? pause() : play());
+  document.getElementById('restart').addEventListener('click', () => { pause(); pos = 0; play(); });
+  document.getElementById('guides').addEventListener('click', () => {
+    frames.forEach(f => { try { f.contentDocument.documentElement.classList.toggle('guides'); } catch (e) {
+      // file:// blocks cross-frame DOM access - reload frames with ?guides instead
+      const u = new URL(f.src); u.searchParams.has('guides') ? u.searchParams.delete('guides') : u.searchParams.set('guides', ''); f.src = u.toString();
+    } });
+  });
+  bar.addEventListener('click', e => { const r = bar.getBoundingClientRect(); seekTo((e.clientX - r.left) / r.width * TOTAL); });
+  addEventListener('keydown', e => { if (e.key === ' ') { e.preventDefault(); playing ? pause() : play(); } });
+
+  function startWhenReady() { setTimeout(() => { pos = 0; play(); }, 300); }
+  fit(); show(0); paint(0);
+  setTimeout(fit, 50);
+})();
+</script>
+</body>
+</html>
