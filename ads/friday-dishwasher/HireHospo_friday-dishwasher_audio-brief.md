@@ -1,4 +1,4 @@
-# Audio brief - HireHospo "Friday Glasswasher" - 15s
+# Audio brief - HireHospo "Friday Dishwasher" - 15s
 
 ## Music brief
 - Genre/feel: warm, capable, mid-tempo understated groove (muted Rhodes, soft kick, brushed hats, warm bass). No vocals, no EDM drop, no corporate-inspirational piano.
@@ -11,14 +11,14 @@
 
 | Time | Line | Direction |
 |---|---|---|
-| 0:00-0:03 | "Glasswasher died on a Friday?" | Dry, knowing, a half-smile. Not dramatic. Small lift on "Friday". |
-| 0:03-0:07 | "That's up to four grand, plus GST, out of the till." | Flat and factual. Stress "four grand". "Out of the till" lands lower. |
-| 0:07-0:10 | "HireHospo finances a refurbished glasswasher, with warranty." | Brighter, steady. Say "refurbished" with confidence, no apology. Tiny beat before "with warranty". |
-| 0:10-0:12.5 | "From $4.66 a day, plus GST." | Read as "four sixty-six". Plain, unhurried. Don't sell it. |
+| 0:00-0:03 | "Bar dishwasher died on a Friday?" | Dry, knowing, a half-smile. Not dramatic. Small lift on "Friday". |
+| 0:03-0:07 | "That's up to four grand, out of the till." | Flat and factual. Stress "four grand". "Out of the till" lands lower. |
+| 0:07-0:10 | "HireHospo finances a refurbished dishwasher, with warranty." | Brighter, steady. Say "refurbished" with confidence, no apology. Tiny beat before "with warranty". |
+| 0:10-0:12.5 | "From $4.66 a day." | Read as "four sixty-six". Plain, unhurried. Don't sell it. |
 | 0:12.5-0:15 | "Apply now. Subject to credit approval." | Calm close. "Apply now" warm; the credit line as matter-of-fact as a receipt, not a mumbled disclaimer. |
 
 - Record 2-3 reads of the hook and the CTA at varying warmth for the editor.
-- Pronunciation: "HireHospo" = HIRE-HOSS-po; "GST" spelled out.
+- Pronunciation: "HireHospo" = HIRE-HOSS-po.
 
 ## SFX - mapped to storyboard timestamps
 | Timestamp | Cue | Purpose | Level |

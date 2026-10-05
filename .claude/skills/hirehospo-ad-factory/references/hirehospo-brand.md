@@ -17,7 +17,11 @@
 **HireHospo** finances it - turning a $4,000 dishwasher into a low weekly payment so a hospitality
 operator preserves cashflow. One catalogue, synced from washpro.co.nz to hirehospo.com (~241 active
 products, ~30 brands, roughly $795-$32,995, median ~$3,600 - snapshot figures; check the live
-catalogue). New Zealand business, NZ market, NZD, GST.
+catalogue). New Zealand business, NZ market, NZD.
+
+> **House rules:** never write "+ GST" (or any GST wording) in ad copy. Say **"dishwasher"**,
+> never "glasswasher" - the catalogue's "Glasswashers" category is called "compact dishwashers"
+> (or "bar dishwashers") in all creative.
 
 - **The offer in one sentence:** "Premium kitchen equipment, refurbished and warranted, on low
   weekly payments."
@@ -33,20 +37,20 @@ catalogue). New Zealand business, NZ market, NZD, GST.
 | **Rent** | 12 months | No | Purchase at discount, continue at reduced rate, or upgrade |
 | **Lease-to-Own** | 36 months | Yes, at end of term | Ownership transfers, nothing further |
 
-- Weekly direct-debit payments, always quoted **"+ GST"**.
+- Weekly direct-debit payments. **Ads never add "+ GST"** to any figure.
 - Deposits are credit-tiered and case-by-case (standard 10+10 weeks; reduced structures exist).
   **Ads never advertise a specific deposit structure** - at most "reduced upfront deposit available
   for qualifying customers".
 - Delivery/installation quoted separately; LPG conversion available if required.
 - **Pricing is only ever shared after credit approval** (the sales golden rule). Ads therefore sell
-  the *model* (low weekly payments + GST), not a number - see §8.
+  the *model* (low weekly payments), not a number - see §8.
 
 ## 3. Approved claims (the only claims ads may make)
 
 | Claim | Wording to use | Notes |
 |---|---|---|
-| Payment model | "low weekly payments + GST" | Never a specific figure for a specific product |
-| Entry price hook | **"From $4.66/day"** | ONLY for the cheapest categories (glasswashers, hot plates, small fryers) where it is believable; footnote "+ GST · subject to credit approval" |
+| Payment model | "low weekly payments" | Never a specific figure for a specific product |
+| Entry price hook | **"From $4.66/day"** | ONLY for the cheapest categories (compact bar/cafe dishwashers, hot plates, small fryers) where it is believable; footnote "Subject to credit approval" |
 | Approval speed | "Approved in 24 to 48 hours" | Never "instant", never "guaranteed" |
 | Funding ceiling | "Up to $50,000" | |
 | Delivery | "Delivered in 1 to 3 business days" | After deposit - don't drop the qualifier if timing is load-bearing |
@@ -54,7 +58,7 @@ catalogue). New Zealand business, NZ market, NZD, GST.
 | Premium access | "Get a $20,000 [Rational] combi working in your kitchen without $20,000 leaving your bank" | The capital-preservation frame for premium gear |
 | Support | "Delivered, installed and serviced by Washpro - NZ-based" | Washpro does the physical work, always |
 | Upgrades | "Upgrade path at end of term" | Rent term only |
-| Price bands | Category price bands from `hirehospo-products` (e.g. glasswashers $2,300-$4,000) | Real bands only; ⚠-flag and verify before paid use |
+| Price bands | Category price bands from `hirehospo-products` (e.g. compact dishwashers $2,300-$4,000) | Real bands only; ⚠-flag and verify before paid use |
 
 Anything not on this table gets **⚠ + "confirm before publishing"** inline - never silently
 invented, never silently dropped. Internal metrics (portfolio failure rates, late fees, admin fees,
@@ -68,13 +72,13 @@ ad shows an undercounter dishwasher, not a 20-tray Rational.
 
 | ICP | The felt problem | Hero categories | Angle |
 |---|---|---|---|
-| **New cafe owner** | Fit-out quote bigger than the fit-out budget | Undercounter dishwasher, convection oven (Turbofan-led), glasswasher, espresso-adjacent prep | "Open the doors without emptying the account" - the whole fit-out as weekly payments |
+| **New cafe owner** | Fit-out quote bigger than the fit-out budget | Undercounter dishwasher, convection oven (Turbofan-led), compact dishwasher, espresso-adjacent prep | "Open the doors without emptying the account" - the whole fit-out as weekly payments |
 | **Restaurant owner** | The oven they need costs what a car costs | Combi ovens (the premium hero category), ranges, passthrough dishwashers | Capital preservation - premium brands (Rational, Convotherm, Electrolux) they'd never buy new |
 | **Caterer** | Gear sized for the biggest job, paid for year-round | Combi ovens, holding cabinets, banquet carts | Capacity when it's needed, a weekly payment when it's not |
 | **Cloud / ghost kitchen** | Speed to open beats everything | Fryers, griddles, conveyor pizza ovens, prep | Fastest route from lease signed to first order out |
 | **Food truck** | Small footprint, gas, tight capital | Compact fryers, griddles, hot plates; LPG conversion available | Every dollar stays in the truck |
 | **Bakery** | Heavy iron: mixers, sheeters, provers, deck ovens | Bakery & dough equipment ($1,300-$17,000) | Serious machinery on hospitality-sized payments |
-| **Bar / pub** | The glasswasher just died on a Friday | Glasswashers ($2,300-$4,000 - the "$4.66/day" zone), ice | Cheapest believable entry point; fixed fast, financed weekly |
+| **Bar / pub** | The bar dishwasher just died on a Friday | Compact bar dishwashers (catalogue category "Glasswashers", $2,300-$4,000 - the "$4.66/day" zone), ice | Cheapest believable entry point; fixed fast, financed weekly |
 
 ## 5. Awareness stages (map every hook to one)
 
@@ -106,12 +110,13 @@ marks almost never). Reframes to reuse:
 | Category | Never |
 |---|---|
 | **Approval hype** | "guaranteed approval", "everyone approved", "no credit checks", "instant approval", "easy money" |
-| **Pricing** | A specific weekly/daily payment for a specific product (only "$4.66/day" entry hook, cheapest categories); any payment figure without "+ GST"; "interest free"; total-cost claims; specific deposit structures |
+| **Pricing** | A specific weekly/daily payment for a specific product (only "$4.66/day" entry hook, cheapest categories); "+ GST" or any GST wording; "interest free"; total-cost claims; specific deposit structures |
 | **Pressure** | "act now", "limited time", "don't miss out", "last chance", "hurry", countdown mechanics |
 | **Discount-shop energy** | "cheap", "bargain", "clearance", "slashed", stacked exclamation marks |
 | **Condition-shame** | "used", "second-hand", "pre-loved" as apology - the word is **"refurbished, with warranty"**, said with confidence |
 | **Role-blur** | Implying HireHospo stocks, services, or repairs equipment (that's Washpro); implying Washpro does the finance |
 | **Invented gear** | Generic "commercial oven" where a real category/brand exists; invented specs, capacities, model numbers; draft/archived catalogue items |
+| **Terminology** | "glasswasher" / "glass washer" - always **"dishwasher"** ("compact" or "bar dishwasher" where size matters) |
 | **Jargon** | leverage, synergy, game-changing, best-in-class, revolutionary, seamless, hassle-free (bare), "solutions" |
 
 ## 8. Credit + catalogue gates (first-class, every line)
@@ -121,7 +126,8 @@ marks almost never). Reframes to reuse:
    after Checkmate approval; the ad sells the model and the CTA.
 2. **"Subject to credit approval"** appears as microcopy wherever finance terms are shown (end
    card at minimum). "Normal lending criteria apply" is an acceptable NZ-standard alternative.
-3. **"+ GST"** on every payment/price mention, no exceptions - NZ Fair Trading discipline.
+3. **No "+ GST"** - never add GST wording to any payment or price mention, in VO, on screen, or
+   in footnotes.
 4. **Catalogue-true:** active products only; real brands, categories, price bands via
    `hirehospo-products`; never invent specs (they live on the product page); link the product page
    where a product is named.
@@ -164,7 +170,7 @@ accentink #14161A   text on a flame surface - always
 ```
 
 - **Type:** Space Grotesk (display; semibold headings, bold figures, tight tracking) · Inter
-  (body) · **JetBrains Mono for money, terms, and chips** (prices, "+ GST", "REFURBISHED · WITH
+  (body) · **JetBrains Mono for money, terms, and chips** (prices, "REFURBISHED · WITH
   WARRANTY", SKU/category labels, uppercase 0.08em). Money always in mono - it reads like a ledger,
   which is the brand.
 - **Texture:** subtle brushed-stainless gradient allowed on equipment plinth frames; dot-grid and
@@ -183,7 +189,7 @@ accentink #14161A   text on a flame surface - always
 | Frame | What it is | Notes |
 |---|---|---|
 | **Quote-shock number** | One oversized price ("$18,400"), mono, counting up, flame highlight under the last digits. The capital-hit hook. Doubles as thumbnail. | Real price band for the category, ⚠-verified |
-| **Big-number-vs-weekly split** | Left: the full price greying out. Right: "low weekly payments + GST" in flame. The core reframe. | Never a fabricated weekly figure on the right - the *model*, not a number |
+| **Big-number-vs-weekly split** | Left: the full price greying out. Right: "low weekly payments" in flame. The core reframe. | Never a fabricated weekly figure on the right - the *model*, not a number |
 | **Equipment hero plinth** | Real catalogue product cut out on steel plinth, brand + category chip in mono, "Refurbished · With warranty" badge. | Product must be active; link its page in the hand-off |
 | **Refurb-with-warranty badge** | The condition chip stamping onto the gear: `REFURBISHED · WITH WARRANTY`. | The objection-killer beat |
 | **Approval timeline** | Four mono steps ticking: APPLY → CREDIT CHECK → APPROVED (flame) → DELIVERED 1-3 DAYS. | The bridge frame; "Subject to credit approval" microcopy lives here |
@@ -193,7 +199,7 @@ accentink #14161A   text on a flame surface - always
 
 ## 12. File & naming conventions
 
-- Slugs: short kebab from the hook (`quote-shock`, `466-a-day`, `friday-glasswasher`,
+- Slugs: short kebab from the hook (`quote-shock`, `466-a-day`, `friday-dishwasher`,
   `rational-without-20k`).
 - Files: `HireHospo_<slug>_script_<len>s.md` · `HireHospo_<slug>_storyboard.md` ·
   `HireHospo_<slug>_audio-brief.md` · `claude-code-prompt-hirehospo-<slug>-frames.md`.

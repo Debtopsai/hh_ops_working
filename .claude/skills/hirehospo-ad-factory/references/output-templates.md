@@ -12,7 +12,7 @@ the headings. Dark-steel theme throughout (provisional system - a real kit in th
 
 **Offer focus:** <Rent 12m / Lease-to-Own 36m / full fit-out> · **Featured gear:** <real category / product + price band> · **HireHospo intro at:** <0:0X (XX%)> · **CTA:** Apply now
 **Format:** person-free motion graphics + real equipment imagery (dark). **Voice:** credit-led operator - underwriting, not selling.
-**Compliance:** approved claims only · "+ GST" on every payment mention · "Subject to credit approval" on the end card · no quoted weekly price for a specific product.
+**Compliance:** approved claims only · no "+ GST" · "dishwasher" never "glasswasher" · "Subject to credit approval" on the end card · no quoted weekly price for a specific product.
 
 | Time | Section | VO | On-screen text | Visual (dark, no people) | SFX / music |
 |---|---|---|---|---|---|
@@ -23,7 +23,7 @@ the headings. Dark-steel theme throughout (provisional system - a real kit in th
 | ...-0:<len> | CTA | "<offer line>" | **Apply now** · *Approved in 24 to 48 hours · Subject to credit approval* | <end card> | <settle; out> |
 
 - **Bridge intent honoured:** <1 line - why each transition is inevitable>.
-- **Audit:** bridge ✓ · offer last ✓ · specifics: <list> ✓ · single CTA ✓ · ~<n> words / <wps> wps · claims all approved ✓ · "+ GST" ✓ · credit-approval microcopy ✓ · catalogue-true ✓.
+- **Audit:** bridge ✓ · offer last ✓ · specifics: <list> ✓ · single CTA ✓ · ~<n> words / <wps> wps · claims all approved ✓ · no "+ GST" ✓ · "dishwasher" terminology ✓ · credit-approval microcopy ✓ · catalogue-true ✓.
 - **⚠ Claim check:** <flag anything off the approved table or any price band needing live-site verification; confirm "$4.66/day" only used for cheapest categories>.
 - **Shorter-cut trim:** <how to compress, keeping the bridge + end card>.
 ```
@@ -54,7 +54,7 @@ Shared system: provisional HireHospo dark-steel tokens (a real kit/brand book in
 ## Production notes
 - Dark frames throughout (#12141A). Flame #FF9B2E = the only "go" fill. **One flame highlight per frame, key beats only.** Money and terms in mono.
 - Equipment shots use real catalogue products (real brand + category chip; link the product page in the hand-off). Never invent models or specs.
-- Wordmark at the bridge + end card only; never redraw the logo. End card carries "Apply now" + "Approved in 24 to 48 hours · Subject to credit approval" + "+ GST" wherever a payment is referenced.
+- Wordmark at the bridge + end card only; never redraw the logo. End card carries "Apply now" + "Approved in 24 to 48 hours · Subject to credit approval". Never "+ GST".
 - Caption every spoken line, burned-in, bottom-center, inside the safe zone.
 
 ## Safe-area check (9:16) · ## Hold-rate (bridge reset ~7-9s; body cuts ~2s) · ## Audit (shots/timing) · ## Aspect variants (4:5 / 1:1) · ## Hand-off
@@ -108,8 +108,8 @@ Music −6 to −9 dB under VO (the hook may ride without a duck); SFX peaks duc
 ## 2. Mandate - build the animated frames + a <len>s animatic at 1080×1920; person-free motion graphics + real equipment imagery (UGC/founder variant only if the hook calls for a face).
 ## 3. Inputs - the script + storyboard (build spec) · any HireHospo kit/brand assets in the folder (source of truth if present) · the catalogue export for real product names/prices.
 ## 4. Design system - provisional dark-steel tokens (a real kit WINS if present): canvas #12141A · surface #1C1F26 · ink #F4F4F2 · flame #FF9B2E (the only "go" fill) · flamedark #D97C14 · warmtint #2A2318 · approve #58C97B (ticks only) · accentink #14161A on flame. Space Grotesk display / Inter body / **JetBrains Mono for money, terms, chips**. One flame highlight per frame. Brushed-steel gradient allowed on plinth frames. **Never redraw the logo** - wordmark asset or display-face text, ⚠-flagged.
-## 5. What to build - per-frame contract table (File | Beat | Duration | verbatim copy | Motion), reusing the standard frames (quote-shock / split / hero plinth / refurb badge / approval timeline / category grid / ledger / end card). **Lock copy verbatim** - approved claims only, "+ GST" on every payment mention, "Subject to credit approval" on the end card, no quoted weekly price for a specific product, catalogue-true gear.
+## 5. What to build - per-frame contract table (File | Beat | Duration | verbatim copy | Motion), reusing the standard frames (quote-shock / split / hero plinth / refurb badge / approval timeline / category grid / ledger / end card). **Lock copy verbatim** - approved claims only, no "+ GST" anywhere, "dishwasher" never "glasswasher", "Subject to credit approval" on the end card, no quoted weekly price for a specific product, catalogue-true gear.
 ## 6. Deliverable structure - ad/<slug>/ {index.html (contact sheet + animatic), frames/*.html, shared/{tokens.css, stage.js, frame-end-card.html}, README.md}.
 ## 7. Constraints - self-contained (Tailwind + Google Fonts CDN, vanilla JS); on-system only (dark steel, flame = only go-fill, mono money, one flame highlight/frame); NZ English; compliance (approved claims only; price bands real and ⚠-verified; no approval hype; roles clean: financed by HireHospo, delivered/installed/serviced by Washpro); recordable true 1080×1920 with `?record`; original work.
-## 8. Process - read the assets + storyboard, confirm tokens (kit vs provisional), copy locks, and the compliance gates; build shared first; build frames in order; build the animatic; README; self-review (animatic = <len>.0s · copy verbatim · "+ GST" + credit-approval microcopy present · catalogue-true gear · flame discipline · safe area · `?record` clean).
+## 8. Process - read the assets + storyboard, confirm tokens (kit vs provisional), copy locks, and the compliance gates; build shared first; build frames in order; build the animatic; README; self-review (animatic = <len>.0s · copy verbatim · credit-approval microcopy present · no "+ GST" · no "glasswasher" · catalogue-true gear · flame discipline · safe area · `?record` clean).
 ```

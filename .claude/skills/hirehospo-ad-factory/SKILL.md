@@ -4,8 +4,8 @@ description: >-
   Turn a single ad hook into a complete, build-ready HireHospo video-ad package in one run -
   script, storyboard, VO/audio brief, and a Claude Code animation prompt - with the credit-led
   brand voice, the 7 operator ICPs (new cafe, restaurant, caterer, cloud kitchen, food truck,
-  bakery, bar/pub), the real Washpro-synced catalogue, NZ finance-ad compliance (+ GST, subject
-  to credit approval, no approval hype, no quoted weekly prices), and the "Apply now" CTA baked
+  bakery, bar/pub), the real Washpro-synced catalogue, NZ finance-ad compliance (subject to
+  credit approval, no approval hype, no quoted weekly prices), and the "Apply now" CTA baked
   in. Use whenever the user has a hook (or picks one) and wants a HireHospo ad: "make a HireHospo
   ad", "turn this hook into an ad", "run the ad pipeline", "hook to script to storyboard", "build
   the ad", "ad factory", "create the ad for [cafe / restaurant / bakery / food truck / bar]", or
@@ -56,7 +56,7 @@ Capture, verbatim: **hook text** · **archetype** · **awareness stage** (Proble
 Aware) · **ICP** (which of the 7 operator types) · **offer focus** (Rent 12 months / Lease-to-Own
 36 months / full fit-out) · **featured category or product** (from the catalogue via
 `hirehospo-products`) · **target length** (default **15s**; range 8-30s). Market is **NZ, always**
-(NZ English, NZD, GST). Infer archetype/stage/ICP from the wording + the ICP cues in
+(NZ English, NZD). Infer archetype/stage/ICP from the wording + the ICP cues in
 `references/hirehospo-brand.md`. Only ask the user when the angle genuinely turns on it (e.g. the
 hook could target either a new cafe or an established restaurant and the equipment package differs).
 
@@ -69,11 +69,11 @@ motion graphics + real equipment imagery**) + length + the **framework auto-sele
 transition inevitable); **every claim comes from the approved-claims table** (anything else gets ⚠ +
 "confirm before publishing"); equipment named is **real catalogue gear** with its real price band;
 **no specific weekly or daily payment for a specific product** - "From $4.66/day" is the only
-approved entry-point figure and only for the cheapest categories; any payment or price mention
-carries **"+ GST"**; finance framing carries **"Subject to credit approval"**; **single CTA "Apply
+approved entry-point figure and only for the cheapest categories; **never write "+ GST"** (or any
+GST wording) in ad copy; say **"dishwasher"**, never "glasswasher"; finance framing carries **"Subject to credit approval"**; **single CTA "Apply
 now"** + the subline "Approved in 24 to 48 hours. Subject to credit approval." Run the **script
 audit** (bridge inevitable? · offer last? · 3+ specifics? · single CTA? · pace ≤ ~2.6 wps? ·
-catalogue-true? · credit gate clean? · GST present? · no hype/pressure language?). Save with the
+catalogue-true? · credit gate clean? · no "+ GST"? · "dishwasher" not "glasswasher"? · no hype/pressure language?). Save with the
 script template in `references/output-templates.md`.
 
 ## Step 3 - Storyboard
@@ -107,16 +107,16 @@ asset in the folder; otherwise the **provisional token set** in `references/hire
 (dark steel canvas, flame accent as the only "go" fill, mono for money). Never redraw the logo -
 use the wordmark asset from the site or set the name in the display face and flag it. Per-frame
 contract table (file / beat / duration / verbatim copy / motion), reusing prior frames. Lock copy
-verbatim; build in the compliance self-review (every claim from the approved table; "+ GST" and
-"Subject to credit approval" present where required; equipment names/prices catalogue-true). Save
+verbatim; build in the compliance self-review (every claim from the approved table; "Subject to
+credit approval" present where required; no "+ GST" anywhere; "dishwasher" never "glasswasher"; equipment names/prices catalogue-true). Save
 with the Claude-Code-prompt template.
 
 ## Cross-cutting gates (apply at every step)
 
 - **Credit gate (the golden rule, ad edition):** pricing is shared only after credit approval, so
   ads never quote a specific weekly or daily payment for a specific product. "From $4.66/day" is
-  the sole approved entry figure (cheapest categories only: glasswashers, hot plates, small
-  fryers). Premium gear leads with **capital preservation** ("a $20,000 Rational combi working in
+  the sole approved entry figure (cheapest categories only: compact bar/cafe dishwashers, hot
+  plates, small fryers). Premium gear leads with **capital preservation** ("a $20,000 Rational combi working in
   your kitchen without $20,000 leaving your bank"), never a tiny daily number.
 - **Never imply guaranteed approval.** HireHospo is credit-led and declines applicants by design.
   Banned: "everyone approved", "no credit checks", "guaranteed approval", "instant approval".
@@ -126,9 +126,13 @@ with the Claude-Code-prompt template.
   Link `https://www.hirehospo.com/products/<handle>` where a product is named.
 - **Refurbished is a strength:** always paired with "with warranty"; never hidden, never
   apologised for. It is *why* the weekly payment is low.
-- **Money formatting:** every payment or price mention carries **"+ GST"**. Never advertise
+- **Money formatting:** **never include "+ GST"** (or "excl./incl. GST") in any ad copy, VO,
+  on-screen text, or footnote - prices and payments stand on their own. Never advertise
   specific deposit structures (they are credit-tiered, case-by-case); if deposits come up, only
   "reduced upfront deposit available for qualifying customers".
+- **Terminology:** HireHospo says **"dishwasher"**, never "glasswasher" - including for the
+  catalogue's "Glasswashers" category (compact bar/cafe units). Where size matters, say "compact
+  dishwasher" or "bar dishwasher". Applies to VO, on-screen text, chips, file slugs and briefs.
 - **Roles stay clean:** HireHospo finances; **Washpro** sources, refurbishes, delivers, installs,
   and services. Say "delivered, installed and serviced by Washpro" - never imply HireHospo holds
   stock or turns a spanner.

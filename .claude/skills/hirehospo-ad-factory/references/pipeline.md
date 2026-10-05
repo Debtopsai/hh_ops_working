@@ -21,7 +21,7 @@ the opening problem beats.
 
 Problem Unaware → Problem Aware (quote shock) → Solution Aware (finance exists) → Product Aware
 (HireHospo vs outright vs bank) → Most Aware (ready to apply). No product in the Problem stages -
-sell the felt cost of the capital hit (the fit-out quote, the dead glasswasher, the drained account);
+sell the felt cost of the capital hit (the fit-out quote, the dead dishwasher, the drained account);
 HireHospo enters at Solution Aware; "Apply now" + the approval subline land at Most Aware. The
 competitor is **delay and outright purchase** - make the cost of tying up capital specific, flat, and
 calm.
@@ -44,7 +44,7 @@ shorter-cut trim note (compress the agitation/mechanism, keep the bridge + end c
 bridge ~45-55%, not the opening)? · 3+ specifics (real prices/timeframes/named gear)? · single CTA
 ("Apply now")? · pace ≤ ~2.6 wps? · every claim on the approved table or ⚠-flagged? · no specific
 weekly/daily payment for a specific product ("$4.66/day" entry hook only, cheapest categories)? ·
-"+ GST" on every payment/price mention? · "Subject to credit approval" present (end card at
+no "+ GST" anywhere? · "dishwasher" never "glasswasher"? · "Subject to credit approval" present (end card at
 minimum)? · no approval hype, pressure, or discount-shop language? · equipment catalogue-true
 (active products, real brands/bands)? · Washpro/HireHospo roles clean?
 
@@ -92,5 +92,5 @@ contracts (file / beat / duration / verbatim copy / motion); specify self-contai
 at 1080×1920 with a stitched animatic + `?record` mode; visual source = any HireHospo kit/brand
 asset in the folder, else the provisional tokens (canvas #12141A, flame #FF9B2E as the only "go"
 fill, mono for money, one flame highlight per frame, never redraw the logo); reuse prior frames;
-lock copy verbatim ("+ GST", "Subject to credit approval", approved claims only, catalogue-true
+lock copy verbatim ("Subject to credit approval", no "+ GST", "dishwasher" not "glasswasher", approved claims only, catalogue-true
 gear) → save with the Claude-Code-prompt template.
